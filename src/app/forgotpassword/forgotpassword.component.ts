@@ -19,4 +19,13 @@ export class ForgotpasswordComponent implements OnInit {
     console.log(this.signinForm);
   }
 
+  myFunc(){
+    console.log("function called");
+  }
+
+    // if(confirm("Are you sure to delete ")) {
+    //   console.log("Implement delete functionality here");
+    // }
+  
+
 }
