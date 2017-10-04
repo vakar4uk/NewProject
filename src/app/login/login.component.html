@@ -13,10 +13,13 @@ https://bootsnipp.com/similar/MR9Al
 <!-- Login Container -->
 <div class="container">    
           <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-signin">
+            <h3><i class="fa fa-sign-in fa-4x" aria-hidden="true"></i></h3>
             <h2 class="form-signin-heading">Sign In</h2><hr>
 
             <div class="form-group">
             <label for="inputUsername" class="sr-only">Username</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
             <input 
             type="text"
             placeholder="Username"
@@ -26,9 +29,12 @@ https://bootsnipp.com/similar/MR9Al
             name="username"
             required autofocus>
             </div>
+            </div>
 
             <div class="form-group">
             <label for="inputPassword" class="sr-only">Password</label>
+            <div  class="input-group">
+                <span  id="key-icon" class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
             <input 
             type="password" 
             id="inputPassword"
@@ -37,7 +43,8 @@ https://bootsnipp.com/similar/MR9Al
             ngModel
             name="password"            
             required>
-            </div>            
+            </div>     
+            </div>       
 
 
             <div class="checkbox">
@@ -52,6 +59,6 @@ https://bootsnipp.com/similar/MR9Al
             [disabled]="!f.valid"
             routerLink="/home"
             >Log in</button>
-            <p class="message">Forgot your password? <a href="#">Reset password</a></p>
+            <p class="message">Forgot your password? <a routerLink="/forgotpassword">Reset password</a></p>
           </form>    
         </div> <!-- /Login container -->       
