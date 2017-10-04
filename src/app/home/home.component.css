@@ -1,14 +1,51 @@
 #navbar {
     background-color: #616467;
-    color: #bbb;
+    color: #bbb;    
 }
 
-nav > a:hover {
+.nav-link, .nav-link:hover {
+    cursor: pointer;     
+}
+
+#main-content {
+    margin-top: 150px;
+}
+
+nav > li,a:hover {
+    color: #DDDDAC;
+}
+
+li >  a {
+    margin-left: 15px;
+    font-size: 1.2em;
+}
+
+#dropdown-button {
+    margin-top: 12px;
+}
+
+#dropdown-button:hover {
     color: #DDDDAC;
 }
 
 a {
     color: lightgray;
+}
+
+.dropdown-menu {
+    margin-left:250px;
+    background-color: #D4D4D6;
+    border-style: 1px solid black;    
+}
+
+.dropdown-menu > li:hover {
+    color: #FEFEFE;
+    background-color: transparent; 
+    cursor: pointer; 
+}
+
+.dropdown-item:hover {   
+    background-color: transparent;
 }
 
 #brand {

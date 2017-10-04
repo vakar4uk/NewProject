@@ -1,20 +1,25 @@
 <!-- Navbar -->
 <nav id="navbar" class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand" href="#"><i class="fa fa-heartbeat" aria-hidden="true"></i>Wipro HMS</a>
+    <a class="navbar-brand" routerLink="/home"><i class="fa fa-heartbeat" aria-hidden="true"></i>Wipro HMS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="#"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i>Calendar<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item" dropdown>
+            <a id="dropdown-button" dropdownToggle class="nav-link"><i class="fa fa-caret-down" aria-hidden="true"></i>
+                Patient <span class="caret"></span>
+            </a>
+              <ul *dropdownMenu class="dropdown-menu" role="menu">
+                  <li role="menuitem"><a class="dropdown-item">Add Patient</a></li>
+                  <li role="menuitem"><a class="dropdown-item">Edit Patient</a></li>
+                  <li role="menuitem"><a class="dropdown-item">Search Patient</a></li>
+                </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+        
       </ul>
       <form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -22,6 +27,26 @@
       </form>
     </div>
   </nav>   <!-- Navbar -->
+
+<!-- Page Content -->
+<div class="container-fluid">
+<div class="btn-group" dropdown container="body">
+    <button dropdownToggle type="button" class="btn btn-primary dropdownToggle">
+      Dropdown on Body <span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Page Content -->
+
 
   <!-- Footer -->
   <footer>
