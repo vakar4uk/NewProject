@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
+import { HttpModule } from '@angular/http';
+
+import { DataService} from './backend/data.service';
+
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -28,9 +33,10 @@ const appRoutes: Routes =[
     FormsModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot(appRoutes),
+    HttpModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
