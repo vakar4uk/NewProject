@@ -7,24 +7,27 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="#"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i>Calendar<span class="sr-only">(current)</span></a>
+          <a id="dropdown-button" class="nav-link row" routerLink="#">Calendar<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" dropdown>
             <a id="dropdown-button" dropdownToggle class="nav-link"><i class="fa fa-caret-down" aria-hidden="true"></i>
                 Patient <span class="caret"></span>
             </a>
-              <ul *dropdownMenu class="dropdown-menu" role="menu">
-                  <li role="menuitem"><a class="dropdown-item">Add Patient</a></li>
-                  <li role="menuitem"><a class="dropdown-item">Edit Patient</a></li>
-                  <li role="menuitem"><a class="dropdown-item">Search Patient</a></li>
+              <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
+                  <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
+                  <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
+                  <li role="menuitem"><a id="dropdown-item"class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
                 </ul>
-        </li>
-        
+        </li>        
+          <a  id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>      
       </ul>
-      <form class="form-inline mt-2 mt-md-0">
+
+
+
+      <!-- <form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> -->
     </div>
   </nav>   <!-- Navbar -->
 
