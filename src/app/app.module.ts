@@ -5,6 +5,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DataService} from './backend/data.service';
 
@@ -34,6 +35,7 @@ const appRoutes: Routes =[
     AngularFontAwesomeModule,
     RouterModule.forRoot(appRoutes),
     HttpModule,
+    HttpClientModule,
     BsDropdownModule.forRoot()
   ],
   providers: [DataService],

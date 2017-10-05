@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TestBed, inject } from '@angular/core/testing';
-import { Http, Headers, Response, RequestOptions } from '@angular/http';
+//import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Login } from '../login/login'
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
@@ -9,32 +10,35 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class DataService {
-  private allLogin:Login[]=[];
-  constructor(private _http: Http) {
-    //this.getData().subscribe(data => obj = data, error => console.log(error));
+  title = 'app';
+  results = '';
+  constructor(private http: HttpClient) {
   }
-
-
-  getUsername(Username: any):Observable<any>{
-
-    return this._http.get("http://localhost:3000/Person")
-      .map((response: Response) => response.json())
-      .catch((error: any) => {
-        console.log(error);
-        return Observable.of(undefined)
-      });
+  
+  getPerson(){
+    return this.http.get("http://localhost:3000/Person").subscribe(data =>{
+      console.log(data);
+    });
 
   }
 
-  getPassword(Password: any):Observable<any>{
-        return this._http.get("http://localhost:3000/Person")
-          .map((response: Response) => response.json())
-          .catch((error: any) => {
-            console.log(error);
-            return Observable.of(undefined)
-          });
+  getUsername(Username: any){
+    return this.http.get("http://localhost:3000/Person").subscribe(data =>{
+      console.log(data);
+    });
 
-      }
+  }
+
+  getPassword(Password: any){
+    return this.http.get("http://localhost:3000/Person").subscribe(data =>{
+      console.log(data);
+    });
+
+  }
+
+
+}
+
 
   // editTask(item: Login) {
 
@@ -46,4 +50,4 @@ export class DataService {
 
   // }
 
-}
+

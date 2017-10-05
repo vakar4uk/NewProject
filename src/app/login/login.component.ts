@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   @ViewChild('f') signinForm: NgForm;
   selectedLogin: Login;
   private subscription: Subscription;
-  model = {Username:'', Password:''};
+  model = {PID:'',Fname:'', Lname:'',Sex:'', DOB:''};
   constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
   }
@@ -23,14 +23,12 @@ export class LoginComponent implements OnInit {
 
   }
   onSubmit() {
-    this._datatask.getUsername(this.model).subscribe(
-      (data:Login)=>{
-        if(data!= null)
-          this._router.navigate(['/dashboard']);
-      },
-      function (error){console.log("error"+error)},
-      function(){console.log("subcription done")}
-    );
+    this._datatask.getPerson();
+    // (data:Login)=>{
+    //     if(data!= null)
+    //       this._router.navigate(['/home']);
+    // }
+     
     console.log(this.signinForm);
 
     
