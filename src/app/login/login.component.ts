@@ -24,10 +24,7 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     this._datatask.getPerson();
-    // (data:Login)=>{
-    //     if(data!= null)
-    //       this._router.navigate(['/home']);
-    // }
+    this._router.navigate(['/home']);
      
     console.log(this.signinForm);
 

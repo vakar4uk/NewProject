@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve && node ./nodejs/app.js",
+    "start": "ng serve",
+    "nstart": "node C:/Users/CO387105/Documents/GitHub/NewProject/nodejs/app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
