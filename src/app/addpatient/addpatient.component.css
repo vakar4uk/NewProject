@@ -101,4 +101,37 @@ a {
   i {
       padding-right: 5px;
   }
-  
+
+  li> .active {
+      color: #0B0B28;
+      background-color: transparent;
+  }
+
+/* Main Content */
+.content {   
+    margin-top: 80px;
+}
+
+/* Forms */
+#form {
+    margin-left: 30px;
+    padding-top: 10px;
+    background-color: #D5ECEC;
+    border: 2px solid rgb(44, 95, 112);
+    border-radius: 30px;
+}
+
+.input-group > span {
+    width:95px;
+}
+
+#state {
+    width:208px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

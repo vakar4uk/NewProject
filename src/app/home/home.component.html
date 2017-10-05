@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a id="dropdown-button" class="nav-link row" routerLink="#">Calendar<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" dropdown>
@@ -14,7 +14,7 @@
                 Patient <span class="caret"></span>
             </a>
               <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
-                  <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
+                  <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
                   <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
                   <li role="menuitem"><a id="dropdown-item"class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
                 </ul>
@@ -32,37 +32,22 @@
   </nav>   <!-- Navbar -->
 
 <!-- Page Content -->
-<div class="container-fluid">
-<div class="btn-group" dropdown container="body">
-    <button dropdownToggle type="button" class="btn btn-primary dropdownToggle">
-      Dropdown on Body <span class="caret"></span>
-    </button>
-    <ul *dropdownMenu class="dropdown-menu" role="menu">
-      <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-      <li class="divider dropdown-divider"></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-      </li>
-    </ul>
-  </div>
-</div>
 
 <!-- Page Content -->
 
 
   <!-- Footer -->
-  <footer>
-  <nav id="footer" class="navbar fixed-bottom navbar-light">
-      <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
-      <div class="row">
-      <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
-      <span><a href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-      <span><a href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
-      </div>
-    </nav>
-  </footer>
-  <!-- Footer -->
+<footer class="footer">
+    <nav id="footer" class="navbar fixed-bottom navbar-light">
+        <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
+        <div class="row">
+        <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
+        <span><a href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
+        <span><a href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
+        </div>
+      </nav>
+    </footer>
+    <!-- Footer -->
 
 
   
