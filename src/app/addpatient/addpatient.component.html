@@ -33,12 +33,12 @@
 </nav>
 <!-- Navbar -->
 
-<!-- <div class="content"> -->
-    <div class="row content text-center">      
-        <div id="form" class="col-lg-5">
+<!-- Main Content -->
+    <div id="content" class="row text-center">      
+        <div id="form">
             <h5>Personal Information</h5>
             <div class="form-group">
-                <label for="inputUsername" class="sr-only">First Name</label>
+                <label for="firstName" class="sr-only">First Name</label>
                 <div class="input-group">
                     <span class="input-group-addon">First Name</span>
                 <input
@@ -49,9 +49,9 @@
                 name="firstName"
                 required>
                 </div>
-              </div>
+            </div>
               <div class="form-group">
-                  <label for="inputUsername" class="sr-only">Last Name</label>
+                  <label for="lastName" class="sr-only">Last Name</label>
                   <div class="input-group">
                       <span class="input-group-addon">Last Name</span>
                   <input
@@ -62,33 +62,45 @@
                   name="lastName"
                   required>
                   </div>
+                  
               </div>   
+
+              <div class="form-group">
+                <label for="dob" class="sr-only">Date of Birth</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Date of Birth</span>
+                <input
+                type="date"               
+                id="dob"
+                class="form-control"
+                ngModel            
+                name="dob"
+                required>
+                </div>                
+            </div>
+            
+            <div class="custom-controls-stacked d-block my-3">
+            <div class="form-group">
+                    <div class="input-group">
+                    <span class="input-group-addon">Gender</span>
+                    <label id="radio-button" class="custom-control custom-radio">
+                            <input id="male" name="gender" type="radio" class="custom-control-input" required>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Male</span>
+                          </label>
+                    
+                                              
+                          <label id="radio-button" class="custom-control custom-radio">
+                                <input id="female" name="gender" type="radio" class="custom-control-input" required>
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Female</span>
+                              </label>
+                    </div>
+                    
+            </div>
+            </div>
               
               <!-- <div class="form-group">
-                  <label for="firstname" class="sr-only">First Name</label>
-                  <div class="input-group">
-                      <span class="input-group-addon">First Name</span>
-                  <input
-                  type="text"               
-                  id="firstName"
-                  class="form-control"
-                  ngModel            
-                  name="firstName"
-                  required>
-
-                  <label for="lastname" class="sr-only">Last Name</label>
-                  <span style="margin-left: 5px; text-align:right;" class="input-group-addon">Last Name</span>
-                  <input
-                  type="text"               
-                  id="lastName"
-                  class="col-lg-3  form-control"
-                  ngModel            
-                  name="lastname"
-                  required> 
-                  </div>                  
-              </div> -->
-              
-              <div class="form-group">
                   <label for="street" class="sr-only">Street</label>
                   <div class="input-group">
                       <span class="input-group-addon">Street</span>
@@ -110,9 +122,9 @@
                   name="city"
                   required> 
                   </div>                  
-              </div>
-              <div class="form-group">
-                  <label for="address" class="sr-only">State</label>                  
+              </div> -->
+              <!-- <div class="form-group">
+                  <label for="state" class="sr-only">State</label>                  
                   <div class="input-group">
                       <span style="text-align:right;" class="input-group-addon">State</span>
                       <div >
@@ -182,166 +194,134 @@
                   name="zipcode"
                   required> 
                   </div>
+              </div> -->
+              
+        </div>      
+
+        <div id="form">
+                <h5>Address</h5>
+                <div class="form-group">
+                        <label for="street" class="sr-only">Street</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">Street</span>
+                        <input
+                        type="text"               
+                        id="street"
+                        class="col-lg-10 form-control"
+                        ngModel            
+                        name="street"
+                        required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                            <label for="apt" class="sr-only">Apartment</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">Apartment</span>
+                            <input
+                            type="text"               
+                            id="apt"
+                            class="col-lg-10 form-control"
+                            ngModel            
+                            name="apt">
+                            </div>
+                        </div>
+
+                    <div class="form-group">
+                            <label for="sreet" class="sr-only">City</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">City</span>
+                            <input
+                            type="text"               
+                            id="City"
+                            class="form-control"
+                            ngModel            
+                            name="City"
+                            required>
+                            </div>
+                            
+                        </div> 
+                        
+                        <div class="form-group">
+                  <label for="state" class="sr-only">State</label>                  
+                  <div class="input-group">
+                      <span class="input-group-addon">State</span>
+                      <div >
+                          <select class="form-control" id="state" name="state">
+                            <option value="">N/A</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VA">Virginia</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option>
+                          </select>
+                        </div>                   
+
+                  <span class="input-group-addon">Zipcode</span>
+                  <input
+                  type="number"              
+                  id="zipcode"
+                  class="form-control"
+                  ngModel            
+                  name="zipcode"
+                  required> 
+                  </div>
               </div>
               
+                
         </div>
-        
 
-        <div class="col-lg-3">
-            <div id="form" class="">
-                <h5>Personal Information</h5>
-                <div class="form-group">
-                    <label for="inputUsername" class="sr-only">First Name</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">First Name</span>
-                    <input
-                    type="text"               
-                    id="firstName"
-                    class="col-lg-10 form-control"
-                    ngModel            
-                    name="firstName"
-                    required>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                      <label for="inputUsername" class="sr-only">Last Name</label>
-                      <div class="input-group">
-                          <span class="input-group-addon">Last Name</span>
-                      <input
-                      type="text"               
-                      id="lastName"
-                      class="form-control"
-                      ngModel            
-                      name="lastName"
-                      required>
-                      </div>
-                  </div>   
-                  
-                  <!-- <div class="form-group">
-                      <label for="firstname" class="sr-only">First Name</label>
-                      <div class="input-group">
-                          <span class="input-group-addon">First Name</span>
-                      <input
-                      type="text"               
-                      id="firstName"
-                      class="form-control"
-                      ngModel            
-                      name="firstName"
-                      required>
-    
-                      <label for="lastname" class="sr-only">Last Name</label>
-                      <span style="margin-left: 5px; text-align:right;" class="input-group-addon">Last Name</span>
-                      <input
-                      type="text"               
-                      id="lastName"
-                      class="col-lg-3  form-control"
-                      ngModel            
-                      name="lastname"
-                      required> 
-                      </div>                  
-                  </div> -->
-                  
-                  <div class="form-group">
-                      <label for="street" class="sr-only">Street</label>
-                      <div class="input-group">
-                          <span class="input-group-addon">Street</span>
-                      <input
-                      type="text"               
-                      id="street"
-                      class="form-control"
-                      ngModel            
-                      name="street"
-                      required>
-    
-                      <label for="city" class="sr-only">Street</label>
-                      <span style="margin-left: 5px; text-align:right;" class="input-group-addon">City</span>
-                      <input
-                      type="text"               
-                      id="city"
-                      class="col-lg-3  form-control"
-                      ngModel            
-                      name="city"
-                      required> 
-                      </div>                  
-                  </div>
-                  <div class="form-group">
-                      <label for="address" class="sr-only">State</label>                  
-                      <div class="input-group">
-                          <span style="text-align:right;" class="input-group-addon">State</span>
-                          <div >
-                              <select class="form-control" id="state" name="state">
-                                <option value="">N/A</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DC">District of Columbia</option>
-                                <option value="DE">Delaware</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="IA">Iowa</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MD">Maryland</option>
-                                <option value="ME">Maine</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MT">Montana</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NY">New York</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VA">Virginia</option>
-                                <option value="VT">Vermont</option>
-                                <option value="WA">Washington</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WY">Wyoming</option>
-                              </select>
-                            </div>                   
-    
-                      <span style="margin-left: 4px; text-align:right;" class="input-group-addon">Zipcode</span>
-                      <input
-                      type="number"              
-                      id="zipcode"
-                      class="form-control"
-                      ngModel            
-                      name="zipcode"
-                      required> 
-                      </div>
-                  </div>
-                  
-            </div>
-        </div>        
+              
     </div>
 
-<!-- </div> -->
+<!-- Main Content -->
 
 <!-- Footer -->
 <footer class="footer">
