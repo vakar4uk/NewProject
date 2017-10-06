@@ -1,15 +1,3 @@
-<!-- More examples
-
-https://www.codeply.com/go/nhbdi2FkJm/bootstrap-4-login-form
-
-https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
-
-https://bootsnipp.com/similar/MR9Al
-
--->
-
-
-
 <!-- Login Container -->
 <div class="container">    
           <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-signin">
@@ -57,7 +45,17 @@ https://bootsnipp.com/similar/MR9Al
             class="btn btn-lg btn-primary btn-block" 
             type="submit"
             [disabled]="!f.valid"
+<<<<<<< HEAD
             >Log in</button>
+=======
+            routerLink="/home"
+            >Log in</button>       
+            
+            
+
+>>>>>>> master
             <p class="message">Forgot your password? <a routerLink="/forgotpassword">Reset password</a></p>
           </form>    
-        </div> <!-- /Login container -->       
+        </div> <!-- /Login container -->
+           
+         

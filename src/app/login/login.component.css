@@ -76,3 +76,11 @@
   input.ng-invalid.ng-touched {
       border: 1px solid #C52929;
   }
+
+  a {
+    color: #B31103;
+  }
+
+  a:hover {
+    color: #ED0003;
+  }

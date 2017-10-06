@@ -27,7 +27,5 @@ export class LoginComponent implements OnInit {
     this._router.navigate(['/home']);
      
     console.log(this.signinForm);
-
-    
   }
 }
