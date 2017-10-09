@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-addpatient',
   templateUrl: './addpatient.component.html',
   styleUrls: ['./addpatient.component.css']
 })
 
-export class AddpatientComponent implements OnInit {
+export class AddpatientComponent implements OnInit {  
+
   @ViewChild('f') addPatient: NgForm;
   public genders = ['Male', 'Female'];
 
