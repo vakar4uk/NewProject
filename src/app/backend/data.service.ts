@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TestBed, inject } from '@angular/core/testing';
 //import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
-import { Login } from '../login/login'
+import { Login } from '../login/login';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
