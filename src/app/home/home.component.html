@@ -7,12 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a id="dropdown-button" class="nav-link row" routerLink="#">Calendar<span class="sr-only">(current)</span></a>
+          <a id="dropdown-button" class="nav-link" routerLink="#">Calendar<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" dropdown>
-            <a id="dropdown-button" dropdownToggle class="nav-link"><i class="fa fa-caret-down" aria-hidden="true"></i>
-                Patient <span class="caret"></span>
-            </a>
+          <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+              </a>  
               <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
                   <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
                   <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>

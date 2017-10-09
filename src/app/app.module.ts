@@ -30,12 +30,14 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule,
+    
+    AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot()    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

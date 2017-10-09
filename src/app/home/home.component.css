@@ -1,6 +1,9 @@
-#navbar {
+#navbar {    
+    position: relative;
+    width: 100%;
+    height: 70px;
     background-color: #616467;
-    color: #bbb;    
+    color: #bbb;   
 }
 
 .nav-link, .nav-link:hover {
