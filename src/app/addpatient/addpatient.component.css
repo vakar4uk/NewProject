@@ -171,3 +171,17 @@ input::-webkit-inner-spin-button {
     margin-left: 50px;
     width: 50px;
 }
+
+textarea {
+    margin-bottom: 10px;
+}
+
+#condition {
+    text-align: left;
+    width: 200px;
+}
+
+.images-wrapper {
+    display: flex;
+    
+ }

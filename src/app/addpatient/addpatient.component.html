@@ -150,7 +150,13 @@
                       <span class="input-group-addon">State</span>
                       <select id="state" name="state">
                             <option *ngFor="let state of states" [value]="state.value">  
-                            {{state}}
+                                   <input
+                                    type="radio"
+                                    name="state"
+                                    ngModel
+                                    [value]="state"
+                                    required>
+                                    {{state.name}}
                             </option>
                         </select>
                       <!-- <div >
@@ -256,7 +262,7 @@
 
             <br><h5>Medical History</h5>
             <p>Have patient had any of the following deseases or problems:</p>
-            <div class="input-group">                    
+            <!-- <div class="input-group">                    
                     <div class="col-lg-2" *ngFor="let condition of conditions">
                         <label id="condition">
                             <input
@@ -267,11 +273,35 @@
                                 {{ condition }}
                         </label>
                     </div>
-                </div>     
-                
+                </div>      -->
+                <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Condition</span>
+                            <div>
+                            <div *ngFor="let condition of conditions">
+                                <label id="condition">
+                                    <input
+                                        type="checkbox"
+                                        name="condition"
+                                        ngModel
+                                        [value]="condition"
+                                        required>                                        
+                                        {{ condition }}                        
+                                </label>
+                            </div>
+                            </div>
+                        </div>                   
+                    </div>
                 <div class="input-group">
-                    <textarea name="" id="" cols="80" rows="10"></textarea>
+                    <textarea name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
                 </div>
+
+                <button id="submit" 
+                class="btn btn-lg btn-primary btn-block" 
+                type="submit"
+                
+                
+                >Submit</button>    
 
         </div>      
               
