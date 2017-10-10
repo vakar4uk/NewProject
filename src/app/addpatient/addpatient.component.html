@@ -341,16 +341,15 @@
                                     Head
                                 </label> -->
                             <div>
-                            <div *ngFor="let condition of conditions">
-                                <label id="condition">
+                                <div *ngFor="let condition of conditions; let i = index; let n = id">
+                                 <label id="condition">
                                     <input
                                         type="checkbox"
-                                        name="isCondition"
-                                        [(ngModel)] = "conditions.isCondition"
-                                        
-                                        >                                        
+                                        name="isCondition[{{i}}]"                                        
+                                        [ngModel] = "isCondition"> 
+                                        {{ condition.value}}                                       
                                 </label>
-                            </div>
+                             </div>
                             </div>
                         </div>                   
                     </div>
@@ -360,16 +359,13 @@
 
                 <button id="submit" 
                 class="btn btn-lg btn-primary btn-block" 
-                type="submit"
-                
-                
+                type="submit"         
                 >Submit</button>    
 
         </div>      
               
     </div>
 </form>
-
 <!-- Main Content -->
 
 <!-- Footer -->

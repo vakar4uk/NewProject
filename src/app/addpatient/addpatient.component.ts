@@ -12,8 +12,8 @@ export class AddpatientComponent implements OnInit {
 
   
  public conditions = [
-    {label: 'HEAD', name:'head', value: '1', checked:false},
-    {label: 'BODY', name:'body', value: '2', checked:false},
+    {label: 'HEAD', name:'head', value: '1', isCondition:false},
+    {label: 'BODY', name:'body', value: '2', isCondition:false},
   ]; 
 
   @ViewChild('f') addPatient: NgForm;
@@ -49,14 +49,7 @@ export class AddpatientComponent implements OnInit {
   //   'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
   // ];
 
-  ngOnInit() {
-    type conditions = Array<{id: number, name: string, isCondition: boolean}>;
-    var arr: conditions = [
-      {id: 1, name: 'Head', isCondition: false},
-      {id: 2, name: 'Body', isCondition: false},
-      
-    ];
-    
+  ngOnInit() {    
   }
 
   onSubmit() {
