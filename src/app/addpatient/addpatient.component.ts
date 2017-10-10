@@ -10,14 +10,21 @@ import { NgForm } from '@angular/forms';
 
 export class AddpatientComponent implements OnInit {  
 
+  
+ public conditions = [
+    {label: 'HEAD', name:'head', value: '1', checked:false},
+    {label: 'BODY', name:'body', value: '2', checked:false},
+  ]; 
+
   @ViewChild('f') addPatient: NgForm;
   public genders = ['Male', 'Female'];
 
-    public states = [
-      { value: 'al', display: 'Alaska' },
-      { value: 'guest', display: 'Guest' },
-      { value: 'custom', display: 'Custom' }
+  public states = [
+    { value: 'al', display: 'Alaska' },
+    { value: 'guest', display: 'Guest' },
+    { value: 'custom', display: 'Custom' }
   ];
+
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    
@@ -30,13 +37,26 @@ export class AddpatientComponent implements OnInit {
   //                  'West Virginia', 'Wisconsin', 'Wyoming'
   // ];
 
-  public conditions = [
-    'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
-    'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
-    'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
-  ];
-  
+  // public conditions = [
+  //   { value: 'al', display: 'Hey' },
+  //   { value: 'guest', display: 'Guest' },
+  //   { value: 'custom', display: 'Custom' }
+  // ];
+
+  // public conditions = [
+  //   'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
+  //   'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
+  //   'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
+  // ];
+
   ngOnInit() {
+    type conditions = Array<{id: number, name: string, isCondition: boolean}>;
+    var arr: conditions = [
+      {id: 1, name: 'Head', isCondition: false},
+      {id: 2, name: 'Body', isCondition: false},
+      
+    ];
+    
   }
 
   onSubmit() {
