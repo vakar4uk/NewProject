@@ -342,15 +342,15 @@
                                 </label> -->
                             <div>
                                 <div *ngFor="let condition of conditions; let i = index">
-                                 <label id="condition">
-                                    <input
-                                        type="checkbox"
-                                        name="isCondition{{i}}"   
-                                        value = "condition.isCondition"                                     
-                                        [ngModel] = "isCondition"> 
-                                        {{ condition.value}}                                       
-                                </label>
-                             </div>
+                                    <label id="condition">
+                                        <input
+                                            type="checkbox"
+                                            name="isCondition{{i}}"   
+                                            value = "condition.isCondition"                                     
+                                            [ngModel] = "isCondition"> 
+                                            {{ condition.value}}                                       
+                                    </label>
+                                </div>
                             </div>
                         </div>                   
                     </div>
