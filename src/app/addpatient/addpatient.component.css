@@ -172,16 +172,11 @@ input::-webkit-inner-spin-button {
     width: 50px;
 }
 
-textarea {
-    margin-bottom: 10px;
-}
-
 #condition {
     text-align: left;
-    width: 200px;
+    width: 450px;
 }
 
 .images-wrapper {
-    display: flex;
-    
+    display: flex;    
  }

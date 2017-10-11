@@ -10,11 +10,12 @@ import { NgForm } from '@angular/forms';
 
 export class AddpatientComponent implements OnInit {  
 
+  isCondition: false;
   
- public conditions = [
-    {label: 'HEAD', name:'head', value: '1', isCondition:false},
-    {label: 'BODY', name:'body', value: '2', isCondition:false},
-  ]; 
+//  public conditions = [
+//     {name:'head', value: '1'},
+    
+//   ]; 
 
   @ViewChild('f') addPatient: NgForm;
   public genders = ['Male', 'Female'];
@@ -32,11 +33,11 @@ export class AddpatientComponent implements OnInit {
   
 
   
-  // public conditions = [
-  //   'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
-  //   'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
-  //   'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
-  // ];
+  public conditions = [
+    'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
+    'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
+    'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
+  ];
 
   ngOnInit() {    
   }

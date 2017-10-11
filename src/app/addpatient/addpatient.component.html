@@ -346,17 +346,25 @@
                                         <input
                                             type="checkbox"
                                             name="isCondition{{i}}"   
-                                            value = "condition.isCondition"                                     
+                                                                                
                                             [ngModel] = "isCondition"> 
-                                            {{ condition.value}}                                       
+                                            {{ condition }}                                       
                                     </label>
                                 </div>
                             </div>
                         </div>                   
                     </div>
-                <div class="input-group">
-                    <textarea name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
-                </div>
+
+                <br><h5>Additional Information</h5>
+                <div class="form-group">
+                        <div class="input-group">
+                <span class="input-group-addon">Notes</span>               
+               
+                    
+                        <textarea name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
+                    </div>
+                </div>  
+               
 
                 <button id="submit" 
                 class="btn btn-lg btn-primary btn-block" 
