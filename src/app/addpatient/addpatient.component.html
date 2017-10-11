@@ -341,11 +341,12 @@
                                     Head
                                 </label> -->
                             <div>
-                                <div *ngFor="let condition of conditions; let i = index; let n = id">
+                                <div *ngFor="let condition of conditions; let i = index">
                                  <label id="condition">
                                     <input
                                         type="checkbox"
-                                        name="isCondition[{{i}}]"                                        
+                                        name="isCondition{{i}}"   
+                                        value = "condition.isCondition"                                     
                                         [ngModel] = "isCondition"> 
                                         {{ condition.value}}                                       
                                 </label>

@@ -19,13 +19,6 @@ export class AddpatientComponent implements OnInit {
   @ViewChild('f') addPatient: NgForm;
   public genders = ['Male', 'Female'];
 
-  public states = [
-    { value: 'al', display: 'Alaska' },
-    { value: 'guest', display: 'Guest' },
-    { value: 'custom', display: 'Custom' }
-  ];
-
-
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    
   //                  'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
@@ -36,13 +29,9 @@ export class AddpatientComponent implements OnInit {
   //                  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia', 'Washington', 
   //                  'West Virginia', 'Wisconsin', 'Wyoming'
   // ];
+  
 
-  // public conditions = [
-  //   { value: 'al', display: 'Hey' },
-  //   { value: 'guest', display: 'Guest' },
-  //   { value: 'custom', display: 'Custom' }
-  // ];
-
+  
   // public conditions = [
   //   'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
   //   'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
