@@ -180,3 +180,9 @@ input::-webkit-inner-spin-button {
 .images-wrapper {
     display: flex;    
  }
+
+ #submit {
+    cursor: pointer;
+    display: inline;
+    width: 300px;
+ }
