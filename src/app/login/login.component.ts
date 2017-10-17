@@ -6,21 +6,30 @@ import { NgForm } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit {  
+  verify = "";
 
   @ViewChild('f') signinForm: NgForm;
-
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {    
+    console.log(name);
+
   }
 
   // onSubmit(form: NgForm) {
   //   console.log(form);
   // }
 
-  onSubmit() {
-    console.log(this.signinForm);
-  } 
+  onSubmit(f:NgForm) {
+    // if(name == "doctor")   {
+    //   this.link = "/home";
+    // }
+    var link = (<HTMLInputElement>document.getElementById("inputUsername")).value;
+    if(link === "doctor") {
+      this.verify = "/home";
+        }
+    console.log(this.signinForm);    
+  }   
 
 }
