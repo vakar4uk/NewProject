@@ -51,7 +51,7 @@ app.use('/Departments', Departments);
 app.use('/Doctors', Doctors);
 app.use('/Rooms', Rooms);
 app.use('/Patients', Patients);
-app.use('/Assigments', Assignments);
+app.use('/Assignments', Assignments);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
