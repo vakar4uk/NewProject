@@ -9,12 +9,21 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var Persons = require('./routes/Persons');
 var UserTemps = require('./routes/UserTemps');
+<<<<<<< HEAD
 var Administratives = require('./routes/Administratives');
 var Appointments = require('./routes/Appointments');
 var InPatients = require('./routes/InPatients');
 var Nurses = require('./routes/Nurses');
 var Staffs = require('./routes/Staffs');
 var UserLevels = require('./routes/UserLevels');
+=======
+var OutPatients = require('./routes/OutPatients');
+var Assignments = require('./routes/Assignments');
+var Patients = require('./routes/Patients');
+var Departments = require('./routes/Departments');
+var Doctors = require('./routes/Doctors');
+var Rooms = require('./routes/Rooms');
+>>>>>>> 775046d4b4176604138f4ce97d9aae44ee52c74d
 var app = express();
 
 // view engine setup
@@ -34,12 +43,21 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/Persons', Persons);
 app.use('/UserTemps', UserTemps);
+<<<<<<< HEAD
 app.use('/Administratives', Administratives);
 app.use('/Appointments', Appointments);
 app.use('/InPatients', InPatients);
 app.use('/Nurses', Nurses);
 app.use('/Staffs', Staffs);
 app.use('/UserLevels', UserLevels);
+=======
+app.use('/OutPatients', OutPatients);
+app.use('/Departments', Departments);
+app.use('/Doctors', Doctors);
+app.use('/Rooms', Rooms);
+app.use('/Patients', Patients);
+app.use('/Assigments', Assignments);
+>>>>>>> 775046d4b4176604138f4ce97d9aae44ee52c74d
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
