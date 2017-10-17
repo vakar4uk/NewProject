@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-component',
@@ -13,23 +13,20 @@ export class LoginComponent implements OnInit {
   @ViewChild('f') signinForm: NgForm;
   constructor() { }
 
-  ngOnInit() {    
-    
+  ngOnInit() {   
   }   
 
-  
-
-  // onSubmit(form: NgForm) {
-  //   console.log(form);
-  // }
   userValidation(){
     var link = (<HTMLInputElement>document.getElementById("inputUsername")).value;
     console.log(link);
     if(link === "doctor") {
+      this.verify = "/doctorhome";      
+    }
+    
+    if(link === "nurse") {
       this.verify = "/home";      
-    }  
-        
-        console.log(this.verify);
+    }
+       
   }
   onSubmit(f:NgForm) {    
 
