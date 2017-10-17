@@ -14,7 +14,7 @@ var UserTemp={
 		return db.query("delete from UserTemp where UID=?",[id],callback);
 	},
 	updateUser:function(id,Person,callback){
-		return db.query("update UserTemp set Fname=?,Lname=?,Password=? where UID=?",[UserTemp.Fname,UserTemp.Lname,UserTemp.Password,id],callback);
+		return db.query("update UserTemp set Password=? where UID=?",[UserTemp.Password,id],callback);
 	}
 };
 module.exports = UserTemp;
