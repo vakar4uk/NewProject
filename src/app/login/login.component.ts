@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
     this._datatask.getPerson();
     this.selectedLogin.Fname = (<HTMLInputElement>document.getElementById("inputUsername")).value;
     this.selectedLogin.Lname = (<HTMLInputElement>document.getElementById("inputPassword")).value;
-    this._router.navigate(['/home']);
+    this._datatask.checkPerson(this.selectedLogin);
+    // this._router.navigate(['/home']);
      
     console.log(this.signinForm);
   }
