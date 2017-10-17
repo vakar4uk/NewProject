@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-
 @Component({
   selector: 'app-editpatient', 
   templateUrl: './editpatient.component.html',
@@ -11,7 +10,7 @@ import { NgForm } from '@angular/forms';
 export class EditpatientComponent implements OnInit {  
 
   isCondition: false;
-  public singleModel: string = '1';
+  
 //  public conditions = [
 //     {name:'head', value: '1'},
     
@@ -31,20 +30,22 @@ export class EditpatientComponent implements OnInit {
   //                  'West Virginia', 'Wisconsin', 'Wyoming'
   // ];
   
-
   
   public conditions = [
     'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
     'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
     'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
   ];
-
+  public inactive:boolean = true;
+  
   ngOnInit() {    
   }
 
   onSubmit() {
     console.log(this.editPatient);
   }
-
-
+  
+  changeStatus() {
+    this.inactive = false;
+  }
 }
