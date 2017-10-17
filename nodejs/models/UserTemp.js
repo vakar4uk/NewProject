@@ -13,7 +13,7 @@ var UserTemp={
 	removeUser:function(id,callback){
 		return db.query("delete from UserTemp where UID=?",[id],callback);
 	},
-	updateUser:function(id,Person,callback){
+	updateUser:function(id,Administrative,callback){
 		return db.query("update UserTemp set Password=? where UID=?",[UserTemp.Password,id],callback);
 	}
 };

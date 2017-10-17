@@ -9,6 +9,12 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var Persons = require('./routes/Persons');
 var UserTemps = require('./routes/UserTemps');
+var Administratives = require('./routes/Administratives');
+var Appointments = require('./routes/Appointments');
+var InPatients = require('./routes/InPatients');
+var Nurses = require('./routes/Nurses');
+var Staffs = require('./routes/Staffs');
+var UserLevels = require('./routes/UserLevels');
 var app = express();
 
 // view engine setup
@@ -28,6 +34,12 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/Persons', Persons);
 app.use('/UserTemps', UserTemps);
+app.use('/Administratives', Administratives);
+app.use('/Appointments', Appointments);
+app.use('/InPatients', InPatients);
+app.use('/Nurses', Nurses);
+app.use('/Staffs', Staffs);
+app.use('/UserLevels', UserLevels);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

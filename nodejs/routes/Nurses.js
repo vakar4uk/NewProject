@@ -1,0 +1,57 @@
+var express = require('express');
+var router = express.Router();
+var Nurse = require('../models/Nurse');
+
+router.get('/:id?',function(req,res,next){
+	if(req.params.id){
+		Appointment.getNurseById(req.params.id,function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+	else{
+		UserTemp.getAllNurses(function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+});
+router.post('/',function(req,res,next){
+	UserTemp.addNurse(req.body,function(err,count){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(req.body);
+		}
+	});
+});
+router.delete('/:id',function(req,res,next){
+	UserTemp.removeNurse(req.params.id,function(err,count){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(count);
+		}
+	});
+});
+router.put('/:id',function(req,res,next){
+	UserTemp.updateNurse(req.params.id,req.body,function(err,rows){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(rows);
+		}
+	});
+});
+module.exports=router;
