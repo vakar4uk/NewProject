@@ -21,15 +21,12 @@ export class LoginComponent implements OnInit {
   //   console.log(form);
   // }
 
-  onSubmit(f:NgForm) {
-    // if(name == "doctor")   {
-    //   this.link = "/home";
-    // }
+  onSubmit(f:NgForm) {    
     var link = (<HTMLInputElement>document.getElementById("inputUsername")).value;
+    console.log(link);
     if(link === "doctor") {
       this.verify = "/home";
-        }
-    console.log(this.signinForm);    
+        }    
   }   
 
 }
