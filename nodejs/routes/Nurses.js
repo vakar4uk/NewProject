@@ -4,7 +4,7 @@ var Nurse = require('../models/Nurse');
 
 router.get('/:id?',function(req,res,next){
 	if(req.params.id){
-		Appointment.getNurseById(req.params.id,function(err,rows){
+		Nurse.getNurseById(req.params.id,function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -14,7 +14,7 @@ router.get('/:id?',function(req,res,next){
 		});
 	}
 	else{
-		UserTemp.getAllNurses(function(err,rows){
+		Nurse.getAllNurses(function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -25,7 +25,7 @@ router.get('/:id?',function(req,res,next){
 	}
 });
 router.post('/',function(req,res,next){
-	UserTemp.addNurse(req.body,function(err,count){
+	Nurse.addNurse(req.body,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -35,7 +35,7 @@ router.post('/',function(req,res,next){
 	});
 });
 router.delete('/:id',function(req,res,next){
-	UserTemp.removeNurse(req.params.id,function(err,count){
+	Nurse.removeNurse(req.params.id,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -45,7 +45,7 @@ router.delete('/:id',function(req,res,next){
 	});
 });
 router.put('/:id',function(req,res,next){
-	UserTemp.updateNurse(req.params.id,req.body,function(err,rows){
+	Nurse.updateNurse(req.params.id,req.body,function(err,rows){
 		if(err){
 			res.json(err);
 		}

@@ -4,7 +4,7 @@ var InPatient = require('../models/InPatient');
 
 router.get('/:id?',function(req,res,next){
 	if(req.params.id){
-		Appointment.getInPatById(req.params.id,function(err,rows){
+		InPatient.getInPatById(req.params.id,function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -14,7 +14,7 @@ router.get('/:id?',function(req,res,next){
 		});
 	}
 	else{
-		UserTemp.getAllInPats(function(err,rows){
+		InPatient.getAllInPats(function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -25,7 +25,7 @@ router.get('/:id?',function(req,res,next){
 	}
 });
 router.post('/',function(req,res,next){
-	UserTemp.addInPat(req.body,function(err,count){
+	InPatient.addInPat(req.body,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -35,7 +35,7 @@ router.post('/',function(req,res,next){
 	});
 });
 router.delete('/:id',function(req,res,next){
-	UserTemp.removeInPat(req.params.id,function(err,count){
+	InPatient.removeInPat(req.params.id,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -45,7 +45,7 @@ router.delete('/:id',function(req,res,next){
 	});
 });
 router.put('/:id',function(req,res,next){
-	UserTemp.updateInPat(req.params.id,req.body,function(err,rows){
+	InPatient.updateInPat(req.params.id,req.body,function(err,rows){
 		if(err){
 			res.json(err);
 		}

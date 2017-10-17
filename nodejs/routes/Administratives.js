@@ -14,7 +14,7 @@ router.get('/:id?',function(req,res,next){
 		});
 	}
 	else{
-		UserTemp.getAllAdmins(function(err,rows){
+		Administrative.getAllAdmins(function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -25,7 +25,7 @@ router.get('/:id?',function(req,res,next){
 	}
 });
 router.post('/',function(req,res,next){
-	UserTemp.addAdmin(req.body,function(err,count){
+	Administrative.addAdmin(req.body,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -35,7 +35,7 @@ router.post('/',function(req,res,next){
 	});
 });
 router.delete('/:id',function(req,res,next){
-	UserTemp.removeAdmin(req.params.id,function(err,count){
+	Administrative.removeAdmin(req.params.id,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -45,7 +45,7 @@ router.delete('/:id',function(req,res,next){
 	});
 });
 router.put('/:id',function(req,res,next){
-	UserTemp.updateAdmin(req.params.id,req.body,function(err,rows){
+	Administrative.updateAdmin(req.params.id,req.body,function(err,rows){
 		if(err){
 			res.json(err);
 		}

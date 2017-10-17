@@ -4,7 +4,7 @@ var Staff = require('../models/Staff');
 
 router.get('/:id?',function(req,res,next){
 	if(req.params.id){
-		Appointment.getStaffById(req.params.id,function(err,rows){
+		Staff.getStaffById(req.params.id,function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -14,7 +14,7 @@ router.get('/:id?',function(req,res,next){
 		});
 	}
 	else{
-		UserTemp.getAllStaff(function(err,rows){
+		Staff.getAllStaff(function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -25,7 +25,7 @@ router.get('/:id?',function(req,res,next){
 	}
 });
 router.post('/',function(req,res,next){
-	UserTemp.addStaff(req.body,function(err,count){
+	Staff.addStaff(req.body,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -35,7 +35,7 @@ router.post('/',function(req,res,next){
 	});
 });
 router.delete('/:id',function(req,res,next){
-	UserTemp.removeStaff(req.params.id,function(err,count){
+	Staff.removeStaff(req.params.id,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -45,7 +45,7 @@ router.delete('/:id',function(req,res,next){
 	});
 });
 router.put('/:id',function(req,res,next){
-	UserTemp.updateStaff(req.params.id,req.body,function(err,rows){
+	Staff.updateStaff(req.params.id,req.body,function(err,rows){
 		if(err){
 			res.json(err);
 		}

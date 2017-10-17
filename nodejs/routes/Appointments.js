@@ -14,7 +14,7 @@ router.get('/:id?',function(req,res,next){
 		});
 	}
 	else{
-		UserTemp.getAllAppts(function(err,rows){
+		Appointment.getAllAppts(function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -25,7 +25,7 @@ router.get('/:id?',function(req,res,next){
 	}
 });
 router.post('/',function(req,res,next){
-	UserTemp.addAppt(req.body,function(err,count){
+	Appointment.addAppt(req.body,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -35,7 +35,7 @@ router.post('/',function(req,res,next){
 	});
 });
 router.delete('/:id',function(req,res,next){
-	UserTemp.removeAppt(req.params.id,function(err,count){
+	Appointment.removeAppt(req.params.id,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -45,7 +45,7 @@ router.delete('/:id',function(req,res,next){
 	});
 });
 router.put('/:id',function(req,res,next){
-	UserTemp.updateAppt(req.params.id,req.body,function(err,rows){
+	Appointment.updateAppt(req.params.id,req.body,function(err,rows){
 		if(err){
 			res.json(err);
 		}

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var UserLevels = require('../models/UserLevel');
+var UserLevel = require('../models/UserLevel');
 
 router.get('/:id?',function(req,res,next){
 	if(req.params.id){
-		Appointment.getLevelByNo(req.params.id,function(err,rows){
+		UserLevel.getLevelByNo(req.params.id,function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -14,7 +14,7 @@ router.get('/:id?',function(req,res,next){
 		});
 	}
 	else{
-		UserTemp.getAllLevels(function(err,rows){
+		UserLevel.getAllLevels(function(err,rows){
 			if(err){
 				res.json(err);
 			}
@@ -25,7 +25,7 @@ router.get('/:id?',function(req,res,next){
 	}
 });
 router.post('/',function(req,res,next){
-	UserTemp.addLevel(req.body,function(err,count){
+	UserLevel.addLevel(req.body,function(err,count){
 		if(err){
 			res.json(err);
 		}
@@ -35,7 +35,7 @@ router.post('/',function(req,res,next){
 	});
 });
 router.delete('/:id',function(req,res,next){
-	UserTemp.removeLevel(req.params.id,function(err,count){
+	UserLevel.removeLevel(req.params.id,function(err,count){
 		if(err){
 			res.json(err);
 		}
