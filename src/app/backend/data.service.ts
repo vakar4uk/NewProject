@@ -4,6 +4,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClient } from '@angular/common/http';
 import { Login } from '../login/login';
 import { Observable } from 'rxjs/Rx';
+import { Router,ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -12,7 +13,7 @@ import 'rxjs/add/operator/catch';
 export class DataService {
   title = 'app';
   results = '';
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private _router:Router,private route:ActivatedRoute) {
   }
   
   getPerson(){
@@ -20,6 +21,17 @@ export class DataService {
       console.log(data);
     });
 
+  }
+  //verify the person or user
+  checkPerson(person:Login){
+    return this.http.get<Login>("http://localhost:3000/Person").subscribe(data =>{
+      if(data.Fname == person.Fname && data.Lname == person.Lname){
+        console.log("User is logged in");
+        this._router.navigate(['/home']);
+      }
+    }
+  );
+    
   }
 
   getUsername(Username: any){
