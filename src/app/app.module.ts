@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AddpatientComponent } from './addpatient/addpatient.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
+import { EditpatientComponent } from './editpatient/editpatient.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -19,6 +20,7 @@ const appRoutes: Routes =[
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'addpatient', component: AddpatientComponent },
   { path: 'scheduler', component: SchedulerComponent }, 
+  { path: 'editpatient', component: EditpatientComponent }
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes =[
     HomeComponent,
     ForgotpasswordComponent,
     AddpatientComponent,
-    SchedulerComponent,    
+    SchedulerComponent,
+    EditpatientComponent
   ],
   imports: [
     BrowserModule,
