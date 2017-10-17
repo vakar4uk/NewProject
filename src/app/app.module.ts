@@ -5,6 +5,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ngxClickToEditModule } from 'ngx-click-to-edit';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,6 +14,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { AddpatientComponent } from './addpatient/addpatient.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { EditpatientComponent } from './editpatient/editpatient.component';
+import { Component } from '@angular/core';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -22,7 +24,7 @@ const appRoutes: Routes =[
   { path: 'scheduler', component: SchedulerComponent }, 
   { path: 'editpatient', component: EditpatientComponent }
 ];
-
+// require("@angular/core/package.json");
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,7 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     FormsModule,
-    
+    ngxClickToEditModule.forRoot(),
     AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
     BsDropdownModule.forRoot(),

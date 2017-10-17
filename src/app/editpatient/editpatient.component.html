@@ -1,3 +1,5 @@
+
+
 <!-- Navbar -->
 <nav id="navbar" class="navbar navbar-expand-md fixed-top">
     <a class="navbar-brand" routerLink="/home"><i class="fa fa-heartbeat" aria-hidden="true"></i>Wipro HMS</a>
@@ -43,14 +45,14 @@
                   <label for="firstName" class="sr-only">First Name</label>
                   <div class="input-group">
                       <span class="input-group-addon">First Name</span>
-                  <input 
-                  [readonly]="true"
+                      <click-to-edit><input 
+                  
                   type="text"               
                   id="firstName"
                   class="col-lg-10 form-control"
                   ngModel            
                   name="firstName"
-                  required>
+                  required></click-to-edit>
                   <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
                   <button type="button" class="btn btn-primary"
                           [(ngModel)]="singleModel" btnCheckbox
@@ -65,7 +67,6 @@
                     <div class="input-group">
                         <span class="input-group-addon">Last Name</span>
                     <input
-                    [readonly]="true"
                     type="text"               
                     id="lastName"
                     class="form-control"

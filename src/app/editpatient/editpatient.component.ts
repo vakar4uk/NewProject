@@ -5,7 +5,8 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-editpatient', 
   templateUrl: './editpatient.component.html',
-  styleUrls: ['./editpatient.component.css']
+  styleUrls: ['./editpatient.component.css'],
+  template: '<click-to-edit></click-to-edit>'
 })
 
 export class EditpatientComponent implements OnInit {  
@@ -39,6 +40,7 @@ export class EditpatientComponent implements OnInit {
     'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
   ];
 
+  public edit = [];
   ngOnInit() {    
   }
 
