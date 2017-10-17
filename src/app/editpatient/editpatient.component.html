@@ -44,19 +44,18 @@
                   <div class="input-group">
                       <span class="input-group-addon">First Name</span>
                   <input 
-                  [disabled]="inactive"
+                  [readonly]="true"
                   type="text"               
-                  id="edit"
+                  id="firstName"
                   class="col-lg-10 form-control"
                   ngModel            
                   name="firstName"
                   required>
                   <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
-                  <button (click)="changeStatus()"
-                          type="button" class="btn btn-primary"
+                  <button type="button" class="btn btn-primary"
                           [(ngModel)]="singleModel" btnCheckbox
                           btnCheckboxTrue="1" btnCheckboxFalse="0">
-                    editMe
+                    edit
                   </button> 
                   </div>           
               </div>
@@ -66,14 +65,14 @@
                     <div class="input-group">
                         <span class="input-group-addon">Last Name</span>
                     <input
-                    [disabled]="inactive"
+                    [readonly]="true"
                     type="text"               
                     id="lastName"
                     class="form-control"
                     ngModel            
                     name="lastName"
                     required>
-                    <button (click)="changeStatus()"type="button" class="btn btn-primary"
+                    <button type="button" class="btn btn-primary"
                     [(ngModel)]="singleModel" btnCheckbox
                     btnCheckboxTrue="1" btnCheckboxFalse="0">
                       edit
@@ -87,7 +86,7 @@
                   <div class="input-group">
                       <span class="input-group-addon">Date of Birth</span>
                   <input
-                  [disabled]="inactive"
+                  [readonly]="true"
                   type="date"               
                   id="dob"
                   class="form-control"
@@ -109,7 +108,7 @@
                       <div *ngFor="let gender of genders">
                           <label id="gender">
                               <input
-                              [disabled]="inactive"
+                                  [readonly]="true"
                                   type="radio"
                                   name="gender"
                                   ngModel
@@ -128,7 +127,7 @@
                       <div class="input-group">
                           <span class="input-group-addon">Street</span>
                       <input
-                      [disabled]="inactive"
+                      [readonly]="true"
                       type="text"               
                       id="street"
                       class="col-lg-10 form-control"
@@ -148,7 +147,7 @@
                           <div class="input-group">
                               <span class="input-group-addon">Apartment</span>
                           <input
-                          [disabled]="inactive"
+                          [readonly]="true"
                           type="text"               
                           id="apt"
                           class="col-lg-10 form-control"
@@ -167,7 +166,7 @@
                               <div class="input-group">
                                   <span class="input-group-addon">City</span>
                               <input
-                              readonly="readonly"
+                              [readonly]="true"
                               type="text"               
                               id="City"
                               class="form-control"
@@ -188,7 +187,7 @@
                     <div class="input-group">
                         <span class="input-group-addon">State</span>
                         <div>
-                            <select [disabled]="inactive"class="form-control" id="state" name="state" ngModel>
+                            <select class="form-control" id="state" name="state" ngModel>
                               <option value="">N/A</option>
                               <option value="AK">Alaska</option>
                               <option value="AL">Alabama</option>
@@ -317,7 +316,7 @@
   
                     <span class="input-group-addon">Zipcode</span>
                     <input
-                    readonly="readonly"
+                    [readonly]="true"
                     type="number"
                     min="0"                
                     id="zipcode"
@@ -340,7 +339,7 @@
                           <div class="input-group">
                               <span class="input-group-addon">Phone</span>
                           <input
-                          readonly="readonly"
+                          [readonly]="true"
                           type="number"               
                           id="phone"
                           class="col-lg-10 form-control"
@@ -360,7 +359,7 @@
                               <div class="input-group">
                                   <span class="input-group-addon">Email</span>
                               <input
-                              readonly="readonly"
+                              [readonly]="true"
                               type="email"               
                               id="patEmail"
                               class="col-lg-10 form-control"
@@ -398,7 +397,7 @@
                                   <div *ngFor="let condition of conditions; let i = index">
                                       <label id="condition">
                                           <input
-                                              readonly="readonly"
+                                              [readonly]="true"
                                               type="checkbox"
                                               name="isCondition{{i}}"   
                                                                                   
