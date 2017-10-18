@@ -13,6 +13,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { AddpatientComponent } from './addpatient/addpatient.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { SearchComponent } from './search/search.component';
+import { DoctorhomeComponent } from './doctorhome/doctorhome.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -20,7 +21,8 @@ const appRoutes: Routes =[
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'addpatient', component: AddpatientComponent },
   { path: 'scheduler', component: SchedulerComponent }, 
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'doctorhome', component: DoctorhomeComponent }
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoutes: Routes =[
     ForgotpasswordComponent,
     AddpatientComponent,
     SchedulerComponent,
-    SearchComponent,    
+    SearchComponent,
+    DoctorhomeComponent,    
   ],
   imports: [
     BrowserModule,

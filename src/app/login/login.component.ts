@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  link = "";
+
   @ViewChild('f') signinForm: NgForm;
 
   constructor() { }
@@ -15,10 +17,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onSubmit(form: NgForm) {
-  //   console.log(form);
-  // }
-
+  userValidation(){
+    var verify = (<HTMLInputElement>document.getElementById("inputUsername")).value;    
+      if(verify === "doctor") {
+        this.link = "/doctorhome";      
+      }    
+      if(verify === "nurse") {
+        this.link = "/home";     
+      }   
+    }       
+  
   onSubmit() {
     console.log(this.signinForm);
   } 
