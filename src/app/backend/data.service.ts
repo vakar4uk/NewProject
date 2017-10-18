@@ -10,13 +10,13 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
   interface login{
-    UID:any;
-    Username:any;
-    Email:any;
-    Fname:any;
-    Lname:any;
-    Password:any;
-    UserLevel:any;
+    UID:string;
+    Username:string;
+    Email:string;
+    Fname:string;
+    Lname:string;
+    Password:string;
+    UserLevel:string;
   }
 @Injectable()
 export class DataService {
@@ -48,8 +48,15 @@ export class DataService {
 
   getUsername(user:any,pass:any){
     return this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
+      console.log("Username:"+data.Username);
+      console.log("Password:"+data.Password);
+      console.log("Lname:"+data.Lname);
       console.log(data);
-    });
+    },
+    err=>{
+      console.log(err);
+    }
+    );
 
   }
 
