@@ -38,6 +38,7 @@ export class EditpatientComponent implements OnInit {
     'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
     'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
   ];
+  public inactive:boolean = true;
 
   ngOnInit() {    
   }
@@ -45,6 +46,38 @@ export class EditpatientComponent implements OnInit {
   onSubmit() {
     console.log(this.editPatient);
   }
-
-
+  
+  changeStatusFirstName(){
+    (<HTMLInputElement>document.getElementById('firstName')).readOnly=false;
+  }
+  changeStatusLastName(){
+    (<HTMLInputElement>document.getElementById('lastName')).readOnly=false;
+  }
+  changeStatusDOB(){
+    (<HTMLInputElement>document.getElementById('dob')).readOnly=false;
+  }
+  changeStatusAddress(){
+    (<HTMLInputElement>document.getElementById('street')).readOnly=false;
+  }
+  changeStatusUnit(){
+    (<HTMLInputElement>document.getElementById('unit')).readOnly=false;
+  }
+  changeStatusCity(){
+    (<HTMLInputElement>document.getElementById('City')).readOnly=false;
+  }
+  changeStatusState(){
+    (<HTMLInputElement>document.getElementById('state')).disabled=false;
+  }
+  changeStatusZipcode(){
+    (<HTMLInputElement>document.getElementById('zipcode')).readOnly=false;
+  }
+  changeStatusPhone(){
+    (<HTMLInputElement>document.getElementById('phone')).readOnly=false;
+  }
+  changeStatusPatEmail(){
+    (<HTMLInputElement>document.getElementById('patEmail')).readOnly=false;
+  }
+  changeStatusNotes(){
+    (<HTMLInputElement>document.getElementById('notes')).disabled=false;
+  }
 }

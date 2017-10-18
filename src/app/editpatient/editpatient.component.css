@@ -142,7 +142,7 @@ a {
 }
 
 #state {
-    width:220px;
+    width:180px;
 }
 
 input::-webkit-outer-spin-button,
@@ -186,3 +186,4 @@ input::-webkit-inner-spin-button {
     display: inline;
     width: 300px;
  }
+ 

@@ -43,16 +43,19 @@
                   <label for="firstName" class="sr-only">First Name</label>
                   <div class="input-group">
                       <span class="input-group-addon">First Name</span>
-                  <input 
-                  [readonly]="true"
-                  type="text"               
+                  <input
                   id="firstName"
+                  readonly="true"
+                  placeholder="John"
+                  type="text"               
                   class="col-lg-10 form-control"
                   ngModel            
                   name="firstName"
                   required>
                   <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
                   <button type="button" class="btn btn-primary"
+                          id="firstNameButton"
+                          (click)="changeStatusFirstName()"
                           [(ngModel)]="singleModel" btnCheckbox
                           btnCheckboxTrue="1" btnCheckboxFalse="0">
                     edit
@@ -65,7 +68,8 @@
                     <div class="input-group">
                         <span class="input-group-addon">Last Name</span>
                     <input
-                    [readonly]="true"
+                    readonly="true"
+                    placeholder="Smith"
                     type="text"               
                     id="lastName"
                     class="form-control"
@@ -73,6 +77,7 @@
                     name="lastName"
                     required>
                     <button type="button" class="btn btn-primary"
+                    (click)="changeStatusLastName()"
                     [(ngModel)]="singleModel" btnCheckbox
                     btnCheckboxTrue="1" btnCheckboxFalse="0">
                       edit
@@ -86,7 +91,7 @@
                   <div class="input-group">
                       <span class="input-group-addon">Date of Birth</span>
                   <input
-                  [readonly]="true"
+                  readonly="true"
                   type="date"               
                   id="dob"
                   class="form-control"
@@ -94,6 +99,7 @@
                   name="dob"
                   required>
                   <button type="button" class="btn btn-primary"
+                  (click)="changeStatusDOB()"
                   [(ngModel)]="singleModel" btnCheckbox
                   btnCheckboxTrue="1" btnCheckboxFalse="0">
                     edit
@@ -108,7 +114,7 @@
                       <div *ngFor="let gender of genders">
                           <label id="gender">
                               <input
-                                  [readonly]="true"
+                                  readonly="true"
                                   type="radio"
                                   name="gender"
                                   ngModel
@@ -127,7 +133,8 @@
                       <div class="input-group">
                           <span class="input-group-addon">Street</span>
                       <input
-                      [readonly]="true"
+                      readonly="true"
+                      placeholder="123 Main St"
                       type="text"               
                       id="street"
                       class="col-lg-10 form-control"
@@ -135,6 +142,7 @@
                       name="street"
                       required>
                       <button type="button" class="btn btn-primary"
+                      (click)="changeStatusAddress()"
                       [(ngModel)]="singleModel" btnCheckbox
                       btnCheckboxTrue="1" btnCheckboxFalse="0">
                         edit
@@ -143,17 +151,18 @@
               </div>
   
               <div class="form-group">
-                          <label for="apt" class="sr-only">Apartment</label>
+                          <label for="unit" class="sr-only">Unit</label>
                           <div class="input-group">
-                              <span class="input-group-addon">Apartment</span>
+                              <span class="input-group-addon">Unit</span>
                           <input
-                          [readonly]="true"
+                          readonly="true"
                           type="text"               
-                          id="apt"
+                          id="unit"
                           class="col-lg-10 form-control"
                           ngModel            
-                          name="apt">
+                          name="unit">
                           <button type="button" class="btn btn-primary"
+                          (click)="changeStatusUnit()"
                           [(ngModel)]="singleModel" btnCheckbox
                           btnCheckboxTrue="1" btnCheckboxFalse="0">
                             edit
@@ -166,14 +175,16 @@
                               <div class="input-group">
                                   <span class="input-group-addon">City</span>
                               <input
-                              [readonly]="true"
+                              readonly="true"
                               type="text"               
                               id="City"
+                              placeholder="Bangalore"
                               class="form-control"
                               ngModel            
                               name="City"
                               required>
                               <button type="button" class="btn btn-primary"
+                              (click)="changeStatusCity()"
                               [(ngModel)]="singleModel" btnCheckbox
                               btnCheckboxTrue="1" btnCheckboxFalse="0">
                                 edit
@@ -187,7 +198,7 @@
                     <div class="input-group">
                         <span class="input-group-addon">State</span>
                         <div>
-                            <select class="form-control" id="state" name="state" ngModel>
+                            <select disabled class="form-control" id="state" name="state" ngModel>
                               <option value="">N/A</option>
                               <option value="AK">Alaska</option>
                               <option value="AL">Alabama</option>
@@ -242,7 +253,14 @@
                               <option value="WV">West Virginia</option>
                               <option value="WY">Wyoming</option>
                             </select>
-                          </div>                   
+                          </div>     
+                          <button type="button" class="btn btn-primary"
+                          id="firstNameButton"
+                          (click)="changeStatusState()"
+                          [(ngModel)]="singleModel" btnCheckbox
+                          btnCheckboxTrue="1" btnCheckboxFalse="0">
+                            edit
+                        </button>               
   
   
                         <!-- <select id="state" name="state">
@@ -316,15 +334,17 @@
   
                     <span class="input-group-addon">Zipcode</span>
                     <input
-                    [readonly]="true"
+                    readonly="true"
                     type="number"
-                    min="0"                
+                    min="0"     
+                    placeholder="12345"           
                     id="zipcode"
                     class="form-control"
                     ngModel                          
                     name="zipcode"
                     required>   
                     <button type="button" class="btn btn-primary"
+                    (click)="changeStatusZipcode()"
                     [(ngModel)]="singleModel" btnCheckbox
                     btnCheckboxTrue="1" btnCheckboxFalse="0">
                       edit
@@ -339,7 +359,7 @@
                           <div class="input-group">
                               <span class="input-group-addon">Phone</span>
                           <input
-                          [readonly]="true"
+                          readonly="true"
                           type="number"               
                           id="phone"
                           class="col-lg-10 form-control"
@@ -347,6 +367,7 @@
                           name="phone"
                           required>
                           <button type="button" class="btn btn-primary"
+                          (click)="changeStatusPhone()"
                           [(ngModel)]="singleModel" btnCheckbox
                           btnCheckboxTrue="1" btnCheckboxFalse="0">
                             edit
@@ -359,7 +380,7 @@
                               <div class="input-group">
                                   <span class="input-group-addon">Email</span>
                               <input
-                              [readonly]="true"
+                              readonly="true"
                               type="email"               
                               id="patEmail"
                               class="col-lg-10 form-control"
@@ -368,6 +389,7 @@
                               required
                               email>
                               <button type="button" class="btn btn-primary"
+                              (click)="changeStatusPatEmail()"
                               [(ngModel)]="singleModel" btnCheckbox
                               btnCheckboxTrue="1" btnCheckboxFalse="0">
                                 edit
@@ -414,8 +436,9 @@
                   <div class="form-group">
                           <div class="input-group">
                   <span class="input-group-addon">Notes</span>            
-                          <textarea [readonly]="true"name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
+                          <textarea disabled name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
                           <button type="button" class="btn btn-primary"
+                          (click)="changeStatusNotes()"
                           [(ngModel)]="singleModel" btnCheckbox
                           btnCheckboxTrue="1" btnCheckboxFalse="0">
                             edit
