@@ -9,8 +9,18 @@ import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+  interface login{
+    UID:any;
+    Username:any;
+    Email:any;
+    Fname:any;
+    Lname:any;
+    Password:any;
+    UserLevel:any;
+  }
 @Injectable()
 export class DataService {
+
   title = 'app';
   results = '';
   personUrl="http://localhost:3000/Persons";
@@ -36,16 +46,16 @@ export class DataService {
     
   }
 
-  getUsername(user:Login){
-    return this.http.get<Login>(this.userUrl+"/"+user.Username).subscribe(data =>{
-      console.log(data.Username);
+  getUsername(user:any,pass:any){
+    return this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
+      console.log(data);
     });
 
   }
 
-  checkLogin(user:Login){
-    return this.http.get<Login>(this.userUrl+"/"+user.Username).subscribe(data =>{
-      if(data.Username === user.Username && data.Password === user.Password){
+  checkLogin(user:any,pass:any){
+    return this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
+      if(data.Username === user && data.Password === pass){
         console.log("User is logged in");
         this._router.navigate(['/home']);
       }

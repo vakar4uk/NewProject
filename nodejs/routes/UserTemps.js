@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var UserTemp = require('../models/UserTemp');
 
-router.get('/:id?',function(req,res,next){
-	if(req.params.id){
-		UserTemp.getUserById(req.params.id,function(err,rows){
+router.get('/:Username/:Password',function(req,res,next){
+	if(req.params.Username){
+		UserTemp.login(req.params.Username,function(err,rows){
 			if(err){
 				res.json(err);
 			}
