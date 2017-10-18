@@ -8,12 +8,12 @@
             <label for="inputUsername" class="sr-only">Username</label>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-            <input (keyup)="userValidation()" (blur)="userValidation()"
+            <input 
             type="text"
             placeholder="Username"
             id="inputUsername"
             class="form-control"
-            [(ngModel)] = "name"            
+            ngModel            
             name="username"
             required autofocus>
             </div>
@@ -37,17 +37,16 @@
 
             <div class="checkbox">
               <label>
-                <input ng-model="type" type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me"> Remember me
                 
               </label>
             </div>
-            <button id="submit" (click)="userValidation()"
-            class="btn btn-lg btn-primary btn-block"          
+            <button id="submit" 
+            class="btn btn-lg btn-primary btn-block" 
             type="submit"
             [disabled]="!f.valid"
-            routerLink= "{{verify}}"            
-            >Log in</button>   
-           
+            routerLink="/home"
+            >Log in</button>       
             
             
 
