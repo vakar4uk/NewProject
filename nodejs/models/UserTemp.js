@@ -4,8 +4,8 @@ var UserTemp={
 	getAllUsers:function(callback){
 		return db.query("select * from UserTemp",callback);
 	},
-	login:function(uname,pword,callback){
-		return db.query("select * from UserTemp where Username=? && Password=?",[uname,pword],callback);
+	login:function(uname,callback){
+		return db.query("select * from UserTemp where Username=?",[uname],callback);
 	},
 	addUser:function(UserTemp,callback){
 		return db.query("insert into UserTemp values(?,?,?,?,?,?,?)",[UserTemp.UID,UserTemp.Username,UserTemp.Email,UserTemp.Fname,UserTemp.Lname,UserTemp.Password,UserTemp.UserLevel],callback);

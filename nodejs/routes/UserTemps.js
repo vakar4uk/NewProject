@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var UserTemp = require('../models/UserTemp');
 
-router.get('/:Username/:Password',function(req,res,next){
-	if(req.params.Username){
-		UserTemp.login(req.params.Username,function(err,rows){
+router.get('/:uname',function(req,res,next){
+	if(req.params.uname){
+		UserTemp.login(req.params.uname,function(err,rows){
 			if(err){
 				res.json(err);
 			}
