@@ -43,9 +43,10 @@
                   <label for="firstName" class="sr-only">First Name</label>
                   <div class="input-group">
                       <span class="input-group-addon">First Name</span>
-                  <input (blur)="changeStatusFirstName1()"
+                  <input 
                   id="firstName"
                   readonly="true"
+                  (blur)="changeStatusFirstName1()"
                   placeholder="John"
                   type="text"               
                   class="col-lg-10 form-control"
@@ -70,6 +71,7 @@
                         <span class="input-group-addon">Last Name</span>
                     <input
                     readonly="true"
+                    (blur)="changeStatusLastName2()"
                     placeholder="Smith"
                     type="text"               
                     id="lastName"
@@ -93,6 +95,7 @@
                       <span class="input-group-addon">Date of Birth</span>
                   <input
                   readonly="true"
+                  (blur)="changeStatusDOB2()"
                   type="date"               
                   id="dob"
                   class="form-control"
@@ -135,7 +138,8 @@
                           <span class="input-group-addon">Street</span>
                       <input
                       readonly="true"
-                      placeholder="123 Main St"
+                    (blur)="changeStatusAddress2()"
+                    placeholder="123 Main St"
                       type="text"               
                       id="street"
                       class="col-lg-10 form-control"
@@ -156,7 +160,8 @@
                           <div class="input-group">
                               <span class="input-group-addon">Unit</span>
                           <input
-                          readonly="true"
+                           readonly="true"
+                            (blur)="changeStatusUnit2()"
                           type="text"               
                           id="unit"
                           class="col-lg-10 form-control"
@@ -176,7 +181,8 @@
                               <div class="input-group">
                                   <span class="input-group-addon">City</span>
                               <input
-                              readonly="true"
+                    (blur)="changeStatusCity2()"
+                    readonly="true"
                               type="text"               
                               id="City"
                               placeholder="Bangalore"
@@ -199,7 +205,7 @@
                     <div class="input-group">
                         <span class="input-group-addon">State</span>
                         <div>
-                            <select disabled class="form-control" id="state" name="state" ngModel>
+                            <select disabled (blur)="ChangeStatusState2()"class="form-control" id="state" name="state" ngModel>
                               <option value="">N/A</option>
                               <option value="AK">Alaska</option>
                               <option value="AL">Alabama</option>
@@ -335,6 +341,7 @@
   
                     <span class="input-group-addon">Zipcode</span>
                     <input
+                    (blur)="changeStatusZipcode2()"
                     readonly="true"
                     type="number"
                     min="0"     
@@ -360,6 +367,7 @@
                           <div class="input-group">
                               <span class="input-group-addon">Phone</span>
                           <input
+                    (blur)="changeStatusPhone2()"                    
                           readonly="true"
                           type="number"               
                           id="phone"
@@ -381,7 +389,8 @@
                               <div class="input-group">
                                   <span class="input-group-addon">Email</span>
                               <input
-                              readonly="true"
+                    (blur)="changeStatusPatEmail2()"
+                    readonly="true"
                               type="email"               
                               id="patEmail"
                               class="col-lg-10 form-control"
@@ -437,7 +446,9 @@
                   <div class="form-group">
                           <div class="input-group">
                   <span class="input-group-addon">Notes</span>            
-                          <textarea disabled name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
+                          <textarea disabled name="notes" 
+                    (blur)="changeStatusNotes2()"                    
+                          id="notes" cols="90" rows="10" ngModel></textarea>
                           <button type="button" class="btn btn-primary"
                           (click)="changeStatusNotes()"
                           [(ngModel)]="singleModel" btnCheckbox
