@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('f') signinForm: NgForm;
   selectedLogin: Login;
-  model = {PID:'',Fname:'', Lname:'',Sex:'', DOB:''};
   constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
   }
@@ -22,10 +21,10 @@ export class LoginComponent implements OnInit {
 
   }
   onSubmit() {
-    this._datatask.getPerson();
-    this.selectedLogin.Fname = (<HTMLInputElement>document.getElementById("inputUsername")).value;
-    this.selectedLogin.Lname = (<HTMLInputElement>document.getElementById("inputPassword")).value;
-    this._datatask.checkPerson(this.selectedLogin);
+    this.selectedLogin.Username = (<HTMLInputElement>document.getElementById("inputUsername")).value;
+    this.selectedLogin.Password = (<HTMLInputElement>document.getElementById("inputPassword")).value;
+    this._datatask.getUsername(this.selectedLogin);
+    this._datatask.checkLogin(this.selectedLogin);
     // this._router.navigate(['/home']);
      
     console.log(this.signinForm);

@@ -13,19 +13,21 @@ import 'rxjs/add/operator/catch';
 export class DataService {
   title = 'app';
   results = '';
+  personUrl="http://localhost:3000/Persons";
+  userUrl="http://localhost:3000/UserTemps";
   constructor(private http: HttpClient, private _router:Router,private route:ActivatedRoute) {
   }
   
   getPerson(){
-    return this.http.get("http://localhost:3000/Person").subscribe(data =>{
+    return this.http.get(this.personUrl).subscribe(data =>{
       console.log(data);
     });
 
   }
   //verify the person or user
   checkPerson(person:Login){
-    return this.http.get<Login>("http://localhost:3000/Person").subscribe(data =>{
-      if(data.Fname == person.Fname && data.Lname == person.Lname){
+    return this.http.get<Login>(this.personUrl).subscribe(data =>{
+      if(data.Fname === person.Fname && data.Lname === person.Lname){
         console.log("User is logged in");
         this._router.navigate(['/home']);
       }
@@ -34,16 +36,21 @@ export class DataService {
     
   }
 
-  getUsername(Username: any){
-    return this.http.get("http://localhost:3000/Person").subscribe(data =>{
-      console.log(data);
+  getUsername(user:Login){
+    return this.http.get<Login>(this.userUrl+"/"+user.Username).subscribe(data =>{
+      console.log(data.Username);
     });
 
   }
 
-  getPassword(Password: any){
-    return this.http.get("http://localhost:3000/Person").subscribe(data =>{
-      console.log(data);
+  checkLogin(user:Login){
+    return this.http.get<Login>(this.userUrl+"/"+user.Username).subscribe(data =>{
+      if(data.Username === user.Username && data.Password === user.Password){
+        console.log("User is logged in");
+        this._router.navigate(['/home']);
+      }
+      else
+        console.log("Access Denied");
     });
 
   }
@@ -52,14 +59,5 @@ export class DataService {
 }
 
 
-  // editTask(item: Login) {
-
-  //   let body = JSON.stringify(item);
-  //   let headers = new Headers({ 'Content-Type': 'application/json' });
-  //   let options = new RequestOptions({ headers: headers });
-  //   return this.http.put(this. + item., body, options)
-  //     .map((response: Response) => response.json());
-
-  // }
 
 
