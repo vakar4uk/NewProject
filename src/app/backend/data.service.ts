@@ -55,6 +55,7 @@ export class DataService {
 
   checkLogin(user:any,pass:any){
     return this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
+
       if(data.Username === user && data.Password === pass){
         console.log("User is logged in");
         this._router.navigate(['/home']);
