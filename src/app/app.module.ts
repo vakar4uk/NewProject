@@ -14,7 +14,7 @@ import { AddpatientComponent } from './addpatient/addpatient.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { SearchComponent } from './search/search.component';
 import { DoctorhomeComponent } from './doctorhome/doctorhome.component';
-
+import { EditpatientComponent } from './editpatient/editpatient.component';
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -22,7 +22,8 @@ const appRoutes: Routes =[
   { path: 'addpatient', component: AddpatientComponent },
   { path: 'scheduler', component: SchedulerComponent }, 
   { path: 'search', component: SearchComponent },
-  { path: 'doctorhome', component: DoctorhomeComponent }
+  { path: 'doctorhome', component: DoctorhomeComponent }, 
+  { path: 'editpatient', component: EditpatientComponent }
 ];
 
 @NgModule({
@@ -34,7 +35,8 @@ const appRoutes: Routes =[
     AddpatientComponent,
     SchedulerComponent,
     SearchComponent,
-    DoctorhomeComponent,    
+    DoctorhomeComponent, 
+    EditpatientComponent   
   ],
   imports: [
     BrowserModule,
