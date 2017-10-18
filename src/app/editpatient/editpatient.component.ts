@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 
 export class EditpatientComponent implements OnInit {  
 
-  isCondition: false;
+  isCondition = false;
   
 //  public conditions = [
 //     {name:'head', value: '1'},
