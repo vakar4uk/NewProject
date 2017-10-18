@@ -47,7 +47,7 @@ export class DataService {
   }
 
   getUsername(user:any,pass:any){
-    return this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
+    this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
       console.log("Username:"+data.Username);
       console.log("Password:"+data.Password);
       console.log("Lname:"+data.Lname);
@@ -61,7 +61,7 @@ export class DataService {
   }
 
   checkLogin(user:any,pass:any){
-    return this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
+    this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
 
       if(data.Username === user && data.Password === pass){
         console.log("User is logged in");
