@@ -48,6 +48,9 @@ export class EditpatientComponent implements OnInit {
   changeStatusFirstName(){
     (<HTMLInputElement>document.getElementById('firstName')).readOnly=false;
   }
+  changeStatusFirstName1(){
+    (<HTMLInputElement>document.getElementById('firstName')).readOnly=true;
+  }
   changeStatusLastName(){
     (<HTMLInputElement>document.getElementById('lastName')).readOnly=false;
   }
