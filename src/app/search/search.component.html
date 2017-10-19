@@ -6,17 +6,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a id="dropdown-button" class="nav-link" routerLink="/scheduler">Calendar<span class="sr-only">(current)</span></a>
-      </li>
+    <ul class="navbar-nav mr-auto">      
       <li class="nav-item" dropdown>
         <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
             </a>
         <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
-          <li role="menuitem"><a routerLink="#" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
-          <!-- <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li> -->
-          <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-search active" aria-hidden="true"></i>Search Patient</a></li>
+          <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
+          <li role="menuitem"><a routerLink="/editpatient" id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
+          <li role="menuitem"><a routerLink="#" id="dropdown-item" class="dropdown-item active"><i class="fa fa-search active" aria-hidden="true"></i>Search Patient</a></li>
         </ul>
       </li>
       <a id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
