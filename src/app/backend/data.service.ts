@@ -49,8 +49,10 @@ export class DataService {
 
   checkLogin(user:any,pass:any){
     this.http.get<loginArray>(this.userUrl+"/"+user).subscribe(data =>{
-
-      if(data[0].Username === user && data[0].Password  === pass && data[0].UserLevel === 1){
+      if(data[0] === undefined){
+        console.log("Access Denied");
+      }
+      else if(data[0].Username === user && data[0].Password  === pass && data[0].UserLevel === 1){
         console.log("Welcome Doctor");
         this._router.navigate(['/doctorhome']);
       }
@@ -58,8 +60,6 @@ export class DataService {
         console.log("Welcome Nurse");
         this._router.navigate(['/home']);
       }
-      else
-        console.log("Access Denied");
     },
     err=>{
       console.log("Not Connected to DB");
