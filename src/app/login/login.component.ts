@@ -12,12 +12,15 @@ import { Subscription } from 'rxjs/Rx';
 })
 export class LoginComponent implements OnInit {
 
+  link = "";
+
   @ViewChild('f') signinForm: NgForm;
   selectedLogin: Login;
   constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
   }
   ngOnInit(){
+
 
   }
   onSubmit() {

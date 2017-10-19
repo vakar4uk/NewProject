@@ -3,12 +3,12 @@ import { NgForm } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-addpatient',
-  templateUrl: './addpatient.component.html',
-  styleUrls: ['./addpatient.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
 
-export class AddpatientComponent implements OnInit {  
+export class SearchComponent implements OnInit {  
 
   isCondition: false;
   
@@ -17,7 +17,7 @@ export class AddpatientComponent implements OnInit {
     
 //   ]; 
 
-  @ViewChild('f') addPatient: NgForm;
+  @ViewChild('f') search: NgForm;
   public genders = ['Male', 'Female'];
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
@@ -38,13 +38,46 @@ export class AddpatientComponent implements OnInit {
     'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
     'HIGH BLOOD PRESSURE', 'LOW BLOOD PRESSURE', 'RHEUMATIC FEVER/SCARLET FEVER'
   ];
+  public inactive:boolean = true;
 
   ngOnInit() {    
   }
 
   onSubmit() {
-    console.log(this.addPatient);
+    console.log(this.search);
   }
-
-
+  
+  changeStatusFirstName(){
+    (<HTMLInputElement>document.getElementById('firstName')).readOnly=false;
+  }
+  changeStatusLastName(){
+    (<HTMLInputElement>document.getElementById('lastName')).readOnly=false;
+  }
+  changeStatusDOB(){
+    (<HTMLInputElement>document.getElementById('dob')).readOnly=false;
+  }
+  changeStatusAddress(){
+    (<HTMLInputElement>document.getElementById('street')).readOnly=false;
+  }
+  changeStatusUnit(){
+    (<HTMLInputElement>document.getElementById('unit')).readOnly=false;
+  }
+  changeStatusCity(){
+    (<HTMLInputElement>document.getElementById('City')).readOnly=false;
+  }
+  changeStatusState(){
+    (<HTMLInputElement>document.getElementById('state')).disabled=false;
+  }
+  changeStatusZipcode(){
+    (<HTMLInputElement>document.getElementById('zipcode')).readOnly=false;
+  }
+  changeStatusPhone(){
+    (<HTMLInputElement>document.getElementById('phone')).readOnly=false;
+  }
+  changeStatusPatEmail(){
+    (<HTMLInputElement>document.getElementById('patEmail')).readOnly=false;
+  }
+  changeStatusNotes(){
+    (<HTMLInputElement>document.getElementById('notes')).disabled=false;
+  }
 }

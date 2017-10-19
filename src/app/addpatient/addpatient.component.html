@@ -6,39 +6,30 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a id="dropdown-button" class="nav-link row" routerLink="#">Calendar<span class="sr-only">(current)</span></a>
-      </li>
+    <ul class="navbar-nav mr-auto">      
       <li class="nav-item" dropdown>
-        <a id="dropdown-button" dropdownToggle class="nav-link"><i class="fa fa-caret-down" aria-hidden="true"></i>
-                Patient <span class="caret"></span>
+        <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
             </a>
         <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
           <li role="menuitem"><a routerLink="#" id="dropdown-item" class="dropdown-item active"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
-          <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
-          <li role="menuitem"><a id="dropdown-item" class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
+          <li role="menuitem"><a routerLink="/editpatient"id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
+          <li role="menuitem"><a routerLink="/search" id="dropdown-item" class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
         </ul>
       </li>
       <a id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
-    </ul>
-
-
-
-    <!-- <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
+    </ul>    
   </div>
-</nav>
-<!-- Navbar -->
+</nav>  <!-- Navbar -->
 
-<!-- <div class="content"> -->
-    <div class="row content text-center">      
-        <div id="form" class="col-lg-5">
+<!-- Main Content -->
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addPatient">    
+    <div class="col-lg-12 row" id="content">  
+        <div class="form col-lg-6 text-center">
+
+            <!-- Personal Information -->                      
             <h5>Personal Information</h5>
             <div class="form-group">
-                <label for="inputUsername" class="sr-only">First Name</label>
+                <label for="firstName" class="sr-only">First Name</label>
                 <div class="input-group">
                     <span class="input-group-addon">First Name</span>
                 <input
@@ -48,10 +39,11 @@
                 ngModel            
                 name="firstName"
                 required>
-                </div>
-              </div>
+                </div>            
+            </div>
+            
               <div class="form-group">
-                  <label for="inputUsername" class="sr-only">Last Name</label>
+                  <label for="lastName" class="sr-only">Last Name</label>
                   <div class="input-group">
                       <span class="input-group-addon">Last Name</span>
                   <input
@@ -62,61 +54,91 @@
                   name="lastName"
                   required>
                   </div>
+                  
               </div>   
-              
-              <!-- <div class="form-group">
-                  <label for="firstname" class="sr-only">First Name</label>
-                  <div class="input-group">
-                      <span class="input-group-addon">First Name</span>
-                  <input
-                  type="text"               
-                  id="firstName"
-                  class="form-control"
-                  ngModel            
-                  name="firstName"
-                  required>
 
-                  <label for="lastname" class="sr-only">Last Name</label>
-                  <span style="margin-left: 5px; text-align:right;" class="input-group-addon">Last Name</span>
-                  <input
-                  type="text"               
-                  id="lastName"
-                  class="col-lg-3  form-control"
-                  ngModel            
-                  name="lastname"
-                  required> 
-                  </div>                  
-              </div> -->
-              
               <div class="form-group">
-                  <label for="street" class="sr-only">Street</label>
-                  <div class="input-group">
-                      <span class="input-group-addon">Street</span>
-                  <input
-                  type="text"               
-                  id="street"
-                  class="form-control"
-                  ngModel            
-                  name="street"
-                  required>
+                <label for="dob" class="sr-only">Date of Birth</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Date of Birth</span>
+                <input
+                type="date"               
+                id="dob"
+                class="form-control"
+                ngModel            
+                name="dob"
+                required>
+                </div>                
+            </div>
+            
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Gender</span>
+                    <div *ngFor="let gender of genders">
+                        <label id="gender">
+                            <input
+                                type="radio"
+                                name="gender"
+                                ngModel
+                                [value]="gender"
+                                required>
+                                {{ gender }}
+                        </label>
+                    </div>
+                </div>                   
+            </div><hr> <!-- Personal Information      -->
 
-                  <label for="city" class="sr-only">Street</label>
-                  <span style="margin-left: 5px; text-align:right;" class="input-group-addon">City</span>
-                  <input
-                  type="text"               
-                  id="city"
-                  class="col-lg-3  form-control"
-                  ngModel            
-                  name="city"
-                  required> 
-                  </div>                  
-              </div>
-              <div class="form-group">
-                  <label for="address" class="sr-only">State</label>                  
+            <!-- Address -->
+            <br><h5>Address</h5>
+            <div class="form-group">
+                    <label for="street" class="sr-only">Street</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">Street</span>
+                    <input
+                    type="text"               
+                    id="street"
+                    class="col-lg-10 form-control"
+                    ngModel            
+                    name="street"
+                    required>
+                    </div>
+            </div>
+
+            <div class="form-group">
+                        <label for="unit" class="sr-only">Unit</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">Unit</span>
+                        <input
+                        type="text"               
+                        id="unit"
+                        class="col-lg-10 form-control"
+                        ngModel            
+                        name="unit">
+                        </div>
+            </div>
+
+            <div class="form-group">
+                            <label for="sreet" class="sr-only">City</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">City</span>
+                            <input
+                            type="text"               
+                            id="City"
+                            class="form-control"
+                            ngModel            
+                            name="City"
+                            required>
+                            </div>
+                            
+            </div> 
+                        
+            <div class="form-group">
+                  <label for="state" class="sr-only">State</label>                  
                   <div class="input-group">
-                      <span style="text-align:right;" class="input-group-addon">State</span>
-                      <div >
-                          <select class="form-control" id="state" name="state">
+                      <span class="input-group-addon">State</span>
+                      <div>
+                          <select class="form-control" id="state" name="state" ngModel>
                             <option value="">N/A</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
@@ -171,181 +193,92 @@
                             <option value="WV">West Virginia</option>
                             <option value="WY">Wyoming</option>
                           </select>
-                        </div>                   
-
-                  <span style="margin-left: 4px; text-align:right;" class="input-group-addon">Zipcode</span>
+                        </div>  
+                  <span class="input-group-addon">Zipcode</span>
                   <input
-                  type="number"              
+                  type="number"
+                  min="0"                
                   id="zipcode"
                   class="form-control"
-                  ngModel            
+                  ngModel                          
                   name="zipcode"
-                  required> 
-                  </div>
-              </div>
-              
-        </div>
-        
+                  required>                   
+                  </div>                  
+        </div><hr> <!-- Address -->
 
-        <div class="col-lg-3">
-            <div id="form" class="">
-                <h5>Personal Information</h5>
-                <div class="form-group">
-                    <label for="inputUsername" class="sr-only">First Name</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">First Name</span>
-                    <input
-                    type="text"               
-                    id="firstName"
-                    class="col-lg-10 form-control"
-                    ngModel            
-                    name="firstName"
-                    required>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                      <label for="inputUsername" class="sr-only">Last Name</label>
-                      <div class="input-group">
-                          <span class="input-group-addon">Last Name</span>
-                      <input
-                      type="text"               
-                      id="lastName"
-                      class="form-control"
-                      ngModel            
-                      name="lastName"
-                      required>
-                      </div>
-                  </div>   
-                  
-                  <!-- <div class="form-group">
-                      <label for="firstname" class="sr-only">First Name</label>
-                      <div class="input-group">
-                          <span class="input-group-addon">First Name</span>
-                      <input
-                      type="text"               
-                      id="firstName"
-                      class="form-control"
-                      ngModel            
-                      name="firstName"
-                      required>
-    
-                      <label for="lastname" class="sr-only">Last Name</label>
-                      <span style="margin-left: 5px; text-align:right;" class="input-group-addon">Last Name</span>
-                      <input
-                      type="text"               
-                      id="lastName"
-                      class="col-lg-3  form-control"
-                      ngModel            
-                      name="lastname"
-                      required> 
-                      </div>                  
-                  </div> -->
-                  
-                  <div class="form-group">
-                      <label for="street" class="sr-only">Street</label>
-                      <div class="input-group">
-                          <span class="input-group-addon">Street</span>
-                      <input
-                      type="text"               
-                      id="street"
-                      class="form-control"
-                      ngModel            
-                      name="street"
-                      required>
-    
-                      <label for="city" class="sr-only">Street</label>
-                      <span style="margin-left: 5px; text-align:right;" class="input-group-addon">City</span>
-                      <input
-                      type="text"               
-                      id="city"
-                      class="col-lg-3  form-control"
-                      ngModel            
-                      name="city"
-                      required> 
-                      </div>                  
-                  </div>
-                  <div class="form-group">
-                      <label for="address" class="sr-only">State</label>                  
-                      <div class="input-group">
-                          <span style="text-align:right;" class="input-group-addon">State</span>
-                          <div >
-                              <select class="form-control" id="state" name="state">
-                                <option value="">N/A</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DC">District of Columbia</option>
-                                <option value="DE">Delaware</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="IA">Iowa</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MD">Maryland</option>
-                                <option value="ME">Maine</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MT">Montana</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NY">New York</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VA">Virginia</option>
-                                <option value="VT">Vermont</option>
-                                <option value="WA">Washington</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WY">Wyoming</option>
-                              </select>
-                            </div>                   
-    
-                      <span style="margin-left: 4px; text-align:right;" class="input-group-addon">Zipcode</span>
-                      <input
-                      type="number"              
-                      id="zipcode"
-                      class="form-control"
-                      ngModel            
-                      name="zipcode"
-                      required> 
-                      </div>
-                  </div>
-                  
+        <!-- Contact Information -->
+        <br><h5>Contact Information</h5>
+        <div class="form-group">
+                <label for="phone" class="sr-only">Phone</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">Phone</span>
+                        <input
+                        type="number"               
+                        id="phone"
+                        class="col-lg-10 form-control"
+                        ngModel            
+                        name="phone">
+                        </div>
             </div>
-        </div>        
-    </div>
 
-<!-- </div> -->
+            <div class="form-group">
+                    <label for="patEmail" class="sr-only">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">Email</span>
+                            <input
+                            type="email"               
+                            id="patEmail"
+                            class="col-lg-10 form-control"
+                            ngModel            
+                            name="patEmail"                            
+                            email>
+                            </div>
+            </div><hr> <!-- Contact Information -->
+
+            <!-- Medical History -->
+            <br><h5>Medical History</h5>
+            <p>Have patient had any of the following deseases or problems:</p>           
+                <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Condition</span>                          
+                            <div>
+                                <div *ngFor="let condition of conditions; let i = index">
+                                    <label id="condition">
+                                        <input
+                                            type="checkbox"
+                                            name="isCondition{{i}}"                                                                                 
+                                            [ngModel] = "isCondition"> 
+                                            {{ condition }}                                       
+                                    </label>
+                                </div>
+                            </div>
+                        </div>                   
+                    </div><hr><!-- Medical History -->
+                
+                <!-- Additioonal Information -->
+                <br><h5>Additional Information</h5>
+                <div class="form-group">
+                        <div class="input-group">
+                <span class="input-group-addon">Notes</span>            
+                        <textarea name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
+                    </div>
+                </div>  <!-- Additioonal Information -->               
+
+                <button id="submit" 
+                class="btn btn-lg btn-success btn-block" 
+                [disabled]="!f.valid"
+                type="submit"         
+                >Submit</button>    
+
+        </div>      
+              
+    </div>
+</form>
+<!-- Main Content -->
 
 <!-- Footer -->
 <footer class="footer">
-    <nav id="footer" class="navbar fixed-bottom navbar-light">
+    <nav id="footer" class="navbar navbar-light">
         <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
         <div class="row">
         <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>

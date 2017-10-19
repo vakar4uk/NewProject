@@ -79,18 +79,13 @@ a {
     margin-bottom: 0;
 }
 
-    .footer {
-        background-color: #46494C;    
-        color: black;       
-        position: relative;       
-        right: 0;
-        bottom: 0;
-        left: 0;            
-        text-align: center;
-        
-    }
-
-  
+#footer {
+    background-color: #46494C;
+    position: absolute;
+    color: black;
+    bottom: 0;
+    width: 100%;   
+  }  
   
   footer a {
     color: #999;
@@ -142,7 +137,7 @@ a {
 }
 
 #state {
-    width:220px;
+    width:180px;
 }
 
 input::-webkit-outer-spin-button,
@@ -186,3 +181,4 @@ input::-webkit-inner-spin-button {
     display: inline;
     width: 300px;
  }
+ 

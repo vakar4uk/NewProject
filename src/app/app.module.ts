@@ -18,12 +18,21 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AddpatientComponent } from './addpatient/addpatient.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
+import { SearchComponent } from './search/search.component';
+import { DoctorhomeComponent } from './doctorhome/doctorhome.component';
+import { EditpatientComponent } from './editpatient/editpatient.component';
 
-const appRoutes: Routes =[
+const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
-  { path: 'addpatient', component: AddpatientComponent }
+  { path: 'addpatient', component: AddpatientComponent },
+  { path: 'scheduler', component: SchedulerComponent }, 
+  { path: 'search', component: SearchComponent },
+  { path: 'doctorhome', component: DoctorhomeComponent }, 
+  { path: 'editpatient', component: EditpatientComponent },
+  { path: 'search', component: SearchComponent }
 ];
 
 @NgModule({
@@ -33,17 +42,23 @@ const appRoutes: Routes =[
     HomeComponent,
     ForgotpasswordComponent,
     AddpatientComponent,
+    SchedulerComponent,
+    SearchComponent,
+    DoctorhomeComponent, 
+    EditpatientComponent   
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule,
+    
+    AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot()    
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
