@@ -18,11 +18,6 @@ import 'rxjs/add/operator/catch';
     Password:any;
     UserLevel:any;
   }
-
-interface loginArray{
-  [index:number]:login;
-}
-
 @Injectable()
 export class DataService {
 
@@ -52,10 +47,10 @@ export class DataService {
   }
 
   getUsername(user:any,pass:any){
-    this.http.get<loginArray>(this.userUrl+"/"+user).subscribe(data =>{
-      console.log("Username:"+data[0].Username);
-      console.log("Password:"+data[0].Password);
-      console.log("Lname:"+data[0].Lname);
+    this.http.get(this.userUrl+"/"+user).subscribe(data =>{
+      console.log("Username:"+data['Username']);
+      console.log("Password:"+data['Password']);
+      console.log("Lname:"+data['Lname']);
       console.log(data);
     },
     err=>{
@@ -66,9 +61,9 @@ export class DataService {
   }
 
   checkLogin(user:any,pass:any){
-    this.http.get<loginArray>(this.userUrl+"/"+user).subscribe(data =>{
+    this.http.get<login>(this.userUrl+"/"+user).subscribe(data =>{
 
-      if(data[0].Username === user && data[0].Password  === pass){
+      if(data['Username'] === user && data['Password'] === pass){
         console.log("User is logged in");
         this._router.navigate(['/home']);
       }
