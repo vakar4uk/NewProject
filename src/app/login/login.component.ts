@@ -26,10 +26,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     var user = (<HTMLInputElement>document.getElementById("inputUsername")).value;
     var pass = (<HTMLInputElement>document.getElementById("inputPassword")).value;
-    this._datatask.getUsername(user,pass);
-    this._datatask.checkLogin(user,pass);
+    if(user != undefined && pass != undefined){
+      //this._datatask.getUser(user,pass);
+      this._datatask.checkLogin(user,pass);
+    }
     // this._router.navigate(['/home']);
-     
-    console.log(this.signinForm);
+    else{
+      console.log("Access Denied");
+    }
   }
 }
