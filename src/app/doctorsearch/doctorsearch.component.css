@@ -11,6 +11,7 @@
 }
 
 #main-content {
+    
     margin-top: 150px;
 }
 
@@ -32,7 +33,7 @@ li >  a {
 }
 
 #dropdown-button {
-    margin-top: 2.3px;
+    margin-top: 2px;
 }
 
 #dropdown-button:hover {
@@ -77,6 +78,7 @@ a {
     color: lightgray;
     margin-bottom: 0;
 }
+
 #footer {
     background-color: #46494C;
     position: absolute;
@@ -104,4 +106,79 @@ a {
   i {
       padding-right: 5px;
   }
-  
+
+  li> .active {
+      color: #0B0B28;
+      background-color: transparent;
+  }
+
+/* Main Content */
+#content {   
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+   
+    padding-bottom: 50px;    
+}
+
+/* Forms */
+.form {      
+    margin-left: 380px;    
+    padding: 10px;   
+    background-color: #D5ECEC;
+    border: 2px solid rgb(44, 95, 112);     
+    border-radius: 30px;      
+    margin-bottom: 10px;
+}
+
+.input-group > span {
+    width:115px;
+    border: 2px;
+}
+
+#state {
+    width:180px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+#dropdown {
+    position: relative;
+    margin-top: 100px;
+}
+
+#radio-button {
+    margin-left: 30px;
+    margin-top: 7px;
+}
+
+#gender {   
+    margin-top: 6px;
+    margin-left: 60px;
+}
+
+#condition {
+    margin-left: 20px;
+    width: 50px;
+}
+
+#condition {
+    text-align: left;
+    width: 450px;
+}
+
+.images-wrapper {
+    display: flex;    
+ }
+
+ #submit {
+    cursor: pointer;
+    display: inline;
+    width: 300px;
+ }
+ 
