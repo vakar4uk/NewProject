@@ -7,14 +7,25 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">        
         <li class="nav-item" dropdown>
-          <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+          <a id="dropdown-patient" dropdownToggle class="nav-link"><i class="fa fa-user-md" aria-hidden="true"></i>
+            Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
               </a>  
               <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
                   <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
                   <li role="menuitem"><a routerLink="/editpatient"id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
                   <li role="menuitem"><a routerLink="/search"  id="dropdown-item"class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
-                </ul>
+                </ul>          
         </li>        
+
+        <li class="nav-item" dropdown>
+          <a id="dropdown-lab" dropdownToggle class="nav-link"><i class="fa fa-flask" aria-hidden="true"></i>
+            Lab Results<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+              </a>  
+              <ul id="dropdown-lab-menu" *dropdownMenu class="dropdown-menu" role="menu">
+                  <li role="menuitem"><a routerLink="/addlabresults" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Results</a></li>
+                  <li role="menuitem"><a routerLink="#"id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Results</a></li>                  
+                </ul>          
+        </li>    
           <a  id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>      
       </ul>
       <!-- <form class="form-inline mt-2 mt-md-0">

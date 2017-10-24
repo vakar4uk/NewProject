@@ -23,6 +23,7 @@ import {AccordionModule} from 'primeng/primeng';     //accordion and accordion t
 import {MenuItem} from 'primeng/primeng';            //api
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ScheduleModule} from 'primeng/primeng';
+import { AddlabresultsComponent } from './addlabresults/addlabresults.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -33,7 +34,9 @@ const appRoutes: Routes =[
   { path: 'search', component: SearchComponent },
   { path: 'doctorhome', component: DoctorhomeComponent }, 
   { path: 'editpatient', component: EditpatientComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'addlabresults', component: AddlabresultsComponent },
+  
 ];
 
 @NgModule({
@@ -46,7 +49,7 @@ const appRoutes: Routes =[
     SchedulerComponent,
     SearchComponent,
     DoctorhomeComponent, 
-    EditpatientComponent   
+    EditpatientComponent, AddlabresultsComponent   
   ],
   imports: [
     BrowserModule,

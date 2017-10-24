@@ -1,11 +1,20 @@
 .container {
     background-color: #D5ECEC;
-    margin-top: 80px;
-    width: 750px;
-    height: 200px;
+    margin-top: 20px;
+    width: 60%;
+    height: 540px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
+    margin-bottom: 10px;
 }
+
+#table {
+    margin-top: 30px;
+}
+
+#submit {
+    cursor: pointer; 
+ }
 
 #navbar {    
     position: relative;
@@ -73,6 +82,7 @@ a {
     margin-left:310px;
 }
 
+
 .dropdown-menu {
     color: #bbb;
     width: 75px;
@@ -109,13 +119,16 @@ a {
     color: lightgray;
     margin-bottom: 0;
 }
-#footer {
-    background-color: #46494C;
-    position: absolute;
-    color: black;
+.footer {
+    background-color: #46494C;    
+    color: black;       
+    position: relative;       
+    right: 0;
     bottom: 0;
-    width: 100%;   
-  }  
+    left: 0;            
+    text-align: center;
+    
+}
   
   footer a {
     color: #999;
@@ -132,6 +145,11 @@ a {
   .row, .row > span {
       margin-right: 10px;
   }
+
+  li> .active {
+    color: #0B0B28;
+    background-color: transparent;
+}
 
   i {
       padding-right: 5px;
