@@ -15,6 +15,9 @@
     color: #bbb;   
 }
 
+li.nav-item {
+    width: 200px;
+}
 
 .nav-link, .nav-link:hover {
     cursor: pointer;     

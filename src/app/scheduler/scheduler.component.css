@@ -36,8 +36,7 @@ li >  a {
 }
 
 #logout {        
-    margin-left: 600px;
-    margin-top: 12px;
+    margin-left: 820px;
 }
 
 #logout:hover {
@@ -195,6 +194,30 @@ input::-webkit-inner-spin-button {
     position: relative;
     margin-top: 100px;
 }
+
+#radio-button {
+    margin-left: 30px;
+    margin-top: 7px;
+}
+
+#gender {   
+    margin-top: 6px;
+    margin-left: 60px;
+}
+
+#condition {
+    margin-left: 20px;
+    width: 50px;
+}
+
+#condition {
+    text-align: left;
+    width: 450px;
+}
+
+.images-wrapper {
+    display: flex;    
+ }
 
  #submit {
     cursor: pointer;
