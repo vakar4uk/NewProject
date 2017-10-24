@@ -24,6 +24,7 @@ import {MenuItem} from 'primeng/primeng';            //api
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ScheduleModule} from 'primeng/primeng';
 import { AddlabresultsComponent } from './addlabresults/addlabresults.component';
+import { EditlabresultsComponent } from './editlabresults/editlabresults.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -36,7 +37,7 @@ const appRoutes: Routes =[
   { path: 'editpatient', component: EditpatientComponent },
   { path: 'search', component: SearchComponent },
   { path: 'addlabresults', component: AddlabresultsComponent },
-  
+  { path: 'editlabresults', component: EditlabresultsComponent }  
 ];
 
 @NgModule({
@@ -49,7 +50,7 @@ const appRoutes: Routes =[
     SchedulerComponent,
     SearchComponent,
     DoctorhomeComponent, 
-    EditpatientComponent, AddlabresultsComponent   
+    EditpatientComponent, AddlabresultsComponent, EditlabresultsComponent   
   ],
   imports: [
     BrowserModule,
