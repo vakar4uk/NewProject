@@ -24,22 +24,29 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {    
-    margin-left: 1000px;  
+#logout {        
+    margin-left: 820px;
 }
 
 #logout:hover {
         color: #D35252;
 }
 
-#dropdown-button {
-    margin-top: 2px;
+#dropdown-patient {
+    margin-top: 2.3px;
 }
 
-#dropdown-button:hover {
+#dropdown-patient:hover {
     color: #DDDDAC;
 }
 
+#dropdown-lab {
+    margin-top: 2.3px;
+}
+
+#dropdown-lab:hover {
+    color: #DDDDAC;
+}
 a {
     color: lightgray;
 }
@@ -53,7 +60,7 @@ a {
 .dropdown-menu {
     color: #bbb;
     width: 75px;
-    margin-left:290px;
+    margin-left:170px;
     background-color: #616467;
     border-style: 1px solid black;    
 }
@@ -73,6 +80,14 @@ a {
 .dropdown-item:hover {   
     background-color: transparent;
 }
+
+#dropdown-lab-menu {
+    padding: 0;
+    margin-top: 0;
+    width: 180px;
+    margin-left:310px;
+}
+
 
 #brand {
     color: lightgray;

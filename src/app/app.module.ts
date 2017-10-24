@@ -6,6 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+
+
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +20,12 @@ import { DoctorhomeComponent } from './doctorhome/doctorhome.component';
 import { EditpatientComponent } from './editpatient/editpatient.component';
 import { DoctorSearchComponent } from './doctorsearch/doctorsearch.component';
 
+import {AccordionModule} from 'primeng/primeng';     //accordion and accordion tab
+import {MenuItem} from 'primeng/primeng';            //api
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ScheduleModule} from 'primeng/primeng';
+import { AddlabresultsComponent } from './addlabresults/addlabresults.component';
+
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -27,7 +36,9 @@ const appRoutes: Routes =[
   { path: 'doctorhome', component: DoctorhomeComponent }, 
   { path: 'editpatient', component: EditpatientComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'doctorsearch', component: DoctorSearchComponent }
+  { path: 'doctorsearch', component: DoctorSearchComponent },
+  { path: 'addlabresults', component: AddlabresultsComponent },
+  
 ];
 
 @NgModule({
@@ -41,16 +52,17 @@ const appRoutes: Routes =[
     SearchComponent,
     DoctorhomeComponent, 
     EditpatientComponent, 
-    DoctorSearchComponent   
+    DoctorSearchComponent,
+    EditpatientComponent,
+    AddlabresultsComponent,  
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    
+    BrowserModule,    
+    FormsModule,    
     AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()    
+    ModalModule.forRoot()   
   ],
   providers: [],
   bootstrap: [AppComponent]
