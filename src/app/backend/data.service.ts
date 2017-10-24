@@ -115,10 +115,12 @@ export class DataService {
 
   }
   //********missing DOB and Gender*********
-  updatePerson(id,fname, lname, street, city, state, zip, phone, email) {
+  updatePerson(id,fname, lname, dob, gender, street, city, state, zip, phone, email) {
     const req = this.http.put(this.personUrl+"/"+id, {
       Fname:fname,
       Lname:lname,
+      Sex:gender,
+      DOB:dob,
       Street:street,
       City:city,
       State:state,

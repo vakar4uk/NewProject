@@ -110,7 +110,7 @@ export class EditpatientComponent implements OnInit {
     var zip = (<HTMLInputElement>document.getElementById("zipcode")).value;
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
     var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
-    this._datatask.updatePerson(this.id,fname, lname, street, city, state, zip, phone, email);
+    this._datatask.updatePerson(this.id,fname, lname,dob,gender, street, city, state, zip, phone, email);
     //console.log(this.addPatient);
   }
 
