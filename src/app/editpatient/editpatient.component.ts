@@ -1,20 +1,41 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataService} from '../backend/data.service';
-import { Router,ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
-
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Rx';
+import { Router, ActivatedRoute } from '@angular/router';
+import 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+interface person{
+  PID:any;
+  Fname:any;
+  Lname:any;
+  Sex:any;
+  DOB:any;
+  Street:any;
+  Unit:any;
+  City:any;
+  State:any;
+  Zipcode:any;
+  PhoneNo:any;
+  Email:any;
+}
+interface personArray{
+  [index:number]:person;
+}
 @Component({
   selector: 'app-editpatient', 
   templateUrl: './editpatient.component.html',
   styleUrls: ['./editpatient.component.css']
 })
 
-export class EditpatientComponent implements OnInit {  
 
+export class EditpatientComponent implements OnInit {  
+  personUrl = "http://localhost:3000/Persons";
   isCondition = false;
-  constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
+  constructor(private http: HttpClient,private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
     
   }
 //  public conditions = [
@@ -49,8 +70,15 @@ export class EditpatientComponent implements OnInit {
   search(){
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
-    var data = this._datatask.searchPatient(search);
-    console.log(data);
+    this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
+      console.log("Looking for:" +search);
+      console.log(data);
+    },
+      err => {
+        console.log("No Valid Entry");
+      }
+    );
+    
   }
 
   onSubmit() {
