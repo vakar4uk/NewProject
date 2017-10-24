@@ -87,7 +87,7 @@ export class DataService {
   searchPatient(search:any){
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" +search);
-      console.log("Results:"+data);
+      console.log(data);
     },
       err => {
         console.log("No Valid Entry");
