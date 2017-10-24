@@ -7,10 +7,18 @@
     color: #bbb;   
 }
 
+.nav2 {
+    font-size: 1.2em;
+    color: #bbb;   
+}
+
 .nav-link, .nav-link:hover {
     cursor: pointer;     
 }
-
+li.nav-item {
+    height: 70px;
+    padding-top: 10px;
+}
 
 
 #main-content {    
@@ -37,6 +45,7 @@ li >  a {
 
 #dropdown-patient {
     margin-top: 2.3px;
+    width: 125px;
 }
 
 #dropdown-patient:hover {
@@ -45,6 +54,7 @@ li >  a {
 
 #dropdown-lab {
     margin-top: 2.3px;
+    width: 170px;
 }
 
 #dropdown-lab:hover {
@@ -213,3 +223,4 @@ input::-webkit-inner-spin-button {
     display: inline;
     width: 300px;
  }
+ 
