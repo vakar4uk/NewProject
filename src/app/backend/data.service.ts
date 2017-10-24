@@ -18,6 +18,20 @@ interface login {
   Password: any;
   UserLevel: any;
 }
+interface person{
+  PID:any;
+  Fname:any;
+  Lname:any;
+  Sex:any;
+  DOB:any;
+  Street:any;
+  Unit:any;
+  City:any;
+  State:any;
+  Zipcode:any;
+  PhoneNo:any;
+  Email:any;
+}
 
 interface loginArray {
   [index: number]: login;
@@ -46,11 +60,17 @@ export class DataService {
     );
 
   }
-  addPerson() {
-    const req = this.http.post(this.personUrl + "/", {
-      title: 'foo',
-      body: 'bar',
-      userId: 1
+  addPerson(fname, lname, dob, gender, street, city, state, zip, phone) {
+    const req = this.http.post(this.personUrl, {
+      Fname:fname,
+      Lname:lname,
+      Sex:gender,
+      DOB:'1999-10-10',
+      Street:street,
+      City:city,
+      State:state,
+      Zipcode:zip,
+      PhoneNo:phone,
     })
       .subscribe(
       res => {
