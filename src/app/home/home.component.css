@@ -36,9 +36,8 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {     
-    margin-top: 12px;
-    margin-left: 600px;
+#logout {        
+    margin-left: 200px;
 }
 
 #logout:hover {
