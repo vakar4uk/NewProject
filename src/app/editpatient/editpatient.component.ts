@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { DataService} from '../backend/data.service';
+import { DataService } from '../backend/data.service';
 import { Subscription } from 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
@@ -8,40 +8,40 @@ import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-interface person{
-  PID:any;
-  Fname:any;
-  Lname:any;
-  Sex:any;
-  DOB:any;
-  Street:any;
-  Unit:any;
-  City:any;
-  State:any;
-  Zipcode:any;
-  PhoneNo:any;
-  Email:any;
+interface person {
+  PID: any;
+  Fname: any;
+  Lname: any;
+  Sex: any;
+  DOB: any;
+  Street: any;
+  Unit: any;
+  City: any;
+  State: any;
+  Zipcode: any;
+  PhoneNo: any;
+  Email: any;
 }
-interface personArray{
-  [index:number]:person;
+interface personArray {
+  [index: number]: person;
 }
 @Component({
-  selector: 'app-editpatient', 
+  selector: 'app-editpatient',
   templateUrl: './editpatient.component.html',
   styleUrls: ['./editpatient.component.css']
 })
 
 
-export class EditpatientComponent implements OnInit {  
+export class EditpatientComponent implements OnInit {
   personUrl = "http://localhost:3000/Persons";
   isCondition = false;
-  constructor(private http: HttpClient,private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
-    
+  constructor(private http: HttpClient, private _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
+
   }
-//  public conditions = [
-//     {name:'head', value: '1'},
-    
-//   ]; 
+  //  public conditions = [
+  //     {name:'head', value: '1'},
+
+  //   ]; 
 
   @ViewChild('f') addPatient: NgForm;
   //public genders = ['Male', 'Female'];
@@ -56,9 +56,9 @@ export class EditpatientComponent implements OnInit {
   //                  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia', 'Washington', 
   //                  'West Virginia', 'Wisconsin', 'Wyoming'
   // ];
-  
-  public inactive:boolean = true;
-  
+
+  public inactive: boolean = true;
+
   public conditions = [
     'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
     'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
@@ -67,99 +67,110 @@ export class EditpatientComponent implements OnInit {
 
   ngOnInit() {
   }
-  search(){
+  search() {
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
-      console.log("Looking for:" +search);
+      console.log("Looking for:" + search);
       console.log(data);
+      (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
+      (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
+      (<HTMLInputElement>document.getElementById("dob")).value=data[0].DOB;
+      (<HTMLInputElement>document.getElementById("gender")).value=data[0].Sex;
+      (<HTMLInputElement>document.getElementById("street")).value=data[0].Street;
+      (<HTMLInputElement>document.getElementById("unit")).value=data[0].Unit;
+      (<HTMLInputElement>document.getElementById("City")).value=data[0].City;
+      (<HTMLInputElement>document.getElementById("state")).value=data[0].State;
+      (<HTMLInputElement>document.getElementById("zipcode")).value=data[0].Zipcode;
+      (<HTMLInputElement>document.getElementById("phone")).value=data[0].PhoneNo;
+      (<HTMLInputElement>document.getElementById("patEmail")).value=data[0].Email;
     },
       err => {
         console.log("No Valid Entry");
       }
     );
-    
+
   }
 
   onSubmit() {
     console.log(this.addPatient);
   }
-  
-  changeStatusFirstName(){
-    (<HTMLInputElement>document.getElementById('firstName')).readOnly=false;
+
+  changeStatusFirstName() {
+    (<HTMLInputElement>document.getElementById('firstName')).readOnly = false;
     (<HTMLInputElement>document.getElementById('firstName')).focus();
   }
-  changeStatusFirstName1(){
-    (<HTMLInputElement>document.getElementById('firstName')).readOnly=true;
+  changeStatusFirstName1() {
+    (<HTMLInputElement>document.getElementById('firstName')).readOnly = true;
   }
-  changeStatusLastName(){
-    (<HTMLInputElement>document.getElementById('lastName')).readOnly=false;
+  changeStatusLastName() {
+    (<HTMLInputElement>document.getElementById('lastName')).readOnly = false;
     (<HTMLInputElement>document.getElementById('lastName')).focus();
   }
-  changeStatusLastName2(){
-    (<HTMLInputElement>document.getElementById('lastName')).readOnly=true;
+  changeStatusLastName2() {
+    (<HTMLInputElement>document.getElementById('lastName')).readOnly = true;
   }
-  changeStatusDOB(){
-    (<HTMLInputElement>document.getElementById('dob')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('dob')).focus();    
+  changeStatusDOB() {
+    (<HTMLInputElement>document.getElementById('dob')).readOnly = false;
+    (<HTMLInputElement>document.getElementById('dob')).focus();
   }
-  changeStatusDOB2(){
-    (<HTMLInputElement>document.getElementById('dob')).readOnly=true;
+  changeStatusDOB2() {
+    (<HTMLInputElement>document.getElementById('dob')).readOnly = true;
   }
-  changeStatusAddress(){
-    (<HTMLInputElement>document.getElementById('street')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('street')).focus();    
+  changeStatusAddress() {
+    (<HTMLInputElement>document.getElementById('street')).readOnly = false;
+    (<HTMLInputElement>document.getElementById('street')).focus();
   }
-  changeStatusAddress2(){
-    (<HTMLInputElement>document.getElementById('street')).readOnly=true;
+  changeStatusAddress2() {
+    (<HTMLInputElement>document.getElementById('street')).readOnly = true;
   }
-  changeStatusUnit(){
-    (<HTMLInputElement>document.getElementById('unit')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('unit')).focus();    
+  changeStatusUnit() {
+    (<HTMLInputElement>document.getElementById('unit')).readOnly = false;
+    (<HTMLInputElement>document.getElementById('unit')).focus();
   }
-  changeStatusUnit2(){
-    (<HTMLInputElement>document.getElementById('unit')).readOnly=true;
+  changeStatusUnit2() {
+    (<HTMLInputElement>document.getElementById('unit')).readOnly = true;
   }
-  changeStatusCity(){
-    (<HTMLInputElement>document.getElementById('City')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('City')).focus();    
+  changeStatusCity() {
+    (<HTMLInputElement>document.getElementById('City')).readOnly = false;
+    (<HTMLInputElement>document.getElementById('City')).focus();
   }
-  changeStatusCity2(){
-    (<HTMLInputElement>document.getElementById('City')).readOnly=true;
+  changeStatusCity2() {
+    (<HTMLInputElement>document.getElementById('City')).readOnly = true;
   }
-  changeStatusState(){
-    (<HTMLInputElement>document.getElementById('state')).disabled=false;
-    (<HTMLInputElement>document.getElementById('state')).focus();    
+  changeStatusState() {
+    (<HTMLInputElement>document.getElementById('state')).disabled = false;
+    (<HTMLInputElement>document.getElementById('state')).focus();
   }
-  changeStatusState2(){
-    (<HTMLInputElement>document.getElementById('state')).disabled=true;
+  changeStatusState2() {
+    (<HTMLInputElement>document.getElementById('state')).disabled = true;
   }
-  changeStatusZipcode(){
-    (<HTMLInputElement>document.getElementById('zipcode')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('zipcode')).focus();    
+  changeStatusZipcode() {
+    (<HTMLInputElement>document.getElementById('zipcode')).readOnly = false;
+    (<HTMLInputElement>document.getElementById('zipcode')).focus();
   }
-  changeStatusZipcode2(){
-    (<HTMLInputElement>document.getElementById('zipcode')).readOnly=true;
+  changeStatusZipcode2() {
+    (<HTMLInputElement>document.getElementById('zipcode')).readOnly = true;
   }
-  changeStatusPhone(){
-    (<HTMLInputElement>document.getElementById('phone')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('phone')).focus();    
+  changeStatusPhone() {
+    (<HTMLInputElement>document.getElementById('phone')).readOnly = false;
+    (<HTMLInputElement>document.getElementById('phone')).focus();
   }
-  changeStatusPhone2(){
-    (<HTMLInputElement>document.getElementById('phone')).readOnly=true;
+  changeStatusPhone2() {
+    (<HTMLInputElement>document.getElementById('phone')).readOnly = true;
   }
-  changeStatusPatEmail(){
-    (<HTMLInputElement>document.getElementById('patEmail')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('patEmail')).focus();    
+  changeStatusPatEmail() {
+    (<HTMLInputElement>document.getElementById('patEmail')).readOnly = false;
+    (<HTMLInputElement>document.getElementById('patEmail')).focus();
   }
-  changeStatusPatEmail2(){
-    (<HTMLInputElement>document.getElementById('patEmail')).readOnly=true;
+  changeStatusPatEmail2() {
+    (<HTMLInputElement>document.getElementById('patEmail')).readOnly = true;
   }
-  changeStatusNotes(){
-    (<HTMLInputElement>document.getElementById('notes')).disabled=false;
-    (<HTMLInputElement>document.getElementById('notes')).focus();    
+  changeStatusNotes() {
+    (<HTMLInputElement>document.getElementById('notes')).disabled = false;
+    (<HTMLInputElement>document.getElementById('notes')).focus();
   }
-  changeStatusNotes2(){
-    (<HTMLInputElement>document.getElementById('notes')).disabled=true;
+  changeStatusNotes2() {
+    (<HTMLInputElement>document.getElementById('notes')).disabled = true;
   }
 }
