@@ -78,7 +78,7 @@ export class EditpatientComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
       (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
       var t = data[0].DOB.split(/[- T]/);
-      this.date= new Date(t[0],t[1],t[2]);
+      this.date= t[0]+"-"+t[1]+"-"+t[2];
       (<HTMLInputElement>document.getElementById("dob")).value= this.date;
       (<HTMLInputElement>document.getElementById("gender")).value=data[0].Sex;
       (<HTMLInputElement>document.getElementById("street")).value=data[0].Street;
