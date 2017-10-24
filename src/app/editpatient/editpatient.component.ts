@@ -49,7 +49,8 @@ export class EditpatientComponent implements OnInit {
   search(){
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
-    this._datatask.searchPatient(search);
+    var data = this._datatask.searchPatient(search);
+    console.log(data);
   }
 
   onSubmit() {
