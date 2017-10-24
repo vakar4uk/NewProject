@@ -141,6 +141,10 @@ a {
     border: 2px;
 }
 
+#gender {
+    width: 150px;
+}
+
 #state {
     width:220px;
 }
