@@ -49,15 +49,15 @@ constructor(private _datatask:DataService,private _router:Router,private route:A
   onSubmit() {
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lname = (<HTMLInputElement>document.getElementById("lname")).value;
-    var dob = (<HTMLInputElement>document.getElementById("dob")).value;
+    var dob = (<HTMLInputElement>document.getElementById("dob")).valueAsDate;
     var gender = (<HTMLInputElement>document.getElementById("gender")).value;
     var street = (<HTMLInputElement>document.getElementById("street")).value;
-    //var unit = (<HTMLInputElement>document.getElementById("unit")).value;
+    var unit = (<HTMLInputElement>document.getElementById("unit")).value;
     var city = (<HTMLInputElement>document.getElementById("City")).value;
     var state = (<HTMLInputElement>document.getElementById("state")).value;
     var zip = (<HTMLInputElement>document.getElementById("zipcode")).value;
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
-    //var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
+    var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
     //if(fname != undefined && lname != undefined && dob != undefined && gender != undefined && street != undefined && city != undefined){
     this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone);
     //}
