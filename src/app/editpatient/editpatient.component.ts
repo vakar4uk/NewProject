@@ -58,7 +58,7 @@ export class EditpatientComponent implements OnInit {
   // ];
 
   public inactive: boolean = true;
-
+  public id:any;
   public conditions = [
     'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
     'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
@@ -68,6 +68,7 @@ export class EditpatientComponent implements OnInit {
   ngOnInit() {
   }
   search() {
+    //searching for person|patient
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
@@ -84,6 +85,7 @@ export class EditpatientComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("zipcode")).value=data[0].Zipcode;
       (<HTMLInputElement>document.getElementById("phone")).value=data[0].PhoneNo;
       (<HTMLInputElement>document.getElementById("patEmail")).value=data[0].Email;
+      this.id=data[0].PID;
     },
       err => {
         console.log("No Valid Entry");
@@ -93,7 +95,20 @@ export class EditpatientComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.addPatient);
+    //updating person|patient Currently missing DOB and Gender
+    var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
+    var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
+    //var dob = (<HTMLInputElement>document.getElementById("dob")).value;
+    //var gender = (<HTMLInputElement>document.getElementById("gender")).value;
+    var street = (<HTMLInputElement>document.getElementById("street")).value;
+    var unit = (<HTMLInputElement>document.getElementById("unit")).value;
+    var city = (<HTMLInputElement>document.getElementById("City")).value;
+    var state = (<HTMLInputElement>document.getElementById("state")).value;
+    var zip = (<HTMLInputElement>document.getElementById("zipcode")).value;
+    var phone = (<HTMLInputElement>document.getElementById("phone")).value;
+    var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
+    this._datatask.updatePerson(this.id,fname, lname, street, city, state, zip, phone, email);
+    //console.log(this.addPatient);
   }
 
   changeStatusFirstName() {
