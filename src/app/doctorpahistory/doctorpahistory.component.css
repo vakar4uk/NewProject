@@ -24,13 +24,13 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {        
+/* #logout {        
     margin-left: 820px;
 }
 
 #logout:hover {
         color: #D35252;
-}
+} */
 
 #dropdown-patient {
     margin-top: 2.3px;
