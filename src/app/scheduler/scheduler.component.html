@@ -24,7 +24,7 @@
               </a>  
               <ul id="dropdown-lab-menu" *dropdownMenu class="dropdown-menu" role="menu">
                   <li role="menuitem"><a routerLink="/addlabresults" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Results</a></li>
-                  <li role="menuitem"><a routerLink="#"id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Results</a></li>                  
+                  <li role="menuitem"><a routerLink="/editlabresults"id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Results</a></li>                  
                 </ul>          
         </li>    
            
@@ -41,7 +41,7 @@
   <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addLabResults">
     <div class="col-lg-12">
     <div class="container">
-      <br><h5 class="text-center">Blood Test Results</h5><hr>
+      <br><h5 class="text-center">Scheduler</h5><hr>
       <table id="table" class="table table-striped">
         <thead>
           <tr>
