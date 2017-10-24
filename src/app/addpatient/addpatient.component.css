@@ -34,6 +34,7 @@ li >  a {
 
 #dropdown-patient {
     margin-top: 2.3px;
+    width: 125px;
 }
 
 #dropdown-patient:hover {
@@ -42,6 +43,7 @@ li >  a {
 
 #dropdown-lab {
     margin-top: 2.3px;
+    width: 170px;
 }
 
 #dropdown-lab:hover {
@@ -61,7 +63,7 @@ a {
 .dropdown-menu {
     color: #bbb;
     width: 75px;
-    margin-left:170px;
+    margin-left:276px;
     background-color: #616467;
     border-style: 1px solid black;    
 }
@@ -70,7 +72,7 @@ a {
     padding: 0;
     margin-top: 0;
     width: 180px;
-    margin-left:310px;
+    margin-left:416px;
 }
 
 
@@ -199,3 +201,13 @@ input::-webkit-inner-spin-button {
  #submit {
     cursor: pointer;    
  }
+
+.nav2 {
+    font-size: 1.2em;
+    color: #bbb;   
+}
+
+li.nav-item {
+    height: 70px;
+    padding-top: 10px;
+}
