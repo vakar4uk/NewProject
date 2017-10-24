@@ -4,8 +4,8 @@ var BloodTest={
 	getAllTests:function(callback){
 		return db.query("select * from BloodTest",callback);
 	},
-	getTestByNum:function(id,callback){
-		return db.query("select * from BloodTest where ResultsNo=?",[id],callback);
+	getTestByDate:function(date,callback){
+		return db.query("select * from BloodTest where DateTaken=?",[date],callback);
 	},
 	addBloodTest:function(BloodTest,callback){
 		return db.query("insert into BloodTest values(?,?,?,?,?,?,?)",[BloodTest.ResultsNo,BloodTest.Sodium,BloodTest.Potassium,BloodTest.Calcium,BloodTest.Globulinn,BloodTest.Hemoglobin,BloodTest.Results_PatID],callback);
