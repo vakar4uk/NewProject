@@ -57,11 +57,9 @@ const appRoutes: Routes =[
     DoctorhomeComponent, 
     EditpatientComponent, 
     DoctorSearchComponent,
-    EditpatientComponent,
     AddlabresultsComponent,
     DoctorpahistoryComponent,  
-    EditpatientComponent,
-     AddlabresultsComponent, 
+    AddlabresultsComponent, 
     EditlabresultsComponent   
   ],
   imports: [
