@@ -75,7 +75,7 @@ export class EditpatientComponent implements OnInit {
       console.log(data);
       (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
       (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
-      (<HTMLInputElement>document.getElementById("dob")).valueAsDate=data[0].DOB;
+      (<HTMLInputElement>document.getElementById("dob")).valueAsDate= (<Date>data[0].DOB);
       (<HTMLInputElement>document.getElementById("gender")).value=data[0].Sex;
       (<HTMLInputElement>document.getElementById("street")).value=data[0].Street;
       (<HTMLInputElement>document.getElementById("unit")).value=data[0].Unit;
