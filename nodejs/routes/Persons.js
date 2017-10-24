@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var Person = require('../models/Person');
 
-router.get('/:fname?',function(req,res,next){
+router.get('/:name',function(req,res,next){
 	if(req.params.id){
-		Person.getPersonByFname(req.params.fname,function(err,rows){
+		Person.getPersonByFname(req.params.name,function(err,rows){
 			if(err){
 				res.json(err);
 			}
