@@ -60,7 +60,7 @@ export class DataService {
     );
 
   }
-  addPerson(fname, lname, dob, gender, street, city, state, zip, phone) {
+  addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
     const req = this.http.post(this.personUrl, {
       Fname:fname,
       Lname:lname,
@@ -71,6 +71,7 @@ export class DataService {
       State:state,
       Zipcode:zip,
       PhoneNo:phone,
+      Email:email
     })
       .subscribe(
       res => {

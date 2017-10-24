@@ -59,7 +59,7 @@ constructor(private _datatask:DataService,private _router:Router,private route:A
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
     var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
     //if(fname != undefined && lname != undefined && dob != undefined && gender != undefined && street != undefined && city != undefined){
-    this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone);
+    this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email);
     //}
     //else{
     console.log("Patient/Person Added");
