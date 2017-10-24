@@ -114,22 +114,19 @@
               
               
               <div class="form-group">
-                  <div class="input-group">
-                      <span class="input-group-addon">Gender</span>
-                      <div *ngFor="let gender of genders">
-                          <label id="gender">
-                              <input
-                                  readonly="true"
-                                  type="radio"
-                                  name="gender"
-                                  ngModel
-                                  [value]="gender"
-                                  required>
-                                  {{ gender }}
-                          </label>
-                      </div>
-                  </div>                   
-              </div><hr> <!-- Personal Information      -->
+                <div class="input-group">
+                    <span class="input-group-addon">Gender</span>
+                    <div>
+                        <select class="form-control" id="gender" name="gender" ngModel>
+                            <option value="">N/A</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+
+                                 
+                    </div>
+                </div>                   
+            </div><hr><!-- Personal Information      -->     -->
   
               <!-- Address -->
               <br><h5>Address</h5>

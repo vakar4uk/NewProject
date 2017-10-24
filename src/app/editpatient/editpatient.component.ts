@@ -59,6 +59,7 @@ export class EditpatientComponent implements OnInit {
 
   public inactive: boolean = true;
   public id:any;
+  public date:any;
   public conditions = [
     'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
     'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
@@ -76,7 +77,9 @@ export class EditpatientComponent implements OnInit {
       console.log(data);
       (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
       (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
-      (<HTMLInputElement>document.getElementById("dob")).valueAsDate= (<Date>(data[0].DOB));
+      var t = data[0].DOB.split(/[- T]/);
+      this.date= new Date(t[0],t[1],t[2]);
+      (<HTMLInputElement>document.getElementById("dob")).value= this.date;
       (<HTMLInputElement>document.getElementById("gender")).value=data[0].Sex;
       (<HTMLInputElement>document.getElementById("street")).value=data[0].Street;
       (<HTMLInputElement>document.getElementById("unit")).value=data[0].Unit;
@@ -98,8 +101,8 @@ export class EditpatientComponent implements OnInit {
     //updating person|patient Currently missing DOB and Gender
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
-    //var dob = (<HTMLInputElement>document.getElementById("dob")).value;
-    //var gender = (<HTMLInputElement>document.getElementById("gender")).value;
+    var dob = (<HTMLInputElement>document.getElementById("dob")).value;
+    var gender = (<HTMLInputElement>document.getElementById("gender")).value;
     var street = (<HTMLInputElement>document.getElementById("street")).value;
     var unit = (<HTMLInputElement>document.getElementById("unit")).value;
     var city = (<HTMLInputElement>document.getElementById("City")).value;
