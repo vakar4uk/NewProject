@@ -7,6 +7,10 @@
     color: #bbb;   
 }
 
+#search {
+    text-align: center;
+}
+
 .nav-link, .nav-link:hover {
     cursor: pointer;     
 }
