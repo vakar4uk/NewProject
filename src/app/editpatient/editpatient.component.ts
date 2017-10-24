@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { DataService} from '../backend/data.service';
+import { Router,ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
 
 
 @Component({
@@ -11,14 +14,16 @@ import { NgForm } from '@angular/forms';
 export class EditpatientComponent implements OnInit {  
 
   isCondition = false;
-  
+  constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
+    
+  }
 //  public conditions = [
 //     {name:'head', value: '1'},
     
 //   ]; 
 
   @ViewChild('f') addPatient: NgForm;
-  public genders = ['Male', 'Female'];
+  //public genders = ['Male', 'Female'];
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    
@@ -40,6 +45,10 @@ export class EditpatientComponent implements OnInit {
   ];
 
   ngOnInit() {
+  }
+  search(){
+    var search = (<HTMLInputElement>document.getElementById("search")).value;
+    this._datatask.searchPatient(search);
   }
 
   onSubmit() {

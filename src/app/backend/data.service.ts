@@ -32,7 +32,9 @@ interface person{
   PhoneNo:any;
   Email:any;
 }
-
+interface personArray{
+  [index:number]:person;
+}
 interface loginArray {
   [index: number]: login;
 }
@@ -81,6 +83,15 @@ export class DataService {
         console.log("Error occured");
       }
       );
+  }
+  searchPatient(search:any){
+    this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
+      console.log(data);
+    },
+      err => {
+        console.log("Not Connected to DB or User does not exist");
+      }
+    );
   }
   checkLogin(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
