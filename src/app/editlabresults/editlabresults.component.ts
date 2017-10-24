@@ -19,32 +19,32 @@ export class EditlabresultsComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('sodium')).readOnly=true;
   }
   changeStatusPotassium(){
-    (<HTMLInputElement>document.getElementById('lastName')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('lastName')).focus();
+    (<HTMLInputElement>document.getElementById('potassium')).readOnly=false;
+    (<HTMLInputElement>document.getElementById('potassium')).focus();
   }
   changeStatusPotassium2(){
-    (<HTMLInputElement>document.getElementById('lastName')).readOnly=true;
+    (<HTMLInputElement>document.getElementById('potassium')).readOnly=true;
   }
   changeStatusCalcium(){
-    (<HTMLInputElement>document.getElementById('dob')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('dob')).focus();    
+    (<HTMLInputElement>document.getElementById('calcium')).readOnly=false;
+    (<HTMLInputElement>document.getElementById('calcium')).focus();    
   }
   changeStatusCalcium2(){
-    (<HTMLInputElement>document.getElementById('dob')).readOnly=true;
+    (<HTMLInputElement>document.getElementById('calcium')).readOnly=true;
   }
   changeStatusGlucose(){
-    (<HTMLInputElement>document.getElementById('street')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('street')).focus();    
+    (<HTMLInputElement>document.getElementById('glucose')).readOnly=false;
+    (<HTMLInputElement>document.getElementById('glucose')).focus();    
   }
   changeStatusGlucose2(){
-    (<HTMLInputElement>document.getElementById('street')).readOnly=true;
+    (<HTMLInputElement>document.getElementById('glucose')).readOnly=true;
   }
   changeStatusHemoglobin(){
-    (<HTMLInputElement>document.getElementById('unit')).readOnly=false;
-    (<HTMLInputElement>document.getElementById('unit')).focus();    
+    (<HTMLInputElement>document.getElementById('hemoglobin')).readOnly=false;
+    (<HTMLInputElement>document.getElementById('hemoglobin')).focus();    
   }
   changeStatusHemoglobin2(){
-    (<HTMLInputElement>document.getElementById('unit')).readOnly=true;
+    (<HTMLInputElement>document.getElementById('hemoglobin')).readOnly=true;
   }
   
 

@@ -64,7 +64,7 @@
               ngModel            
               name="sodium" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusSodium()" id="btn">
+              (click)="changeStatusSodium()" id="sodium">
                 edit
               </button>
             </td>
@@ -75,13 +75,14 @@
             <td>Potassium</td>
             <td><input
               id="potassium"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusPotassium2()"
               class="col-lg-3 form-control"
               ngModel            
               name="potassium" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusPotassium()" id="btn">
+              (click)="changeStatusPotassium()" id="potassium">
                 edit
               </button>
             </td>
@@ -92,13 +93,14 @@
             <td>Calcium</td>
             <td><input
               id="calcium"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusCalcium2()"
               class="col-lg-3 form-control"
               ngModel            
               name="calcium" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusCalcium()" id="btn">
+              (click)="changeStatusCalcium()" id="calcium">
                 edit
               </button>
             </td>
@@ -109,13 +111,14 @@
             <td>Glucose</td>
             <td><input
               id="glucose"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusGlucose2()"
               class="col-lg-3 form-control"
               ngModel            
               name="glucose" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusGlucose()" id="btn">
+              (click)="changeStatusGlucose()" id="glucose">
                 edit
               </button>
             </td>
@@ -126,13 +129,14 @@
             <td>Hemoglobin</td>
             <td><input
               id="hemoglobin"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusHemoglobin2()"
               class="col-lg-3 form-control"
               ngModel            
               name="hemoglobin" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusHemoglobin()" id="btn">
+              (click)="changeStatusHemoglobin()" id="hemoglobin">
                 edit
               </button>
             </td>
