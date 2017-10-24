@@ -64,8 +64,8 @@ export class DataService {
     const req = this.http.post(this.personUrl, {
       Fname:fname,
       Lname:lname,
-      Sex:'Male',
-      DOB:'1999-10-10',
+      Sex:gender,
+      DOB:dob,
       Street:street,
       City:city,
       State:state,
