@@ -1,3 +1,21 @@
+.container {
+    background-color: #D5ECEC;
+    margin-top: 20px;
+    width: 60%;
+    height: 540px;
+    border: 2px solid rgb(44, 95, 112);
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+#table {
+    margin-top: 30px;
+}
+
+#submit {
+    cursor: pointer; 
+ }
+
 #navbar {    
     position: relative;
     width: 100%;
@@ -23,19 +41,27 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {    
-    margin-left: 1000px;  
+#logout {        
+    margin-left: 820px;
 }
 
 #logout:hover {
         color: #D35252;
 }
 
-#dropdown-button {
+#dropdown-patient {
     margin-top: 2.3px;
 }
 
-#dropdown-button:hover {
+#dropdown-patient:hover {
+    color: #DDDDAC;
+}
+
+#dropdown-lab {
+    margin-top: 2.3px;
+}
+
+#dropdown-lab:hover {
     color: #DDDDAC;
 }
 
@@ -49,10 +75,26 @@ a {
     width: 180px;
 }
 
+#dropdown-lab-menu {
+    padding: 0;
+    margin-top: 0;
+    width: 180px;
+    margin-left:310px;
+}
+
+
 .dropdown-menu {
     color: #bbb;
     width: 75px;
-    margin-left:290px;
+    margin-left:170px;
+    background-color: #616467;
+    border-style: 1px solid black;    
+}
+
+.dropdown-menu {
+    color: #bbb;
+    width: 75px;
+    margin-left:175px;
     background-color: #616467;
     border-style: 1px solid black;    
 }
@@ -77,13 +119,16 @@ a {
     color: lightgray;
     margin-bottom: 0;
 }
-#footer {
-    background-color: #46494C;
-    position: absolute;
-    color: black;
+.footer {
+    background-color: #46494C;    
+    color: black;       
+    position: relative;       
+    right: 0;
     bottom: 0;
-    width: 100%;   
-  }  
+    left: 0;            
+    text-align: center;
+    
+}
   
   footer a {
     color: #999;
@@ -101,7 +146,13 @@ a {
       margin-right: 10px;
   }
 
+  li> .active {
+    color: #0B0B28;
+    background-color: transparent;
+}
+
   i {
       padding-right: 5px;
   }
+
   
