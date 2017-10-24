@@ -4,8 +4,8 @@ var Person={
 	getAllPersons:function(callback){
 		return db.query("select * from Person",callback);
 	},
-	getPersonById:function(id,callback){
-		return db.query("select * from Person where PID=?",[id],callback);
+	getPersonByFname:function(name,callback){
+		return db.query("select * from Person where Fname=?",[name],callback);
 	},
 	addPerson:function(Person,callback){
 		return db.query("insert into Person values(?,?,?,?,?,?,?,?,?,?,?,?)",[Person.PID,Person.Fname,Person.Lname,Person.Sex,Person.DOB,Person.Street,Person.Unit,Person.City,Person.State,Person.Zipcode,Person.PhoneNo,Person.Email],callback);
