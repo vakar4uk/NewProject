@@ -18,7 +18,7 @@ export class AddpatientComponent implements OnInit {
 //   ]; 
 
   @ViewChild('f') addPatient: NgForm;
-  public genders = ['Male', 'Female'];
+  
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    

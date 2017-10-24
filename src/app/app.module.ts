@@ -5,6 +5,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 
@@ -69,7 +70,8 @@ const appRoutes: Routes =[
     AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()   
+    ModalModule.forRoot(),
+    TooltipModule.forRoot() 
   ],
   providers: [],
   bootstrap: [AppComponent]
