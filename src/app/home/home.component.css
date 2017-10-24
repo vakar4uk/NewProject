@@ -33,10 +33,7 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {     
-    margin-top: 12px;
-    margin-left: 600px;
-}
+
 
 #logout:hover {
         color: #D35252;
