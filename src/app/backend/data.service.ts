@@ -4,66 +4,80 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClient } from '@angular/common/http';
 import { Login } from '../login/login';
 import { Observable } from 'rxjs/Rx';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-  interface login{
-    UID:any;
-    Username:any;
-    Email:any;
-    Fname:any;
-    Lname:any;
-    Password:any;
-    UserLevel:any;
-  }
+interface login {
+  UID: any;
+  Username: any;
+  Email: any;
+  Fname: any;
+  Lname: any;
+  Password: any;
+  UserLevel: any;
+}
 
-interface loginArray{
-  [index:number]:login;
+interface loginArray {
+  [index: number]: login;
 }
 
 @Injectable()
 export class DataService {
 
   title = 'app';
-  personUrl="http://localhost:3000/Persons";
-  userUrl="http://localhost:3000/UserTemps";
-  constructor(private http: HttpClient, private _router:Router,private route:ActivatedRoute) {
+  personUrl = "http://localhost:3000/Persons";
+  userUrl = "http://localhost:3000/UserTemps";
+  constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
-  
 
 
-  getUser(user:any,pass:any){
-    this.http.get<loginArray>(this.userUrl+"/"+user).subscribe(data =>{
-      console.log("Username:"+data[0].Username);
-      console.log("Password:"+data[0].Password);
+
+  getUser(user: any, pass: any) {
+    this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
+      console.log("Username:" + data[0].Username);
+      console.log("Password:" + data[0].Password);
       console.log(data);
     },
-    err=>{
-      console.log("Not Connected to DB or User does not exist");
-    }
+      err => {
+        console.log("Not Connected to DB or User does not exist");
+      }
     );
 
   }
-
-  checkLogin(user:any,pass:any){
-    this.http.get<loginArray>(this.userUrl+"/"+user).subscribe(data =>{
-      if(data[0] === undefined){
+  addPerson() {
+    const req = this.http.post(this.personUrl + "/", {
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    })
+      .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
+  }
+  checkLogin(user: any, pass: any) {
+    this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
+      if (data[0] === undefined) {
         console.log("Access Denied");
       }
-      else if(data[0].Username === user && data[0].Password  === pass && data[0].UserLevel === 1){
+      else if (data[0].Username === user && data[0].Password === pass && data[0].UserLevel === 1) {
         console.log("Welcome Doctor");
         this._router.navigate(['/doctorhome']);
       }
-      else if(data[0].Username === user && data[0].Password  === pass && data[0].UserLevel != 1){
+      else if (data[0].Username === user && data[0].Password === pass && data[0].UserLevel != 1) {
         console.log("Welcome Nurse");
         this._router.navigate(['/home']);
       }
     },
-    err=>{
-      console.log("Not Connected to DB");
-    });
+      err => {
+        console.log("Not Connected to DB");
+      });
 
   }
 
