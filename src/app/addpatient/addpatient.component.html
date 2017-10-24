@@ -89,16 +89,25 @@
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Gender</span>
-                    <div *ngFor="let gender of genders">
+                    <div>
                         <label id="gender">
-                            <input
+                            <input 
+                                placeholder="Male"
                                 type="radio"
                                 name="gender"
                                 ngModel
-                                [value]="gender"
-                                required>
-                                {{ gender }}
+                                value="male"
+                                required>Male                            
                         </label>
+                        <label id="gender">
+                                <input 
+                                    placeholder="Female"
+                                    type="radio"
+                                    name="gender"
+                                    ngModel
+                                    value="female"
+                                    required>Female                            
+                        </label>                                  
                     </div>
                 </div>                   
             </div><hr> <!-- Personal Information      -->
