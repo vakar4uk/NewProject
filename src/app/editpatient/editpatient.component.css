@@ -25,12 +25,14 @@ li >  a {
 }
 
 #logout {        
-    margin-left: 820px;
+    margin-left: 600px;
+    margin-top: 12px;
 }
 
 #logout:hover {
         color: #D35252;
 }
+
 
 #dropdown-patient {
     margin-top: 2.3px;
