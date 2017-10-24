@@ -169,6 +169,7 @@
                             (blur)="changeStatusUnit2()"
                           type="text"               
                           id="unit"
+                          placeholder="#888"
                           class="col-lg-10 form-control"
                           ngModel            
                           name="unit">
@@ -211,7 +212,7 @@
                         <span class="input-group-addon">State</span>
                         <div>
                             <select disabled (blur)="ChangeStatusState2()"class="form-control" id="state" name="state" ngModel>
-                              <option value="">N/A</option>
+                              <option value="">Select...</option>
                               <option value="AK">Alaska</option>
                               <option value="AL">Alabama</option>
                               <option value="AR">Arkansas</option>
@@ -302,8 +303,9 @@
                           <div class="input-group">
                               <span class="input-group-addon">Phone</span>
                           <input
-                    (blur)="changeStatusPhone2()"                    
+                          (blur)="changeStatusPhone2()"                    
                           readonly="true"
+                          placeholder="888.888.8888"
                           type="number"               
                           id="phone"
                           class="col-lg-10 form-control"
@@ -331,6 +333,7 @@
                               class="col-lg-10 form-control"
                               ngModel            
                               name="patEmail"
+                              placeholder="john.danger.smith@wipro.com"
                               required
                               email>
                               <button type="button" class="btn btn-primary"
@@ -382,7 +385,8 @@
                           <div class="input-group">
                   <span class="input-group-addon">Notes</span>            
                           <textarea disabled name="notes" 
-                    (blur)="changeStatusNotes2()"                    
+                    (blur)="changeStatusNotes2()"    
+                          placeholder="Allergic to Azithromycin, found an unusual growth, etc."                
                           id="notes" cols="90" rows="10" ngModel></textarea>
                           <button type="button" class="btn btn-primary"
                           (click)="changeStatusNotes()"

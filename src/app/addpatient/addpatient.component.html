@@ -51,6 +51,7 @@
                 id="firstName"
                 class="col-lg-10 form-control"
                 ngModel            
+                placeholder="John"
                 name="firstName"
                 required>
                 </div>            
@@ -63,6 +64,7 @@
                   <input
                   type="text"               
                   id="lastName"
+                  placeholder="Smith"
                   class="form-control"
                   ngModel            
                   name="lastName"
@@ -112,6 +114,7 @@
                     <input
                     type="text"               
                     id="street"
+                    placeholder="1725 Slough Avenue"
                     class="col-lg-10 form-control"
                     ngModel            
                     name="street"
@@ -126,6 +129,7 @@
                         <input
                         type="text"               
                         id="unit"
+                        placeholder="#888"
                         class="col-lg-10 form-control"
                         ngModel            
                         name="unit">
@@ -139,6 +143,7 @@
                             <input
                             type="text"               
                             id="City"
+                            placeholder="Scranton"
                             class="form-control"
                             ngModel            
                             name="City"
@@ -153,7 +158,7 @@
                       <span class="input-group-addon">State</span>
                       <div>
                           <select class="form-control" id="state" name="state" ngModel>
-                            <option value="">N/A</option>
+                            <option value="">Select...</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
                             <option value="AR">Arkansas</option>
@@ -214,6 +219,7 @@
                   min="0"                
                   id="zipcode"
                   class="form-control"
+                  placeholder="18508"
                   ngModel                          
                   name="zipcode"
                   required>                   
@@ -229,6 +235,7 @@
                         <input
                         type="number"               
                         id="phone"
+                        placeholder="888.888.8888"
                         class="col-lg-10 form-control"
                         ngModel            
                         name="phone">
@@ -242,6 +249,7 @@
                             <input
                             type="email"               
                             id="patEmail"
+                            placeholder="john.danger.smith@wipro.com"
                             class="col-lg-10 form-control"
                             ngModel            
                             name="patEmail"                            
@@ -280,6 +288,7 @@
 
                 <button id="submit" 
                 class="btn btn-lg btn-success btn-block" 
+                placeholder="Allergic to beets, bears, and battlestar galactica."
                 [disabled]="!f.valid"
                 type="submit"         
                 >Submit</button>    
