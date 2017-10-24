@@ -114,6 +114,27 @@ export class DataService {
       });
 
   }
+  //********missing DOB and Gender*********
+  updatePerson(id,fname, lname, street, city, state, zip, phone, email) {
+    const req = this.http.put(this.personUrl+"/"+id, {
+      Fname:fname,
+      Lname:lname,
+      Street:street,
+      City:city,
+      State:state,
+      Zipcode:zip,
+      PhoneNo:phone,
+      Email:email
+    })
+      .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
+  }
 
 
 }
