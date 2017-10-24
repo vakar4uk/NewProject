@@ -85,11 +85,11 @@ export class DataService {
       );
   }
   searchPatient(search:any){
-    this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
-      console.log(data);
+    this.http.get<person>(this.personUrl + "/" + search).subscribe(data => {
+      console.log("Persons:"+data);
     },
       err => {
-        console.log("Not Connected to DB or User does not exist");
+        console.log("No Valid Entry");
       }
     );
   }
