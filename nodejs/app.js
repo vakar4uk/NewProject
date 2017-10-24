@@ -21,6 +21,7 @@ var Patients = require('./routes/Patients');
 var Departments = require('./routes/Departments');
 var Doctors = require('./routes/Doctors');
 var Rooms = require('./routes/Rooms');
+var BloodTests = require('./routes/BloodTests');
 var app = express();
 
 // view engine setup
@@ -52,6 +53,7 @@ app.use('/Doctors', Doctors);
 app.use('/Rooms', Rooms);
 app.use('/Patients', Patients);
 app.use('/Assignments', Assignments);
+app.use('/BloodTests', BloodTests);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
