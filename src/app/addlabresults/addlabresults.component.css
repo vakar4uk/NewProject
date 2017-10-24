@@ -37,13 +37,13 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {        
+/* #logout {        
     margin-left: 820px;
 }
 
 #logout:hover {
         color: #D35252;
-}
+} */
 
 #dropdown-patient {
     margin-top: 2.3px;
@@ -156,60 +156,13 @@ a {
     padding-bottom: 50px;    
 }
 
-/* Forms */
-.form {      
-    margin-left: 380px;    
-    padding: 10px;   
-    background-color: #D5ECEC;
-    border: 2px solid rgb(44, 95, 112);     
-    border-radius: 30px;      
-    margin-bottom: 10px;
-}
-
-.input-group > span {
-    width:115px;
-    border: 2px;
-}
-
-#state {
-    width:220px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    
-    -webkit-appearance: none;
-    margin: 0; 
-}
 
 #dropdown {
     
     margin-top: 100px;
 }
 
-#radio-button {
-    margin-left: 30px;
-    margin-top: 7px;
-}
 
-#gender {   
-    margin-top: 6px;
-    margin-left: 60px;
-}
-
-#condition {
-    margin-left: 20px;
-    width: 50px;
-}
-
-#condition {
-    text-align: left;
-    width: 450px;
-}
-
-.images-wrapper {
-    display: flex;    
- }
 
  #submit {
     cursor: pointer;    
