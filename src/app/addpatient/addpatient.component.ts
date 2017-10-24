@@ -48,9 +48,10 @@ constructor(private _datatask:DataService,private _router:Router,private route:A
 
   onSubmit() {
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
-    var lname = (<HTMLInputElement>document.getElementById("lname")).value;
-    var dob = (<HTMLInputElement>document.getElementById("dob")).valueAsDate;
+    var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
+    var dob = (<HTMLInputElement>document.getElementById("dob")).value;
     var gender = (<HTMLInputElement>document.getElementById("gender")).value;
+    console.log(gender);
     var street = (<HTMLInputElement>document.getElementById("street")).value;
     var unit = (<HTMLInputElement>document.getElementById("unit")).value;
     var city = (<HTMLInputElement>document.getElementById("City")).value;
