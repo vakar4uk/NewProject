@@ -99,22 +99,23 @@
                 </div>
             </div>
 
-
             <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon">Gender</span>
-                    <div>
-                        <select class="form-control" id="gender" name="gender" ngModel>
-                            <option value="">N/A</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-
-
+                    <div class="input-group">
+                        <span class="input-group-addon">Gender</span>
+                        <div>
+                            <select disabled (blur)="changeStatusGender2()" class="form-control" id="gender" name="gender" ngModel>
+                                <option value="" disabled selected>Select...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusGender()" [(ngModel)]="singleModel"
+                            btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
+                          edit
+                      </button>
                     </div>
                 </div>
-            </div>
-            <hr>
+                <hr>
             <!-- Personal Information      -->
 
             <!-- Address -->
