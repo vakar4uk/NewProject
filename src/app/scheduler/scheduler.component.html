@@ -82,98 +82,29 @@
           </button>
           <ul *dropdownMenu class="dropdown-menu" id="listedDoctors"role="menu">
             <li role="menuitem"><a class="dropdown-item" href="#">Beesly, Pam</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Bratton, Creed</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Flenderson, Toby</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">Halpert, Jim</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Howard, Ryan</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Hudson, Stanley</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Kapoor, Kelly</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Lapin, Phyllis</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Malone, Kevin</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">Martin, Angela</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Martinez, Oscar</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Palmer, Meredith</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">Scott, Michael</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">Schrute, Dwight</a></li>
           </ul>
       </div>
       <!-- Doctor dropdown -->
       <table id="table" class="table table-striped">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Time</th>
-            <th>Doctor</th>
-            <th>Confirm</th>
-          </tr>
-        </thead>
         <tbody>
-          <tr>
-            <td>Monday</td>
-            <td>8:00A.M.</td>
-            <td>Martin, Angela</td>
-            <td>
-                <button type="button" class="btn btn-primary"
-                (click)="changeStatusSelect()" id="btn">
-                  select
-                </button>
-            </td>
-          </tr>
-          <tr>
-              <td>Tuesday</td>
-              <td>9:00A.M.</td>
-              <td>Beesly, Pam</td>
-              <td>
-                  <button type="button" class="btn btn-primary"
-                  (click)="changeStatusSelect()" id="btn">
-                    select
-                  </button>
-              </td>
-          </tr>
-          <tr>
-              <td>Wednesday</td>
-              <td>10:00A.M.</td>
-              <td>Scott, Michael</td>
-              <td>
-                  <button type="button" class="btn btn-primary"
-                  (click)="changeStatusSelect()" id="btn">
-                    select
-                  </button>
-              </td>
-          </tr>
-          <tr>
-              <td>Thursday</td>
-              <td>11:00A.M.</td>
-              <td>Beesly, Pam</td>
-              <td>
-                  <button type="button" class="btn btn-primary"
-                  (click)="changeStatusSelect()" id="btn">
-                    select
-                  </button>
-              </td>
-          </tr>
-          <tr>
-              <td>Friday</td>
-              <td>12:00P.M.</td>
-              <td>Halpert, Jim</td>
-              <td>
-                  <button type="button" class="btn btn-primary"
-                  (click)="changeStatusSelect()" id="btn">
-                    select
-                  </button>
-              </td>
-          </tr>
-          <tr>
-              <td>Friday</td>
-              <td>1:00P.M.</td>
-              <td>Schrute, Dwight</td>
-              <td>
-                  <button type="button" class="btn btn-primary"
-                  (click)="changeStatusSelect()" id="btn">
-                    select
-                  </button>
-              </td>
-          </tr>
+            <table class="table">
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Doctor</th>
+                    <th>Confirm</th>
+                </tr>
+                <!-- <tr *ngFor="let appointment of appointments; let i = index">
+                    <td>{{day}}</td>
+                    <td>{{time}}</td>
+                    <td>{{doctor}}</td>
+                    <td><button type="button" id="confirmAppointment" (click)=""><i class="fa fa-check" aria-hidden="true"></i></button>{{i + 1}}</td>
+                </tr> -->
+            </table>`
         </tbody>
       </table> 
     </div>
