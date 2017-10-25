@@ -79,19 +79,7 @@ export class EditpatientComponent implements OnInit {
       console.log(data);
       this.pArray=data;
       console.log("Checking if data was Stored",this.pArray);
-      // (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
-      // (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
-      // var t = data[0].DOB.split(/[- T]/);
-      // this.date= t[0]+"-"+t[1]+"-"+t[2];
-      // (<HTMLInputElement>document.getElementById("dob")).value= this.date;
-      // (<HTMLInputElement>document.getElementById("gender")).value=data[0].Sex;
-      // (<HTMLInputElement>document.getElementById("street")).value=data[0].Street;
-      // (<HTMLInputElement>document.getElementById("unit")).value=data[0].Unit;
-      // (<HTMLInputElement>document.getElementById("City")).value=data[0].City;
-      // (<HTMLInputElement>document.getElementById("state")).value=data[0].State;
-      // (<HTMLInputElement>document.getElementById("zipcode")).value=data[0].Zipcode;
-      // (<HTMLInputElement>document.getElementById("phone")).value=data[0].PhoneNo;
-      // (<HTMLInputElement>document.getElementById("patEmail")).value=data[0].Email;
+
     },
       err => {
         console.log("No Valid Entry");
@@ -103,6 +91,19 @@ export class EditpatientComponent implements OnInit {
     this._datatask.getID(this.pArray[index].PID);
     console.log("Index"+index);
     console.log("PID:"+this._datatask.ID);
+    (<HTMLInputElement>document.getElementById("firstName")).value=this.pArray[index].Fname;
+    (<HTMLInputElement>document.getElementById("lastName")).value=this.pArray[index].Lname;
+    var t = this.pArray[index].DOB.split(/[- T]/);
+    this.date= t[0]+"-"+t[1]+"-"+t[2];
+    (<HTMLInputElement>document.getElementById("dob")).value= this.date;
+    (<HTMLInputElement>document.getElementById("gender")).value=this.pArray[index].Sex;
+    (<HTMLInputElement>document.getElementById("street")).value=this.pArray[index].Street;
+    (<HTMLInputElement>document.getElementById("unit")).value=this.pArray[index].Unit;
+    (<HTMLInputElement>document.getElementById("City")).value=this.pArray[index].City;
+    (<HTMLInputElement>document.getElementById("state")).value=this.pArray[index].State;
+    (<HTMLInputElement>document.getElementById("zipcode")).value=this.pArray[index].Zipcode;
+    (<HTMLInputElement>document.getElementById("phone")).value=this.pArray[index].PhoneNo;
+    (<HTMLInputElement>document.getElementById("patEmail")).value=this.pArray[index].Email;
   }
   onSubmit() {
     //updating person|patient Currently missing DOB and Gender

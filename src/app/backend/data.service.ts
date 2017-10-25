@@ -88,7 +88,7 @@ export class DataService {
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" +search);
       console.log(data);
-      //return data;
+      return data;
     },
       err => {
         console.log("No Valid Entry");
