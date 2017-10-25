@@ -30,6 +30,9 @@ import { DoctorpahistoryComponent } from './doctorpahistory/doctorpahistory.comp
 import { EditlabresultsComponent } from './editlabresults/editlabresults.component';
 import { ChartsModule } from 'ng2-charts';
 import { LabresultschartComponent } from './labresultschart/labresultschart.component';
+import { HeaderComponent } from './header/header.component';
+import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
+import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -64,7 +67,8 @@ const appRoutes: Routes =[
     DoctorpahistoryComponent,  
     AddlabresultsComponent, 
     EditlabresultsComponent, 
-    LabresultschartComponent   
+    LabresultschartComponent,   
+    HeaderComponent, StickyfooterComponent, ScrollablefooterComponent, 
   ],
   imports: [
     BrowserModule,    
