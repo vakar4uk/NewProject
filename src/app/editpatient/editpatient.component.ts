@@ -9,6 +9,9 @@ import *as myID from '../global-id';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import {TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 interface person {
   PID: any;
   Fname: any;
@@ -34,9 +37,10 @@ interface personArray {
 
 
 export class EditpatientComponent implements OnInit {
+  public modalRef: BsModalRef;
   personUrl = "http://localhost:3000/Persons";
   isCondition = false;
-  constructor(private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
+  constructor(private modalService: BsModalService,private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
 
   }
   //  public conditions = [
@@ -59,6 +63,8 @@ export class EditpatientComponent implements OnInit {
   // ];
 
   public inactive: boolean = true;
+  public isTableHidden: boolean = true;
+  public isInfoHidden: boolean = true;
   public pArray:personArray;
   public id:any;
   public date:any;
@@ -70,7 +76,10 @@ export class EditpatientComponent implements OnInit {
 
   ngOnInit() {
   }
-  search() {
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+  search(template: TemplateRef<any>) {
     //searching for person|patient
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
@@ -83,6 +92,7 @@ export class EditpatientComponent implements OnInit {
     },
       err => {
         console.log("No Valid Entry");
+        this.modalRef = this.modalService.show(template);
       }
     );
 
