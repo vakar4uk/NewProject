@@ -88,6 +88,16 @@ export class EditpatientComponent implements OnInit {
   changeStatusCity2(){
     (<HTMLInputElement>document.getElementById('City')).readOnly=true;
   }
+
+  changeStatusGender() {
+    (<HTMLInputElement>document.getElementById('gender')).disabled=false;
+    (<HTMLInputElement>document.getElementById('gender')).focus();    
+  }
+
+  changeStatusGender2() {
+    (<HTMLInputElement>document.getElementById('gender')).disabled=true;
+  }
+
   changeStatusState(){
     (<HTMLInputElement>document.getElementById('state')).disabled=false;
     (<HTMLInputElement>document.getElementById('state')).focus();    

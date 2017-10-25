@@ -40,7 +40,28 @@
   
   
   <!-- Main Content -->
-  <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">    
+  <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
+        <div class="col-lg-12 row" id="table-content">  
+                <div class="form col-lg-6 text-center">
+        <table class="table">
+                <tr>
+                    <th>#ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th> 
+                    <th>Address</th>
+                    <th>Phone</th>
+                </tr>
+                <tr *ngFor="let person of persons; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{person.firstName}}</td>
+                    <td>{{person.lastName}}</td>
+                    <td>{{person.street}}</td>
+                    <td>{{person.phone}}</td>
+                </tr>
+            </table>`  
+                </div>
+        </div>
+    
       <div class="col-lg-12 row" id="content">  
           <div class="form col-lg-6 text-center">
   
@@ -120,22 +141,24 @@
               
               
               <div class="form-group">
-                  <div class="input-group">
-                      <span class="input-group-addon">Gender</span>
-                      <div *ngFor="let gender of genders">
-                          <label id="gender">
-                              <input
-                                  readonly="true"
-                                  type="radio"
-                                  name="gender"
-                                  ngModel
-                                  [value]="gender"
-                                  required>
-                                  {{ gender }}
-                          </label>
-                      </div>
-                  </div>                   
-              </div><hr> <!-- Personal Information      -->
+                <div class="input-group">
+                    <span class="input-group-addon">Gender</span>
+                    <div>
+                        <select disabled (blur)="changeStatusGender2()" class="form-control" id="gender" name="gender" ngModel>
+                            <option value="" disabled selected>Select...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>                                 
+                    </div>
+                    <button type="button" class="btn btn-primary"
+                    id="firstNameButton"
+                    (click)="changeStatusGender()"
+                    [(ngModel)]="singleModel" btnCheckbox
+                    btnCheckboxTrue="1" btnCheckboxFalse="0">
+                      edit
+                  </button>     
+                </div>                   
+            </div><hr> <!-- Personal Information      -->
   
               <!-- Address -->
               <br><h5>Address</h5>
