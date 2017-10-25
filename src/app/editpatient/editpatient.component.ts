@@ -77,6 +77,7 @@ export class EditpatientComponent implements OnInit {
       console.log("Looking for:" + search);
       console.log(data);
       this.pArray=data;
+      console.log("Checking if data was Stored",this.pArray);
       // (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
       // (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
       // var t = data[0].DOB.split(/[- T]/);
