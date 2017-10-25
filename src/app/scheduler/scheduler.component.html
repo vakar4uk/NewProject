@@ -43,20 +43,61 @@
     <div class="container">
       <br><h5 class="text-center">Scheduler</h5><hr>
       <!-- Day of the week dropdown -->
-      
-              <div id="dayoftheweek"class="btn-group" dropdown>
-                  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-                    Day <span class="caret"></span>
-                  </button>
-                  <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
-                    <li role="menuitem"><a class="dropdown-item" href="#">Monday</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">Tuesday</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">Wednesday</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">Thursday</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">Friday</a></li>
-                  </ul>
-                </div>
+      <div id="dayoftheweek"class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Day <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
+            <li role="menuitem"><a class="dropdown-item" href="#">Monday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Tuesday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Wednesday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Thursday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Friday</a></li>
+          </ul>
+      </div>
       <!-- Day of the week dropdown -->
+      <!-- Time of day dropdown -->
+      <div id="timeofday"class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Time <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
+            <li role="menuitem"><a class="dropdown-item" href="#">8:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">9:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">10:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">11:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">12:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">1:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">2:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">3:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">4:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">5:00P.M.</a></li>
+          </ul>
+      </div>
+      <!-- Time of day dropdown -->
+      <!-- Doctor dropdown -->
+      <div id="doctor"class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Doctor <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" id="listedDoctors"role="menu">
+            <li role="menuitem"><a class="dropdown-item" href="#">Beesly, Pam</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Bratton, Creed</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Flenderson, Toby</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Halpert, Jim</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Howard, Ryan</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Hudson, Stanley</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Kapoor, Kelly</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Lapin, Phyllis</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Malone, Kevin</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Martin, Angela</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Martinez, Oscar</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Palmer, Meredith</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Scott, Michael</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Schrute, Dwight</a></li>
+          </ul>
+      </div>
+      <!-- Doctor dropdown -->
       <table id="table" class="table table-striped">
         <thead>
           <tr>
