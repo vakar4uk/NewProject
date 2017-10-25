@@ -81,11 +81,13 @@ export class EditpatientComponent implements OnInit {
   }
   search(template: TemplateRef<any>) {
     //searching for person|patient
+    
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" + search);
       console.log(data);
+      this.isTableHidden = false;
       this.pArray=data;
       console.log("Checking if data was Stored",this.pArray);
 
@@ -99,6 +101,7 @@ export class EditpatientComponent implements OnInit {
   }
   getID(index){
     this._datatask.getID(this.pArray[index].PID);
+    this.isInfoHidden = false;
     console.log("Index"+index);
     console.log("PID:"+this._datatask.ID);
     (<HTMLInputElement>document.getElementById("firstName")).value=this.pArray[index].Fname;
