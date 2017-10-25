@@ -10,3 +10,13 @@ body {
 #logout:hover {
         color: #D35252;
 }
+
+:host >>> .tooltip-inner {
+    background-color: #353535;
+     color: #8C8989;
+    }
+    :host >>> .tooltip .tooltip-arrow {
+  border-bottom-color: #353535;
+    }
+
+ 
