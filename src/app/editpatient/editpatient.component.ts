@@ -18,7 +18,12 @@ export class EditpatientComponent implements OnInit {
 //   ]; 
 
   @ViewChild('f') addPatient: NgForm;
-  public genders = ['Male', 'Female'];
+  public isSelected: boolean = true;
+
+ 
+  // if (isSelected = true) {
+  //   this.footer = "<app-scrollablefooter></app-scrollablefooter>";
+  // }
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    

@@ -18,7 +18,7 @@
                     <th>Phone</th>
                 </tr>
                 <tr *ngFor="let person of persons; let i = index">
-                    <td><button type="button" id="seleectPatient" (click)=""><i class="fa fa-check" aria-hidden="true"></i></button>{{i + 1}}</td>
+                    <td><button type="button"><i class="fa fa-check" aria-hidden="true"></i></button>{{i + 1}}</td>
                     <td>{{person.firstName}}</td>
                     <td>{{person.lastName}}</td>
                     <td>{{person.street}}</td>
@@ -28,7 +28,7 @@
         </div>
     </div>    
 
-    <div class="col-lg-12 row" id="content">
+    <div [hidden]="!isSelected" class="col-lg-12 row" id="content">
         <div class="form col-lg-6 text-center">
 
             <!-- Personal Information -->
@@ -312,4 +312,9 @@
 <!-- Main Content -->
 
 <!-- Footer -->
-<app-scrollablefooter></app-scrollablefooter>
+<div *ngIf="isSelected">
+    <app-scrollablefooter></app-scrollablefooter>
+</div>
+<div *ngIf="!isSelected">
+        <app-stickyfooter></app-stickyfooter>
+    </div>

@@ -169,3 +169,7 @@ li.nav-item {
     height: 70px;
     padding-top: 10px;
 }
+
+#date {    
+    width: 330px;
+}

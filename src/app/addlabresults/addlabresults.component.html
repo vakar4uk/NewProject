@@ -7,6 +7,18 @@
   <div class="col-lg-12">
   <div class="container">
     <br><h5 class="text-center">Blood Test Results</h5><hr>
+
+    <div id="date" class="input-group">
+        <span class="input-group-addon">Date of the test</span>
+    <input
+    type="date"
+    value=""               
+    id="testDate"    
+    class="col-lg-10 form-control"
+    ngModel            
+    name="testDate">
+    </div><hr>
+
     <table id="table" class="table table-striped">
       <thead>
         <tr>
@@ -92,4 +104,4 @@
 <!-- Page Content -->
 
 <!-- Footer -->
-<app-stickyfooter></app-stickyfooter>
+<app-scrollablefooter></app-scrollablefooter>
