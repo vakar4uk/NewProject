@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { Router, ActivatedRoute } from '@angular/router';
+import *as myID from '../global-id';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -35,7 +36,7 @@ interface personArray {
 export class EditpatientComponent implements OnInit {
   personUrl = "http://localhost:3000/Persons";
   isCondition = false;
-  constructor(private http: HttpClient, private _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
+  constructor(private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
 
   }
   //  public conditions = [
@@ -78,6 +79,7 @@ export class EditpatientComponent implements OnInit {
       console.log(data);
       this.pArray=data;
       console.log("Checking if data was Stored",this.pArray);
+      this._datatask.getID(this.pArray[0].PID);
       // (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
       // (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
       // var t = data[0].DOB.split(/[- T]/);
@@ -91,7 +93,6 @@ export class EditpatientComponent implements OnInit {
       // (<HTMLInputElement>document.getElementById("zipcode")).value=data[0].Zipcode;
       // (<HTMLInputElement>document.getElementById("phone")).value=data[0].PhoneNo;
       // (<HTMLInputElement>document.getElementById("patEmail")).value=data[0].Email;
-      this.id=data[0].PID;
     },
       err => {
         console.log("No Valid Entry");
@@ -113,7 +114,7 @@ export class EditpatientComponent implements OnInit {
     var zip = (<HTMLInputElement>document.getElementById("zipcode")).value;
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
     var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
-    this._datatask.updatePerson(this.id,fname, lname,dob,gender, street, city, state, zip, phone, email);
+    this._datatask.updatePerson(fname, lname,dob,gender, street, city, state, zip, phone, email);
     //console.log(this.addPatient);
   }
   changeStatusGender() {

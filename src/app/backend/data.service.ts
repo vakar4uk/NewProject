@@ -41,10 +41,10 @@ interface loginArray {
 
 @Injectable()
 export class DataService {
-
   title = 'app';
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
+  ID;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
@@ -88,12 +88,15 @@ export class DataService {
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" +search);
       console.log(data);
-      return data;
+      //return data;
     },
       err => {
         console.log("No Valid Entry");
       }
     );
+  }
+  getID(id:any){
+    this.ID = id;
   }
   checkLogin(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
@@ -114,9 +117,9 @@ export class DataService {
       });
 
   }
-  //********missing DOB and Gender*********
-  updatePerson(id,fname, lname, dob, gender, street, city, state, zip, phone, email) {
-    const req = this.http.put(this.personUrl+"/"+id, {
+  
+  updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
+    const req = this.http.put(this.personUrl+"/"+this.ID, {
       Fname:fname,
       Lname:lname,
       Sex:gender,
@@ -130,7 +133,7 @@ export class DataService {
     })
       .subscribe(
       res => {
-        console.log(res);
+        console.log("Update Success");
       },
       err => {
         console.log("Error occured");

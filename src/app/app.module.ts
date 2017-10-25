@@ -50,7 +50,6 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     FormsModule,
-    
     AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
