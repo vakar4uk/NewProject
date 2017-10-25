@@ -87,7 +87,12 @@ export class EditpatientComponent implements OnInit {
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" + search);
       console.log(data);
-      this.isTableHidden = false;
+      if(data[0] != undefined){
+        this.isTableHidden = false;
+      }
+      else if(data[0] === undefined){
+        this.modalRef = this.modalService.show(template);
+      }
       this.pArray=data;
       console.log("Checking if data was Stored",this.pArray);
 
