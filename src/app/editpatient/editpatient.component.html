@@ -18,7 +18,7 @@
                     <th>Phone</th>
                 </tr>
                 <tr *ngFor="let person of persons; let i = index">
-                    <td>{{i + 1}}</td>
+                    <td><button type="button" id="seleectPatient" (click)=""><i class="fa fa-check" aria-hidden="true"></i></button>{{i + 1}}</td>
                     <td>{{person.firstName}}</td>
                     <td>{{person.lastName}}</td>
                     <td>{{person.street}}</td>
@@ -26,7 +26,7 @@
                 </tr>
             </table>`
         </div>
-    </div>
+    </div>    
 
     <div class="col-lg-12 row" id="content">
         <div class="form col-lg-6 text-center">
