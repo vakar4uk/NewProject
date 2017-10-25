@@ -101,7 +101,6 @@ export class EditpatientComponent implements OnInit {
   }
   getID(){
     var stuff = (<HTMLInputElement>document.getElementById("selectPatient{{i}}")).valueAsNumber;
-    stuff = stuff - 1;
     console.log("Index"+stuff);
   }
   onSubmit() {
