@@ -93,16 +93,12 @@
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Gender</span>
-                    <div *ngFor="let gender of genders">
-                        <label id="gender">
-                            <input
-                                type="radio"
-                                name="gender"
-                                ngModel
-                                [value]="gender"
-                                required>
-                                {{ gender }}
-                        </label>
+                    <div>
+                        <select class="form-control" id="gender" name="gender" ngModel>
+                            <option value="" disabled selected>Select...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>                                 
                     </div>
                 </div>                   
             </div><hr> <!-- Personal Information      -->
@@ -161,7 +157,7 @@
                       <span class="input-group-addon">State</span>
                       <div>
                           <select class="form-control" id="state" name="state" ngModel>
-                            <option value="">Select...</option>
+                            <option value="" disabled selected>Select...</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
                             <option value="AR">Arkansas</option>
