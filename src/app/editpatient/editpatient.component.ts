@@ -115,6 +115,14 @@ export class EditpatientComponent implements OnInit {
     this._datatask.updatePerson(this.id,fname, lname,dob,gender, street, city, state, zip, phone, email);
     //console.log(this.addPatient);
   }
+  changeStatusGender() {
+    (<HTMLInputElement>document.getElementById('gender')).disabled=false;
+    (<HTMLInputElement>document.getElementById('gender')).focus();    
+  }
+
+  changeStatusGender2() {
+    (<HTMLInputElement>document.getElementById('gender')).disabled=true;
+  }
 
   changeStatusFirstName() {
     (<HTMLInputElement>document.getElementById('firstName')).readOnly = false;
