@@ -99,9 +99,10 @@ export class EditpatientComponent implements OnInit {
     );
 
   }
-  getID(){
-    var stuff = (<HTMLInputElement>document.getElementById("selectPatient{{i}}")).valueAsNumber;
-    console.log("Index"+stuff);
+  getID(index){
+    this._datatask.getID(this.pArray[index].PID);
+    console.log("Index"+index);
+    console.log("PID:"+this._datatask.ID);
   }
   onSubmit() {
     //updating person|patient Currently missing DOB and Gender
