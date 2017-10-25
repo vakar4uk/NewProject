@@ -13,7 +13,7 @@ export class LabresultschartComponent {
  public lineChartData:Array<any> = [
    {data: [65, 59, 80, 81, 56, 55], label: 'Series A'},
    {data: [28, 48, 40, 19, 86, 27], label: 'Series B'},
-   {data: [12, 32, 13, 2, 65, 84], label: 'Series C'},
+   {data: [12, 32, 133, 2, 65, 84], label: 'Series C'},
    {data: [94, 3, 67, 19, 42, 21], label: 'Series D'},
    {data: [72, 38, 87, 5, 33, 59], label: 'Series E'},
    
