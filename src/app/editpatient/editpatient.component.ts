@@ -58,6 +58,7 @@ export class EditpatientComponent implements OnInit {
   // ];
 
   public inactive: boolean = true;
+  public pArray:personArray;
   public id:any;
   public date:any;
   public conditions = [
@@ -75,6 +76,7 @@ export class EditpatientComponent implements OnInit {
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" + search);
       console.log(data);
+      this.pArray=data;
       (<HTMLInputElement>document.getElementById("firstName")).value=data[0].Fname;
       (<HTMLInputElement>document.getElementById("lastName")).value=data[0].Lname;
       var t = data[0].DOB.split(/[- T]/);

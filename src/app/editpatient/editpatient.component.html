@@ -2,118 +2,105 @@
 <nav id="navbar" class="navbar navbar-expand-md fixed-top">
     <a class="navbar-brand" routerLink="/home"><i class="fa fa-heartbeat" aria-hidden="true"></i>Wipro HMS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-      aria-expanded="false" aria-label="Toggle navigation">
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">       
-        <li class="nav-item" dropdown>
-          <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" dropdown>
+                <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
               </a>
-          <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item" ><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
-            <li role="menuitem"><a routerLink="#" id="dropdown-item" class="dropdown-item"class="dropdown-item active"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
-            <li role="menuitem"><a routerLink="/search" id="dropdown-item" class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
-          </ul>
-        </li>
-        <a id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
-      </ul>  
+                <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
+                    <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
+                    <li role="menuitem"><a routerLink="#" id="dropdown-item" class="dropdown-item" class="dropdown-item active"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
+                    <li role="menuitem"><a routerLink="/search" id="dropdown-item" class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
+                </ul>
+            </li>
+            <a id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+        </ul>
     </div>
-  </nav>    <!-- Navbar -->
-  
-  
-  <!-- Main Content -->
-  
+</nav>
+<!-- Navbar -->
 
-  <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">  
 
-    
+<!-- Main Content -->
 
-      <div class="col-lg-12 row" id="content">  
-          <div class="form col-lg-6 text-center">  
-                <input id="search" type="text" name="search" ngModel placeholder="Search.."> <hr>
-                <button type="button" class="btn btn-primary"
-                id="searchButton"
-                (click)="search()"
-                >Confirm
-        </button>        
-  
-              <!-- Personal Information -->                      
-              <h5>Personal Information</h5>
-              <div class="form-group">
-                  <label for="firstName" class="sr-only">First Name</label>
-                  <div class="input-group">
-                      <span class="input-group-addon">First Name</span>
-                  <input 
-                  id="firstName"
-                  readonly="true"
-                  (blur)="changeStatusFirstName1()"
-                  placeholder="John"
-                  type="text"               
-                  class="col-lg-10 form-control"
-                  ngModel            
-                  name="firstName"
-                  required>
-                  <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
-                  <button type="button" class="btn btn-primary"
-                          id="firstNameButton"
-                          (click)="changeStatusFirstName()"
-                          
-                          [(ngModel)]="singleModel" btnCheckbox
-                          btnCheckboxTrue="1" btnCheckboxFalse="0">
+
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
+    <div class="col-lg-12 row" id="table-content">
+        <div class="form col-lg-6 text-center">
+                <input id="search" type="text" name="search" ngModel placeholder="Search..">
+                <hr>
+                <button type="button" class="btn btn-primary" id="searchButton" (click)="search()">Confirm
+            </button>
+            <table class="table">
+                <tr>
+                    <th>#ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                </tr>
+                <tr *ngFor="let person of persons; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{person.firstName}}</td>
+                    <td>{{person.lastName}}</td>
+                    <td>{{person.street}}</td>
+                    <td>{{person.phone}}</td>
+                </tr>
+            </table>`
+        </div>
+    </div>
+
+
+    <div class="col-lg-12 row" id="content">
+        <div class="form col-lg-6 text-center">
+            
+
+            <!-- Personal Information -->
+            <h5>Personal Information</h5>
+            <div class="form-group">
+                <label for="firstName" class="sr-only">First Name</label>
+                <div class="input-group">
+                    <span class="input-group-addon">First Name</span>
+                    <input id="firstName" readonly="true" (blur)="changeStatusFirstName1()" placeholder="John" type="text" class="col-lg-10 form-control"
+                        ngModel name="firstName" required>
+                    <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
+                    <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusFirstName()" [(ngModel)]="singleModel"
+                        btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
                     edit
-                  </button> 
-                  </div>           
-              </div>
-              
-                <div class="form-group">
-                    <label for="lastName" class="sr-only">Last Name</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">Last Name</span>
-                    <input
-                    readonly="true"
-                    (blur)="changeStatusLastName2()"
-                    placeholder="Smith"
-                    type="text"               
-                    id="lastName"
-                    class="form-control"
-                    ngModel            
-                    name="lastName"
-                    required>
-                    <button type="button" class="btn btn-primary"
-                    (click)="changeStatusLastName()"
-                    [(ngModel)]="singleModel" btnCheckbox
-                    btnCheckboxTrue="1" btnCheckboxFalse="0">
+                  </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName" class="sr-only">Last Name</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Last Name</span>
+                    <input readonly="true" (blur)="changeStatusLastName2()" placeholder="Smith" type="text" id="lastName" class="form-control"
+                        ngModel name="lastName" required>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusLastName()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                       edit
-                    </button> 
-                    </div>
-                    
-                </div>   
-  
-                <div class="form-group">
-                  <label for="dob" class="sr-only">Date of Birth</label>
-                  <div class="input-group">
-                      <span class="input-group-addon">Date of Birth</span>
-                  <input
-                  readonly="true"
-                  (blur)="changeStatusDOB2()"
-                  type="date"               
-                  id="dob"
-                  class="form-control"
-                  ngModel            
-                  name="dob"
-                  required>
-                  <button type="button" class="btn btn-primary"
-                  (click)="changeStatusDOB()"
-                  [(ngModel)]="singleModel" btnCheckbox
-                  btnCheckboxTrue="1" btnCheckboxFalse="0">
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="dob" class="sr-only">Date of Birth</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Date of Birth</span>
+                    <input readonly="true" (blur)="changeStatusDOB2()" type="date" id="dob" class="form-control" ngModel name="dob" required>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusDOB()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                     edit
-                  </button> 
-                  </div>                
-              </div>
-              
-              
-              <div class="form-group">
+                  </button>
+                </div>
+            </div>
+
+
+            <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Gender</span>
                     <div>
@@ -123,87 +110,61 @@
                             <option value="Female">Female</option>
                         </select>
 
-                                 
+
                     </div>
-                </div>                   
-            </div><hr><!-- Personal Information      -->     -->
-  
-              <!-- Address -->
-              <br><h5>Address</h5>
-              <div class="form-group">
-                      <label for="street" class="sr-only">Street</label>
-                      <div class="input-group">
-                          <span class="input-group-addon">Street</span>
-                      <input
-                      readonly="true"
-                    (blur)="changeStatusAddress2()"
-                    placeholder="123 Main St"
-                      type="text"               
-                      id="street"
-                      class="col-lg-10 form-control"
-                      ngModel            
-                      name="street"
-                      required>
-                      <button type="button" class="btn btn-primary"
-                      (click)="changeStatusAddress()"
-                      [(ngModel)]="singleModel" btnCheckbox
-                      btnCheckboxTrue="1" btnCheckboxFalse="0">
+                </div>
+            </div>
+            <hr>
+            <!-- Personal Information      -->
+
+            <!-- Address -->
+            <br>
+            <h5>Address</h5>
+            <div class="form-group">
+                <label for="street" class="sr-only">Street</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Street</span>
+                    <input readonly="true" (blur)="changeStatusAddress2()" placeholder="123 Main St" type="text" id="street" class="col-lg-10 form-control"
+                        ngModel name="street" required>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusAddress()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                         edit
-                      </button> 
-                      </div>
-              </div>
-  
-              <div class="form-group">
-                          <label for="unit" class="sr-only">Unit</label>
-                          <div class="input-group">
-                              <span class="input-group-addon">Unit</span>
-                          <input
-                           readonly="true"
-                            (blur)="changeStatusUnit2()"
-                          type="text"               
-                          id="unit"
-                          class="col-lg-10 form-control"
-                          ngModel            
-                          name="unit">
-                          <button type="button" class="btn btn-primary"
-                          (click)="changeStatusUnit()"
-                          [(ngModel)]="singleModel" btnCheckbox
-                          btnCheckboxTrue="1" btnCheckboxFalse="0">
+                      </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="unit" class="sr-only">Unit</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Unit</span>
+                    <input readonly="true" (blur)="changeStatusUnit2()" type="text" id="unit" class="col-lg-10 form-control" ngModel name="unit">
+                    <button type="button" class="btn btn-primary" (click)="changeStatusUnit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                             edit
-                          </button> 
-                          </div>
-              </div>
-  
-              <div class="form-group">
-                              <label for="sreet" class="sr-only">City</label>
-                              <div class="input-group">
-                                  <span class="input-group-addon">City</span>
-                              <input
-                    (blur)="changeStatusCity2()"
-                    readonly="true"
-                              type="text"               
-                              id="City"
-                              placeholder="Bangalore"
-                              class="form-control"
-                              ngModel            
-                              name="City"
-                              required>
-                              <button type="button" class="btn btn-primary"
-                              (click)="changeStatusCity()"
-                              [(ngModel)]="singleModel" btnCheckbox
-                              btnCheckboxTrue="1" btnCheckboxFalse="0">
+                          </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sreet" class="sr-only">City</label>
+                <div class="input-group">
+                    <span class="input-group-addon">City</span>
+                    <input (blur)="changeStatusCity2()" readonly="true" type="text" id="City" placeholder="Bangalore" class="form-control" ngModel
+                        name="City" required>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusCity()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                                 edit
-                              </button> 
-                              </div>
-                              
-              </div> 
-                          
-              <div class="form-group">
-                    <label for="state" class="sr-only">State</label>                  
-                    <div class="input-group">
-                        <span class="input-group-addon">State</span>
-                        <div>
-                            <select disabled (blur)="ChangeStatusState2()"class="form-control" id="state" name="state" ngModel>
+                              </button>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="state" class="sr-only">State</label>
+                <div class="input-group">
+                    <span class="input-group-addon">State</span>
+                    <div>
+                        <select disabled (blur)="ChangeStatusState2()" class="form-control" id="state" name="state" ngModel>
                               <option value="">N/A</option>
                               <option value="AK">Alaska</option>
                               <option value="AL">Alabama</option>
@@ -258,87 +219,60 @@
                               <option value="WV">West Virginia</option>
                               <option value="WY">Wyoming</option>
                             </select>
-                          </div>     
-                          <button type="button" class="btn btn-primary"
-                          id="firstNameButton"
-                          (click)="changeStatusState()"
-                          [(ngModel)]="singleModel" btnCheckbox
-                          btnCheckboxTrue="1" btnCheckboxFalse="0">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusState()" [(ngModel)]="singleModel"
+                        btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
                             edit
-                        </button>                      
-  
+                        </button>
+
                     <span class="input-group-addon">Zipcode</span>
-                    <input
-                    (blur)="changeStatusZipcode2()"
-                    readonly="true"
-                    type="number"
-                    min="0"     
-                    placeholder="12345"           
-                    id="zipcode"
-                    class="form-control"
-                    ngModel                          
-                    name="zipcode"
-                    required>   
-                    <button type="button" class="btn btn-primary"
-                    (click)="changeStatusZipcode()"
-                    [(ngModel)]="singleModel" btnCheckbox
-                    btnCheckboxTrue="1" btnCheckboxFalse="0">
+                    <input (blur)="changeStatusZipcode2()" readonly="true" type="number" min="0" placeholder="12345" id="zipcode" class="form-control"
+                        ngModel name="zipcode" required>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusZipcode()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                       edit
-                    </button>                 
-                    </div>                  
-          </div><hr> <!-- Address -->
-  
-          <!-- Contact Information -->
-          <br><h5>Contact Information</h5>
-          <div class="form-group">
-                  <label for="phone" class="sr-only">Phone</label>
-                          <div class="input-group">
-                              <span class="input-group-addon">Phone</span>
-                          <input
-                    (blur)="changeStatusPhone2()"                    
-                          readonly="true"
-                          type="number"               
-                          id="phone"
-                          class="col-lg-10 form-control"
-                          ngModel            
-                          name="phone"
-                          required>
-                          <button type="button" class="btn btn-primary"
-                          (click)="changeStatusPhone()"
-                          [(ngModel)]="singleModel" btnCheckbox
-                          btnCheckboxTrue="1" btnCheckboxFalse="0">
+                    </button>
+                </div>
+            </div>
+            <hr>
+            <!-- Address -->
+
+            <!-- Contact Information -->
+            <br>
+            <h5>Contact Information</h5>
+            <div class="form-group">
+                <label for="phone" class="sr-only">Phone</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Phone</span>
+                    <input (blur)="changeStatusPhone2()" readonly="true" type="number" id="phone" class="col-lg-10 form-control" ngModel name="phone"
+                        required>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusPhone()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                             edit
-                          </button> 
-                          </div>
-              </div>
-  
-              <div class="form-group">
-                      <label for="patEmail" class="sr-only">Email</label>
-                              <div class="input-group">
-                                  <span class="input-group-addon">Email</span>
-                              <input
-                    (blur)="changeStatusPatEmail2()"
-                    readonly="true"
-                              type="email"               
-                              id="patEmail"
-                              class="col-lg-10 form-control"
-                              ngModel            
-                              name="patEmail"
-                              required
-                              email>
-                              <button type="button" class="btn btn-primary"
-                              (click)="changeStatusPatEmail()"
-                              [(ngModel)]="singleModel" btnCheckbox
-                              btnCheckboxTrue="1" btnCheckboxFalse="0">
+                          </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="patEmail" class="sr-only">Email</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Email</span>
+                    <input (blur)="changeStatusPatEmail2()" readonly="true" type="email" id="patEmail" class="col-lg-10 form-control" ngModel
+                        name="patEmail" required email>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusPatEmail()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
                                 edit
-                              </button> 
-                              </div>
-              </div><hr> <!-- Contact Information -->
-  
-              <!-- Medical History -->
-              <br><h5>Medical History</h5>
-              <p>Have patient had any of the following deseases or problems:</p>
-              <!-- <div class="input-group">                    
+                              </button>
+                </div>
+            </div>
+            <hr>
+            <!-- Contact Information -->
+
+            <!-- Medical History -->
+            <br>
+            <h5>Medical History</h5>
+            <p>Have patient had any of the following deseases or problems:</p>
+            <!-- <div class="input-group">                    
                       <div class="col-lg-2" *ngFor="let condition of conditions">
                           <label id="condition">
                               <input
@@ -350,12 +284,12 @@
                           </label>
                       </div>
                   </div>      -->
-                  <div class="form-group">
-                          <div class="input-group">
-                              <span class="input-group-addon">Condition</span>                          
-                              <div>
-                                  <div *ngFor="let condition of conditions; let i = index">
-                                      <label id="condition">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Condition</span>
+                    <div>
+                        <div *ngFor="let condition of conditions; let i = index">
+                            <label id="condition">
                                           <input
                                               [readonly]="true"
                                               type="checkbox"
@@ -364,53 +298,50 @@
                                               [ngModel] = "isCondition"> 
                                               {{ condition }}                                       
                                       </label>
-                                  </div>
-                              </div>
-                          </div>                   
-                      </div><hr><!-- Medical History -->
-                  
-                  <!-- Additioonal Information -->
-                  <br><h5>Additional Information</h5>
-                  <div class="form-group">
-                          <div class="input-group">
-                  <span class="input-group-addon">Notes</span>            
-                          <textarea disabled name="notes" 
-                    (blur)="changeStatusNotes2()"                    
-                          id="notes" cols="90" rows="10" ngModel></textarea>
-                          <button type="button" class="btn btn-primary"
-                          (click)="changeStatusNotes()"
-                          [(ngModel)]="singleModel" btnCheckbox
-                          btnCheckboxTrue="1" btnCheckboxFalse="0">
-                            edit
-                          </button> 
                         </div>
-                  </div>  <!-- Additioonal Information -->               
-  
-                  <button id="submit" 
-                  class="btn btn-lg btn-success btn-block" 
-                  type="submit"         
-                  >Submit</button>    
-  
-          </div>      
-                
-      </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Medical History -->
 
-<fieldset [disabled]="(killfields ? 'disabled':null)">   
-    
-    
-</fieldset>
-  </form>
-  <!-- Main Content -->
-  
-  <!-- Footer -->
-  <footer class="footer">
-      <nav id="footer" class="navbar navbar-light">
-          <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
-          <div class="row">
-          <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
-          <span><a href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-          <span><a href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
-          </div>
-        </nav>
-      </footer>
-  <!-- Footer -->
+            <!-- Additioonal Information -->
+            <br>
+            <h5>Additional Information</h5>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Notes</span>
+                    <textarea disabled name="notes" (blur)="changeStatusNotes2()" id="notes" cols="90" rows="10" ngModel></textarea>
+                    <button type="button" class="btn btn-primary" (click)="changeStatusNotes()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
+                            edit
+                          </button>
+                </div>
+            </div>
+            <!-- Additioonal Information -->
+
+            <button id="submit" class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+
+        </div>
+
+    </div>
+
+    <fieldset [disabled]="(killfields ? 'disabled':null)">
+
+
+    </fieldset>
+</form>
+<!-- Main Content -->
+
+<!-- Footer -->
+<footer class="footer">
+    <nav id="footer" class="navbar navbar-light">
+        <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
+        <div class="row">
+            <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
+            <span><a href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
+            <span><a href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
+        </div>
+    </nav>
+</footer>
+<!-- Footer -->
