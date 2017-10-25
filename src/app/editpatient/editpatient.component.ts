@@ -100,7 +100,8 @@ export class EditpatientComponent implements OnInit {
 
   }
   getID(){
-    console.log((<HTMLInputElement>document.getElementById("selectPatient")).value);
+    var stuff = (<HTMLInputElement>document.getElementById("selectPatient")).value;
+    console.log(stuff);
     this._datatask.getID(this.pArray[(<HTMLInputElement>document.getElementById("selectPatient")).value].PID);
     console.log(this._datatask.ID);
   }
