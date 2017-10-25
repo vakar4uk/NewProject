@@ -24,6 +24,28 @@ router.get('/:name?',function(req,res,next){
 		});
 	}
 });
+router.get('/:id?',function(req,res,next){
+	if(req.params.id){
+		Person.getPersonByID(req.params.id,function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+	else{
+		Person.getAllPersons(function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+});
 router.post('/',function(req,res,next){
 	Person.addPerson(req.body,function(err,count){
 		if(err){

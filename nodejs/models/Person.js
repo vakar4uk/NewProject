@@ -7,6 +7,9 @@ var Person={
 	getPersonByFname:function(name,callback){
 		return db.query("select * from Person where Fname=?",[name],callback);
 	},
+	getPersonByID:function(id,callback){
+		return db.query("select * from Person where PID=?",[id],callback);
+	},
 	addPerson:function(Person,callback){
 		return db.query("insert into Person values(?,?,?,?,?,?,?,?,?,?,?,?)",[Person.PID,Person.Fname,Person.Lname,Person.Sex,Person.DOB,Person.Street,Person.Unit,Person.City,Person.State,Person.Zipcode,Person.PhoneNo,Person.Email],callback);
 	},
