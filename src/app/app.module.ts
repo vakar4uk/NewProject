@@ -28,6 +28,9 @@ import {ScheduleModule} from 'primeng/primeng';
 import { AddlabresultsComponent } from './addlabresults/addlabresults.component';
 import { DoctorpahistoryComponent } from './doctorpahistory/doctorpahistory.component';
 import { EditlabresultsComponent } from './editlabresults/editlabresults.component';
+import { HeaderComponent } from './header/header.component';
+import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
+import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -60,7 +63,7 @@ const appRoutes: Routes =[
     AddlabresultsComponent,
     DoctorpahistoryComponent,  
     AddlabresultsComponent, 
-    EditlabresultsComponent   
+    EditlabresultsComponent, HeaderComponent, StickyfooterComponent, ScrollablefooterComponent, 
   ],
   imports: [
     BrowserModule,    

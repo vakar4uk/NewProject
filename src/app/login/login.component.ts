@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         this.link = "/doctorhome";      
       }    
       if(verify === "nurse") {
-        this.link = "/home";     
+        this.link = "/scheduler";     
       }   
     }       
   
