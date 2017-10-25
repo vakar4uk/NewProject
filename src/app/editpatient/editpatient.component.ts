@@ -70,7 +70,7 @@ export class EditpatientComponent implements OnInit {
 
   ngOnInit() {
   }
-  search() {
+  search(len) {
     //searching for person|patient
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
@@ -79,7 +79,21 @@ export class EditpatientComponent implements OnInit {
       console.log(data);
       this.pArray=data;
       console.log("Checking if data was Stored",this.pArray);
-
+      if(len === 1){
+        (<HTMLInputElement>document.getElementById("firstName")).value=this.pArray[0].Fname;
+        (<HTMLInputElement>document.getElementById("lastName")).value=this.pArray[0].Lname;
+        var t = this.pArray[0].DOB.split(/[- T]/);
+        this.date= t[0]+"-"+t[1]+"-"+t[2];
+        (<HTMLInputElement>document.getElementById("dob")).value= this.date;
+        (<HTMLInputElement>document.getElementById("gender")).value=this.pArray[0].Sex;
+        (<HTMLInputElement>document.getElementById("street")).value=this.pArray[0].Street;
+        (<HTMLInputElement>document.getElementById("unit")).value=this.pArray[0].Unit;
+        (<HTMLInputElement>document.getElementById("City")).value=this.pArray[0].City;
+        (<HTMLInputElement>document.getElementById("state")).value=this.pArray[0].State;
+        (<HTMLInputElement>document.getElementById("zipcode")).value=this.pArray[0].Zipcode;
+        (<HTMLInputElement>document.getElementById("phone")).value=this.pArray[0].PhoneNo;
+        (<HTMLInputElement>document.getElementById("patEmail")).value=this.pArray[0].Email;
+      }
     },
       err => {
         console.log("No Valid Entry");

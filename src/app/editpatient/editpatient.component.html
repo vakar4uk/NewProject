@@ -31,9 +31,9 @@
         <div class="form col-lg-6 text-center">
                 <input id="search" type="text" name="search" ngModel placeholder="Search..">
                 <hr>
-                <button type="button" class="btn btn-primary" id="searchButton" (click)="search()">Confirm
+                <button type="button" class="btn btn-primary" id="searchButton" (click)="search(pArray.length)">Confirm
             </button>
-            <table class="table">
+            <table *ngIf="pArray.length > 1" class="table">
                 <tr>
                     <th>#ID</th>
                     <th>First Name</th>
@@ -41,8 +41,9 @@
                     <th>Address</th>
                     <th>Phone</th>
                 </tr>
-                <tr *ngFor="let person of pArray; let i = index">
-                    <td><button type="button" id="selectPatient" (click)="getID(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+
+                <tr  *ngFor="let person of pArray; let i = index">
+                    <td><button type="button" id="selectPatient" (click)="getID(i,pArray.length)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
                     <td>{{person.Fname}}</td>
                     <td>{{person.Lname}}</td>
                     <td>{{person.Street}}</td>
