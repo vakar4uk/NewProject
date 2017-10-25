@@ -99,7 +99,9 @@ export class EditpatientComponent implements OnInit {
     );
 
   }
-
+  getID(){
+    this.pArray[(<HTMLInputElement>document.getElementById("selectPatient")).value].PID
+  }
   onSubmit() {
     //updating person|patient Currently missing DOB and Gender
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
