@@ -12,6 +12,10 @@ import { DataService} from './backend/data.service';
 
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
+
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +26,18 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
 import { SearchComponent } from './search/search.component';
 import { DoctorhomeComponent } from './doctorhome/doctorhome.component';
 import { EditpatientComponent } from './editpatient/editpatient.component';
+import { DoctorSearchComponent } from './doctorsearch/doctorsearch.component';
+
+import {AccordionModule} from 'primeng/primeng';     //accordion and accordion tab
+import {MenuItem} from 'primeng/primeng';            //api
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ScheduleModule} from 'primeng/primeng';
+import { AddlabresultsComponent } from './addlabresults/addlabresults.component';
+import { DoctorpahistoryComponent } from './doctorpahistory/doctorpahistory.component';
+import { EditlabresultsComponent } from './editlabresults/editlabresults.component';
+import { HeaderComponent } from './header/header.component';
+import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
+import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -32,7 +48,11 @@ const appRoutes: Routes =[
   { path: 'search', component: SearchComponent },
   { path: 'doctorhome', component: DoctorhomeComponent }, 
   { path: 'editpatient', component: EditpatientComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'doctorsearch', component: DoctorSearchComponent },
+  { path: 'addlabresults', component: AddlabresultsComponent },
+  { path: 'doctorpahistory', component: DoctorpahistoryComponent },  
+  { path: 'editlabresults', component: EditlabresultsComponent }  
 ];
 
 @NgModule({
@@ -45,7 +65,12 @@ const appRoutes: Routes =[
     SchedulerComponent,
     SearchComponent,
     DoctorhomeComponent, 
-    EditpatientComponent   
+    EditpatientComponent, 
+    DoctorSearchComponent,
+    AddlabresultsComponent,
+    DoctorpahistoryComponent,  
+    AddlabresultsComponent, 
+    EditlabresultsComponent, HeaderComponent, StickyfooterComponent, ScrollablefooterComponent, 
   ],
   imports: [
     BrowserModule,
@@ -54,7 +79,8 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()    
+    ModalModule.forRoot(),
+    TooltipModule.forRoot() 
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

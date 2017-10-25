@@ -1,25 +1,5 @@
 <!-- Navbar -->
-<nav id="navbar" class="navbar navbar-expand-md fixed-top">
-  <a class="navbar-brand" routerLink="/home"><i class="fa fa-heartbeat" aria-hidden="true"></i>Wipro HMS</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-    aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">      
-      <li class="nav-item" dropdown>
-        <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-            </a>
-        <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
-          <li role="menuitem"><a routerLink="#" id="dropdown-item" class="dropdown-item active"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
-          <li role="menuitem"><a routerLink="/editpatient"id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
-          <li role="menuitem"><a routerLink="/search" id="dropdown-item" class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
-        </ul>
-      </li>
-      <a id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
-    </ul>    
-  </div>
-</nav>  <!-- Navbar -->
+<app-header></app-header>    
 
 <!-- Main Content -->
 <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addPatient">    
@@ -37,6 +17,7 @@
                 id="firstName"
                 class="col-lg-10 form-control"
                 ngModel            
+                placeholder="John"
                 name="firstName"
                 required>
                 </div>            
@@ -49,6 +30,7 @@
                   <input
                   type="text"               
                   id="lastName"
+                  placeholder="Smith"
                   class="form-control"
                   ngModel            
                   name="lastName"
@@ -71,21 +53,19 @@
                 </div>                
             </div>
             
-            
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Gender</span>
                     <div>
                         <select class="form-control" id="gender" name="gender" ngModel>
-                            <option value="">N/A</option>
+                            <option value="" disabled selected>Select...</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                        </select>
-
-                                 
+                        </select>                                 
                     </div>
                 </div>                   
             </div><hr><!-- Personal Information      -->
+
 
             <!-- Address -->
             <br><h5>Address</h5>
@@ -96,6 +76,7 @@
                     <input
                     type="text"               
                     id="street"
+                    placeholder="1725 Slough Avenue"
                     class="col-lg-10 form-control"
                     ngModel            
                     name="street"
@@ -110,6 +91,7 @@
                         <input
                         type="text"               
                         id="unit"
+                        placeholder="#888"
                         class="col-lg-10 form-control"
                         ngModel            
                         name="unit">
@@ -123,6 +105,7 @@
                             <input
                             type="text"               
                             id="City"
+                            placeholder="Scranton"
                             class="form-control"
                             ngModel            
                             name="City"
@@ -137,7 +120,7 @@
                       <span class="input-group-addon">State</span>
                       <div>
                           <select class="form-control" id="state" name="state" ngModel>
-                            <option value="">N/A</option>
+                            <option value="" disabled selected>Select...</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
                             <option value="AR">Arkansas</option>
@@ -198,6 +181,7 @@
                   min="0"                
                   id="zipcode"
                   class="form-control"
+                  placeholder="18508"
                   ngModel                          
                   name="zipcode"
                   required>                   
@@ -213,6 +197,7 @@
                         <input
                         type="number"               
                         id="phone"
+                        placeholder="888.888.8888"
                         class="col-lg-10 form-control"
                         ngModel            
                         name="phone">
@@ -226,6 +211,7 @@
                             <input
                             type="email"               
                             id="patEmail"
+                            placeholder="john.danger.smith@wipro.com"
                             class="col-lg-10 form-control"
                             ngModel            
                             name="patEmail"                            
@@ -264,6 +250,7 @@
 
                 <button id="submit" 
                 class="btn btn-lg btn-success btn-block" 
+                placeholder="Allergic to beets, bears, and battlestar galactica."
                 [disabled]="!f.valid"
                 type="submit"         
                 >Submit</button>    
@@ -275,14 +262,4 @@
 <!-- Main Content -->
 
 <!-- Footer -->
-<footer class="footer">
-    <nav id="footer" class="navbar navbar-light">
-        <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
-        <div class="row">
-        <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
-        <span><a href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-        <span><a href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
-        </div>
-      </nav>
-    </footer>
-<!-- Footer -->
+<app-scrollablefooter></app-scrollablefooter>

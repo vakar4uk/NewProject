@@ -1,3 +1,14 @@
+.container {
+    background-color: #D5ECEC;
+    margin-top: 20px;
+    width: 70%;
+    height: 600px;
+    border: 2px solid rgb(44, 95, 112);
+    border-radius: 50px;
+    margin-bottom: 10px;
+      padding-right: 5px;
+  }
+
 #navbar {    
     position: relative;
     width: 100%;
@@ -150,11 +161,6 @@ a {
     border: 2px;
 }
 
-#gender {
-    margin-left: 0;
-    width: 150px;
-}
-
 #state {
     width:220px;
 }
@@ -177,7 +183,8 @@ input::-webkit-inner-spin-button {
 }
 
 #gender {   
-    width: 100px;   
+    margin-top: 6px;
+    margin-left: 60px;
 }
 
 #condition {

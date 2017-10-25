@@ -10,13 +10,19 @@
     cursor: pointer;     
 }
 
-#main-content {
-    
-    margin-top: 150px;
+.nav2 {
+    font-size: 1.2em;
+    color: #bbb;   
+}
+
+li.nav-item {
+    height: 70px;
+    padding-top: 10px;
 }
 
 nav > li,a:hover {
     color: #DDDDAC;
+    text-decoration: none;
 }
 
 li >  a {
@@ -24,22 +30,23 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {    
-    margin-left: 1000px;  
+#dropdown-patient {
+    margin-top: 2.3px;
+    width: 125px;
 }
 
-#logout:hover {
-        color: #D35252;
-}
-
-#dropdown-button {
-    margin-top: 2px;
-}
-
-#dropdown-button:hover {
+#dropdown-patient:hover {
     color: #DDDDAC;
 }
 
+#dropdown-lab {
+    margin-top: 2.3px;
+    width: 170px;
+}
+
+#dropdown-lab:hover {
+    color: #DDDDAC;
+}
 a {
     color: lightgray;
 }
@@ -53,11 +60,10 @@ a {
 .dropdown-menu {
     color: #bbb;
     width: 75px;
-    margin-left:290px;
+    margin-left:276px;
     background-color: #616467;
     border-style: 1px solid black;    
 }
-
 
 .dropdown-menu > li:hover {
     color: #DDDDAC;
@@ -73,6 +79,14 @@ a {
 .dropdown-item:hover {   
     background-color: transparent;
 }
+
+#dropdown-lab-menu {
+    padding: 0;
+    margin-top: 0;
+    width: 185px;
+    margin-left:420px;
+}
+
 
 #brand {
     color: lightgray;

@@ -1,25 +1,5 @@
 <!-- Navbar -->
-<nav id="navbar" class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand" routerLink="/home"><i class="fa fa-heartbeat" aria-hidden="true"></i>Wipro HMS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item" dropdown>
-                <a id="dropdown-button" dropdownToggle class="nav-link">Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-              </a>
-                <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
-                    <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
-                    <li role="menuitem"><a routerLink="#" id="dropdown-item" class="dropdown-item" class="dropdown-item active"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
-                    <li role="menuitem"><a routerLink="/search" id="dropdown-item" class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
-                </ul>
-            </li>
-            <a id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
-        </ul>
-    </div>
-</nav>
+<app-header></app-header>
 <!-- Navbar -->
 
 
@@ -139,7 +119,8 @@
                 <label for="unit" class="sr-only">Unit</label>
                 <div class="input-group">
                     <span class="input-group-addon">Unit</span>
-                    <input readonly="true" (blur)="changeStatusUnit2()" type="text" id="unit" class="col-lg-10 form-control" ngModel name="unit">
+                    <input readonly="true" (blur)="changeStatusUnit2()" type="text" id="unit" placeholder="#888" class="col-lg-10 form-control"
+                        ngModel name="unit">
                     <button type="button" class="btn btn-primary" (click)="changeStatusUnit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
@@ -167,7 +148,7 @@
                     <span class="input-group-addon">State</span>
                     <div>
                         <select disabled (blur)="ChangeStatusState2()" class="form-control" id="state" name="state" ngModel>
-                              <option value="">N/A</option>
+                              <option value="">Select...</option>
                               <option value="AK">Alaska</option>
                               <option value="AL">Alabama</option>
                               <option value="AR">Arkansas</option>
@@ -246,8 +227,8 @@
                 <label for="phone" class="sr-only">Phone</label>
                 <div class="input-group">
                     <span class="input-group-addon">Phone</span>
-                    <input (blur)="changeStatusPhone2()" readonly="true" type="number" id="phone" class="col-lg-10 form-control" ngModel name="phone"
-                        required>
+                    <input (blur)="changeStatusPhone2()" readonly="true" placeholder="888.888.8888" type="number" id="phone" class="col-lg-10 form-control"
+                        ngModel name="phone" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusPhone()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
@@ -260,7 +241,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">Email</span>
                     <input (blur)="changeStatusPatEmail2()" readonly="true" type="email" id="patEmail" class="col-lg-10 form-control" ngModel
-                        name="patEmail" required email>
+                        name="patEmail" placeholder="john.danger.smith@wipro.com" required email>
                     <button type="button" class="btn btn-primary" (click)="changeStatusPatEmail()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                                 edit
@@ -313,7 +294,8 @@
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Notes</span>
-                    <textarea disabled name="notes" (blur)="changeStatusNotes2()" id="notes" cols="90" rows="10" ngModel></textarea>
+                    <textarea disabled name="notes" (blur)="changeStatusNotes2()" placeholder="Allergic to Azithromycin, found an unusual growth, etc."
+                        id="notes" cols="90" rows="10" ngModel></textarea>
                     <button type="button" class="btn btn-primary" (click)="changeStatusNotes()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
@@ -336,14 +318,4 @@
 <!-- Main Content -->
 
 <!-- Footer -->
-<footer class="footer">
-    <nav id="footer" class="navbar navbar-light">
-        <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
-        <div class="row">
-            <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
-            <span><a href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-            <span><a href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
-        </div>
-    </nav>
-</footer>
-<!-- Footer -->
+<app-scrollablefooter></app-scrollablefooter>
