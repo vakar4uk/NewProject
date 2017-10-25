@@ -329,9 +329,9 @@
 </template>
 <!-- Footer -->
 <div *ngIf="isTableHidden || isInfoHidden">
-<app-stickyfooter></app-stickyfooter>
+    <app-stickyfooter></app-stickyfooter>
 </div>
-<div *ngIf="!isTableHidden || !isInfoHidden">
-<app-scrollablefooter></app-scrollablefooter>
+<div *ngIf="!isTableHidden && !isInfoHidden">
+    <app-scrollablefooter></app-scrollablefooter>
 </div>
     
