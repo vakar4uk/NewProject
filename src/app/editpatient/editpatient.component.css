@@ -169,8 +169,7 @@ input::-webkit-inner-spin-button {
 }
 
 #gender {   
-    margin-top: 6px;
-    margin-left: 60px;
+    width: 100px;   
 }
 
 #condition {
