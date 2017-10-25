@@ -7,6 +7,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
+import { TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
 
 
 
@@ -31,6 +35,7 @@ import { EditlabresultsComponent } from './editlabresults/editlabresults.compone
 import { HeaderComponent } from './header/header.component';
 import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
 import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
+import { AlertmessageComponent } from './alertmessage/alertmessage.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -45,7 +50,8 @@ const appRoutes: Routes =[
   { path: 'doctorsearch', component: DoctorSearchComponent },
   { path: 'addlabresults', component: AddlabresultsComponent },
   { path: 'doctorpahistory', component: DoctorpahistoryComponent },  
-  { path: 'editlabresults', component: EditlabresultsComponent }  
+  { path: 'editlabresults', component: EditlabresultsComponent },
+  { path: 'alertmessage', component: AlertmessageComponent },  
 ];
 
 @NgModule({
@@ -63,7 +69,11 @@ const appRoutes: Routes =[
     AddlabresultsComponent,
     DoctorpahistoryComponent,  
     AddlabresultsComponent, 
-    EditlabresultsComponent, HeaderComponent, StickyfooterComponent, ScrollablefooterComponent, 
+    EditlabresultsComponent, 
+    HeaderComponent, 
+    StickyfooterComponent, 
+    ScrollablefooterComponent, 
+    AlertmessageComponent, 
   ],
   imports: [
     BrowserModule,    
@@ -77,5 +87,9 @@ const appRoutes: Routes =[
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private modalService: BsModalService) {}
+  
+  public modalRef: BsModalRef;
+ }
 
