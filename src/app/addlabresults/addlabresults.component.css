@@ -1,14 +1,11 @@
 .container {
     background-color: #D5ECEC;
     margin-top: 20px;
-    width: 60%;
-    height: 540px;
     width: 70%;
-    height: 560px;
+    height: 620px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
-      padding-right: 5px;
   }
 
   #navbar {    
@@ -168,4 +165,8 @@ a {
 li.nav-item {
     height: 70px;
     padding-top: 10px;
+}
+
+#date {
+    width: 350px;
 }
