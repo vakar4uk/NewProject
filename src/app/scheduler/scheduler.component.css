@@ -84,3 +84,22 @@ input::-webkit-inner-spin-button {
     width: 300px;
  }
  
+#listedDays {
+    margin:auto;
+    padding:auto;
+}
+
+#timeofday {
+    margin:auto;
+    padding:auto;
+}
+#doctor {
+    margin:auto;
+    padding:auto;
+    width: auto;
+}
+#listedDoctors {
+    width: auto;
+    margin:auto;
+    padding:auto;
+}
