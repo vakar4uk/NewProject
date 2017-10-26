@@ -1,114 +1,5 @@
-
-#navbar {    
-    position: relative;
-    width: 100%;
-    height: 70px;
-    background-color: #616467;
-    color: #bbb;   
-}
-
-.nav2 {
-    font-size: 1.2em;
-    color: #bbb;   
-}
-
-.nav-link, .nav-link:hover {
-    cursor: pointer;     
-}
-li.nav-item {
-    height: 70px;
-    padding-top: 10px;
-}
-
-
 #main-content {    
     margin-top: 150px;
-}
-
-nav > li,a:hover {
-    color: #DDDDAC;
-    text-decoration: none;
-}
-
-li >  a {
-    margin-left: 15px;
-    font-size: 1.2em;
-}
-
-#logout {        
-    margin-left: 820px;
-}
-
-#logout:hover {
-        color: #D35252;
-}
-
-#dropdown-patient {
-    margin-top: 2.3px;
-    width: 125px;
-}
-
-#dropdown-patient:hover {
-    color: #DDDDAC;
-}
-
-#dropdown-lab {
-    margin-top: 2.3px;
-    width: 170px;
-}
-
-#dropdown-lab:hover {
-    color: #DDDDAC;
-}
-
-a {
-    color: lightgray;
-}
-
-
-.dropdown-menu {
-    color: #bbb;
-    width: 75px;
-    margin-left:276px;
-    background-color: #616467;
-    border-style: 1px solid black;    
-}
-
-#dropdown-menu {
-    padding: 0;
-    margin-top: 0;
-    width: 180px;
-}
-
-#dropdown-lab-menu {
-    padding: 0;
-    margin-top: 0;
-    width: 185px;
-    margin-left:420px;
-}
-
-
-
-
-
-.dropdown-menu > li:hover {
-    color: #DDDDAC;
-    background-color: transparent; 
-    cursor: pointer; 
-}
-
-#dropdown-item {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.dropdown-item:hover {   
-    background-color: transparent;
-}
-
-#brand {
-    color: lightgray;
-    margin-bottom: 0;
 }
 
 #search {    
@@ -141,19 +32,11 @@ a {
     text-decoration:none;
     
   }  
-
-  .row, .row > span {
-      margin-right: 10px;
-  }
-
-  i {
-      padding-right: 5px;
-  }
-
-  li> .active {
+  
+li> .active {
       color: #0B0B28;
       background-color: transparent;
-  }
+}
 
 /* Main Content */
 #content {   
@@ -195,33 +78,28 @@ input::-webkit-inner-spin-button {
     margin-top: 100px;
 }
 
-#radio-button {
-    margin-left: 30px;
-    margin-top: 7px;
-}
-
-#gender {   
-    margin-top: 6px;
-    margin-left: 60px;
-}
-
-#condition {
-    margin-left: 20px;
-    width: 50px;
-}
-
-#condition {
-    text-align: left;
-    width: 450px;
-}
-
-.images-wrapper {
-    display: flex;    
- }
-
  #submit {
     cursor: pointer;
     display: inline;
     width: 300px;
  }
  
+#listedDays {
+    margin:auto;
+    padding:auto;
+}
+
+#timeofday {
+    margin:auto;
+    padding:auto;
+}
+#doctor {
+    margin:auto;
+    padding:auto;
+    width: auto;
+}
+#listedDoctors {
+    width: auto;
+    margin:auto;
+    padding:auto;
+}

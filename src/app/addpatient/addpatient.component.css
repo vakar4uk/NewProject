@@ -24,14 +24,6 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {        
-    margin-left: 820px;
-}
-
-#logout:hover {
-        color: #D35252;
-}
-
 #dropdown-patient {
     margin-top: 2.3px;
     width: 125px;
@@ -158,6 +150,11 @@ a {
     border: 2px;
 }
 
+#gender {
+    margin-left: 0;
+    width: 150px;
+}
+
 #state {
     width:220px;
 }
@@ -180,8 +177,7 @@ input::-webkit-inner-spin-button {
 }
 
 #gender {   
-    margin-top: 6px;
-    margin-left: 60px;
+    width: 100px;   
 }
 
 #condition {
@@ -211,3 +207,20 @@ li.nav-item {
     height: 70px;
     padding-top: 10px;
 }
+
+/* Modal */
+.modal-body {
+    font-size: 2em;
+    text-align: center;
+    color: #00FF44;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {   
+    font-weight: bold;
+    color: #03541C;
+}
+/* Modal */

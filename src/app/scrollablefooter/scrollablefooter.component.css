@@ -1,0 +1,47 @@
+#brand {
+    color: lightgray;
+    margin-bottom: 0;
+}
+
+.footer {
+    background-color: #46494C;    
+    color: black;       
+    position: relative;       
+    right: 0;
+    bottom: 0;
+    left: 0;            
+    text-align: center;
+}  
+  
+footer a {
+    color: #999;
+    text-decoration:none;
+    cursor: pointer;    
+}
+  
+footer a:hover, footer a:focus {
+    color: #E1E1E1;
+    text-decoration:none;    
+}  
+
+.row, .row > span {
+      margin-right: 10px;
+}
+
+i {
+      padding-right: 5px;
+}
+
+/* social-media links */
+#linkedin:hover {      
+    color: #007bb5;
+  }
+
+  #twitter:hover {
+    color: #00aced;
+  }
+
+  #facebook:hover {
+    color: #3b5998;
+  }
+  /* social-media links */  

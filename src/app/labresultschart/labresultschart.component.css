@@ -1,0 +1,19 @@
+/* Forms */
+.form {      
+    margin-left: 380px;    
+    padding: 10px;   
+    background-color: #D5ECEC;
+    border: 2px solid rgb(44, 95, 112);     
+    border-radius: 30px;      
+    margin-bottom: 10px;
+}
+.input-group > span {
+    width:115px;
+    border: 2px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    
+    -webkit-appearance: none;
+    margin: 0; 
+}

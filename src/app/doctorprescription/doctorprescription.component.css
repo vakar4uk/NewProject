@@ -10,19 +10,13 @@
     cursor: pointer;     
 }
 
-.nav2 {
-    font-size: 1.2em;
-    color: #bbb;   
-}
-
-li.nav-item {
-    height: 70px;
-    padding-top: 10px;
+#main-content {
+    
+    margin-top: 150px;
 }
 
 nav > li,a:hover {
     color: #DDDDAC;
-    text-decoration: none;
 }
 
 li >  a {
@@ -30,17 +24,8 @@ li >  a {
     font-size: 1.2em;
 }
 
-#logout {        
-    margin-left: 820px;
-}
-
-#logout:hover {
-        color: #D35252;
-}
-
 #dropdown-patient {
     margin-top: 2.3px;
-    width: 125px;
 }
 
 #dropdown-patient:hover {
@@ -49,12 +34,12 @@ li >  a {
 
 #dropdown-lab {
     margin-top: 2.3px;
-    width: 170px;
 }
 
 #dropdown-lab:hover {
     color: #DDDDAC;
 }
+
 a {
     color: lightgray;
 }
@@ -68,10 +53,18 @@ a {
 .dropdown-menu {
     color: #bbb;
     width: 75px;
-    margin-left:276px;
+    margin-left:170px;
     background-color: #616467;
     border-style: 1px solid black;    
 }
+
+#dropdown-lab-menu {
+    padding: 0;
+    margin-top: 0;
+    width: 180px;
+    margin-left:310px;
+}
+
 
 .dropdown-menu > li:hover {
     color: #DDDDAC;
@@ -88,26 +81,23 @@ a {
     background-color: transparent;
 }
 
-#dropdown-lab-menu {
-    padding: 0;
-    margin-top: 0;
-    width: 185px;
-    margin-left:420px;
-}
-
-
 #brand {
     color: lightgray;
     margin-bottom: 0;
 }
 
-#footer {
-    background-color: #46494C;
-    position: absolute;
-    color: black;
-    bottom: 0;
-    width: 100%;   
-  }  
+    .footer {
+        background-color: #46494C;    
+        color: black;       
+        position: relative;       
+        right: 0;
+        bottom: 0;
+        left: 0;            
+        text-align: center;
+        
+    }
+
+  
   
   footer a {
     color: #999;
@@ -159,7 +149,7 @@ a {
 }
 
 #state {
-    width:180px;
+    width:220px;
 }
 
 input::-webkit-outer-spin-button,
@@ -199,8 +189,5 @@ input::-webkit-inner-spin-button {
  }
 
  #submit {
-    cursor: pointer;
-    display: inline;
-    width: 300px;
+    cursor: pointer;    
  }
- 

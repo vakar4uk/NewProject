@@ -15,9 +15,6 @@
     color: #bbb;   
 }
 
-li.nav-item {
-    width: 200px;
-}
 
 .nav-link, .nav-link:hover {
     cursor: pointer;     
@@ -34,14 +31,6 @@ nav > li,a:hover {
 li >  a {
     margin-left: 15px;
     font-size: 1.2em;
-}
-
-#logout {        
-    margin-left: 200px;
-}
-
-#logout:hover {
-        color: #D35252;
 }
 
 #dropdown-patient {
@@ -163,13 +152,5 @@ li.nav-item {
     height: 70px;
     padding-top: 10px;
 }
-
-  :host >>> .tooltip-inner {
-     background-color: #353535;
-      color: #8C8989;
-     }
-     :host >>> .tooltip .tooltip-arrow {
-   border-bottom-color: #353535;
-     }
 
   

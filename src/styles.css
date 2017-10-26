@@ -2,3 +2,21 @@
 body {    
     background-color: #D4D4D6;
 }
+#logout {        
+    margin-left: 600px;
+    margin-top: 12px;
+}
+
+#logout:hover {
+        color: #D35252;
+}
+
+:host >>> .tooltip-inner {
+    background-color: #353535;
+     color: #8C8989;
+    }
+    :host >>> .tooltip .tooltip-arrow {
+  border-bottom-color: #353535;
+    }
+
+ 

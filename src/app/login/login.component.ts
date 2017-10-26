@@ -23,6 +23,17 @@ export class LoginComponent implements OnInit {
 
 
   }
+
+  // userValidation(){
+  //   var verify = (<HTMLInputElement>document.getElementById("inputUsername")).value;    
+  //     if(verify === "doctor") {
+  //       this.link = "/doctorhome";      
+  //     }    
+  //     if(verify === "nurse") {
+  //       this.link = "/scheduler";     
+  //     }   
+  //   }       
+  
   onSubmit() {
     var user = (<HTMLInputElement>document.getElementById("inputUsername")).value;
     var pass = (<HTMLInputElement>document.getElementById("inputPassword")).value;

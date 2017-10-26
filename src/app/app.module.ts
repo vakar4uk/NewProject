@@ -14,6 +14,10 @@ import { DataService} from './backend/data.service';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
+import { TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
 
 
 
@@ -23,7 +27,6 @@ import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AddpatientComponent } from './addpatient/addpatient.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
-import { SearchComponent } from './search/search.component';
 import { DoctorhomeComponent } from './doctorhome/doctorhome.component';
 import { EditpatientComponent } from './editpatient/editpatient.component';
 import { DoctorSearchComponent } from './doctorsearch/doctorsearch.component';
@@ -35,6 +38,17 @@ import {ScheduleModule} from 'primeng/primeng';
 import { AddlabresultsComponent } from './addlabresults/addlabresults.component';
 import { DoctorpahistoryComponent } from './doctorpahistory/doctorpahistory.component';
 import { EditlabresultsComponent } from './editlabresults/editlabresults.component';
+import { ChartsModule } from 'ng2-charts';
+import { LabresultschartComponent } from './labresultschart/labresultschart.component';
+import { HeaderComponent } from './header/header.component';
+import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
+import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
+import { AlertmessageComponent } from './alertmessage/alertmessage.component';
+import { TryComponent } from './try/try.component';
+import { DoctorheaderComponent } from './doctorheader/doctorheader.component';
+import { DoctorprescriptionComponent } from './doctorprescription/doctorprescription.component';
+import { DoctorlabresultComponent } from './doctorlabresult/doctorlabresult.component';
+import { LabhistoryComponent } from './labhistory/labhistory.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -42,14 +56,19 @@ const appRoutes: Routes =[
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'addpatient', component: AddpatientComponent },
   { path: 'scheduler', component: SchedulerComponent }, 
-  { path: 'search', component: SearchComponent },
   { path: 'doctorhome', component: DoctorhomeComponent }, 
-  { path: 'editpatient', component: EditpatientComponent },
-  { path: 'search', component: SearchComponent },
+  { path: 'editpatient', component: EditpatientComponent },  
   { path: 'doctorsearch', component: DoctorSearchComponent },
   { path: 'addlabresults', component: AddlabresultsComponent },
   { path: 'doctorpahistory', component: DoctorpahistoryComponent },  
-  { path: 'editlabresults', component: EditlabresultsComponent }  
+  { path: 'editlabresults', component: EditlabresultsComponent },
+  { path: 'alertmessage', component: AlertmessageComponent },
+  { path: 'try', component: TryComponent },  
+  { path: 'doctorprescription', component: DoctorprescriptionComponent },  
+  { path: 'doctorlabresult', component: DoctorlabresultComponent },  
+  { path: 'labhistory', component: LabhistoryComponent }, 
+  { path: 'labresultschart', component: LabresultschartComponent },  
+  
 ];
 
 @NgModule({
@@ -59,30 +78,37 @@ const appRoutes: Routes =[
     HomeComponent,
     ForgotpasswordComponent,
     AddpatientComponent,
-    SchedulerComponent,
-    SearchComponent,
+    SchedulerComponent,   
     DoctorhomeComponent, 
     EditpatientComponent, 
     DoctorSearchComponent,
-    EditpatientComponent,
     AddlabresultsComponent,
     DoctorpahistoryComponent,  
-    EditpatientComponent,
-     AddlabresultsComponent, 
-    EditlabresultsComponent   
+    AddlabresultsComponent, 
+    EditlabresultsComponent, 
+    HeaderComponent, 
+    StickyfooterComponent, 
+    ScrollablefooterComponent, 
+    AlertmessageComponent, TryComponent, DoctorheaderComponent, DoctorprescriptionComponent, DoctorlabresultComponent, LabhistoryComponent, 
+    LabresultschartComponent
   ],
   imports: [
-    BrowserModule,    
-    FormsModule,    
+    BrowserModule,
+    FormsModule,
     AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
-    TooltipModule.forRoot() 
+    TooltipModule.forRoot(),
+    ChartsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private modalService: BsModalService) {}
+  
+  public modalRef: BsModalRef;
+ }
 

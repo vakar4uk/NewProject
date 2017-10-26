@@ -1,0 +1,143 @@
+<!-- Navbar -->
+<app-doctorheader></app-doctorheader>
+
+
+<!-- Page Content -->
+
+<!-- Page Content -->
+
+<!-- Page Content -->
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addLabResults">
+  <div class="col-lg-12">
+  <div class="container">
+    <br><h5 class="text-center">Blood Test Results</h5><hr>
+    <table id="table" class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Test</th>
+          <th>Value 2016</th>
+          <th>Value 2017</th>
+          <th>Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Sodium</td>
+          <td><input
+            type="number"  min="0" step="1"            
+            id="sodium"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="sodium" required>
+          </td>
+          <td><input
+            type="number"  min="0" step="1"            
+            id="sodium"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="sodium" required>
+          </td>
+          <td>135 - 145</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Potassium</td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="potassium"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="potassium" required>
+          </td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="potassium"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="potassium" required>
+          </td>
+          <td>3.5 - 5.2</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Calcium</td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="calcium"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="calcium" required>
+          </td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="calcium"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="calcium" required>
+          </td>
+          <td>8.5 - 10.6</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Glucose</td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="Glucose"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="Glucose" required>
+          </td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="Glucose"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="Glucose" required>
+          </td>
+          <td>3.5 - 5.5</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Hemoglobin</td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="hemoglobin"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="hemoglobin" required>
+          </td>
+          <td><input
+            type="number"  min="0" step="0.1"            
+            id="hemoglobin"
+            class="col-lg-3 form-control"
+            ngModel            
+            name="hemoglobin" required>
+          </td>
+          <td>13.8 - 17.2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="submit" (click)="onSubmit"
+    class="btn btn-lg btn-success btn-block" 
+    [disabled]="!f.valid"
+    type="submit"         
+    >Submit</button>    
+  </div>
+  </div>
+</form>
+
+<!-- Page Content -->
+
+
+
+
+
+  <!-- Footer -->
+
+  <app-scrollablefooter></app-scrollablefooter>
+
+
+  <!-- Footer -->

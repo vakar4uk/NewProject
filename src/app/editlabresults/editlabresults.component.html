@@ -1,49 +1,70 @@
 <!-- Navbar -->
-<nav id="navbar" class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand" routerLink="/home"><i class="fa fa-heartbeat" aria-hidden="true"></i>Wipro HMS</a>
-    <a class="nav2" routerLink="/scheduler"><i class="fa fa-calendar" aria-hidden="true"style = "display:inline"></i>Scheduler</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">        
-          <li class="nav-item" dropdown style = "display:inline">
-            <a id="dropdown-patient" dropdownToggle class="nav-link"><i class="fa fa-user-md" aria-hidden="true"></i>
-              Patient<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                </a>  
-                <ul id="dropdown-menu" *dropdownMenu class="dropdown-menu" role="menu">
-                    <li role="menuitem"><a routerLink="/addpatient" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Patient</a></li>
-                    <li role="menuitem"><a routerLink="/editpatient"id="dropdown-item" class="dropdown-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Patient</a></li>
-                    <li role="menuitem"><a routerLink="/search"  id="dropdown-item"class="dropdown-item"><i class="fa fa-search" aria-hidden="true"></i>Search Patient</a></li>
-                  </ul>          
-          </li>        
-  
-          <li class="nav-item" dropdown style = "display:inline">
-            <a id="dropdown-lab" dropdownToggle class="nav-link"><i class="fa fa-flask" aria-hidden="true"></i>
-              Lab Results<span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                </a>  
-                <ul id="dropdown-lab-menu" *dropdownMenu class="dropdown-menu" role="menu">
-                    <li role="menuitem"><a routerLink="/addlabresults" id="dropdown-item" class="dropdown-item"><i class="fa fa-plus" aria-hidden="true"></i>Add Results</a></li>
-                    <li role="menuitem"><a routerLink="/editlabresults"id="dropdown-item" class="dropdown-item active"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Results</a></li>                  
-                  </ul>          
-          </li>   
-           
-          <a  id="logout" class="nav-link" routerLink="/"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>      
-      </ul>
-      <!-- <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
-    </div>
-  </nav>   <!-- Navbar -->
-  
+<app-header></app-header>
+
   <!-- Page Content -->
   <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addLabResults">
-    <div class="col-lg-12">
-    <div class="container">
-      <br><h5 class="text-center">Blood Test Results</h5><hr>
+    <div class="col-lg-12" id="table-content">
+        <div class="form col-lg-6 text-center"> 
+        <h5 class="text-center">EDIT Lab Results</h5><hr>
+
+      <input autofocus id="search" type="text" name="search" ngModel placeholder="Search..">                
+      <button class="btn btn-outline-info" type="button" id="searchButton" (click)="search(template)"><i class="fa fa-search" aria-hidden="true"></i></button>
+      
+      <table [hidden]="isTableHidden" class="table">
+          <tr>
+              <th>Select</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>Phone</th>
+          </tr>
+
+          <tr  *ngFor="let person of pArray; let i = index">
+              <td><button type="button" id="selectPatient" (click)="getID(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+              <td>{{person.Fname}}</td>
+              <td>{{person.Lname}}</td>
+              <td>{{person.Street}}</td>
+              <td>{{person.PhoneNo}}</td>
+          </tr>
+      </table>
+    </div>
+  </div>   
+
+  <div [hidden]="isInfoHidden" class="col-lg-12">
+      <div class="container">
+
+      <div id="date" class="input-group">
+        <span id="date-text" class="input-group-addon">Date of the test</span>
+    <input
+    readonly="true"
+    type="date"
+    value=""               
+    id="testDate"    
+    class="col-lg-11 form-control"
+    ngModel            
+    name="testDate">
+    </div><hr>
+    
+    <div id="date" class="form-group">
+        <label for="firstName" class="sr-only">First Name</label>
+        <div class="input-group">
+            <span class="input-group-addon">First Name</span>
+            <input id="firstName" readonly="true" type="text" class="col-lg-10 form-control"
+                ngModel name="firstName" required>      
+        </div>
+    </div>
+
+    <div id="date" class="form-group">
+        <label for="lastName" class="sr-only">Last Name</label>
+        <div class="input-group">
+            <span class="input-group-addon">Last Name</span>
+            <input readonly="true" (blur)="changeStatusLastName2()" type="text" id="lastName" class="form-control"
+                ngModel name="lastName" required>            
+        </div>  
+    </div><hr>
+
       <table id="table" class="table table-striped">
-        <thead>
+         <thead>
           <tr>
             <th>#</th>
             <th>Test</th>
@@ -64,7 +85,7 @@
               ngModel            
               name="sodium" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusSodium()" id="btn">
+              (click)="changeStatusSodium()" id="sodium">
                 edit
               </button>
             </td>
@@ -75,13 +96,14 @@
             <td>Potassium</td>
             <td><input
               id="potassium"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusPotassium2()"
               class="col-lg-3 form-control"
               ngModel            
               name="potassium" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusPotassium()" id="btn">
+              (click)="changeStatusPotassium()" id="potassium">
                 edit
               </button>
             </td>
@@ -92,13 +114,14 @@
             <td>Calcium</td>
             <td><input
               id="calcium"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusCalcium2()"
               class="col-lg-3 form-control"
               ngModel            
               name="calcium" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusCalcium()" id="btn">
+              (click)="changeStatusCalcium()" id="calcium">
                 edit
               </button>
             </td>
@@ -109,13 +132,14 @@
             <td>Glucose</td>
             <td><input
               id="glucose"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusGlucose2()"
               class="col-lg-3 form-control"
               ngModel            
               name="glucose" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusGlucose()" id="btn">
+              (click)="changeStatusGlucose()" id="glucose">
                 edit
               </button>
             </td>
@@ -126,13 +150,14 @@
             <td>Hemoglobin</td>
             <td><input
               id="hemoglobin"
+              readonly="true"
               type="number"  min="0" step="0.1"            
               (blur)="changeStatusHemoglobin2()"
               class="col-lg-3 form-control"
               ngModel            
               name="hemoglobin" required style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusHemoglobin()" id="btn">
+              (click)="changeStatusHemoglobin()" id="hemoglobin">
                 edit
               </button>
             </td>
@@ -153,14 +178,10 @@
   <!-- Page Content -->
   
   <!-- Footer -->
-  <footer class="footer">
-      <nav id="footer" class="navbar navbar-light">
-          <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
-          <div class="row">
-          <span><a href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
-          <span><a href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-          <span><a href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
-          </div>
-        </nav>
-      </footer>
-  <!-- Footer -->
+<!-- Footer -->
+<div *ngIf="isTableHidden || isInfoHidden">
+    <app-stickyfooter></app-stickyfooter>
+</div>
+<div *ngIf="!isTableHidden && !isInfoHidden">
+    <app-scrollablefooter></app-scrollablefooter>
+</div>

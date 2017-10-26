@@ -3,6 +3,10 @@ import { NgForm } from '@angular/forms';
 import { DataService} from '../backend/data.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
+import {TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
 
 @Component({
   selector: 'app-addpatient',
@@ -11,18 +15,17 @@ import { Subscription } from 'rxjs/Rx';
 })
 
 export class AddpatientComponent implements OnInit {  
-
+  public modalRef: BsModalRef;
   isCondition: false;
   
 //  public conditions = [
 //     {name:'head', value: '1'},
     
 //   ]; 
-constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
+constructor(private modalService: BsModalService,private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
 }
   @ViewChild('f') addPatient: NgForm;
-  
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    
@@ -46,12 +49,11 @@ constructor(private _datatask:DataService,private _router:Router,private route:A
   ngOnInit() {    
   }
 
-  onSubmit() {
+  onSubmit(template: TemplateRef<any>) {
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
     var dob = (<HTMLInputElement>document.getElementById("dob")).value;
     var gender = (<HTMLInputElement>document.getElementById("gender")).value;
-    console.log(gender);
     var street = (<HTMLInputElement>document.getElementById("street")).value;
     var unit = (<HTMLInputElement>document.getElementById("unit")).value;
     var city = (<HTMLInputElement>document.getElementById("City")).value;
@@ -60,10 +62,12 @@ constructor(private _datatask:DataService,private _router:Router,private route:A
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
     var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
     //if(fname != undefined && lname != undefined && dob != undefined && gender != undefined && street != undefined && city != undefined){
-    this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone);
+    this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email);
     //}
     //else{
     console.log("Patient/Person Added");
+    this._datatask.getIDNewPat(phone);
+    this.modalRef=this.modalService.show(template);
     //}
     console.log(this.addPatient);
   }

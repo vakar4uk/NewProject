@@ -32,21 +32,24 @@ interface person{
   PhoneNo:any;
   Email:any;
 }
-
+interface personArray{
+  [index:number]:person;
+}
 interface loginArray {
   [index: number]: login;
 }
 
 @Injectable()
 export class DataService {
-
   title = 'app';
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
+  bloodUrl = "http://localhost:3000/BloodTests"
+  ID;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
-
+  
 
   getUser(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
@@ -60,7 +63,7 @@ export class DataService {
     );
 
   }
-  addPerson(fname, lname, dob, gender, street, city, state, zip, phone) {
+  addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
     const req = this.http.post(this.personUrl, {
       Fname:fname,
       Lname:lname,
@@ -71,6 +74,7 @@ export class DataService {
       State:state,
       Zipcode:zip,
       PhoneNo:phone,
+      Email:email
     })
       .subscribe(
       res => {
@@ -80,6 +84,31 @@ export class DataService {
         console.log("Error occured");
       }
       );
+  }
+  searchPatient(search:any){
+    this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
+      console.log("Looking for:" +search);
+      console.log(data);
+      return data;
+    },
+      err => {
+        console.log("No Valid Entry");
+      }
+    );
+  }
+  getID(id:any){
+    this.ID = id;
+  }
+  getIDNewPat(phone:any){
+    this.http.get<personArray>(this.personUrl + "/" + phone).subscribe(data => {
+      console.log("Looking for: " +phone);
+      console.log(data);
+      this.ID = data[0].PID;
+    },
+      err => {
+        console.log("Couldn't find: "+phone);
+      }
+    );
   }
   checkLogin(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
@@ -99,6 +128,48 @@ export class DataService {
         console.log("Not Connected to DB");
       });
 
+  }
+  
+  updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
+    const req = this.http.put(this.personUrl+"/"+this.ID, {
+      Fname:fname,
+      Lname:lname,
+      Sex:gender,
+      DOB:dob,
+      Street:street,
+      City:city,
+      State:state,
+      Zipcode:zip,
+      PhoneNo:phone,
+      Email:email
+    })
+      .subscribe(
+      res => {
+        console.log("Update Success");
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
+  }
+  addBloodT(sod, pot, cal, glu, hem, resultPid, date) {
+    const req = this.http.post(this.bloodUrl, {
+      Sodium:sod,
+      Potassium:pot,
+      Calcium:cal,
+      Glucose:glu,
+      Hemoglobin:hem,
+      Results_PID:resultPid,
+      DateTaken:date
+    })
+      .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
   }
 
 
