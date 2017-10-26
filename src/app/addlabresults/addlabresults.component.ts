@@ -94,7 +94,7 @@ export class AddlabresultsComponent implements OnInit {
     this.isInfoHidden = false;
   }
   onSubmit(template: TemplateRef<any>) {
-    var date = (<HTMLInputElement>document.getElementById("date")).value;
+    var date = (<HTMLInputElement>document.getElementById("testDate")).value;
     var sodium=(<HTMLInputElement>document.getElementById("sodium")).value;
     var potassium= (<HTMLInputElement>document.getElementById("potassium")).value;
     var calcium=(<HTMLInputElement>document.getElementById("calcium")).value;
