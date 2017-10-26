@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { DataService} from '../backend/data.service';
+import { Router,ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-addpatient',
@@ -16,9 +18,10 @@ export class AddpatientComponent implements OnInit {
 //     {name:'head', value: '1'},
     
 //   ]; 
-
-  @ViewChild('f') addPatient: NgForm;
+constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
+}
+  @ViewChild('f') addPatient: NgForm;
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    
@@ -43,6 +46,24 @@ export class AddpatientComponent implements OnInit {
   }
 
   onSubmit() {
+    var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
+    var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
+    var dob = (<HTMLInputElement>document.getElementById("dob")).value;
+    var gender = (<HTMLInputElement>document.getElementById("gender")).value;
+    console.log(gender);
+    var street = (<HTMLInputElement>document.getElementById("street")).value;
+    var unit = (<HTMLInputElement>document.getElementById("unit")).value;
+    var city = (<HTMLInputElement>document.getElementById("City")).value;
+    var state = (<HTMLInputElement>document.getElementById("state")).value;
+    var zip = (<HTMLInputElement>document.getElementById("zipcode")).value;
+    var phone = (<HTMLInputElement>document.getElementById("phone")).value;
+    var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
+    //if(fname != undefined && lname != undefined && dob != undefined && gender != undefined && street != undefined && city != undefined){
+    this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email);
+    //}
+    //else{
+    console.log("Patient/Person Added");
+    //}
     console.log(this.addPatient);
   }
 

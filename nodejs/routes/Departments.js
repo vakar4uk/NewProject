@@ -1,0 +1,57 @@
+var express = require('express');
+var router = express.Router();
+var Department = require('../models/Department');
+
+router.get('/:id?',function(req,res,next){
+	if(req.params.id){
+		Department.getDepartmentById(req.params.id,function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+	else{
+		Department.getAllDepartments(function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+});
+router.post('/',function(req,res,next){
+	Department.addDepartment(req.body,function(err,count){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(req.body);
+		}
+	});
+});
+router.delete('/:id',function(req,res,next){
+	Department.removeDepartment(req.params.id,function(err,count){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(count);
+		}
+	});
+});
+router.put('/:id',function(req,res,next){
+	Department.updateDepartment(req.params.id,req.body,function(err,rows){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(rows);
+		}
+	});
+});
+module.exports=router;

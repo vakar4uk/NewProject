@@ -4,8 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
+
+//import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+import { DataService} from './backend/data.service';
+
+
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
+import { TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 
 
@@ -33,6 +44,8 @@ import { LabresultschartComponent } from './labresultschart/labresultschart.comp
 import { HeaderComponent } from './header/header.component';
 import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
 import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
+import { AlertmessageComponent } from './alertmessage/alertmessage.component';
+import { TryComponent } from './try/try.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -48,7 +61,12 @@ const appRoutes: Routes =[
   { path: 'addlabresults', component: AddlabresultsComponent },
   { path: 'doctorpahistory', component: DoctorpahistoryComponent },  
   { path: 'editlabresults', component: EditlabresultsComponent },
+<<<<<<< HEAD
   { path: 'labresultschart', component: LabresultschartComponent },    
+=======
+  { path: 'alertmessage', component: AlertmessageComponent },
+  { path: 'try', component: TryComponent },  
+>>>>>>> master
 ];
 
 @NgModule({
@@ -67,21 +85,33 @@ const appRoutes: Routes =[
     DoctorpahistoryComponent,  
     AddlabresultsComponent, 
     EditlabresultsComponent, 
+<<<<<<< HEAD
     LabresultschartComponent,   
     HeaderComponent, StickyfooterComponent, ScrollablefooterComponent, 
+=======
+    HeaderComponent, 
+    StickyfooterComponent, 
+    ScrollablefooterComponent, 
+    AlertmessageComponent, TryComponent, 
+>>>>>>> master
   ],
   imports: [
-    BrowserModule,    
-    FormsModule,    
+    BrowserModule,
+    FormsModule,
     AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
     ChartsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private modalService: BsModalService) {}
+  
+  public modalRef: BsModalRef;
+ }
 

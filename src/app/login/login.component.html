@@ -8,7 +8,7 @@
             <label for="inputUsername" class="sr-only">Username</label>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-            <input (blur)="userValidation()"
+            <input
             type="text"
             placeholder="Username"
             id="inputUsername"
@@ -45,11 +45,7 @@
             class="btn btn-lg btn-primary btn-block" 
             type="submit"
             [disabled]="!f.valid"
-            routerLink="{{ link }}"
-            >Log in</button>       
-            
-            
-
+            >Log in</button>
             <p class="message">Forgot your password? <a routerLink="/forgotpassword">Reset password</a></p>
           </form>    
         </div> <!-- /Login container -->
