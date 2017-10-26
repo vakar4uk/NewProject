@@ -23,8 +23,8 @@ router.get('/:name?',function(req,res,next){
 			}
 		});
 	}
-});
-router.get('/:id?',function(req,res,next){
+}); 
+/*router.get('/:id?',function(req,res,next){
 	if(req.params.id){
 		Person.getPersonByID(req.params.id,function(err,rows){
 			if(err){
@@ -45,7 +45,29 @@ router.get('/:id?',function(req,res,next){
 			}
 		});
 	}
-});
+});*/
+/*router.get('/:phone?',function(req,res,next){
+	if(req.params.phone){
+		Person.getPersonByPhoneNo(req.params.phone,function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+	else{
+		Person.getAllPersons(function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+});*/
 router.post('/',function(req,res,next){
 	Person.addPerson(req.body,function(err,count){
 		if(err){
