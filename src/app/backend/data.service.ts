@@ -44,11 +44,12 @@ export class DataService {
   title = 'app';
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
+  bloodUrl = "http://localhost:3000/BloodTests"
   ID;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
-
+  
 
   getUser(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {

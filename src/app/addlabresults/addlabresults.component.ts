@@ -5,7 +5,6 @@ import { Subscription } from 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { Router, ActivatedRoute } from '@angular/router';
-import *as myID from '../global-id';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -29,7 +28,11 @@ export class AddlabresultsComponent implements OnInit {
   }
 
   onSubmit() {
-
+    var sodium=(<HTMLInputElement>document.getElementById("sodium")).value;
+    var potassium= (<HTMLInputElement>document.getElementById("potassium")).value;
+    var calcium=(<HTMLInputElement>document.getElementById("calcium")).value;
+    var globulinn=(<HTMLInputElement>document.getElementById("globulinn")).value;
+    var hemoglobin=(<HTMLInputElement>document.getElementById("hemoglobin")).value;
     console.log(this.addLabResults);
   }
 
