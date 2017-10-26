@@ -207,3 +207,20 @@ li.nav-item {
     height: 70px;
     padding-top: 10px;
 }
+
+/* Modal */
+.modal-body {
+    font-size: 2em;
+    text-align: center;
+    color: #00FF44;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {   
+    font-weight: bold;
+    color: #03541C;
+}
+/* Modal */
