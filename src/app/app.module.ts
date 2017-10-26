@@ -61,12 +61,8 @@ const appRoutes: Routes =[
   { path: 'addlabresults', component: AddlabresultsComponent },
   { path: 'doctorpahistory', component: DoctorpahistoryComponent },  
   { path: 'editlabresults', component: EditlabresultsComponent },
-<<<<<<< HEAD
-  { path: 'labresultschart', component: LabresultschartComponent },    
-=======
   { path: 'alertmessage', component: AlertmessageComponent },
   { path: 'try', component: TryComponent },  
->>>>>>> master
 ];
 
 @NgModule({
@@ -85,15 +81,10 @@ const appRoutes: Routes =[
     DoctorpahistoryComponent,  
     AddlabresultsComponent, 
     EditlabresultsComponent, 
-<<<<<<< HEAD
-    LabresultschartComponent,   
-    HeaderComponent, StickyfooterComponent, ScrollablefooterComponent, 
-=======
     HeaderComponent, 
     StickyfooterComponent, 
     ScrollablefooterComponent, 
     AlertmessageComponent, TryComponent, 
->>>>>>> master
   ],
   imports: [
     BrowserModule,
