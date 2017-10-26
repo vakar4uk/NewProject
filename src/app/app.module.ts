@@ -45,6 +45,10 @@ import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
 import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
 import { AlertmessageComponent } from './alertmessage/alertmessage.component';
 import { TryComponent } from './try/try.component';
+import { DoctorheaderComponent } from './doctorheader/doctorheader.component';
+import { DoctorprescriptionComponent } from './doctorprescription/doctorprescription.component';
+import { DoctorlabresultComponent } from './doctorlabresult/doctorlabresult.component';
+import { LabhistoryComponent } from './labhistory/labhistory.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -60,6 +64,9 @@ const appRoutes: Routes =[
   { path: 'editlabresults', component: EditlabresultsComponent },
   { path: 'alertmessage', component: AlertmessageComponent },
   { path: 'try', component: TryComponent },  
+  { path: 'doctorprescription', component: DoctorprescriptionComponent },  
+  { path: 'doctorlabresult', component: DoctorlabresultComponent },  
+  { path: 'labhistory', component: LabhistoryComponent }, 
   { path: 'labresultschart', component: LabresultschartComponent },  
   
 ];
@@ -82,7 +89,8 @@ const appRoutes: Routes =[
     HeaderComponent, 
     StickyfooterComponent, 
     ScrollablefooterComponent, 
-    AlertmessageComponent, TryComponent, LabresultschartComponent
+    AlertmessageComponent, TryComponent, DoctorheaderComponent, DoctorprescriptionComponent, DoctorlabresultComponent, LabhistoryComponent, 
+    LabresultschartComponent
   ],
   imports: [
     BrowserModule,
