@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var BloodTest = require('../models/BloodTest');
 
-router.get('BloodTests/:date?',function(req,res,next){
-	if(req.params.date){
-		BloodTest.getTestByDate(req.params.date,function(err,rows){
+router.get('BloodTests/:date/:id?',function(req,res,next){
+	if(req.params){
+		BloodTest.getTestByDate(req.params,function(err,rows){
 			if(err){
 				res.json(err);
 			}
