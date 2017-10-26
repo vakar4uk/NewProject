@@ -45,3 +45,8 @@ li.nav-item {
 #date {
     width: 350px;
 }
+
+#date-text {    
+    width: 170px;
+    border: none;
+}

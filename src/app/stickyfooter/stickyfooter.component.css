@@ -43,3 +43,10 @@
     color: lightgray;
     margin-bottom: 0;
 }
+
+.tooltip.customClass .tooltip-arrow {
+  color: red;
+}
+
+.tooltip-arrow,
+.red-tooltip + .tooltip > .tooltip-inner {background-color: #f00;}
