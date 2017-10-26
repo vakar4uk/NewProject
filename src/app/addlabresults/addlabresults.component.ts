@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 export class AddlabresultsComponent implements OnInit {
 
   @ViewChild('f') addLabResults: NgForm;
+  public isTableHidden: boolean = true;
+  public isInfoHidden: boolean = true;
 
   constructor() { }
 
