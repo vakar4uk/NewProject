@@ -260,5 +260,28 @@
 </form>
 <!-- Main Content -->
 
+<!-- Alert Message -->
+<template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">That's what's up!</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         Person was added succesfully!
+        </div>
+
+        <!-- This button should take user to Add Lab Results for new (just added person) -->
+        <div class="modal-body">
+            <button type="button" class="btn btn-warning">Add Lab Results</button>
+        </div>
+        <div class="modal-body">
+                <button routerLink="/scheduler" type="button" class="btn btn-success">Return to Home</button>
+            </div>
+
+</template>
+<!-- Alert Message -->
+
 <!-- Footer -->
 <app-scrollablefooter></app-scrollablefooter>
