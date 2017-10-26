@@ -103,14 +103,17 @@ export class AddlabresultsComponent implements OnInit {
     //if date exists get us template
     this.http.get<bloodArray>(this.bloodUrl + "/" + date+"/"+this._datatask.ID).subscribe(data => {
       console.log("Looking for:" + date);
-      if(data[0] === undefined){
+      if(data[0] != undefined){
         this.modalRef = this.modalService.show(template);
       }
-      else{
-        this._datatask.addBloodT(sodium,potassium,calcium,glucose,hemoglobin,this._datatask.ID,date);
-      }
+      
     console.log(this.addLabResults);
-    });
+    },
+    err=>{
+      console.log("Adding Entry");
+      this._datatask.addBloodT(sodium,potassium,calcium,glucose,hemoglobin,this._datatask.ID,date);
+    }
+  );
   }
 
 }
