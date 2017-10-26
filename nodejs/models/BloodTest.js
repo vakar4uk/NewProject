@@ -11,7 +11,7 @@ var BloodTest={
 		return db.query("select * from BloodTest where ResultsNo=?",[id],callback);
 	},
 	addBloodTest:function(BloodTest,callback){
-		return db.query("insert into BloodTest values(?,?,?,?,?,?,?)",[BloodTest.ResultsNo,BloodTest.Sodium,BloodTest.Potassium,BloodTest.Calcium,BloodTest.Glucose,BloodTest.Hemoglobin,BloodTest.Results_PID],callback);
+		return db.query("insert into BloodTest values(?,?,?,?,?,?,?,?)",[BloodTest.ResultsNo,BloodTest.Sodium,BloodTest.Potassium,BloodTest.Calcium,BloodTest.Glucose,BloodTest.Hemoglobin,BloodTest.Results_PID,BloodTest.DateTaken],callback);
 	},
 	removeResults:function(id,callback){
 		return db.query("delete from BloodTest where ResultsNo=?",[id],callback);
