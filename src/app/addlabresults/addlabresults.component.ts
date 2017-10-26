@@ -29,18 +29,15 @@ interface personArray {
   [index: number]: person;
 }
 interface blood {
-  PID: any;
-  Fname: any;
-  Lname: any;
-  Sex: any;
-  DOB: any;
-  Street: any;
-  Unit: any;
-  City: any;
-  State: any;
-  Zipcode: any;
-  PhoneNo: any;
-  Email: any;
+  ResultsNo:any;
+  Sodium:any;
+  Potassium:any;
+  Calcium:any;
+  Glucose:any;
+  Hemoglobin:any;
+  Results_PID:any;
+  DateTaken:any;
+
 }
 interface bloodArray {
   [index: number]: blood;
@@ -104,8 +101,14 @@ export class AddlabresultsComponent implements OnInit {
     var globulinn=(<HTMLInputElement>document.getElementById("globulinn")).value;
     var hemoglobin=(<HTMLInputElement>document.getElementById("hemoglobin")).value;
     //if date exists get us template
-    this.http.get<bloodArray>(this.bloodUrl + "/" + date).subscribe(data => {
+    this.http.get<bloodArray>(this.bloodUrl + "/" + date+"/"+this._datatask.ID).subscribe(data => {
       console.log("Looking for:" + date);
+      if(data[0] === undefined){
+        this.modalRef = this.modalService.show(template);
+      }
+      else{
+        this._datatask.addBloodT(sodium,potassium,calcium,globulinn,hemoglobin,this._datatask.ID,date);
+      }
     console.log(this.addLabResults);
     });
   }

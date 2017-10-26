@@ -141,6 +141,25 @@ export class DataService {
       }
       );
   }
+  addBloodT(sod, pot, cal, glu, hem, resultPid, date) {
+    const req = this.http.post(this.bloodUrl, {
+      Sodium:sod,
+      Potassium:pot,
+      Calcium:cal,
+      Glucose:glu,
+      Hemoglobin:hem,
+      Results_PID:resultPid,
+      DateTaken:date
+    })
+      .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
+  }
 
 
 }
