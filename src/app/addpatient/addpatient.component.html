@@ -2,7 +2,7 @@
 <app-header></app-header>    
 
 <!-- Main Content -->
-<form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addPatient">    
+<form (ngSubmit)="onSubmit(template)" #f="ngForm" class="form-addPatient">    
     <div class="col-lg-12 row" id="content">  
         <div class="form col-lg-6 text-center">
 
@@ -274,7 +274,7 @@
 
         <!-- This button should take user to Add Lab Results for new (just added person) -->
         <div class="modal-body">
-            <button type="button" class="btn btn-warning">Add Lab Results</button>
+            <button routerLink="/addlabresult" type="button" class="btn btn-warning">Add Lab Results</button>
         </div>
         <div class="modal-body">
                 <button routerLink="/scheduler" type="button" class="btn btn-success">Return to Home</button>

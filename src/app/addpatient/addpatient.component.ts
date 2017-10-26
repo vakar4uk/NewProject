@@ -3,6 +3,9 @@ import { NgForm } from '@angular/forms';
 import { DataService} from '../backend/data.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
+import {TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 @Component({
   selector: 'app-addpatient',
@@ -11,14 +14,14 @@ import { Subscription } from 'rxjs/Rx';
 })
 
 export class AddpatientComponent implements OnInit {  
-
+  public modalRef: BsModalRef;
   isCondition: false;
   
 //  public conditions = [
 //     {name:'head', value: '1'},
     
 //   ]; 
-constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
+constructor(private modalService: BsModalService,private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
 }
   @ViewChild('f') addPatient: NgForm;
@@ -45,7 +48,7 @@ constructor(private _datatask:DataService,private _router:Router,private route:A
   ngOnInit() {    
   }
 
-  onSubmit() {
+  onSubmit(template: TemplateRef<any>) {
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
     var dob = (<HTMLInputElement>document.getElementById("dob")).value;
@@ -63,6 +66,8 @@ constructor(private _datatask:DataService,private _router:Router,private route:A
     //}
     //else{
     console.log("Patient/Person Added");
+    this.modalRef=this.modalService.show(template);
+    this._datatask.getIDNewPat(fname,lname);
     //}
     console.log(this.addPatient);
   }
