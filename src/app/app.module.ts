@@ -45,6 +45,9 @@ import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.c
 import { AlertmessageComponent } from './alertmessage/alertmessage.component';
 import { TryComponent } from './try/try.component';
 import { DoctorheaderComponent } from './doctorheader/doctorheader.component';
+import { DoctorprescriptionComponent } from './doctorprescription/doctorprescription.component';
+import { DoctorlabresultComponent } from './doctorlabresult/doctorlabresult.component';
+import { LabhistoryComponent } from './labhistory/labhistory.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -62,6 +65,9 @@ const appRoutes: Routes =[
   { path: 'editlabresults', component: EditlabresultsComponent },
   { path: 'alertmessage', component: AlertmessageComponent },
   { path: 'try', component: TryComponent },  
+  { path: 'Doctorprescription', component: DoctorprescriptionComponent },  
+  { path: 'Doctorlabresult', component: DoctorlabresultComponent },  
+  { path: 'Labhistory', component: LabhistoryComponent }, 
 ];
 
 @NgModule({
@@ -83,7 +89,7 @@ const appRoutes: Routes =[
     HeaderComponent, 
     StickyfooterComponent, 
     ScrollablefooterComponent, 
-    AlertmessageComponent, TryComponent, DoctorheaderComponent, 
+    AlertmessageComponent, TryComponent, DoctorheaderComponent, DoctorprescriptionComponent, DoctorlabresultComponent, LabhistoryComponent 
   ],
   imports: [
     BrowserModule,
