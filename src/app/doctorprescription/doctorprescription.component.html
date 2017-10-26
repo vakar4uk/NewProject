@@ -1,3 +1,60 @@
-<p>
-  doctorprescription works!
-</p>
+ <!-- Navbar -->
+ <app-doctorheader></app-doctorheader>
+ 
+ 
+ <!-- Page Content -->
+  
+  <!-- Main Content -->
+  
+  <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addPatient">    
+          <div class="col-lg-12 row" id="content">  
+              <div class="form col-lg-6 text-center">
+      
+                 
+      
+                
+      
+                      
+                      <!-- Prescription -->
+                      <br><h5>Prescription</h5>
+                      <div class="form-group">
+                              <div class="input-group">
+                      <span class="input-group-addon">Prescription</span>            
+                              <textarea name="Prescription" id="notes" cols="90" rows="10" ngModel></textarea>
+                          </div>
+                      </div>  <!-- Prescription -->   
+
+                       <!-- Any other instructions -->
+                       <br><h5>Any other instructions</h5>
+                       <div class="form-group">
+                               <div class="input-group">
+                       <span class="input-group-addon">Instructions</span>            
+                               <textarea name="Anyotherinstructions" id="notes" cols="90" rows="10" ngModel></textarea>
+                           </div>
+                       </div>  <!-- Prescription -->                 
+      
+                      <button id="submit" 
+                      class="btn btn-lg btn-success btn-block" 
+                      [disabled]="!f.valid"
+                      type="submit"         
+                      >Submit</button>    
+      
+              </div>      
+                    
+          </div>
+      </form>
+  
+  <!-- Main Content -->
+  
+
+
+<!-- Page Content -->
+
+
+
+  <!-- Footer -->
+
+  <app-scrollablefooter></app-scrollablefooter>
+
+
+  <!-- Footer -->

@@ -65,9 +65,9 @@ const appRoutes: Routes =[
   { path: 'editlabresults', component: EditlabresultsComponent },
   { path: 'alertmessage', component: AlertmessageComponent },
   { path: 'try', component: TryComponent },  
-  { path: 'Doctorprescription', component: DoctorprescriptionComponent },  
-  { path: 'Doctorlabresult', component: DoctorlabresultComponent },  
-  { path: 'Labhistory', component: LabhistoryComponent }, 
+  { path: 'doctorprescription', component: DoctorprescriptionComponent },  
+  { path: 'doctorlabresult', component: DoctorlabresultComponent },  
+  { path: 'labhistory', component: LabhistoryComponent }, 
 ];
 
 @NgModule({
