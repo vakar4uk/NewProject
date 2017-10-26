@@ -44,6 +44,7 @@ import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
 import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
 import { AlertmessageComponent } from './alertmessage/alertmessage.component';
 import { TryComponent } from './try/try.component';
+import { DoctorheaderComponent } from './doctorheader/doctorheader.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -82,7 +83,7 @@ const appRoutes: Routes =[
     HeaderComponent, 
     StickyfooterComponent, 
     ScrollablefooterComponent, 
-    AlertmessageComponent, TryComponent, 
+    AlertmessageComponent, TryComponent, DoctorheaderComponent, 
   ],
   imports: [
     BrowserModule,
