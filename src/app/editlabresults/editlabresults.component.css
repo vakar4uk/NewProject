@@ -85,10 +85,37 @@ input::-webkit-inner-spin-button {
     color: #bbb;   
 }
 
-#date {
+#date {    
+    text-align: center;
     width: 350px;
 }
 
 #date-text {    
-    width: 170px;
+    width: 130px;
+}
+
+/* Search Bar */
+#search {
+    text-align: center;
+    width: 250px;
+    height: 38px;
+    border-radius: 23px;
+    border: 1px solid #ccc;
+}
+
+#searchButton {
+    border-radius: 50%;
+}
+
+input:focus {    
+    outline: 0;
+}
+/* Search Bar */
+
+#table-content {   
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    width: 1800px;
+    padding-bottom: 50px;    
 }

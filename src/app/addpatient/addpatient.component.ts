@@ -7,6 +7,7 @@ import {TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
+
 @Component({
   selector: 'app-addpatient',
   templateUrl: './addpatient.component.html',
