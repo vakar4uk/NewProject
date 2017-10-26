@@ -43,6 +43,7 @@ import { HeaderComponent } from './header/header.component';
 import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
 import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
 import { AlertmessageComponent } from './alertmessage/alertmessage.component';
+import { TryComponent } from './try/try.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -58,7 +59,8 @@ const appRoutes: Routes =[
   { path: 'addlabresults', component: AddlabresultsComponent },
   { path: 'doctorpahistory', component: DoctorpahistoryComponent },  
   { path: 'editlabresults', component: EditlabresultsComponent },
-  { path: 'alertmessage', component: AlertmessageComponent },  
+  { path: 'alertmessage', component: AlertmessageComponent },
+  { path: 'try', component: TryComponent },  
 ];
 
 @NgModule({
@@ -80,7 +82,7 @@ const appRoutes: Routes =[
     HeaderComponent, 
     StickyfooterComponent, 
     ScrollablefooterComponent, 
-    AlertmessageComponent, 
+    AlertmessageComponent, TryComponent, 
   ],
   imports: [
     BrowserModule,

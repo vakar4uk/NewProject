@@ -18,15 +18,10 @@ export class AddpatientComponent implements OnInit {
 //     {name:'head', value: '1'},
     
 //   ]; 
-<<<<<<< HEAD
-
-  @ViewChild('f') addPatient: NgForm; 
-=======
 constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
 }
   @ViewChild('f') addPatient: NgForm;
->>>>>>> Corey
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   //                  'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida',                    

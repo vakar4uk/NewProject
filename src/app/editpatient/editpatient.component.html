@@ -21,14 +21,6 @@
                     <th>Address</th>
                     <th>Phone</th>
                 </tr>
-<<<<<<< HEAD
-                <tr *ngFor="let person of persons; let i = index">
-                    <td><button type="button"><i class="fa fa-check" aria-hidden="true"></i></button>{{i + 1}}</td>
-                    <td>{{person.firstName}}</td>
-                    <td>{{person.lastName}}</td>
-                    <td>{{person.street}}</td>
-                    <td>{{person.phone}}</td>
-=======
 
                 <tr  *ngFor="let person of pArray; let i = index">
                     <td><button type="button" id="selectPatient" (click)="getID(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
@@ -36,20 +28,13 @@
                     <td>{{person.Lname}}</td>
                     <td>{{person.Street}}</td>
                     <td>{{person.PhoneNo}}</td>
->>>>>>> Corey
                 </tr>
             </table>
         </div>
-    </div>    
-    
-    <app-alertmessage></app-alertmessage>
+    </div>       
 
-<<<<<<< HEAD
-    <div [hidden]="!isSelected" class="col-lg-12 row" id="content">
-=======
 
     <div [hidden]="isInfoHidden" class="col-lg-12 row" id="content">
->>>>>>> Corey
         <div class="form col-lg-6 text-center">
             
 
@@ -343,14 +328,6 @@
         </div>
 </template>
 <!-- Footer -->
-<<<<<<< HEAD
-<div *ngIf="isSelected">
-    <app-scrollablefooter></app-scrollablefooter>
-</div>
-<div *ngIf="!isSelected">
-        <app-stickyfooter></app-stickyfooter>
-    </div>
-=======
 <div *ngIf="isTableHidden || isInfoHidden">
     <app-stickyfooter></app-stickyfooter>
 </div>
@@ -358,4 +335,3 @@
     <app-scrollablefooter></app-scrollablefooter>
 </div>
     
->>>>>>> Corey

@@ -104,8 +104,16 @@ a {
     background-color: transparent;
 }
 
+#navbarCollapse {
+    position: relative;
+}
+
 #logout {
-    margin-left: 650px;
+    position: relative;
+    float: right;
+   
+    
+    
 }
 #footer {
     background-color: #46494C;
