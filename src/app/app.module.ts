@@ -27,7 +27,6 @@ import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AddpatientComponent } from './addpatient/addpatient.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
-import { SearchComponent } from './search/search.component';
 import { DoctorhomeComponent } from './doctorhome/doctorhome.component';
 import { EditpatientComponent } from './editpatient/editpatient.component';
 import { DoctorSearchComponent } from './doctorsearch/doctorsearch.component';
@@ -51,10 +50,8 @@ const appRoutes: Routes =[
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'addpatient', component: AddpatientComponent },
   { path: 'scheduler', component: SchedulerComponent }, 
-  { path: 'search', component: SearchComponent },
   { path: 'doctorhome', component: DoctorhomeComponent }, 
-  { path: 'editpatient', component: EditpatientComponent },
-  { path: 'search', component: SearchComponent },
+  { path: 'editpatient', component: EditpatientComponent },  
   { path: 'doctorsearch', component: DoctorSearchComponent },
   { path: 'addlabresults', component: AddlabresultsComponent },
   { path: 'doctorpahistory', component: DoctorpahistoryComponent },  
@@ -70,8 +67,7 @@ const appRoutes: Routes =[
     HomeComponent,
     ForgotpasswordComponent,
     AddpatientComponent,
-    SchedulerComponent,
-    SearchComponent,
+    SchedulerComponent,   
     DoctorhomeComponent, 
     EditpatientComponent, 
     DoctorSearchComponent,
