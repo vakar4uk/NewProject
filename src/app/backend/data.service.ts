@@ -99,6 +99,17 @@ export class DataService {
   getID(id:any){
     this.ID = id;
   }
+  getIDNewPat(fname:any, lname:any){
+    this.http.get<personArray>(this.personUrl + "/" + fname+ "/" +lname).subscribe(data => {
+      console.log("Looking for: " +fname+" "+lname);
+      console.log(data);
+      this.ID = data[0].PID;
+    },
+      err => {
+        console.log("Couldn't find: "+fname+" "+lname);
+      }
+    );
+  }
   checkLogin(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
       if (data[0] === undefined) {

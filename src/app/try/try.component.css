@@ -1,13 +1,13 @@
 /* Select Button */
-.fa-check {
+.fa-check-circle-o {    
     padding: 5px;
     border-radius: 100%;
     background-color: #CCCCD4;
     color: #268F4C;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
-.fa-check:hover {
+.fa-check-circle-o:hover {
     opacity:1;
     color: green;
 }
