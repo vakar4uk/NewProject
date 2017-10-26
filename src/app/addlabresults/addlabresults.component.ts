@@ -98,7 +98,7 @@ export class AddlabresultsComponent implements OnInit {
     var sodium=(<HTMLInputElement>document.getElementById("sodium")).value;
     var potassium= (<HTMLInputElement>document.getElementById("potassium")).value;
     var calcium=(<HTMLInputElement>document.getElementById("calcium")).value;
-    var globulinn=(<HTMLInputElement>document.getElementById("globulinn")).value;
+    var glucose=(<HTMLInputElement>document.getElementById("glucose")).value;
     var hemoglobin=(<HTMLInputElement>document.getElementById("hemoglobin")).value;
     //if date exists get us template
     this.http.get<bloodArray>(this.bloodUrl + "/" + date+"/"+this._datatask.ID).subscribe(data => {
@@ -107,7 +107,7 @@ export class AddlabresultsComponent implements OnInit {
         this.modalRef = this.modalService.show(template);
       }
       else{
-        this._datatask.addBloodT(sodium,potassium,calcium,globulinn,hemoglobin,this._datatask.ID,date);
+        this._datatask.addBloodT(sodium,potassium,calcium,glucose,hemoglobin,this._datatask.ID,date);
       }
     console.log(this.addLabResults);
     });
