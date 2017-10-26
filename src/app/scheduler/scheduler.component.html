@@ -6,110 +6,71 @@
     <div class="col-lg-12">
     <div class="container">
       <br><h5 class="text-center">Scheduler</h5><hr>
+      <!-- Day of the week dropdown -->
+      <div id="dayoftheweek"class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Day <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
+            <li role="menuitem"><a class="dropdown-item" href="#">Monday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Tuesday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Wednesday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Thursday</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Friday</a></li>
+          </ul>
+      </div>
+      <!-- Day of the week dropdown -->
+      <!-- Time of day dropdown -->
+      <div id="timeofday"class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Time <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
+            <li role="menuitem"><a class="dropdown-item" href="#">8:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">9:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">10:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">11:00A.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">12:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">1:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">2:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">3:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">4:00P.M.</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">5:00P.M.</a></li>
+          </ul>
+      </div>
+      <!-- Time of day dropdown -->
+      <!-- Doctor dropdown -->
+      <div id="doctor"class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Doctor <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" id="listedDoctors"role="menu">
+            <li role="menuitem"><a class="dropdown-item" href="#">Beesly, Pam</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Halpert, Jim</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Martin, Angela</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Scott, Michael</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Schrute, Dwight</a></li>
+          </ul>
+      </div>
+      <!-- Doctor dropdown -->
       <table id="table" class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Test</th>
-            <th>Value</th>
-            <th>Range</th>
-          </tr>
-        </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Sodium</td>
-            <td><input
-              id="sodium"
-              readonly="true"
-              (blur)="changeStatusSodium2()"
-              type="number"  min="0" step="1"            
-              class="col-lg-3 form-control"
-              ngModel            
-              name="sodium" required style = "display:inline">
-              <button type="button" class="btn btn-primary"
-              (click)="changeStatusSodium()" id="btn">
-                edit
-              </button>
-            </td>
-            <td>135 - 145</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Potassium</td>
-            <td><input
-              id="potassium"
-              type="number"  min="0" step="0.1"            
-              (blur)="changeStatusPotassium2()"
-              class="col-lg-3 form-control"
-              ngModel            
-              name="potassium" required style = "display:inline">
-              <button type="button" class="btn btn-primary"
-              (click)="changeStatusPotassium()" id="btn">
-                edit
-              </button>
-            </td>
-            <td>3.5 - 5.2</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Calcium</td>
-            <td><input
-              id="calcium"
-              type="number"  min="0" step="0.1"            
-              (blur)="changeStatusCalcium2()"
-              class="col-lg-3 form-control"
-              ngModel            
-              name="calcium" required style = "display:inline">
-              <button type="button" class="btn btn-primary"
-              (click)="changeStatusCalcium()" id="btn">
-                edit
-              </button>
-            </td>
-            <td>8.5 - 10.6</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Glucose</td>
-            <td><input
-              id="glucose"
-              type="number"  min="0" step="0.1"            
-              (blur)="changeStatusGlucose2()"
-              class="col-lg-3 form-control"
-              ngModel            
-              name="glucose" required style = "display:inline">
-              <button type="button" class="btn btn-primary"
-              (click)="changeStatusGlucose()" id="btn">
-                edit
-              </button>
-            </td>
-            <td>3.9 - 5.5</td>
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>Hemoglobin</td>
-            <td><input
-              id="hemoglobin"
-              type="number"  min="0" step="0.1"            
-              (blur)="changeStatusHemoglobin2()"
-              class="col-lg-3 form-control"
-              ngModel            
-              name="hemoglobin" required style = "display:inline">
-              <button type="button" class="btn btn-primary"
-              (click)="changeStatusHemoglobin()" id="btn">
-                edit
-              </button>
-            </td>
-            <td>13.8 - 17.2</td>
-          </tr>
+            <table class="table">
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Doctor</th>
+                    <th>Confirm</th>
+                </tr>
+                <!-- <tr *ngFor="let appointment of appointments; let i = index">
+                    <td>{{day}}</td>
+                    <td>{{time}}</td>
+                    <td>{{doctor}}</td>
+                    <td><button type="button" id="confirmAppointment" (click)=""><i class="fa fa-check" aria-hidden="true"></i></button>{{i + 1}}</td>
+                </tr> -->
+            </table>`
         </tbody>
-      </table>
-  
-      <button id="submit" (click)="onSubmit"
-      class="btn btn-lg btn-success btn-block" 
-      [disabled]="!f.valid"
-      type="submit"         
-      >Submit</button>    
+      </table> 
     </div>
     </div>
   </form>
