@@ -2,11 +2,10 @@
     background-color: #D5ECEC;
     margin-top: 20px;
     width: 70%;
-    height: 600px;
+    height: 620px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
-      padding-right: 5px;
   }
 
 #navbar {    
@@ -208,6 +207,10 @@ input::-webkit-inner-spin-button {
 .nav2 {
     font-size: 1.2em;
     color: #bbb;   
+}
+
+#date {
+    width: 350px;
 }
 
 li.nav-item {
