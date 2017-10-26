@@ -4,6 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
+
+//import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+import { DataService} from './backend/data.service';
+
+
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
@@ -76,15 +83,16 @@ const appRoutes: Routes =[
     AlertmessageComponent, 
   ],
   imports: [
-    BrowserModule,    
-    FormsModule,    
+    BrowserModule,
+    FormsModule,
     AngularFontAwesomeModule,    
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TooltipModule.forRoot() 
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

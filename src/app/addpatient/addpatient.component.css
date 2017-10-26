@@ -150,6 +150,11 @@ a {
     border: 2px;
 }
 
+#gender {
+    margin-left: 0;
+    width: 150px;
+}
+
 #state {
     width:220px;
 }

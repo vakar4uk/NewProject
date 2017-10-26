@@ -1,0 +1,57 @@
+var express = require('express');
+var router = express.Router();
+var Room = require('../models/Room');
+
+router.get('/:id?',function(req,res,next){
+	if(req.params.id){
+		Room.getRoomById(req.params.id,function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+	else{
+		Room.getAllRooms(function(err,rows){
+			if(err){
+				res.json(err);
+			}
+			else{
+				res.json(rows);
+			}
+		});
+	}
+});
+router.post('/',function(req,res,next){
+	Room.addRoom(req.body,function(err,count){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(req.body);
+		}
+	});
+});
+router.delete('/:id',function(req,res,next){
+	Room.removeRoom(req.params.id,function(err,count){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(count);
+		}
+	});
+});
+router.put('/:id',function(req,res,next){
+	Room.updateRoom(req.params.id,req.body,function(err,rows){
+		if(err){
+			res.json(err);
+		}
+		else{
+			res.json(rows);
+		}
+	});
+});
+module.exports=router;
