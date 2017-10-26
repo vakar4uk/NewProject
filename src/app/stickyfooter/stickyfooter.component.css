@@ -43,3 +43,7 @@
     color: lightgray;
     margin-bottom: 0;
 }
+
+:host >>> .tooltip {
+  margin-left: 14px;
+}

@@ -6,21 +6,17 @@
     <div class="col-lg-12">
     <div class="container">
       <br><h5 class="text-center">Blood Test Results</h5><hr>
-
-      <div class="container-fluid">
-          
-      <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      About Us
-      </button>
-      <div class="dropdown-menu" aria-labelledby="about-us">
-      <a class="dropdown-item" href="#">Our Story</a>
-      <a class="dropdown-item" href="#">Our Team</a>
-      <a class="dropdown-item" href="#">Contact Us</a>
-      </div>
-      </div>
       
-      </div>           
+      <div id="date" class="input-group">
+        <span id="date-text" class="input-group-addon">Date of the test</span>
+    <input
+    type="date"
+    value=""               
+    id="testDate"    
+    class="col-lg-11 form-control"
+    ngModel            
+    name="testDate">
+    </div><hr>
 
       <table id="table" class="table table-striped">
          <thead>
@@ -137,4 +133,4 @@
   <!-- Page Content -->
   
   <!-- Footer -->
-  <app-stickyfooter></app-stickyfooter>
+  <app-scrollablefooter></app-scrollablefooter>
