@@ -7,30 +7,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-labresultschart',
   templateUrl: './labresultschart.component.html',
   styleUrls: ['./labresultschart.component.css'],
-  // template: `
-  // <base-chart
-  // class="chart"
-  // [datasets]="datasets"
-  // [colors]="colors"
-  // [labels]="labels"
-  // [options]="options"
-  // [chartType]="'bar'">
-  // </base-chart>
-  // `,
 })
 export class LabresultschartComponent {
-  // private colors = [
-  //   {
-  //     backgroundColor: [
-  //       'rgba(255, 99, 132, 0.2)',
-  //       'rgba(54, 162, 235, 0.2)',
-  //       'rgba(255, 206, 86, 0.2)',
-  //       'rgba(23,23,23,1)',
-  //       'rgba(102, 0, 204, 0.2)'
-  //     ]
-  //   }
-  //   ];
-
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
