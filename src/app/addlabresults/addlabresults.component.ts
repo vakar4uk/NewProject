@@ -100,42 +100,24 @@ export class AddlabresultsComponent implements OnInit {
     var calcium = (<HTMLInputElement>document.getElementById("calcium")).value;
     var glucose = (<HTMLInputElement>document.getElementById("glucose")).value;
     var hemoglobin = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
+    this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
     //if date exists get us template
-    this.http.get<bloodArray>(this.bloodUrl + "/" + date + "/" + this._datatask.ID).subscribe(data => {
-      console.log("Looking for:" + date);
-      if (data[0] != undefined) {
-        this.modalRef = this.modalService.show(template);
-      }
-
-      console.log(this.addLabResults);
-    },
-      err => {
-        console.log("Adding Entry");
-        this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
-      }
-    );
-  }
-  onSubmit() {
-    //   var date = (<HTMLInputElement>document.getElementById("testDate")).value;
-    //   var sodium=(<HTMLInputElement>document.getElementById("sodium")).value;
-    //   var potassium= (<HTMLInputElement>document.getElementById("potassium")).value;
-    //   var calcium=(<HTMLInputElement>document.getElementById("calcium")).value;
-    //   var glucose=(<HTMLInputElement>document.getElementById("glucose")).value;
-    //   var hemoglobin=(<HTMLInputElement>document.getElementById("hemoglobin")).value;
-    //   //if date exists get us template
-    //   this.http.get<bloodArray>(this.bloodUrl + "/" + date+"/"+this._datatask.ID).subscribe(data => {
-    //     console.log("Looking for:" + date);
-    //     if(data[0] != undefined){
-    //       this.modalRef = this.modalService.show(template);
-    //     }
+    // this.http.get<bloodArray>(this.bloodUrl + "/" + date + "/" + this._datatask.ID).subscribe(data => {
+    //   console.log("Looking for:" + date);
+    //   if (data[0] != undefined) {
+    //     this.modalRef = this.modalService.show(template);
+    //   }
 
     //   console.log(this.addLabResults);
-    //   },
-    //   err=>{
+    // },
+    //   err => {
     //     console.log("Adding Entry");
-    //     this._datatask.addBloodT(sodium,potassium,calcium,glucose,hemoglobin,this._datatask.ID,date);
+    //     this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
     //   }
     // );
+  }
+  onSubmit() {
+
   }
 
 }
