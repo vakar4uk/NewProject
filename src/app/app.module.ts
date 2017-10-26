@@ -38,11 +38,17 @@ import {ScheduleModule} from 'primeng/primeng';
 import { AddlabresultsComponent } from './addlabresults/addlabresults.component';
 import { DoctorpahistoryComponent } from './doctorpahistory/doctorpahistory.component';
 import { EditlabresultsComponent } from './editlabresults/editlabresults.component';
+import { ChartsModule } from 'ng2-charts';
+import { LabresultschartComponent } from './labresultschart/labresultschart.component';
 import { HeaderComponent } from './header/header.component';
 import { StickyfooterComponent } from './stickyfooter/stickyfooter.component';
 import { ScrollablefooterComponent } from './scrollablefooter/scrollablefooter.component';
 import { AlertmessageComponent } from './alertmessage/alertmessage.component';
 import { TryComponent } from './try/try.component';
+import { DoctorheaderComponent } from './doctorheader/doctorheader.component';
+import { DoctorprescriptionComponent } from './doctorprescription/doctorprescription.component';
+import { DoctorlabresultComponent } from './doctorlabresult/doctorlabresult.component';
+import { LabhistoryComponent } from './labhistory/labhistory.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -58,6 +64,11 @@ const appRoutes: Routes =[
   { path: 'editlabresults', component: EditlabresultsComponent },
   { path: 'alertmessage', component: AlertmessageComponent },
   { path: 'try', component: TryComponent },  
+  { path: 'doctorprescription', component: DoctorprescriptionComponent },  
+  { path: 'doctorlabresult', component: DoctorlabresultComponent },  
+  { path: 'labhistory', component: LabhistoryComponent }, 
+  { path: 'labresultschart', component: LabresultschartComponent },  
+  
 ];
 
 @NgModule({
@@ -78,7 +89,8 @@ const appRoutes: Routes =[
     HeaderComponent, 
     StickyfooterComponent, 
     ScrollablefooterComponent, 
-    AlertmessageComponent, TryComponent, 
+    AlertmessageComponent, TryComponent, DoctorheaderComponent, DoctorprescriptionComponent, DoctorlabresultComponent, LabhistoryComponent, 
+    LabresultschartComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +100,8 @@ const appRoutes: Routes =[
     HttpClientModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
-    TooltipModule.forRoot() 
+    TooltipModule.forRoot(),
+    ChartsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
