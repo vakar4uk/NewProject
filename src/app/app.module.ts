@@ -60,6 +60,8 @@ const appRoutes: Routes =[
   { path: 'editlabresults', component: EditlabresultsComponent },
   { path: 'alertmessage', component: AlertmessageComponent },
   { path: 'try', component: TryComponent },  
+  { path: 'labresultschart', component: LabresultschartComponent },  
+  
 ];
 
 @NgModule({
@@ -80,7 +82,7 @@ const appRoutes: Routes =[
     HeaderComponent, 
     StickyfooterComponent, 
     ScrollablefooterComponent, 
-    AlertmessageComponent, TryComponent, 
+    AlertmessageComponent, TryComponent, LabresultschartComponent
   ],
   imports: [
     BrowserModule,

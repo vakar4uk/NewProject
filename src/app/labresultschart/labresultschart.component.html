@@ -1,26 +1,39 @@
-<div class="row">
-    <div class="col-md-6">
-      <div style="display: block;">
-      <canvas baseChart width="400" height="400"
-                  [datasets]="lineChartData"
-                  [labels]="lineChartLabels"
-                  [options]="lineChartOptions"
-                  [colors]="lineChartColors"
-                  [legend]="lineChartLegend"
-                  [chartType]="lineChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
+<app-header></app-header>
+
+<div class="col-lg-12 row" id="content">
+  <div class="col-lg-6">
+      <!-- first name -->
+    <div class="form-group">
+      <label for="firstName" class="sr-only">First Name</label>
+      <div class="input-group">
+        <span class="input-group-addon">First Name</span>
+        <input type="text" id="firstName" class="col-lg-10 form-control" ngModel name="firstName" required readonly="true">
       </div>
     </div>
-    <div class="col-md-6" style="margin-bottom: 10px">
-      <table class="table table-responsive table-condensed">
-        <tr>
-          <th *ngFor="let label of lineChartLabels">{{label}}</th>
-        </tr>
-        <tr *ngFor="let d of lineChartData">
-          <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
-        </tr>
-      </table>
-      <button (click)="randomize()">CLICK</button>
+    <!-- first name -->
+      <br>
+    <!-- last name -->
+    <div class="form-group">
+    <label for="lastName" class="sr-only">Last Name</label>
+      <div class="input-group">
+        <span class="input-group-addon">Last Name</span>
+        <input type="text" id="lastName" class="col-lg-10 form-control" ngModel name="lastName" required readonly="true">
+      </div>
+    </div>
+    <!-- last name -->
+  
+  </div>
+
+<!-- Bar chart -->
+  <div class="col-lg-6">
+    <div>
+      <div style="display: block">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+          [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <button (click)="randomize()">Update</button>
     </div>
   </div>
+</div>
+
+  <app-stickyfooter></app-stickyfooter>

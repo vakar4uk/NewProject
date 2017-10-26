@@ -9,81 +9,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./labresultschart.component.css']
 })
 export class LabresultschartComponent {
- // lineChart
- public lineChartData:Array<any> = [
-   {data: [65, 59, 80, 81, 56, 55], label: 'Series A'},
-   {data: [28, 48, 40, 19, 86, 27], label: 'Series B'},
-   {data: [12, 32, 133, 2, 65, 84], label: 'Series C'},
-   {data: [94, 3, 67, 19, 42, 21], label: 'Series D'},
-   {data: [72, 38, 87, 5, 33, 59], label: 'Series E'},
-   
- ];
- public lineChartLabels:Array<any> = ['2012', '2013', '2014', '2015', '2016', '2017'];
- public lineChartOptions:any = {
-   responsive: true
- };
- public lineChartColors:Array<any> = [
-   { // dark green
-     backgroundColor: 'rgba(4,118,19,0.2)',
-     borderColor: 'rgba(4,118,19,1)',
-     pointBackgroundColor: 'rgba(4,118,19,1)',
-     pointBorderColor: '#fff',
-     pointHoverBackgroundColor: '#fff',
-     pointHoverBorderColor: 'rgba(4,118,19,0.8)'
-   },
-   { // green
-     backgroundColor: 'rgba(22,206,47,0.2)',
-     borderColor: 'rgba(22,206,47,1)',
-     pointBackgroundColor: 'rgba(22,206,47,1)',
-     pointBorderColor: '#fff',
-     pointHoverBackgroundColor: '#fff',
-     pointHoverBorderColor: 'rgba(22,206,47,1)'
-   },
-   { // purple
-     backgroundColor: 'rgba(76,42,110,0.2)',
-     borderColor: 'rgba(76,42,110,1)',
-     pointBackgroundColor: 'rgba(76,42,110,1)',
-     pointBorderColor: '#fff',
-     pointHoverBackgroundColor: '#fff',
-     pointHoverBorderColor: 'rgba(76,42,110,0.8)'
-   },
-   { // dark red
-    backgroundColor: 'rgba(22,203,206,0.2)',
-    borderColor: 'rgba(22,203,206,1)',
-    pointBackgroundColor: 'rgba(22,203,206,1)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgba(22,203,206,1)'
-   },
-   { // blue
-     backgroundColor: 'rgba(12,12,170,0.2)',
-     borderColor: 'rgba(12,12,170,1)',
-     pointBackgroundColor: 'rgba(12,12,170,1)',
-     pointBorderColor: '#fff',
-     pointHoverBackgroundColor: '#fff',
-     pointHoverBorderColor: 'rgba(12,12,170,0.8)'
-   }
- ];
- public lineChartLegend:boolean = true;
- public lineChartType:string = 'line';
 
- public randomize():void {
-   let _lineChartData:Array<any> = new Array(this.lineChartData.length);
-   for (let i = 0; i < this.lineChartData.length; i++) {
-     _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
-     for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-       _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
-     }
-   }
-   this.lineChartData = _lineChartData;
- }
-
- // events
- public chartClicked(e:any):void {
-   console.log(e);
- }
-
- public chartHovered(e:any):void {
-   console.log(e);
- }
+  public barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartType:string = 'bar';
+  public barChartLegend:boolean = true;
+  
+  public barChartData:any[] = [
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+  ];
+  
+  // events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+  
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
+  
+  public randomize():void {
+    // Only Change 3 values
+    let data = [
+      Math.round(Math.random() * 100),
+      59,
+      80,
+      (Math.random() * 100),
+      56,
+      (Math.random() * 100),
+      40];
+    let clone = JSON.parse(JSON.stringify(this.barChartData));
+    clone[0].data = data;
+    this.barChartData = clone;
+    /**
+     * (My guess), for Angular to recognize the change in the dataset
+     * it has to change the dataset variable directly,
+     * so one way around it, is to clone the data, change it and then
+     * assign it;
+     */
+  }
 }
