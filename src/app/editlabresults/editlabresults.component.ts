@@ -11,6 +11,10 @@ export class EditlabresultsComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  public isTableHidden: boolean = true;
+  public isInfoHidden: boolean = true;
+
   changeStatusSodium(){
     (<HTMLInputElement>document.getElementById('sodium')).readOnly=false;
     (<HTMLInputElement>document.getElementById('sodium')).focus();
