@@ -54,7 +54,6 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
     var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
     var dob = (<HTMLInputElement>document.getElementById("dob")).value;
     var gender = (<HTMLInputElement>document.getElementById("gender")).value;
-    console.log(gender);
     var street = (<HTMLInputElement>document.getElementById("street")).value;
     var unit = (<HTMLInputElement>document.getElementById("unit")).value;
     var city = (<HTMLInputElement>document.getElementById("City")).value;
@@ -67,8 +66,8 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
     //}
     //else{
     console.log("Patient/Person Added");
+    this._datatask.getIDNewPat(phone);
     this.modalRef=this.modalService.show(template);
-    this._datatask.getIDNewPat(fname,lname);
     //}
     console.log(this.addPatient);
   }

@@ -99,14 +99,14 @@ export class DataService {
   getID(id:any){
     this.ID = id;
   }
-  getIDNewPat(fname:any, lname:any){
-    this.http.get<personArray>(this.personUrl + "/" + fname+ "/" +lname).subscribe(data => {
-      console.log("Looking for: " +fname+" "+lname);
+  getIDNewPat(phone:any){
+    this.http.get<personArray>(this.personUrl + "/" + phone).subscribe(data => {
+      console.log("Looking for: " +phone);
       console.log(data);
       this.ID = data[0].PID;
     },
       err => {
-        console.log("Couldn't find: "+fname+" "+lname);
+        console.log("Couldn't find: "+phone);
       }
     );
   }

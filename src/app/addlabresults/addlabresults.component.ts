@@ -61,7 +61,9 @@ export class AddlabresultsComponent implements OnInit {
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this._datatask.ID);
+    // if(this._datatask.ID > 0){
+    //   this.isTableHidden = false;
+    // }
   }
   search(template: TemplateRef<any>) {
     //searching for person|patient
