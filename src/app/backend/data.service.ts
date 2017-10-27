@@ -46,6 +46,7 @@ export class DataService {
   userUrl = "http://localhost:3000/UserTemps";
   bloodUrl = "http://localhost:3000/BloodTests"
   ID;
+  pArray:personArray;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
