@@ -6,7 +6,11 @@
     margin-left: 100px;
     margin-top: 10px;
 }
-
+#content {   
+    position: relative;
+    margin-top: 30px;
+    padding-bottom: 50px;    
+}
 
     .footer {
         background-color: #46494C;    
@@ -41,14 +45,11 @@ li> .active {
 /* Main Content */
 #content {   
     position: relative;
-    text-align: center;
     margin-top: 30px;
-   
     padding-bottom: 50px;    
 }
 
-/* Forms */
-.form {      
+#formatting {      
     margin-left: 380px;    
     padding: 10px;   
     background-color: #a7baba;
@@ -81,7 +82,7 @@ input::-webkit-inner-spin-button {
  #submit {
     cursor: pointer;
     display: inline;
-    width: 300px;
+    margin:center;
  }
  
 #listedDays {
