@@ -60,8 +60,8 @@ export class DataService {
   bloodUrl = "http://localhost:3000/BloodTests";
   pArray:personArray;
   lArray:loginArray;
-  pIndex:number;
-  ID:number;
+  pIndex;
+  ID;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 

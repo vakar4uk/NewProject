@@ -75,7 +75,7 @@ export class EditpatientComponent implements OnInit {
   ];
 
   ngOnInit() {
-    if(this._datatask.ID > 0){
+    if(this._datatask.ID != undefined){
       console.log("Populating");
       (<HTMLInputElement>document.getElementById("firstName")).value=this._datatask.pArray[this._datatask.pIndex].Fname;
       (<HTMLInputElement>document.getElementById("lastName")).value=this._datatask.pArray[this._datatask.pIndex].Lname;
