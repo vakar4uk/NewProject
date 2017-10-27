@@ -41,27 +41,6 @@ export class EditpatientComponent implements OnInit {
   personUrl = "http://localhost:3000/Persons";
   isCondition = false;
   constructor(private modalService: BsModalService,private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
-   populate({
-    //if(this._datatask.ID != undefined){
-      console.log("Populating");
-      console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
-      (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
-      (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
-      var t = (this._datatask.pArray[this._datatask.pIndex].DOB.split(/[- T]/));
-      this.date= t[0]+"-"+t[1]+"-"+t[2];
-      (<HTMLInputElement>document.getElementById("dob")).value= this.date;
-      (<HTMLInputElement>document.getElementById("gender")).value=(this._datatask.pArray[this._datatask.pIndex].Sex);
-      (<HTMLInputElement>document.getElementById("street")).value=(this._datatask.pArray[this._datatask.pIndex].Street);
-      (<HTMLInputElement>document.getElementById("unit")).value=(this._datatask.pArray[this._datatask.pIndex].Unit);
-      (<HTMLInputElement>document.getElementById("City")).value=(this._datatask.pArray[this._datatask.pIndex].City);
-      (<HTMLInputElement>document.getElementById("state")).value=(this._datatask.pArray[this._datatask.pIndex].State);
-      (<HTMLInputElement>document.getElementById("zipcode")).value=(this._datatask.pArray[this._datatask.pIndex].Zipcode);
-      (<HTMLInputElement>document.getElementById("phone")).value=(this._datatask.pArray[this._datatask.pIndex].PhoneNo);
-      (<HTMLInputElement>document.getElementById("patEmail")).value=(this._datatask.pArray[this._datatask.pIndex].Email);
-    //}
-    });
-  }
-
 
   }
   //  public conditions = [
@@ -89,7 +68,6 @@ export class EditpatientComponent implements OnInit {
   public pArray:personArray;
   public id:number;
   public date:any;
-  public show:boolean;
   public conditions = [
     'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
     'ASTHMA', 'TUBERCULOSIS', 'SHORTNESS OF BREATH', 'PAIN, PRESSURE IN CHEST', 'SWELLING OF ANKLES', 'ANEMIA',
@@ -100,7 +78,7 @@ export class EditpatientComponent implements OnInit {
 
   }
   populate(){
-    //if(this._datatask.ID != undefined){
+    if(this._datatask.ID != undefined){
       console.log("Populating");
       console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
       (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
@@ -116,7 +94,7 @@ export class EditpatientComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("zipcode")).value=(this._datatask.pArray[this._datatask.pIndex].Zipcode);
       (<HTMLInputElement>document.getElementById("phone")).value=(this._datatask.pArray[this._datatask.pIndex].PhoneNo);
       (<HTMLInputElement>document.getElementById("patEmail")).value=(this._datatask.pArray[this._datatask.pIndex].Email);
-    //}
+    }
   }
 
   // PRINT

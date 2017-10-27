@@ -4,8 +4,8 @@
 
 
 <!-- Main Content -->
-<div *ngif=show>
-<form id="printThis" (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
+
+<form (focus)="populate()" id="printThis" (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
     <!-- <div class="col-lg-12 row" id="table-content">
         <div class="form col-lg-6 text-center"> 
                 <h5>Search and Edit Patient</h5><hr>       
@@ -38,7 +38,7 @@
             
 
             <!-- Personal Information -->
-            <button (click)="populate()"><h2>Edit Patient</h2><hr></button> 
+            <h2>Edit Patient</h2><hr> 
             <h5>Personal Information</h5>
             <div class="form-group">
                 <label for="firstName" class="sr-only">First Name</label>
@@ -303,7 +303,6 @@
 
     </fieldset>
 </form>
-</div>
 <!-- Main Content -->
 
 <button (click)="print()">print</button>
