@@ -107,3 +107,20 @@ button {
 
 /* Content */
 
+/* Modal */
+.modal-body {
+    font-size: 2em;
+    text-align: center;
+    color: #C61F08;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {   
+    font-weight: bold;
+    color: #E64A0B;
+}
+/* Modal */
+
