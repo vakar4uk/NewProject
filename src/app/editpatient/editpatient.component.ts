@@ -66,7 +66,7 @@ export class EditpatientComponent implements OnInit {
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
   public pArray:personArray;
-  public id:any;
+  public id:number;
   public date:any;
   public conditions = [
     'BONE DEFORMITY', 'FRACTURE', 'EARACHE', 'FREQUENT SORE THROAT', 'HOARSENESS', 'RESPIRATORY PROBLEMS, BRONCHITIS, EMPHYSEMA, ETC.',
@@ -76,6 +76,7 @@ export class EditpatientComponent implements OnInit {
 
   ngOnInit() {
     if(this._datatask.ID > 0){
+      console.log("Populating");
       (<HTMLInputElement>document.getElementById("firstName")).value=this._datatask.pArray[this._datatask.pIndex].Fname;
       (<HTMLInputElement>document.getElementById("lastName")).value=this._datatask.pArray[this._datatask.pIndex].Lname;
       var t = this._datatask.pArray[this._datatask.pIndex].DOB.split(/[- T]/);
