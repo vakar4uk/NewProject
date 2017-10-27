@@ -11,6 +11,11 @@ body {
         color: #D35252;
 }
 
+#submit {
+    cursor: pointer;  
+    border-radius: 20px;  
+}
+
 :host >>> .tooltip-inner {
     background-color: #353535;
      color: #8C8989;
@@ -19,4 +24,12 @@ body {
   border-bottom-color: #353535;
     }
 
- 
+/* Headers for Forms */
+    h2 {
+        color: #2222B1;
+    }
+
+    h5 {
+        margin-bottom: 20px;
+    }
+ /* Headers for Forms */

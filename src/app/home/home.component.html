@@ -1,24 +1,83 @@
+<!-- Header -->
 <app-header></app-header>
-  
+<!-- Header -->
 
-<!-- Page Content -->
-<div class="container">
-</div>
+<!-- Main Content -->
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
+        <div class="col-lg-12 row" id="table-content">
+            <div class="form col-lg-6 text-center">
+                    <div [hidden]="ifDoctor">
+                        <h5>Add New Patient</h5><hr>
+                        <button id="newPatient-button" type="button" class="btn btn-block btn-primary">Add New Patient</button><hr>
+                    </div>
+                    
+                    <h5>Search for a Patient</h5>       
+                    <input autofocus id="search" type="text" name="search" ngModel placeholder="Search..">                
+                    <button class="btn btn-outline-info" type="button" id="searchButton" (click)="search(template)"><i class="fa fa-search" aria-hidden="true"></i></button><hr>
+               
+                <!-- <table [hidden]="isTableHidden" class="table">         -->
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th>Select</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>                        
+                        <th>Phone</th>
+                    </tr>
 
-<!-- Page Content -->
+                    <!-- <tr  *ngFor="let person of pArray; let i = index">   -->
+                    <tr *ngFor="let person of persons; let i = index">
+                        <td><a id="selectPatient" (click)="getID(i)"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
+                        <td>{{person.Fname}}</td>
+                        <td>{{person.Lname}}</td>                        
+                        <td>{{person.PhoneNo}}</td>
+                    </tr>
+                </table>                
+            </div>            
+           
+            <div class="form col-lg-6 text-center">
+                <h5>Select action for...</h5><hr>
+                <div class="input-group">
+                    <span class="input-group-addon">First Name</span>
+                    <input id="firstName" readonly="true" type="text" class="col-lg-10 form-control"
+                        ngModel name="firstName" required> 
 
-<!-- Footer -->
-<footer class="footer">
-    <nav id="footer" class="navbar fixed-bottom navbar-light">
-        <p id="brand" class="navbar-brand">&copy;Wipro Team 2017</p>
-        <div class="row">
-        <span><a id="linkedin" href="https://www.linkedin.com/company/wipro" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
-        <span><a id="twitter" href="https://twitter.com/wipro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-        <span><a id="facebook" href="https://www.facebook.com/WiproLimited/?rf=105550039478283" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
+                    <span class="input-group-addon">Last Name</span>
+                      <input id="lastName" readonly="true" type="text" class="col-lg-10 form-control"
+                        ngModel name="lastName" required>                    
+                </div><hr>
+                
+                <div id="buttons-container">
+                        <button routerLink="/editpatient" type="button" class="btn btn-success btn-block">Edit Patient</button>
+                        <button [hidden]="ifDoctor" routerLink="/addlabresults" type="button" class="btn btn-info btn-block">Add Lab Results</button>
+                        <button routerLink="/editlabresults"type="button" class="btn btn-warning btn-block">Search&Edit Lab Results</button>
+                        <button [hidden]="ifDoctor" routerLink="/scheduler" type="button" class="btn btn-primary btn-block">Appointments</button>
+                        <button [hidden]="!ifDoctor" routerLink="#" type="button" class="btn btn-primary btn-block">Scheduler</button>                        
+                </div>
+                
+            </div>
+       
+
         </div>
-      </nav>
-    </footer>
-    <!-- Footer -->
+</form>
+<!-- Main Content -->
 
+<!-- Alert Message -->
+<template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Error!</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          No record found!
+        </div>
+</template>
+<!-- Alert Message -->
+
+  
+<!-- Footer -->
+<app-scrollablefooter></app-scrollablefooter>
+<!-- Footer -->
 
   

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-scheduler',
@@ -32,6 +33,11 @@ export class SchedulerComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  onSubmit() {
+    console.log(this.scheduler);
+  }
+  
 
 }
 

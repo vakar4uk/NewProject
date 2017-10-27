@@ -9,9 +9,33 @@ import { TooltipModule } from 'ngx-bootstrap';
 })
 export class HomeComponent implements OnInit {
 
+  // Who's logged in
+  public ifDoctor: boolean = true;
+  
+
+  public isTableHidden: boolean = true;
+  public isInfoHidden: boolean = true;
+
   constructor() { }
 
+ 
+
+  // Temporary for sandboxing
+  public persons = [{
+    Fname: "John",
+    Lname: "Terry",
+    PhoneNo: "123-456-7890",
+  },
+  {
+    Fname: "Bob",
+    Lname: "Sponge",
+    PhoneNo: "123-456-7890",
+  }
+];
+ // Temporary for sandboxing
+ 
   ngOnInit() {
+    console.log(this.persons);
   }
 
 }

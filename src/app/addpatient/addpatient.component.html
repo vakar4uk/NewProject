@@ -6,18 +6,19 @@
     <div class="col-lg-12 row" id="content">  
         <div class="form col-lg-6 text-center">
 
-            <!-- Personal Information -->                      
+            <!-- Personal Information -->
+            <h2>Add New Patient</h2><hr>                   
             <h5>Personal Information</h5>
             <div class="form-group">
                 <label for="firstName" class="sr-only">First Name</label>
                 <div class="input-group">
                     <span class="input-group-addon">First Name</span>
                 <input
+                inputmode="latin-name"                
                 type="text"               
                 id="firstName"
-                class="col-lg-10 form-control"
-                ngModel            
-                placeholder="John"
+                class="col-lg-12 form-control"
+                ngModel           
                 name="firstName"
                 required>
                 </div>            
@@ -28,9 +29,8 @@
                       <span class="input-group-addon">Last Name</span>
                   <input
                   type="text"               
-                  id="lastName"
-                  placeholder="Smith"
-                  class="form-control"
+                  id="lastName"                  
+                  class="col-lg-12 form-control"
                   ngModel            
                   name="lastName"
                   required>
@@ -45,7 +45,7 @@
                 <input
                 type="date"               
                 id="dob"
-                class="form-control"
+                class="col-lg-12 form-control"
                 ngModel            
                 name="dob"
                 required>
@@ -74,9 +74,8 @@
                         <span class="input-group-addon">Street</span>
                     <input
                     type="text"               
-                    id="street"
-                    placeholder="1725 Slough Avenue"
-                    class="col-lg-10 form-control"
+                    id="street"                   
+                    class="col-lg-12 form-control"
                     ngModel            
                     name="street"
                     required>
@@ -89,9 +88,8 @@
                             <span class="input-group-addon">Unit</span>
                         <input
                         type="text"               
-                        id="unit"
-                        placeholder="#888"
-                        class="col-lg-10 form-control"
+                        id="unit"                        
+                        class="col-lg-12 form-control"
                         ngModel            
                         name="unit">
                         </div>
@@ -103,9 +101,8 @@
                                 <span class="input-group-addon">City</span>
                             <input
                             type="text"               
-                            id="City"
-                            placeholder="Scranton"
-                            class="form-control"
+                            id="City"                           
+                            class="col-lg-12 form-control"
                             ngModel            
                             name="City"
                             required>
@@ -176,11 +173,12 @@
                         </div>  
                   <span class="input-group-addon">Zipcode</span>
                   <input
-                  type="number"
+                  minlength="5"
+                  maxlength="5"        
+                  type="tel"
                   min="0"                
                   id="zipcode"
-                  class="form-control"
-                  placeholder="18508"
+                  class="col-lg-12 form-control"                  
                   ngModel                          
                   name="zipcode"
                   required>                   
@@ -194,12 +192,14 @@
                         <div class="input-group">
                             <span class="input-group-addon">Phone</span>
                         <input
-                        type="number"               
-                        id="phone"
-                        placeholder="888.888.8888"
-                        class="col-lg-10 form-control"
+                        type="tel"  
+                        placeholder="e.g. 1234567890"
+                        pattern="[0-9]{10}"             
+                        id="phone"                       
+                        class="col-lg-12 form-control"
                         ngModel            
-                        name="phone">
+                        name="phone"
+                        required>
                         </div>
             </div>
 
@@ -209,9 +209,8 @@
                                 <span class="input-group-addon">Email</span>
                             <input
                             type="email"               
-                            id="patEmail"
-                            placeholder="john.danger.smith@wipro.com"
-                            class="col-lg-10 form-control"
+                            id="patEmail"                           
+                            class="col-lg-12 form-control"
                             ngModel            
                             name="patEmail"                            
                             email>
@@ -243,22 +242,40 @@
                 <div class="form-group">
                         <div class="input-group">
                 <span class="input-group-addon">Notes</span>            
-                        <textarea name="notes" id="notes" cols="90" rows="10" ngModel></textarea>
+                        <textarea name="notes" id="notes" cols="110" rows="7" ngModel></textarea>
                     </div>
                 </div>  <!-- Additioonal Information -->               
 
                 <button id="submit" 
-                class="btn btn-lg btn-success btn-block" 
-                placeholder="Allergic to beets, bears, and battlestar galactica."
+                class="btn btn-lg btn-success btn-block"                 
                 [disabled]="!f.valid"
                 type="submit"         
-                >Submit</button>    
+                >Save</button>    
 
         </div>      
               
     </div>
 </form>
 <!-- Main Content -->
+
+<!-- Alert Message -->
+<template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">That's what's up!</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         Patient was added succesfully!
+        </div>        
+        
+        <div class="modal-body">
+                <button routerLink="/home" type="button" class="btn btn-success">Return to Home</button>
+            </div>
+
+</template>
+<!-- Alert Message -->
 
 <!-- Footer -->
 <app-scrollablefooter></app-scrollablefooter>
