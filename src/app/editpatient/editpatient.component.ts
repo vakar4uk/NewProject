@@ -78,7 +78,7 @@ export class EditpatientComponent implements OnInit {
 
   }
   populate(){
-    if(this._datatask.ID != undefined){
+    //if(this._datatask.ID != undefined){
       console.log("Populating");
       console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
       (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
@@ -94,7 +94,7 @@ export class EditpatientComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("zipcode")).value=(this._datatask.pArray[this._datatask.pIndex].Zipcode);
       (<HTMLInputElement>document.getElementById("phone")).value=(this._datatask.pArray[this._datatask.pIndex].PhoneNo);
       (<HTMLInputElement>document.getElementById("patEmail")).value=(this._datatask.pArray[this._datatask.pIndex].Email);
-    }
+    //}
   }
 
   // PRINT
