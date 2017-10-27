@@ -2,51 +2,67 @@
     background-color: #a7baba;
     margin-top: 20px;
     width: 70%;
-    height: 620px;
+    height: 760px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
-  } 
-
-#main-content {
-    
-    margin-top: 150px;
-}
+} 
 
 /* Main Content */
-#content {       
+#content {   
+    position: relative;
     text-align: center;
     margin-top: 30px;   
     padding-bottom: 50px;    
 }
 
-
-#dropdown {
-    
-    margin-top: 100px;
+.form {      
+    margin-left: 380px;    
+    padding: 10px;   
+    background-color: #D5ECEC;
+    border: 2px solid rgb(44, 95, 112);     
+    border-radius: 30px;      
+    margin-bottom: 10px;
 }
 
-
-
- #submit {
-    cursor: pointer;    
- }
-
-.nav2 {
-    font-size: 1.2em;
-    color: #bbb;   
+#print-button {
+    float: right;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
-li.nav-item {
-    height: 70px;
-    padding-top: 10px;
+#records-button {
+    text-align: center;
+    border-radius: 20px;
+}
+
+#submit {
+    cursor: pointer;  
+    border-radius: 20px;  
 }
 
 #date {
-    width: 350px;
+    width: 380px;
 }
 
 #date-text {    
     width: 170px;
     border: none;
 }
+
+/* Modal */
+.modal-body {
+    font-size: 2em;
+    text-align: center;
+    color: #00FF44;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {   
+    font-weight: bold;
+    color: #03541C;
+}
+/* Modal */

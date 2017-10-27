@@ -2,14 +2,34 @@
 <app-header></app-header>
 
   <!-- Page Content -->
-  <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addLabResults">
-    <div class="col-lg-12">
-    <div class="container">
-      <br><h5 class="text-center">Blood Test Results</h5><hr>
-      
+  <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addLabResults">   
+
+  <!-- <div [hidden]="isInfoHidden" class="col-lg-12"> -->
+  <div class="col-lg-12">
+      <div class="container">
+          <br><h2 (click)="populate" class="text-center">Edit Blood Test Results</h2>
+          <hr> 
+      <div id="printArea">
+      <div id="date" class="form-group">          
+          <div class="input-group">
+              <span class="input-group-addon">First Name</span>
+              <input id="firstName" readonly="true" type="text" class="col-lg-10 form-control"
+                  ngModel name="firstName" required>      
+          </div>
+      </div>
+  
+      <div id="date" class="form-group">          
+          <div class="input-group">
+              <span class="input-group-addon">Last Name</span>
+              <input readonly="true" type="text" id="lastName" class="form-control"
+                  ngModel name="lastName" required>            
+          </div>  
+      </div><hr>  
+
       <div id="date" class="input-group">
         <span id="date-text" class="input-group-addon">Date of the test</span>
     <input
+    readonly="true"
     type="date"
     value=""               
     id="testDate"    
@@ -17,7 +37,9 @@
     ngModel            
     name="testDate">
     </div><hr>
+    
 
+    
       <table id="table" class="table table-striped">
          <thead>
           <tr>
@@ -120,17 +142,49 @@
           </tr>
         </tbody>
       </table>
-  
+     
+      <button (click)="print()" id="submit" class="btn btn-sm btn-warning btn-block" type="submit">Print The Results</button><hr>
+
       <button id="submit" (click)="onSubmit"
-      class="btn btn-lg btn-success btn-block" 
+      class="btn btn-lg btn-danger btn-block" 
+      [hidden]="isSubmitted"
       [disabled]="!f.valid"
       type="submit"         
-      >Submit</button>    
+      >Save</button> 
+      
+      <button id="submit" (click)="onSubmit"
+      class="btn btn-lg btn-info btn-block" 
+      [hidden]="!isSubmitted"
+      type="submit"         
+      >See previous results</button>   
+      
     </div>
+      </div>
     </div>
   </form>
   
   <!-- Page Content -->
   
-  <!-- Footer -->
-  <app-scrollablefooter></app-scrollablefooter>
+ <!-- Alert Message -->
+<template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Saved!</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Updated Succesfully!
+    </div>
+</template>
+<!-- Alert Message --> 
+
+<!-- Footer -->
+<app-scrollablefooter></app-scrollablefooter>
+
+<!-- <div *ngIf="isTableHidden || isInfoHidden">
+    <app-stickyfooter></app-stickyfooter>
+</div>
+<div *ngIf="!isTableHidden && !isInfoHidden">
+    <app-scrollablefooter></app-scrollablefooter>
+</div> -->

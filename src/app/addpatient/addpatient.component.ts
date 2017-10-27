@@ -4,15 +4,21 @@ import { DataService} from '../backend/data.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
+import {TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
 @Component({
   selector: 'app-addpatient',
   templateUrl: './addpatient.component.html',
-  styleUrls: ['./addpatient.component.css']
+  styleUrls: ['./addpatient.component.css'],  
 })
 
 export class AddpatientComponent implements OnInit {  
 
   isCondition: false;
+
+  maxLength = '2';
   
 //  public conditions = [
 //     {name:'head', value: '1'},

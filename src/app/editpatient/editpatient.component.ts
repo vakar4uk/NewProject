@@ -76,6 +76,29 @@ export class EditpatientComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  // PRINT
+  print(): void {
+    let printContents, popupWin;
+    printContents = document.getElementById('printArea').innerHTML;
+    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+    popupWin.document.open();
+    popupWin.document.write(`
+      <html>
+        <head>
+          <title>Print tab</title>
+          <style>
+          //........Customized style.......
+          </style>
+        </head>
+    <body onload="window.print();window.close()">${printContents}</body>
+      </html>`
+    );
+    popupWin.document.close();
+}
+  // PRINT
+
+  
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
@@ -224,5 +247,13 @@ export class EditpatientComponent implements OnInit {
   }
   changeStatusNotes2() {
     (<HTMLInputElement>document.getElementById('notes')).disabled = true;
+  }
+
+  changeStatusInstructions() {
+    (<HTMLInputElement>document.getElementById('instructions')).disabled = false;
+    (<HTMLInputElement>document.getElementById('instructions')).focus();
+  }
+  changeStatusInstructions2() {
+    (<HTMLInputElement>document.getElementById('instructions')).disabled = true;
   }
 }
