@@ -248,4 +248,12 @@ export class EditpatientComponent implements OnInit {
   changeStatusNotes2() {
     (<HTMLInputElement>document.getElementById('notes')).disabled = true;
   }
+
+  changeStatusInstructions() {
+    (<HTMLInputElement>document.getElementById('instructions')).disabled = false;
+    (<HTMLInputElement>document.getElementById('instructions')).focus();
+  }
+  changeStatusInstructions2() {
+    (<HTMLInputElement>document.getElementById('instructions')).disabled = true;
+  }
 }
