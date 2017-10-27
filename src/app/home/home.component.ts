@@ -9,6 +9,9 @@ import { TooltipModule } from 'ngx-bootstrap';
 })
 export class HomeComponent implements OnInit {
 
+  public isTableHidden: boolean = true;
+  public isInfoHidden: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
