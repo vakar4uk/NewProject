@@ -14,7 +14,24 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+ 
+
+  // Temporary for sandboxing
+  public persons = [{
+    Fname: "John",
+    Lname: "Terry",
+    PhoneNo: "123-456-7890",
+  },
+  {
+    Fname: "Bob",
+    Lname: "Sponge",
+    PhoneNo: "123-456-7890",
+  }
+];
+ // Temporary for sandboxing
+ 
   ngOnInit() {
+    console.log(this.persons);
   }
 
 }

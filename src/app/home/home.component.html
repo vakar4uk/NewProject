@@ -10,22 +10,47 @@
                     <input autofocus id="search" type="text" name="search" ngModel placeholder="Search..">                
                     <button class="btn btn-outline-info" type="button" id="searchButton" (click)="search(template)"><i class="fa fa-search" aria-hidden="true"></i></button>
                
-                <table [hidden]="isTableHidden" class="table">
+                <!-- <table [hidden]="isTableHidden" class="table">         -->
+                <table class="table table-striped table-bordered">
                     <tr>
                         <th>Select</th>
                         <th>First Name</th>
                         <th>Last Name</th>                        
                         <th>Phone</th>
                     </tr>
-    
-                    <tr  *ngFor="let person of pArray; let i = index">
-                        <td><button type="button" id="selectPatient" (click)="getID(i)"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></button></td>
+
+                    <!-- <tr  *ngFor="let person of pArray; let i = index">   -->
+                    <tr *ngFor="let person of persons; let i = index">
+                        <td><a id="selectPatient" (click)="getID(i)"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
                         <td>{{person.Fname}}</td>
                         <td>{{person.Lname}}</td>                        
                         <td>{{person.PhoneNo}}</td>
                     </tr>
-                </table>
+                </table>                
+            </div>            
+           
+            <div class="form col-lg-6 text-center">
+                <h5>Select action for...</h5><hr>
+                <div class="input-group">
+                    <span class="input-group-addon">First Name</span>
+                    <input id="firstName" readonly="true" type="text" class="col-lg-10 form-control"
+                        ngModel name="firstName" required> 
+
+                    <span class="input-group-addon">Last Name</span>
+                      <input id="lastName" readonly="true" type="text" class="col-lg-10 form-control"
+                        ngModel name="lastName" required>                    
+                </div><hr>
+                
+                <div id="buttons-container">
+                        <button routerLink="/editpatient" type="button" class="btn btn-success">Edit Patient</button>
+                        <button routerLink="/addlabresults" type="button" class="btn btn-info">Add Lab Results</button>
+                        <button routerLink="/editlabresults"type="button" class="btn btn-warning">Edit Lab Results</button>
+                        <button routerLink="/scheduler" type="button" class="btn btn-primary">Schedule an Appointment</button>
+                </div>
+                
             </div>
+       
+
         </div>
 </form>
 <!-- Main Content -->

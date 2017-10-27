@@ -2,7 +2,7 @@
     background-color: #D5ECEC;
     margin-top: 20px;
     width: 70%;
-    height: 620px;
+    height: 750px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
@@ -36,10 +36,6 @@
     border: 2px;
 }
 
-#state {
-    width:220px;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     
@@ -57,28 +53,16 @@ input::-webkit-inner-spin-button {
     margin-top: 7px;
 }
 
-#gender {   
-    margin-top: 6px;
-    margin-left: 60px;
+#submit {
+    cursor: pointer;  
+    border-radius: 20px;  
 }
 
-#condition {
-    margin-left: 20px;
-    width: 50px;
+#print-button {
+    float: right;
+    border-radius: 20px;
+    cursor: pointer;
 }
-
-#condition {
-    text-align: left;
-    width: 450px;
-}
-
-.images-wrapper {
-    display: flex;    
- }
-
- #submit {
-    cursor: pointer;    
- }
 
 .nav2 {
     font-size: 1.2em;
@@ -92,30 +76,4 @@ input::-webkit-inner-spin-button {
 
 #date-text {    
     width: 130px;
-}
-
-/* Search Bar */
-#search {
-    text-align: center;
-    width: 250px;
-    height: 38px;
-    border-radius: 23px;
-    border: 1px solid #ccc;
-}
-
-#searchButton {
-    border-radius: 50%;
-}
-
-input:focus {    
-    outline: 0;
-}
-/* Search Bar */
-
-#table-content {   
-    position: relative;
-    text-align: center;
-    margin-top: 30px;
-    width: 1800px;
-    padding-bottom: 50px;    
 }

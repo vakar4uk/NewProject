@@ -31,7 +31,7 @@ input:focus {
 /* Select Button */
 /* Search Bar */
 
-
+/* Table */
 #table-content {   
     position: relative;
     text-align: center;
@@ -40,11 +40,62 @@ input:focus {
     padding-bottom: 50px;    
 }
 
+.table {
+    margin-top:15px;
+}
+
+th {
+    color: #0B0B5A;
+    font-size: 1.15em;
+    font-weight: bold;
+    text-align: center;
+}
+
+td {
+    font-style: italic;
+    color: #1D1C1C;    
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+/* Table */
+
+/* Content */
 .form {      
     margin-left: 380px;    
-    padding: 10px;   
+    padding: 10px; 
+    padding-left: 20px; 
     background-color: #D5ECEC;
     border: 2px solid rgb(44, 95, 112);     
     border-radius: 35px;      
     margin-bottom: 10px;
 }
+
+h5 {
+    text-align: center;
+}
+
+.input-group-addon {
+    border-right: 1px solid black;   
+}
+
+input {
+    font-weight: bold;
+    border: none;
+    margin-right: 5px;
+}
+
+.input-group {
+    width: 100%;
+}
+
+#buttons-container {
+    margin-top: 30px;    
+}
+
+button {
+    margin-right: 20px;
+}
+
+/* Content */
+

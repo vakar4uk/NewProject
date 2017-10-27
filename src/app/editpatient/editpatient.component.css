@@ -94,17 +94,8 @@ input::-webkit-inner-spin-button {
  }
 
  #submit {
-    cursor: pointer;    
- }
-
-.nav2 {
-    font-size: 1.2em;
-    color: #bbb;   
-}
-
-li.nav-item {
-    height: 70px;
-    padding-top: 10px;
+    cursor: pointer;  
+    border-radius: 20px;  
 }
 
 /* Modal */

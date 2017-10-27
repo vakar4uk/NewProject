@@ -5,8 +5,8 @@
 
 <!-- Main Content -->
 
-<form (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
-    <div class="col-lg-12 row" id="table-content">
+<form id="printThis" (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
+    <!-- <div class="col-lg-12 row" id="table-content">
         <div class="form col-lg-6 text-center"> 
                 <h5>Search and Edit Patient</h5><hr>       
                 <input autofocus id="search" type="text" name="search" ngModel placeholder="Search..">                
@@ -30,14 +30,15 @@
                 </tr>
             </table>
         </div>
-    </div>       
+    </div>        -->
 
-
-    <div [hidden]="isInfoHidden" class="col-lg-12 row" id="content">
+    <!-- <div [hidden]="isInfoHidden" class="col-lg-12 row" id="content"></div> -->
+    <div class="col-lg-12 row" id="content">
         <div class="form col-lg-6 text-center">
             
 
             <!-- Personal Information -->
+            <h2>Edit Patient</h2><hr> 
             <h5>Personal Information</h5>
             <div class="form-group">
                 <label for="firstName" class="sr-only">First Name</label>
@@ -253,19 +254,7 @@
             <!-- Medical History -->
             <br>
             <h5>Medical History</h5>
-            <p>Have patient had any of the following deseases or problems:</p>
-            <!-- <div class="input-group">                    
-                      <div class="col-lg-2" *ngFor="let condition of conditions">
-                          <label id="condition">
-                              <input
-                                  type="checkbox"
-                                  name="condition"
-                                  ngModel
-                                  [value]="condition"                                >
-                                  {{ condition }}
-                          </label>
-                      </div>
-                  </div>      -->
+            <p>Have patient had any of the following deseases or problems:</p>           
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Condition</span>
@@ -303,7 +292,7 @@
             </div>
             <!-- Additioonal Information -->
 
-            <button id="submit" class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+            <button id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save</button>
 
         </div>
 
@@ -315,6 +304,8 @@
     </fieldset>
 </form>
 <!-- Main Content -->
+
+<button (click)="print()">print</button>
 
 <!-- Alert Message -->
 <template #template>
@@ -332,10 +323,5 @@
 
 
 <!-- Footer -->
-<div *ngIf="isTableHidden || isInfoHidden">
-    <app-stickyfooter></app-stickyfooter>
-</div>
-<div *ngIf="!isTableHidden && !isInfoHidden">
     <app-scrollablefooter></app-scrollablefooter>
-</div>
 <!-- Alert Message -->
