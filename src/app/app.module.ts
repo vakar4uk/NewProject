@@ -101,7 +101,7 @@ const appRoutes: Routes =[
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
-    ChartsModule
+    ChartsModule,    
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
