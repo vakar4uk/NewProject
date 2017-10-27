@@ -75,6 +75,21 @@ export class EditpatientComponent implements OnInit {
   ];
 
   ngOnInit() {
+    if(this._datatask.ID > 0){
+      (<HTMLInputElement>document.getElementById("firstName")).value=this._datatask.pArray[this._datatask.pIndex].Fname;
+      (<HTMLInputElement>document.getElementById("lastName")).value=this._datatask.pArray[this._datatask.pIndex].Lname;
+      var t = this._datatask.pArray[this._datatask.pIndex].DOB.split(/[- T]/);
+      this.date= t[0]+"-"+t[1]+"-"+t[2];
+      (<HTMLInputElement>document.getElementById("dob")).value= this.date;
+      (<HTMLInputElement>document.getElementById("gender")).value=this._datatask.pArray[this._datatask.pIndex].Sex;
+      (<HTMLInputElement>document.getElementById("street")).value=this._datatask.pArray[this._datatask.pIndex].Street;
+      (<HTMLInputElement>document.getElementById("unit")).value=this._datatask.pArray[this._datatask.pIndex].Unit;
+      (<HTMLInputElement>document.getElementById("City")).value=this._datatask.pArray[this._datatask.pIndex].City;
+      (<HTMLInputElement>document.getElementById("state")).value=this._datatask.pArray[this._datatask.pIndex].State;
+      (<HTMLInputElement>document.getElementById("zipcode")).value=this._datatask.pArray[this._datatask.pIndex].Zipcode;
+      (<HTMLInputElement>document.getElementById("phone")).value=this._datatask.pArray[this._datatask.pIndex].PhoneNo;
+      (<HTMLInputElement>document.getElementById("patEmail")).value=this._datatask.pArray[this._datatask.pIndex].Email;
+    }
   }
 
   // PRINT
@@ -128,23 +143,24 @@ export class EditpatientComponent implements OnInit {
 
   }
   getID(index){
-    this._datatask.getID(this.pArray[index].PID);
+    //this._datatask.getID(this.pArray[index].PID);
+    this._datatask.pIndex=index;
     this.isInfoHidden = false;
     console.log("Index"+index);
     console.log("PID:"+this._datatask.ID);
-    (<HTMLInputElement>document.getElementById("firstName")).value=this.pArray[index].Fname;
-    (<HTMLInputElement>document.getElementById("lastName")).value=this.pArray[index].Lname;
-    var t = this.pArray[index].DOB.split(/[- T]/);
+    (<HTMLInputElement>document.getElementById("firstName")).value=this._datatask.pArray[this._datatask.pIndex].Fname;
+    (<HTMLInputElement>document.getElementById("lastName")).value=this._datatask.pArray[this._datatask.pIndex].Lname;
+    var t = this._datatask.pArray[this._datatask.pIndex].DOB.split(/[- T]/);
     this.date= t[0]+"-"+t[1]+"-"+t[2];
     (<HTMLInputElement>document.getElementById("dob")).value= this.date;
-    (<HTMLInputElement>document.getElementById("gender")).value=this.pArray[index].Sex;
-    (<HTMLInputElement>document.getElementById("street")).value=this.pArray[index].Street;
-    (<HTMLInputElement>document.getElementById("unit")).value=this.pArray[index].Unit;
-    (<HTMLInputElement>document.getElementById("City")).value=this.pArray[index].City;
-    (<HTMLInputElement>document.getElementById("state")).value=this.pArray[index].State;
-    (<HTMLInputElement>document.getElementById("zipcode")).value=this.pArray[index].Zipcode;
-    (<HTMLInputElement>document.getElementById("phone")).value=this.pArray[index].PhoneNo;
-    (<HTMLInputElement>document.getElementById("patEmail")).value=this.pArray[index].Email;
+    (<HTMLInputElement>document.getElementById("gender")).value=this._datatask.pArray[this._datatask.pIndex].Sex;
+    (<HTMLInputElement>document.getElementById("street")).value=this._datatask.pArray[this._datatask.pIndex].Street;
+    (<HTMLInputElement>document.getElementById("unit")).value=this._datatask.pArray[this._datatask.pIndex].Unit;
+    (<HTMLInputElement>document.getElementById("City")).value=this._datatask.pArray[this._datatask.pIndex].City;
+    (<HTMLInputElement>document.getElementById("state")).value=this._datatask.pArray[this._datatask.pIndex].State;
+    (<HTMLInputElement>document.getElementById("zipcode")).value=this._datatask.pArray[this._datatask.pIndex].Zipcode;
+    (<HTMLInputElement>document.getElementById("phone")).value=this._datatask.pArray[this._datatask.pIndex].PhoneNo;
+    (<HTMLInputElement>document.getElementById("patEmail")).value=this._datatask.pArray[this._datatask.pIndex].Email;
   }
   onSubmit() {
     //updating person|patient Currently missing DOB and Gender

@@ -60,8 +60,8 @@ export class HomeComponent implements OnInit {
       else if(data[0] === undefined){
         this.modalRef = this.modalService.show(template);
       }
-      this.pArray=data;
-      console.log("Checking if data was Stored",this.pArray);
+      this._datatask.pArray=data;
+      console.log("Checking if data was Stored",this._datatask.pArray);
 
     },
       err => {
@@ -72,9 +72,10 @@ export class HomeComponent implements OnInit {
 
   }
   getID(index){
-    this._datatask.getID(this.pArray[index].PID);
-    (<HTMLInputElement>document.getElementById("firstName")).value=this.pArray[index].Fname;
-    (<HTMLInputElement>document.getElementById("lastName")).value=this.pArray[index].Lname;
+    this._datatask.getID(this._datatask.pArray[index].PID);
+    this._datatask.pIndex=index;
+    (<HTMLInputElement>document.getElementById("firstName")).value=this._datatask.pArray[this._datatask.pIndex].Fname;
+    (<HTMLInputElement>document.getElementById("lastName")).value=this._datatask.pArray[this._datatask.pIndex].Lname;
     this.isInfoHidden = false;
     console.log("Index"+index);
     console.log("PID:"+this._datatask.ID);

@@ -38,13 +38,29 @@ interface personArray{
 interface loginArray {
   [index: number]: login;
 }
+interface blood {
+  ResultsNo: any;
+  Sodium: any;
+  Potassium: any;
+  Calcium: any;
+  Glucose: any;
+  Hemoglobin: any;
+  Results_PID: any;
+  DateTaken: any;
 
+}
+interface bloodArray {
+  [index: number]: blood;
+}
 @Injectable()
 export class DataService {
   title = 'app';
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
-  bloodUrl = "http://localhost:3000/BloodTests"
+  bloodUrl = "http://localhost:3000/BloodTests";
+  pArray:personArray;
+  lArray:loginArray;
+  pIndex;
   ID;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
@@ -56,6 +72,7 @@ export class DataService {
       console.log("Username:" + data[0].Username);
       console.log("Password:" + data[0].Password);
       console.log(data);
+      this.lArray = data;
     },
       err => {
         console.log("Not Connected to DB or User does not exist");
@@ -89,7 +106,7 @@ export class DataService {
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" +search);
       console.log(data);
-      return data;
+      this.pArray = data;
     },
       err => {
         console.log("No Valid Entry");
@@ -99,6 +116,7 @@ export class DataService {
   getID(id:any){
     this.ID = id;
   }
+  //might not need
   getIDNewPat(phone:any){
     this.http.get<personArray>(this.personUrl + "/" + phone).subscribe(data => {
       console.log("Looking for: " +phone);
