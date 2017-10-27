@@ -119,23 +119,22 @@ export class EditlabresultsComponent implements OnInit {
     //get PID of person selected
     this._datatask.getID(this.pArray[index].PID);
     
-    // this.http.get<bloodArray>(this.bloodUrl + "/" + date + "/" + this._datatask.ID).subscribe(data => {
-    //   console.log("Looking for:" + date);
-    //   this.bArray = data;
+    this.http.get<bloodArray>(this.bloodUrl +  "/" + this._datatask.ID).subscribe(data => {
+      console.log("Looking for:" + date);
+      this.bArray = data;
 
-    //   console.log(this.addLabResults);
-    // },
-    //   err => {
-    //     console.log("Adding Entry");
-    //     this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
-    //   }
-    // );
-    // var date = (<HTMLInputElement>document.getElementById("testDate")).value;
-    // var sodium = (<HTMLInputElement>document.getElementById("sodium")).value;
-    // var potassium = (<HTMLInputElement>document.getElementById("potassium")).value;
-    // var calcium = (<HTMLInputElement>document.getElementById("calcium")).value;
-    // var glucose = (<HTMLInputElement>document.getElementById("glucose")).value;
-    // var hemoglobin = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
+    },
+      err => {
+        console.log("Adding Entry");
+        this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
+      }
+    );
+    var date = (<HTMLInputElement>document.getElementById("testDate")).value;
+    var sodium = (<HTMLInputElement>document.getElementById("sodium")).value;
+    var potassium = (<HTMLInputElement>document.getElementById("potassium")).value;
+    var calcium = (<HTMLInputElement>document.getElementById("calcium")).value;
+    var glucose = (<HTMLInputElement>document.getElementById("glucose")).value;
+    var hemoglobin = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
     this.isInfoHidden = false;
   }
   changeStatusSodium(){
@@ -173,6 +172,12 @@ export class EditlabresultsComponent implements OnInit {
   changeStatusHemoglobin2(){
     (<HTMLInputElement>document.getElementById('hemoglobin')).readOnly=true;
   }
-  
+  populate(){
+    console.log("Populating");
+    console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
+    (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
+    (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
+    
+}
 
 }
