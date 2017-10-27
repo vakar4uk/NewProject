@@ -44,7 +44,7 @@
                 <label for="firstName" class="sr-only">First Name</label>
                 <div class="input-group">
                     <span class="input-group-addon">First Name</span>
-                    <input id="firstName" readonly="true" (blur)="changeStatusFirstName1()" placeholder="John" type="text" class="col-lg-10 form-control"
+                    <input id="firstName" readonly="true" (blur)="changeStatusFirstName1()" type="text" class="col-lg-10 form-control"
                         ngModel name="firstName" required>
                     <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
                     <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusFirstName()" [(ngModel)]="singleModel"
@@ -58,7 +58,7 @@
                 <label for="lastName" class="sr-only">Last Name</label>
                 <div class="input-group">
                     <span class="input-group-addon">Last Name</span>
-                    <input readonly="true" (blur)="changeStatusLastName2()" placeholder="Smith" type="text" id="lastName" class="form-control"
+                    <input readonly="true" (blur)="changeStatusLastName2()" type="text" id="lastName" class="form-control"
                         ngModel name="lastName" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusLastName()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
@@ -106,7 +106,7 @@
                 <label for="street" class="sr-only">Street</label>
                 <div class="input-group">
                     <span class="input-group-addon">Street</span>
-                    <input readonly="true" (blur)="changeStatusAddress2()" placeholder="123 Main St" type="text" id="street" class="col-lg-10 form-control"
+                    <input readonly="true" (blur)="changeStatusAddress2()" type="text" id="street" class="col-lg-10 form-control"
                         ngModel name="street" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusAddress()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
@@ -119,7 +119,7 @@
                 <label for="unit" class="sr-only">Unit</label>
                 <div class="input-group">
                     <span class="input-group-addon">Unit</span>
-                    <input readonly="true" (blur)="changeStatusUnit2()" type="text" id="unit" placeholder="#888" class="col-lg-10 form-control"
+                    <input readonly="true" (blur)="changeStatusUnit2()" type="text" id="unit" class="col-lg-10 form-control"
                         ngModel name="unit">
                     <button type="button" class="btn btn-primary" (click)="changeStatusUnit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
@@ -132,7 +132,7 @@
                 <label for="sreet" class="sr-only">City</label>
                 <div class="input-group">
                     <span class="input-group-addon">City</span>
-                    <input (blur)="changeStatusCity2()" readonly="true" type="text" id="City" placeholder="Bangalore" class="form-control" ngModel
+                    <input (blur)="changeStatusCity2()" readonly="true" type="text" id="City" class="form-control" ngModel
                         name="City" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusCity()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
@@ -209,7 +209,7 @@
                         </button>
 
                     <span class="input-group-addon">Zipcode</span>
-                    <input (blur)="changeStatusZipcode2()" readonly="true" type="number" min="0" placeholder="12345" id="zipcode" class="form-control"
+                    <input (blur)="changeStatusZipcode2()" readonly="true" type="number" min="0" id="zipcode" class="form-control"
                         ngModel name="zipcode" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusZipcode()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
@@ -227,7 +227,7 @@
                 <label for="phone" class="sr-only">Phone</label>
                 <div class="input-group">
                     <span class="input-group-addon">Phone</span>
-                    <input (blur)="changeStatusPhone2()" readonly="true" placeholder="888.888.8888" type="number" id="phone" class="col-lg-10 form-control"
+                    <input (blur)="changeStatusPhone2()" readonly="true" type="number" id="phone" class="col-lg-10 form-control"
                         ngModel name="phone" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusPhone()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
@@ -241,7 +241,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">Email</span>
                     <input (blur)="changeStatusPatEmail2()" readonly="true" type="email" id="patEmail" class="col-lg-10 form-control" ngModel
-                        name="patEmail" placeholder="john.danger.smith@wipro.com" required email>
+                        name="patEmail" required email>
                     <button type="button" class="btn btn-primary" (click)="changeStatusPatEmail()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                                 edit
@@ -282,8 +282,8 @@
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Notes</span>
-                    <textarea disabled name="notes" (blur)="changeStatusNotes2()" placeholder="Allergic to Azithromycin, found an unusual growth, etc."
-                        id="notes" cols="90" rows="10" ngModel></textarea>
+                    <textarea disabled name="notes" (blur)="changeStatusNotes2()"
+                        id="notes" cols="90" rows="7" ngModel></textarea>
                     <button type="button" class="btn btn-primary" (click)="changeStatusNotes()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
