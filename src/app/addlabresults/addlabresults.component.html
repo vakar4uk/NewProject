@@ -8,7 +8,7 @@
   <!-- <div [hidden]="isInfoHidden" class="col-lg-12">    -->
   <div class="col-lg-12">
   <div class="container">
-    <br><h2 class="text-center">Add Blood Test Results<button [hidden]="!isSubmitted" id="print-button" type="button" class="btn btn-warning" (click)="print()">Print</button></h2>    
+    <br><h2 (click)="populate()" class="text-center">Add Blood Test Results<button [hidden]="!isSubmitted" id="print-button" type="button" class="btn btn-warning" (click)="print()">Print</button></h2>    
     <hr>   
      
     <div id="printArea">

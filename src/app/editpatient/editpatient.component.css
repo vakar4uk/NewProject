@@ -102,7 +102,7 @@ input::-webkit-inner-spin-button {
 .modal-body {
     font-size: 2em;
     text-align: center;
-    color: red;
+    color: #23D052;
 }
 
 .modal-header {
@@ -111,6 +111,6 @@ input::-webkit-inner-spin-button {
 
 .modal-title {   
     font-weight: bold;
-    color: red;
+    color: #23D052;
 }
 /* Modal */

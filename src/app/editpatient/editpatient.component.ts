@@ -80,7 +80,7 @@ export class EditpatientComponent implements OnInit {
   // PRINT
   print(): void {
     let printContents, popupWin;
-    printContents = document.getElementById('printThis').innerHTML;
+    printContents = document.getElementById('printArea').innerHTML;
     popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
     popupWin.document.open();
     popupWin.document.write(`
