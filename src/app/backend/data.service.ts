@@ -32,13 +32,26 @@ interface person{
   PhoneNo:any;
   Email:any;
 }
+interface blood {
+  ResultsNo: any;
+  Sodium: any;
+  Potassium: any;
+  Calcium: any;
+  Glucose: any;
+  Hemoglobin: any;
+  Results_PID: any;
+  DateTaken: any;
+
+}
 interface personArray{
   [index:number]:person;
 }
 interface loginArray {
   [index: number]: login;
 }
-
+interface bloodArray {
+  [index: number]: blood;
+}
 @Injectable()
 export class DataService {
   title = 'app';
@@ -46,7 +59,9 @@ export class DataService {
   userUrl = "http://localhost:3000/UserTemps";
   bloodUrl = "http://localhost:3000/BloodTests"
   ID;
+  lArray:loginArray;
   pArray:personArray;
+  bArray:bloodArray;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
@@ -90,7 +105,7 @@ export class DataService {
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" +search);
       console.log(data);
-      return data;
+      this.pArray = data;
     },
       err => {
         console.log("No Valid Entry");
@@ -100,6 +115,7 @@ export class DataService {
   getID(id:any){
     this.ID = id;
   }
+  //might not need
   getIDNewPat(phone:any){
     this.http.get<personArray>(this.personUrl + "/" + phone).subscribe(data => {
       console.log("Looking for: " +phone);
