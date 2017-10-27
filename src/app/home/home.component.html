@@ -49,12 +49,17 @@
                         <button routerLink="/editpatient" type="button" class="btn btn-success btn-block">Edit Patient</button>
                         <button [hidden]="this._datatask.IsDoctor" routerLink="/addlabresults" type="button" class="btn btn-info btn-block">Add Lab Results</button>
                         <button routerLink="/editlabresults"type="button" class="btn btn-warning btn-block">Search&Edit Lab Results</button>
+<<<<<<< HEAD
 
                         <button [hidden]="this._datatask.IsDoctor" routerLink="/scheduler" type="button" class="btn btn-primary btn-block">Appointments</button>
                         <button [hidden]="!this._datatask.IsDoctor" routerLink="/doctorscheduler" type="button" class="btn btn-primary btn-block">Scheduler</button>       
 
 
                         
+=======
+                        <button [hidden]="this._datatask.IsDoctor" routerLink="/scheduler" type="button" class="btn btn-primary btn-block">Appointments</button>
+                        <button [hidden]="!this._datatask.IsDoctor" routerLink="#" type="button" class="btn btn-primary btn-block">Scheduler</button>                        
+>>>>>>> 321ca4c1388823445fc5e0fc89e33c5772003189
                 </div>
                 
             </div>
