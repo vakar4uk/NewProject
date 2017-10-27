@@ -16,7 +16,7 @@
         <div class="input-group">
             <span class="input-group-addon">First Name</span>
             <input id="firstName" readonly="true" type="text" class="col-lg-10 form-control"
-                ngModel name="firstName" required>                 
+                ngModel name="firstName">                 
         </div>
         
     </div>
@@ -25,7 +25,7 @@
         <div class="input-group">
             <span class="input-group-addon">Last Name</span>
             <input readonly="true" type="text" id="lastName" class="form-control"
-                ngModel name="lastName" required>            
+                ngModel name="lastName">            
         </div>  
     </div><hr>  
 
@@ -37,7 +37,8 @@
     id="testDate"    
     class="col-lg-11 form-control"
     ngModel            
-    name="testDate">
+    name="testDate"
+    required>
     </div><hr>
 
     <table id="table" class="table table-striped">
