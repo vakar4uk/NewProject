@@ -25,6 +25,7 @@ interface person {
   Zipcode: any;
   PhoneNo: any;
   Email: any;
+  Notes:any;
 }
 interface personArray {
   [index: number]: person;
