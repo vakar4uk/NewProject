@@ -63,6 +63,7 @@ export class DataService {
   lArray:loginArray;
   pIndex;
   ID;
+  IsDoctor:boolean;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
@@ -136,10 +137,12 @@ export class DataService {
         console.log("Access Denied");
       }
       else if (data[0].Username === user && data[0].Password === pass && data[0].UserLevel === 1) {
+        this.IsDoctor=true;
         console.log("Welcome Doctor");
-        this._router.navigate(['/doctorhome']);
+        this._router.navigate(['/home']);
       }
       else if (data[0].Username === user && data[0].Password === pass && data[0].UserLevel != 1) {
+        this.IsDoctor=false;
         console.log("Welcome Nurse");
         this._router.navigate(['/home']);
       }
