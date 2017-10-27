@@ -178,6 +178,10 @@ export class EditlabresultsComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
     this.http.get<bloodArray>(this.bloodUrl+"/"+this._datatask.ID).subscribe(data => {
       this.bArray = data;
+      console.log(this.bArray);
+      if(this.bArray[0] != undefined){
+        this.isTableHidden = false;
+      }
     });
 }
 
