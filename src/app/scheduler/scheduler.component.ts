@@ -34,9 +34,9 @@ export class SchedulerComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
-    console.log(this.scheduler);
-  }
+  // onSubmit() {
+  //   console.log(this.scheduler);
+  // }
   
 
 }
