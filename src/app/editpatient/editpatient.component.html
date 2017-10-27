@@ -298,13 +298,13 @@
                     <span class="input-group-addon">Instructions</span>
                     <textarea disabled name="notes" (blur)="changeStatusInstructions2()"
                         id="instructions" cols="90" rows="5" ngModel></textarea>
-                    <button [hidden]="ifDoctor" type="button" class="btn btn-primary" (click)="changeStatusInstructions()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button [hidden]="!this._datatask.IsDoctor" type="button" class="btn btn-primary" (click)="changeStatusInstructions()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
                           </button>
                 </div>
             </div><hr>
-            <button (click)="print()" id="submit" class="btn btn-sm btn-warning btn-block" type="submit">Print The Form</button><hr>
+            <button (click)="print()" id="submit" class="btn btn-sm btn-warning btn-block" type="submit">Print Form</button><hr>
             <!-- Instructions -->
 
             
@@ -338,5 +338,5 @@
 
 
 <!-- Footer -->
-    <app-scrollablefooter></app-scrollablefooter>
+    <!-- <app-scrollablefooter></app-scrollablefooter> -->
 <!-- Alert Message -->
