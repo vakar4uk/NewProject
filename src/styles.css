@@ -19,4 +19,12 @@ body {
   border-bottom-color: #353535;
     }
 
- 
+/* Headers for Forms */
+    h2 {
+        color: #2222B1;
+    }
+
+    h5 {
+        margin-bottom: 20px;
+    }
+ /* Headers for Forms */

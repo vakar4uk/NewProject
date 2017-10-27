@@ -11,12 +11,14 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 @Component({
   selector: 'app-addpatient',
   templateUrl: './addpatient.component.html',
-  styleUrls: ['./addpatient.component.css']
+  styleUrls: ['./addpatient.component.css'],  
 })
 
 export class AddpatientComponent implements OnInit {  
   public modalRef: BsModalRef;
   isCondition: false;
+
+  maxLength = '2';
   
 //  public conditions = [
 //     {name:'head', value: '1'},
