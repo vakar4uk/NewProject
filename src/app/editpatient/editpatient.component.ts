@@ -75,6 +75,9 @@ export class EditpatientComponent implements OnInit {
   ];
 
   ngOnInit() {
+
+  }
+  populate(){
     if(this._datatask.ID != undefined){
       console.log("Populating");
       console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
