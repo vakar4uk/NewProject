@@ -37,6 +37,10 @@ interface personArray {
 })
 export class HomeComponent implements OnInit {
 
+  // Who's logged in
+  public ifDoctor: boolean = true;
+  
+
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
   public modalRef: BsModalRef;

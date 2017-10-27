@@ -33,8 +33,8 @@
     </div>        -->
 
     <!-- <div [hidden]="isInfoHidden" class="col-lg-12 row" id="content"></div> -->
-    <div class="col-lg-12 row" id="content">
-        <div class="form col-lg-6 text-center">
+    <div  class="col-lg-12 row" id="content">
+        <div id="printArea"  class="form col-lg-6 text-center">
             
 
             <!-- Personal Information -->
@@ -276,21 +276,38 @@
             <hr>
             <!-- Medical History -->
 
-            <!-- Additioonal Information -->
-            <br>
+            <!-- Additioonal Information -->            
             <h5>Additional Information</h5>
             <div class="form-group">
                 <div class="input-group">
-                    <span class="input-group-addon">Notes</span>
+                    <span class="input-group-addon">Info</span>
                     <textarea disabled name="notes" (blur)="changeStatusNotes2()"
-                        id="notes" cols="90" rows="7" ngModel></textarea>
+                        id="notes" cols="90" rows="5" ngModel></textarea>
                     <button type="button" class="btn btn-primary" (click)="changeStatusNotes()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
                           </button>
                 </div>
-            </div>
+            </div><hr>
             <!-- Additioonal Information -->
+
+             <!-- Instructions -->
+            <h5>Instructions</h5>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Instructions</span>
+                    <textarea disabled name="notes" (blur)="changeStatusInstructions2()"
+                        id="instructions" cols="90" rows="5" ngModel></textarea>
+                    <button [hidden]="ifDoctor" type="button" class="btn btn-primary" (click)="changeStatusInstructions()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                        btnCheckboxFalse="0">
+                            edit
+                          </button>
+                </div>
+            </div><hr>
+            <button (click)="print()" id="submit" class="btn btn-sm btn-warning btn-block" type="submit">Print The Form</button><hr>
+            <!-- Instructions -->
+
+            
 
             <button id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save</button>
 
@@ -305,17 +322,16 @@
 </form>
 <!-- Main Content -->
 
-<button (click)="print()">print</button>
-
 <!-- Alert Message -->
 <template #template>
         <div class="modal-header">
-          <h4 class="modal-title pull-left">Update Successful</h4>
+          <h4 class="modal-title pull-left">Saved!</h4>
           <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
+          Updated Succesfully!
         </div>
 </template>
 <!-- Alert Message -->

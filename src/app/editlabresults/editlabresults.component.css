@@ -1,8 +1,8 @@
 .container {
-    background-color: #D5ECEC;
+    background-color: #a7baba;
     margin-top: 20px;
     width: 70%;
-    height: 750px;
+    height: 820px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
@@ -77,3 +77,20 @@ input::-webkit-inner-spin-button {
 #date-text {    
     width: 130px;
 }
+
+/* Modal */
+.modal-body {
+    font-size: 2em;
+    text-align: center;
+    color: #00FF44;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {   
+    font-weight: bold;
+    color: #03541C;
+}
+/* Modal */

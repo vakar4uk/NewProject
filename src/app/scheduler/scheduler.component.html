@@ -2,52 +2,22 @@
 <app-header></app-header>
 
   <!-- Page Content -->
-  <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-scheduler">
-    <div class="col-lg-12">
-    <div class="container">
-      <br><h5 class="text-center">Scheduler</h5><hr>
+  
+  
       <!-- Day of the week dropdown -->
-      <div id="dayoftheweek"class="btn btn-primary">
-          <select class="form-control btn btn-primary" id="scheduledDay" name="scheduledDay" ngModel>
-            <option value="" disabled selected>Select day</option>
-            <option value="monday">Monday</option>
-            <option value="tuesday">Tuesday</option>
-            <option value="wednesday">Wednesday</option>
-            <option value="thursday">Thursday</option>
-            <option value="friday">Friday</option>
-          </select>
-      </div>
-
-      <!-- <div id="dayoftheweek"class="btn-group" dropdown>
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            Day <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
-            <li value="monday" role="menuitem"><a class="dropdown-item" routerLink="#">Monday</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Tuesday</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Wednesday</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Thursday</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Friday</a></li>
-          </ul>
-      </div> -->
+    <!-- <div id="date"class="btn-group" dropdown>
+      <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">Date<span class="caret"></span>
+      </button>
+        <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
+          <li role="menuitem"><a class="dropdown-item" href="#">Monday</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Tuesday</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Wednesday</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Thursday</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Friday</a></li>
+        </ul>
+    </div> -->
       <!-- Day of the week dropdown -->
       <!-- Time of day dropdown -->
-      <div id="timeofday" class="btn btn-primary">
-          <select class="form-control btn btn-primary" id="scheduledTime" name="scheduledTime" ngModel>
-            <option value="" disabled selected>Select time</option>
-            <option value="8:00:00">8:00A.M.</option>
-            <option value="9:00:00">9:00A.M.</option>
-            <option value="10:00:00">10:00A.M.</option>
-            <option value="11:00:00">11:00A.M.</option>
-            <option value="12:00:00">12:00P.M.</option>
-            <option value="13:00:00">1:00P.M.</option>
-            <option value="14:00:00">2:00P.M.</option>
-            <option value="15:00:00">3:00P.M.</option>
-            <option value="16:00:00">4:00P.M.</option>
-            <option value="17:00:00">5:00P.M.</option>
-          </select>
-      </div>
-
       <!-- <div id="timeofday"class="btn-group" dropdown>
           <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
             Time <span class="caret"></span>
@@ -67,19 +37,6 @@
       </div> -->
       <!-- Time of day dropdown -->
       <!-- Doctor dropdown -->
-      <div id="doctor" class="btn btn-primary">
-          <select class="form-control btn btn-primary" id="doctor" name="doctor" ngModel>
-            <option value="" disabled selected>Select doctor</option>
-            <option value="">Beesly, Pam</option>
-            <option value="">Halpert, Jim</option>
-            <option value="">Martin, Angela</option>
-            <option value="">Scott, Michael</option>
-            <option value="">Schrute, Dwight</option>
-          </select>
-      </div>
-
-      
-
       <!-- <div id="doctor"class="btn-group" dropdown>
           <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
             Doctor <span class="caret"></span>
@@ -93,41 +50,103 @@
           </ul>
       </div> -->
       <!-- Doctor dropdown -->
-      <table id="table" class="table table-striped">
-        <tbody>
-            <table [hidden]="isTableHidden" class="table">
-                <tr>
-                    <th>Day</th>
-                    <th>Time</th>
-                    <th>Doctor</th>
-                    <th>Confirm</th>                    
-                </tr>
+      
+      <!-- scheduler -->
 
-                <tr  *ngFor="let person of pArray; let i = index">
-                    <td><button type="button" id="selectPatient" (click)="getID(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
-                    <td>{{scheduledDay.value}}</td>
-                    <td>{{person.Lname}}</td>
-                    <td>{{person.Street}}</td>
-                    <td>{{person.PhoneNo}}</td>
-                </tr>
-                <!-- <tr *ngFor="let appointment of appointments; let i = index">
-                    <td>{{scheduledDay}}</td>
-                    <td>{{time}}</td>
-                    <td>{{doctor}}</td>
-                    <td><button type="button" id="confirmAppointment" (click)=""><i class="fa fa-check" aria-hidden="true"></i></button>{{i + 1}}</td>
-                </tr> -->
-            </table>`
-        </tbody>
-      </table> 
-      <button id="submit" 
-      class="btn btn-lg btn-success btn-block" 
-      placeholder="Allergic to beets, bears, and battlestar galactica."      
-      type="submit"         
-      >Submit</button>    
-    </div>
-    </div>
-  </form>
+  <div class="container"id="content">
+    <br><h5 class="text-center">Scheduler</h5><hr>
+    <!-- <body>{{bsValue| date:'yMd'}}</body> -->
+    <input type="text"
+            readonly="true"
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            #dp="bsDatepicker"
+            bsDatepicker [(bsValue)]="bsValue">
+    <!-- <input type="text"
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            [(ngModel)]="bsValue"
+            bsDatepicker> -->
+    <button class="btn btn-success" (click)="dp.toggle()">Select Date</button>
+      
+    <table id="table" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Doctor</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="date">10/31/2017</td>
+          <td id="time">8:00A.M.</td>          
+          <td id="doctor">Beesly, Pam</td>
+          <td id="select">
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusSodium()" id="btn">
+            select
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>9:00A.M.</td>          
+          <td>Halpert, Jim</td>
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusPotassium()" id="btn">
+            select
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>10:00A.M.</td>
+          <td>Schrute, Dwight</td>
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusCalcium()" id="btn">
+            select
+          </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>11:00A.M.</td>
+          <td>Scott, Michael</td>
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusGlucose()" id="btn">
+              select
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>1:00P.M.</td>
+          <td>Levinson, Jan</td>
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusHemoglobin()" id="btn">
+            select
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   
+    <button id="submit" (click)="onSubmit"
+    class="btn btn-lg btn-success btn-block" 
+    [disabled]="!f.valid"
+    type="submit"         
+    >Submit</button>    
+  
+  </div> 
+
+  
+      
   <!-- Page Content -->
   
-  <app-stickyfooter></app-stickyfooter>
+  <app-scrollablefooter></app-scrollablefooter>

@@ -7,7 +7,7 @@
   <!-- <div [hidden]="isInfoHidden" class="col-lg-12"> -->
   <div class="col-lg-12">
       <div class="container">
-          <br><h2 class="text-center">Edit Blood Test Results<button id="print-button" type="button" class="btn btn-warning" (click)="print()">Print</button></h2>
+          <br><h2 (click)="populate" class="text-center">Edit Blood Test Results</h2>
           <hr> 
       <div id="printArea">
       <div id="date" class="form-group">          
@@ -143,7 +143,8 @@
         </tbody>
       </table>
      
-  
+      <button (click)="print()" id="submit" class="btn btn-sm btn-warning btn-block" type="submit">Print The Results</button><hr>
+
       <button id="submit" (click)="onSubmit"
       class="btn btn-lg btn-danger btn-block" 
       [hidden]="isSubmitted"
@@ -164,9 +165,22 @@
   
   <!-- Page Content -->
   
-  <!-- Footer -->
+ <!-- Alert Message -->
+<template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Saved!</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Updated Succesfully!
+    </div>
+</template>
+<!-- Alert Message --> 
+
 <!-- Footer -->
-<app-stickyfooter></app-stickyfooter>
+<app-scrollablefooter></app-scrollablefooter>
 
 <!-- <div *ngIf="isTableHidden || isInfoHidden">
     <app-stickyfooter></app-stickyfooter>
