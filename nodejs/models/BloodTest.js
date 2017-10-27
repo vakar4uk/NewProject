@@ -4,8 +4,8 @@ var BloodTest={
 	getAllTests:function(callback){
 		return db.query("select * from BloodTest",callback);
 	},
-	getTestByDate:function(date,id,callback){
-		return db.query("select * from BloodTest where DateTaken=? AND Results_PID=?",[date,id],callback);
+	getTestByPerson:function(id,callback){
+		return db.query("select * from BloodTest where Results_PID=?",[id],callback);
 	},
 	getTestByID:function(id,callback){
 		return db.query("select * from BloodTest where ResultsNo=?",[id],callback);

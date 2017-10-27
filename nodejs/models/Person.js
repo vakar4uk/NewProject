@@ -14,13 +14,13 @@ var Person={
 		return db.query("select * from Person where PID=?",[id],callback);
 	},
 	addPerson:function(Person,callback){
-		return db.query("insert into Person values(?,?,?,?,?,?,?,?,?,?,?,?)",[Person.PID,Person.Fname,Person.Lname,Person.Sex,Person.DOB,Person.Street,Person.Unit,Person.City,Person.State,Person.Zipcode,Person.PhoneNo,Person.Email],callback);
+		return db.query("insert into Person values(?,?,?,?,?,?,?,?,?,?,?,?,?)",[Person.PID,Person.Fname,Person.Lname,Person.Sex,Person.DOB,Person.Street,Person.Unit,Person.City,Person.State,Person.Zipcode,Person.PhoneNo,Person.Email,Person.Notes],callback);
 	},
 	removePerson:function(id,callback){
 		return db.query("delete from Person where PID=?",[id],callback);
 	},
 	updatePerson:function(id,Person,callback){
-		return db.query("update Person set Fname=?,Lname=?,Sex=?,DOB=?,Street=?,Unit=?,City=?,State=?,Zipcode=?,PhoneNo=?,Email=? where PID=?",[Person.Fname,Person.Lname,Person.Sex,Person.DOB,Person.Street,Person.Unit,Person.City,Person.State,Person.Zipcode,Person.PhoneNo,Person.Email,id],callback);
+		return db.query("update Person set Fname=?,Lname=?,Sex=?,DOB=?,Street=?,Unit=?,City=?,State=?,Zipcode=?,PhoneNo=?,Email=?,Notes=? where PID=?",[Person.Fname,Person.Lname,Person.Sex,Person.DOB,Person.Street,Person.Unit,Person.City,Person.State,Person.Zipcode,Person.PhoneNo,Person.Email,Person.Notes,id],callback);
 	}
 };
 module.exports = Person;

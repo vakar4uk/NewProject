@@ -31,6 +31,7 @@ interface person{
   Zipcode:any;
   PhoneNo:any;
   Email:any;
+  Notes:any;
 }
 interface personArray{
   [index:number]:person;
@@ -80,7 +81,7 @@ export class DataService {
     );
 
   }
-  addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
+  addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.post(this.personUrl, {
       Fname:fname,
       Lname:lname,
@@ -91,7 +92,8 @@ export class DataService {
       State:state,
       Zipcode:zip,
       PhoneNo:phone,
-      Email:email
+      Email:email,
+      Notes:notes
     })
       .subscribe(
       res => {
@@ -148,7 +150,7 @@ export class DataService {
 
   }
   
-  updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
+  updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.put(this.personUrl+"/"+this.ID, {
       Fname:fname,
       Lname:lname,
@@ -159,7 +161,8 @@ export class DataService {
       State:state,
       Zipcode:zip,
       PhoneNo:phone,
-      Email:email
+      Email:email,
+      Notes:notes
     })
       .subscribe(
       res => {

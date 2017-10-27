@@ -94,6 +94,7 @@ export class EditpatientComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("zipcode")).value=(this._datatask.pArray[this._datatask.pIndex].Zipcode);
       (<HTMLInputElement>document.getElementById("phone")).value=(this._datatask.pArray[this._datatask.pIndex].PhoneNo);
       (<HTMLInputElement>document.getElementById("patEmail")).value=(this._datatask.pArray[this._datatask.pIndex].Email);
+      (<HTMLInputElement>document.getElementById("notes")).value=this._datatask.pArray[this._datatask.pIndex].Notes;
     //}
   }
 
@@ -166,8 +167,9 @@ export class EditpatientComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("zipcode")).value=this._datatask.pArray[this._datatask.pIndex].Zipcode;
     (<HTMLInputElement>document.getElementById("phone")).value=this._datatask.pArray[this._datatask.pIndex].PhoneNo;
     (<HTMLInputElement>document.getElementById("patEmail")).value=this._datatask.pArray[this._datatask.pIndex].Email;
+    (<HTMLInputElement>document.getElementById("notes")).value=this._datatask.pArray[this._datatask.pIndex].Notes;
   }
-  onSubmit() {
+  onSubmit(template: TemplateRef<any>) {
     //updating person|patient Currently missing DOB and Gender
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
@@ -180,7 +182,9 @@ export class EditpatientComponent implements OnInit {
     var zip = (<HTMLInputElement>document.getElementById("zipcode")).value;
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
     var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
-    this._datatask.updatePerson(fname, lname,dob,gender, street, city, state, zip, phone, email);
+    var notes = (<HTMLInputElement>document.getElementById("notes")).value;
+    this._datatask.updatePerson(fname, lname,dob,gender, street, city, state, zip, phone, email, notes);
+    this.modalRef = this.modalService.show(template);
     //console.log(this.addPatient);
   }
   changeStatusGender() {

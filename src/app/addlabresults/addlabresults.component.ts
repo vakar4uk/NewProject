@@ -70,6 +70,13 @@ export class AddlabresultsComponent implements OnInit {
     //   this.isTableHidden = false;
     // }
   }
+   populate(){
+      console.log("Populating");
+      console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
+      (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
+      (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
+      
+  }
   search(template: TemplateRef<any>) {
     //searching for person|patient
 
