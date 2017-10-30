@@ -178,10 +178,8 @@ export class EditlabresultsComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
     (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
     this._datatask.searchBloodT();
-    console.log("Index 0 :"+this._datatask.bArray[0]);
-    if(this._datatask.bArray[0] != null){
-      this.isTableHidden = false;
-    }
+    //console.log("Index 0 :"+this._datatask.bArray[0]);
+    this.isTableHidden = false;
 }
 
 }
