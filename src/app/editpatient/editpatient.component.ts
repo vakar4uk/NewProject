@@ -12,23 +12,8 @@ import 'rxjs/add/operator/catch';
 import {TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
-interface person {
-  PID: any;
-  Fname: any;
-  Lname: any;
-  Sex: any;
-  DOB: any;
-  Street: any;
-  Unit: any;
-  City: any;
-  State: any;
-  Zipcode: any;
-  PhoneNo: any;
-  Email: any;
-}
-interface personArray {
-  [index: number]: person;
-}
+
+
 @Component({
   selector: 'app-editpatient',
   templateUrl: './editpatient.component.html',
@@ -38,7 +23,6 @@ interface personArray {
 
 export class EditpatientComponent implements OnInit {
   public modalRef: BsModalRef;
-  personUrl = "http://localhost:3000/Persons";
   isCondition = false;
   constructor(private modalService: BsModalService,private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
 
@@ -65,7 +49,6 @@ export class EditpatientComponent implements OnInit {
   public inactive: boolean = true;
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
-  public pArray:personArray;
   public id:number;
   public date:any;
   public conditions = [
@@ -119,41 +102,32 @@ export class EditpatientComponent implements OnInit {
 }
   // PRINT
 
-  
-  public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
   search(template: TemplateRef<any>) {
     //searching for person|patient
     
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
-    this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
-      console.log("Looking for:" + search);
-      console.log(data);
-      if(data[0] != undefined){
+    this._datatask.searchPatient(search);
+    //if it is not empty show table
+      if(this._datatask.pArray[0] != undefined){
         this.isTableHidden = false;
       }
-      else if(data[0] === undefined){
+      //if it is empty show error
+      else if(this._datatask.pArray[0] === undefined){
         this.modalRef = this.modalService.show(template);
       }
-      this.pArray=data;
-      console.log("Checking if data was Stored",this.pArray);
+      console.log("Checking if data was Stored",this._datatask.pArray);
 
-    },
-      err => {
-        console.log("No Valid Entry");
-        this.modalRef = this.modalService.show(template);
-      }
-    );
+
 
   }
+
   getID(index){
-    //this._datatask.getID(this.pArray[index].PID);
     this._datatask.pIndex=index;
+    this._datatask.getID(this._datatask.pArray[index].PID);
     this.isInfoHidden = false;
-    console.log("Index"+index);
-    console.log("PID:"+this._datatask.ID);
+    console.log("Index: "+this._datatask.pIndex);
+    console.log("PID: "+this._datatask.ID);
     (<HTMLInputElement>document.getElementById("firstName")).value=this._datatask.pArray[this._datatask.pIndex].Fname;
     (<HTMLInputElement>document.getElementById("lastName")).value=this._datatask.pArray[this._datatask.pIndex].Lname;
     var t = this._datatask.pArray[this._datatask.pIndex].DOB.split(/[- T]/);
@@ -185,7 +159,6 @@ export class EditpatientComponent implements OnInit {
     var notes = (<HTMLInputElement>document.getElementById("notes")).value;
     this._datatask.updatePerson(fname, lname,dob,gender, street, city, state, zip, phone, email, notes);
     this.modalRef = this.modalService.show(template);
-    //console.log(this.addPatient);
   }
   changeStatusGender() {
     (<HTMLInputElement>document.getElementById('gender')).disabled=false;

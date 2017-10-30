@@ -137,6 +137,7 @@ export class DataService {
       console.log("Looking for:" +search);
       console.log(data);
       this.pArray = data;
+      console.log("Number of entries: "+Object.keys(this.pArray).length);
     },
       err => {
         console.log("No Valid Entry");
