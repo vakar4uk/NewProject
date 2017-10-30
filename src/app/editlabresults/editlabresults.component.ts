@@ -29,20 +29,20 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 // interface personArray {
 //   [index: number]: person;
 // }
-// interface blood {
-//   ResultsNo: any;
-//   Sodium: any;
-//   Potassium: any;
-//   Calcium: any;
-//   Glucose: any;
-//   Hemoglobin: any;
-//   Results_PID: any;
-//   DateTaken: any;
+interface blood {
+  ResultsNo: any;
+  Sodium: any;
+  Potassium: any;
+  Calcium: any;
+  Glucose: any;
+  Hemoglobin: any;
+  Results_PID: any;
+  DateTaken: any;
 
-// }
-// interface bloodArray {
-//   [index: number]: blood;
-// }
+}
+interface bloodArray {
+  [index: number]: blood;
+}
 
 @Component({
   selector: 'app-editlabresults',
