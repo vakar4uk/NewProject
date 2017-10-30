@@ -87,6 +87,15 @@ export class EditlabresultsComponent implements OnInit {
     );
     popupWin.document.close();
 }
+onSubmit(template: TemplateRef<any>){
+  var sod = (<HTMLInputElement>document.getElementById("sodium")).value;
+  var pot = (<HTMLInputElement>document.getElementById("potassium")).value;
+  var cal = (<HTMLInputElement>document.getElementById("calcium")).value;
+  var glu = (<HTMLInputElement>document.getElementById("glucose")).value;
+  var hem = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
+  this._datatask.updateBloodT(this._datatask.bArray[this._datatask.bIndex].ResultsNo,sod,pot,cal,glu,hem);
+  this.modalRef = this.modalService.show(template);
+}
   // PRINT
 
   // search(template: TemplateRef<any>) {
@@ -130,6 +139,9 @@ export class EditlabresultsComponent implements OnInit {
     //   }
     // );
     //var date = (<HTMLInputElement>document.getElementById("testDate")).value;
+    var t = (this._datatask.bArray[this._datatask.bIndex].DateTaken.split(/[- T]/));
+    this.date= t[0]+"-"+t[1]+"-"+t[2];
+    (<HTMLInputElement>document.getElementById("testDate")).value=this.date;
     (<HTMLInputElement>document.getElementById("sodium")).value = this._datatask.bArray[this._datatask.bIndex].Sodium;
     (<HTMLInputElement>document.getElementById("potassium")).value =this._datatask.bArray[this._datatask.bIndex].Potassium;
     (<HTMLInputElement>document.getElementById("calcium")).value= this._datatask.bArray[this._datatask.bIndex].Calcium;
@@ -137,6 +149,7 @@ export class EditlabresultsComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("hemoglobin")).value=this._datatask.bArray[this._datatask.bIndex].Hemoglobin;
     this.isInfoHidden = false;
   }
+
   changeStatusSodium(){
     (<HTMLInputElement>document.getElementById('sodium')).readOnly=false;
     (<HTMLInputElement>document.getElementById('sodium')).focus();
