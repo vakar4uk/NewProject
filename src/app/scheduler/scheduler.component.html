@@ -61,7 +61,7 @@
             #dp="bsDatepicker"
             bsDatepicker [(bsValue)]="bsValue">
     
-    <button class="btn btn-success" (click)="dp.toggle()" (click)="selectDate()">Select Date</button>
+    <button class="btn btn-success" (click)="dp.toggle()" ng-change="selectDate()">Select Date</button>
       
     <table [hidden]="isTableHidden" id="table" class="table table-striped">
       <tr>
