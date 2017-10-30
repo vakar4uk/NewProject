@@ -67,7 +67,7 @@ interface bloodArray {
 interface Appointment {
   ApptNo: any;
   Appt_DrID: any;
-  ApptDate: any;
+  apptdate: any;
   ApptTime: any;
   Appt_PID: any;
 }
