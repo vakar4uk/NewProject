@@ -10,6 +10,13 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './scheduler.component.html',
   styleUrls: ['./scheduler.component.css']
 })
+interface Appointment {
+  ApptNo: any;
+  Appt_DrID: any;
+  ApptDate: any;
+  ApptTime: any;
+  Appt_PID: any;
+}
 export class SchedulerComponent implements OnInit {
   //minDate = new Date(2017, 5, 10);
   //maxDate = new Date(2018, 9, 15);
