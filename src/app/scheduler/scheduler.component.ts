@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../backend/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-scheduler',
