@@ -74,7 +74,7 @@
       </tr>
         <tr  *ngFor="let appointment of aArray; let i = index">
             <td>{{appointment.ApptDate | date:'MM/dd/yyyy'}}</td>
-            <td>{{appointment.ApptDate | time:'h:mm a'}}</td>
+            <td>{{appointment.ApptDate | time:'jm'}}</td>
             <td>{{appointment.Appt_DrID}}</td>
             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
         </tr>
