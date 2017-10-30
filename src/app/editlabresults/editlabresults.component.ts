@@ -56,6 +56,12 @@ export class EditlabresultsComponent implements OnInit {
   ngOnInit() {
   }
 
+  public isEdited: boolean = false;
+
+  edit() {
+    this.isEdited = true;
+  }  
+
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
   public pArray: personArray;

@@ -47,7 +47,7 @@
                     <input id="firstName" readonly="true" (blur)="changeStatusFirstName1()" type="text" class="col-lg-10 form-control"
                         ngModel name="firstName" required>
                     <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
-                    <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusFirstName()" [(ngModel)]="singleModel"
+                    <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusFirstName(); edit()" [(ngModel)]="singleModel"
                         btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
                     edit
                   </button>
@@ -60,7 +60,7 @@
                     <span class="input-group-addon">Last Name</span>
                     <input readonly="true" (blur)="changeStatusLastName2()" type="text" id="lastName" class="form-control"
                         ngModel name="lastName" required>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusLastName()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusLastName(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                       edit
                     </button>
@@ -73,7 +73,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">Date of Birth</span>
                     <input readonly="true" (blur)="changeStatusDOB2()" type="date" id="dob" class="form-control" ngModel name="dob" required>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusDOB()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusDOB(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                     edit
                   </button>
@@ -90,7 +90,7 @@
                                 <option value="Female">Female</option>
                             </select>
                         </div>
-                        <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusGender()" [(ngModel)]="singleModel"
+                        <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusGender(); edit()" [(ngModel)]="singleModel"
                             btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
                           edit
                       </button>
@@ -108,7 +108,7 @@
                     <span class="input-group-addon">Street</span>
                     <input readonly="true" (blur)="changeStatusAddress2()" type="text" id="street" class="col-lg-10 form-control"
                         ngModel name="street" required>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusAddress()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusAddress(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                         edit
                       </button>
@@ -121,7 +121,7 @@
                     <span class="input-group-addon">Unit</span>
                     <input readonly="true" (blur)="changeStatusUnit2()" type="text" id="unit" class="col-lg-10 form-control"
                         ngModel name="unit">
-                    <button type="button" class="btn btn-primary" (click)="changeStatusUnit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusUnit(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
                           </button>
@@ -134,7 +134,7 @@
                     <span class="input-group-addon">City</span>
                     <input (blur)="changeStatusCity2()" readonly="true" type="text" id="City" class="form-control" ngModel
                         name="City" required>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusCity()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusCity(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                                 edit
                               </button>
@@ -203,7 +203,7 @@
                               <option value="WY">Wyoming</option>
                             </select>
                     </div>
-                    <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusState()" [(ngModel)]="singleModel"
+                    <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusState(); edit()" [(ngModel)]="singleModel"
                         btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
                             edit
                         </button>
@@ -211,7 +211,7 @@
                     <span class="input-group-addon">Zipcode</span>
                     <input (blur)="changeStatusZipcode2()" readonly="true" type="number" min="0" id="zipcode" class="form-control"
                         ngModel name="zipcode" required>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusZipcode()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusZipcode(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                       edit
                     </button>
@@ -229,7 +229,7 @@
                     <span class="input-group-addon">Phone</span>
                     <input (blur)="changeStatusPhone2()" readonly="true" type="number" id="phone" class="col-lg-10 form-control"
                         ngModel name="phone" required>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusPhone()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusPhone(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
                           </button>
@@ -242,7 +242,7 @@
                     <span class="input-group-addon">Email</span>
                     <input (blur)="changeStatusPatEmail2()" readonly="true" type="email" id="patEmail" class="col-lg-10 form-control" ngModel
                         name="patEmail" required email>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusPatEmail()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusPatEmail(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                                 edit
                               </button>
@@ -283,7 +283,7 @@
                     <span class="input-group-addon">Info</span>
                     <textarea disabled name="notes" (blur)="changeStatusNotes2()"
                         id="notes" cols="90" rows="5" ngModel></textarea>
-                    <button type="button" class="btn btn-primary" (click)="changeStatusNotes()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button type="button" class="btn btn-primary" (click)="changeStatusNotes(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
                           </button>
@@ -298,18 +298,18 @@
                     <span class="input-group-addon">Instructions</span>
                     <textarea disabled name="notes" (blur)="changeStatusInstructions2()"
                         id="instructions" cols="90" rows="5" ngModel></textarea>
-                    <button [hidden]="!this._datatask.IsDoctor" type="button" class="btn btn-primary" (click)="changeStatusInstructions()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
+                    <button [hidden]="!this._datatask.IsDoctor" type="button" class="btn btn-primary" (click)="changeStatusInstructions(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                             edit
                           </button>
                 </div>
             </div><hr>
-            <button (click)="print()" id="submit" class="btn btn-sm btn-warning btn-block" type="submit">Print Form</button><hr>
+            <button (click)="print()" type="button" class="btn btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button><hr>
             <!-- Instructions -->
 
             
-
-            <button id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save</button>
+            
+            <button [hidden]="!isEdited" id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save</button>
 
         </div>
 
@@ -333,6 +333,15 @@
         <div class="modal-body">
           Updated Succesfully!
         </div>
+
+        <div class="modal-body">
+            <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="modal-body">
+                <button (click)="modalRef.hide()" routerLink="/home" type="button" class="btn btn-success">Return to Home<i class="fa fa-home" aria-hidden="true"></i></button>
+        </div>
+
 </template>
 <!-- Alert Message -->
 

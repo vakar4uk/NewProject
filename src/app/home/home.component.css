@@ -101,6 +101,10 @@ button {
     margin-right: 20px;
 }
 
+#newPatient-button > i {
+    margin-left: 5px;
+}
+
 #buttons-container > button {
     border-radius: 25px;
 }

@@ -2,7 +2,7 @@
     background-color: #a7baba;
     margin-top: 20px;
     width: 70%;
-    height: 760px;
+    height: 860px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
@@ -39,6 +39,14 @@
 #submit {
     cursor: pointer;  
     border-radius: 20px;  
+}
+
+button {
+    border-radius: 20px;
+}
+
+button > i {
+    margin-left: 5px;
 }
 
 #date {

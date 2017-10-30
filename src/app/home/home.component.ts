@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   public id:any;
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
   }
-
+  /**********Something is wrong have 2 press twice************/
   search(template: TemplateRef<any>) {
     //searching for person|patient
     
