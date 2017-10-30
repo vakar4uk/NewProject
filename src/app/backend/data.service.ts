@@ -246,7 +246,23 @@ export class DataService {
       console.log(this.bArray);
     });
   }
-
+  updateBloodT(resno, sod,pot,cal,glu,hem) {
+    const req = this.http.put(this.bloodUrl+"/"+resno, {
+      Sodium: sod,
+      Potassium: pot,
+      Calcium: cal,
+      Glucose: glu,
+      Hemoglobin: hem
+    })
+      .subscribe(
+      res => {
+        console.log("Update Success");
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
+  }
 
 }
 
