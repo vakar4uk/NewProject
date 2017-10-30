@@ -70,6 +70,7 @@ export class AddlabresultsComponent implements OnInit {
     var glucose = (<HTMLInputElement>document.getElementById("glucose")).value;
     var hemoglobin = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
     this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
+    this.modalRef = this.modalService.show(template);
   }
   // PRINT
   print(): void {
