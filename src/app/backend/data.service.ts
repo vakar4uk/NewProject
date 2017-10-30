@@ -68,6 +68,7 @@ interface Appointment {
   ApptNo: any;
   Appt_DrID: any;
   ApptDate: any;
+  ApptTime: any;
   Appt_PID: any;
 }
 interface appointmentArray {
