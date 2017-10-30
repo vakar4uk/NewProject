@@ -1,5 +1,6 @@
 <!-- Header -->
 <app-header></app-header>
+<br>
 <!-- Header -->
 
 <!-- Main Content -->
@@ -33,7 +34,7 @@
                 </table>                
             </div>            
            
-            <div [hidden]="isInfoHidden" class="form col-lg-6 text-center">
+            <div [hidden]="isTableHidden" class="form col-lg-6 text-center">
                 <h5>Select action for...</h5><hr>
                 <div class="input-group">
                     <span class="input-group-addon">First Name</span>
@@ -45,11 +46,11 @@
                 </div><hr>
                 
                 <div id="buttons-container">
-                        <button routerLink="/editpatient" type="button" class="btn btn-success btn-block">Edit Patient</button>
-                        <button [hidden]="this._datatask.IsDoctor" routerLink="/addlabresults" type="button" class="btn btn-info btn-block">Add Lab Results</button>
-                        <button [hidden]="this._datatask.IsDoctor" routerLink="/editlabresults"type="button" class="btn btn-warning btn-block">Search&Edit Lab Results</button>       
-                        <button [hidden]="this._datatask.IsDoctor" routerLink="/scheduler" type="button" class="btn btn-primary btn-block">Appointments</button>
-                        <button [hidden]="!this._datatask.IsDoctor" routerLink="#" type="button" class="btn btn-primary btn-block">Scheduler</button>                        
+                        <button routerLink="/editpatient" type="button" class="btn btn-success btn-block">Edit Patient<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button [hidden]="this._datatask.IsDoctor" routerLink="/addlabresults" type="button" class="btn btn-info btn-block">Add Lab Results<i class="fa fa-plus" aria-hidden="true"></i></button>
+                        <button [hidden]="this._datatask.IsDoctor" routerLink="/editlabresults"type="button" class="btn btn-warning btn-block">Search&Edit Lab Results<i class="fa fa-search-plus" aria-hidden="true"></i></button>       
+                        <button [hidden]="this._datatask.IsDoctor" routerLink="/scheduler" type="button" class="btn btn-primary btn-block">Appointments<i class="fa fa-calendar" aria-hidden="true"></i></button>
+                        <button [hidden]="!this._datatask.IsDoctor" routerLink="#" type="button" class="btn btn-primary btn-block">Scheduler<i class="fa fa-calendar" aria-hidden="true"></i></button>                        
                 </div>
                 
             </div>
@@ -75,7 +76,8 @@
 
   
 <!-- Footer -->
-<!-- <app-scrollablefooter></app-scrollablefooter> -->
+    <br><br><br><br><br><br><br>
+    <app-scrollablefooter></app-scrollablefooter>
 <!-- Footer -->
 
   

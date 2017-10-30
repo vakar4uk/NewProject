@@ -2,10 +2,22 @@
     background-color: #a7baba;
     margin-top: 20px;
     width: 70%;
-    height: 870px;
+    height: 570px;
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
+}
+
+.container1 {
+    background-color: #a7baba;
+    margin-top: 20px;
+    width: 70%;
+    height: 290px;
+    border: 2px solid rgb(44, 95, 112);
+    border-radius: 50px;
+    margin-bottom: 10px;
+    margin-left: 215px;
+    padding-left: 15px;   
 }
 
 #main-content {    
@@ -23,10 +35,11 @@
 
 /* Forms */
 .form {      
-    margin-left: 380px;    
+    margin-left: 200px;
+    width: 70%;
     padding: 10px;   
-    background-color: #D5ECEC;
-    border: 2px solid rgb(44, 95, 112);     
+    background-color: #a7baba;
+    border: 2px solid rgb(44, 95, 112);    
     border-radius: 30px;      
     margin-bottom: 10px;
 }
@@ -41,11 +54,6 @@ input::-webkit-inner-spin-button {
     
     -webkit-appearance: none;
     margin: 0; 
-}
-
-#dropdown {
-    position: relative;
-    margin-top: 100px;
 }
 
 #radio-button {
@@ -63,7 +71,7 @@ button {
 }
 
 button > i {
-    margin-left: 5px;
+    padding-left: 5px;
 }
 
 #print-button {

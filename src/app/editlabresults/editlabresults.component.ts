@@ -12,23 +12,23 @@ import { TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
-interface person {
-  PID: any;
-  Fname: any;
-  Lname: any;
-  Sex: any;
-  DOB: any;
-  Street: any;
-  Unit: any;
-  City: any;
-  State: any;
-  Zipcode: any;
-  PhoneNo: any;
-  Email: any;
-}
-interface personArray {
-  [index: number]: person;
-}
+// interface person {
+//   PID: any;
+//   Fname: any;
+//   Lname: any;
+//   Sex: any;
+//   DOB: any;
+//   Street: any;
+//   Unit: any;
+//   City: any;
+//   State: any;
+//   Zipcode: any;
+//   PhoneNo: any;
+//   Email: any;
+// }
+// interface personArray {
+//   [index: number]: person;
+// }
 interface blood {
   ResultsNo: any;
   Sodium: any;
@@ -64,15 +64,8 @@ export class EditlabresultsComponent implements OnInit {
 
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
-  public pArray: personArray;
   public date: any;
-  bArray:bloodArray;
-  personUrl = "http://localhost:3000/Persons";
-  bloodUrl = "http://localhost:3000/BloodTests";
   public modalRef: BsModalRef;
-  // public isTableHidden: boolean = true;
-  // public isInfoHidden: boolean = true;
-
   public isSubmitted: boolean = false;
 
   // PRINT
@@ -94,34 +87,45 @@ export class EditlabresultsComponent implements OnInit {
     );
     popupWin.document.close();
 }
+onSubmit(template: TemplateRef<any>){
+  var sod = (<HTMLInputElement>document.getElementById("sodium")).value;
+  var pot = (<HTMLInputElement>document.getElementById("potassium")).value;
+  var cal = (<HTMLInputElement>document.getElementById("calcium")).value;
+  var glu = (<HTMLInputElement>document.getElementById("glucose")).value;
+  var hem = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
+  this._datatask.updateBloodT(this._datatask.bArray[this._datatask.bIndex].ResultsNo,sod,pot,cal,glu,hem);
+  this.modalRef = this.modalService.show(template);
+}
   // PRINT
 
-  search(template: TemplateRef<any>) {
-    //searching for person|patient
+  // search(template: TemplateRef<any>) {
+  //   //searching for person|patient
 
-    var search = (<HTMLInputElement>document.getElementById("search")).value;
-    console.log(search);
-    this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
-      console.log("Looking for:" + search);
-      console.log(data);
-      if (data[0] != undefined) {
-        this.isTableHidden = false;
-      }
-      else if (data[0] === undefined) {
-        this.modalRef = this.modalService.show(template);
-      }
-      this.pArray = data;
-      console.log("Checking if data was Stored", this.pArray);
+  //   var search = (<HTMLInputElement>document.getElementById("search")).value;
+  //   console.log(search);
+  //   this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
+  //     console.log("Looking for:" + search);
+  //     console.log(data);
+  //     if (data[0] != undefined) {
+  //       this.isTableHidden = false;
+  //     }
+  //     else if (data[0] === undefined) {
+  //       this.modalRef = this.modalService.show(template);
+  //     }
+  //     this.pArray = data;
+  //     console.log("Checking if data was Stored", this.pArray);
 
-    },
-      err => {
-        console.log("No Valid Entry");
-        this.modalRef = this.modalService.show(template);
-      }
-    );
+  //   },
+  //     err => {
+  //       console.log("No Valid Entry");
+  //       this.modalRef = this.modalService.show(template);
+  //     }
+  //   );
 
-  }
+  // }
   getID(index) {
+    this._datatask.bIndex=index;
+    //this._datatask.searchBloodT();
     //get PID of person selected
     //this._datatask.getID(this.pArray[index].PID);
     //**** SCRAP LATER
@@ -135,13 +139,17 @@ export class EditlabresultsComponent implements OnInit {
     //   }
     // );
     //var date = (<HTMLInputElement>document.getElementById("testDate")).value;
-    (<HTMLInputElement>document.getElementById("sodium")).value = this._datatask.bArray[index].Sodium;
-    (<HTMLInputElement>document.getElementById("potassium")).value =this._datatask.bArray[index].Potassium;
-    (<HTMLInputElement>document.getElementById("calcium")).value= this._datatask.bArray[index].Calcium;
-    (<HTMLInputElement>document.getElementById("glucose")).value=this._datatask.bArray[index].Glucose;
-    (<HTMLInputElement>document.getElementById("hemoglobin")).value=this._datatask.bArray[index].Hemoglobin;
+    var t = (this._datatask.bArray[this._datatask.bIndex].DateTaken.split(/[- T]/));
+    this.date= t[0]+"-"+t[1]+"-"+t[2];
+    (<HTMLInputElement>document.getElementById("testDate")).value=this.date;
+    (<HTMLInputElement>document.getElementById("sodium")).value = this._datatask.bArray[this._datatask.bIndex].Sodium;
+    (<HTMLInputElement>document.getElementById("potassium")).value =this._datatask.bArray[this._datatask.bIndex].Potassium;
+    (<HTMLInputElement>document.getElementById("calcium")).value= this._datatask.bArray[this._datatask.bIndex].Calcium;
+    (<HTMLInputElement>document.getElementById("glucose")).value=this._datatask.bArray[this._datatask.bIndex].Glucose;
+    (<HTMLInputElement>document.getElementById("hemoglobin")).value=this._datatask.bArray[this._datatask.bIndex].Hemoglobin;
     this.isInfoHidden = false;
   }
+
   changeStatusSodium(){
     (<HTMLInputElement>document.getElementById('sodium')).readOnly=false;
     (<HTMLInputElement>document.getElementById('sodium')).focus();
@@ -182,13 +190,9 @@ export class EditlabresultsComponent implements OnInit {
     console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
     (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
     (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
-    this.http.get<bloodArray>(this.bloodUrl+"/"+this._datatask.ID).subscribe(data => {
-      this.bArray = data;
-      console.log(this.bArray);
-      if(this.bArray[0] != undefined){
-        this.isTableHidden = false;
-      }
-    });
+    this._datatask.searchBloodT();
+    //console.log("Index 0 :"+this._datatask.bArray[0]);
+    this.isTableHidden = false;
 }
 
 }

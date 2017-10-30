@@ -239,7 +239,30 @@ export class DataService {
       }
       );
   }
-
+  searchBloodT(){
+    this.http.get<bloodArray>(this.bloodUrl+"/"+this.ID).subscribe(data => {
+      this.bArray = data;
+      console.log("Inside data service")
+      console.log(this.bArray);
+    });
+  }
+  updateBloodT(resno, sod,pot,cal,glu,hem) {
+    const req = this.http.put(this.bloodUrl+"/"+resno, {
+      Sodium: sod,
+      Potassium: pot,
+      Calcium: cal,
+      Glucose: glu,
+      Hemoglobin: hem
+    })
+      .subscribe(
+      res => {
+        console.log("Update Success");
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
+  }
 
 }
 

@@ -65,8 +65,8 @@ td {
     margin-left: 380px;    
     padding: 10px; 
     padding-left: 20px; 
-    background-color: #D5ECEC;
-    border: 2px solid rgb(44, 95, 112);     
+    background-color: #a7baba;
+    border: 2px solid rgb(44, 95, 112);  
     border-radius: 35px;      
     margin-bottom: 10px;
 }
@@ -99,6 +99,10 @@ input {
 
 button {
     margin-right: 20px;
+}
+
+#buttons-container > button > i {
+    margin-left: 5px;
 }
 
 #newPatient-button > i {
