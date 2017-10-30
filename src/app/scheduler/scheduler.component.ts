@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { DataService } from '../backend/data.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-scheduler',
@@ -10,6 +14,9 @@ export class SchedulerComponent implements OnInit {
   minDate = new Date(2017, 5, 10);
   maxDate = new Date(2018, 9, 15);
   _bsValue: Date;
+  public isTableHidden: boolean = true;
+  public isInfoHidden: boolean = true;
+  
   get bsValue(): Date {
     return this._bsValue;
   }
@@ -29,11 +36,14 @@ export class SchedulerComponent implements OnInit {
   }
  
   log(v: any) {console.log(v);}
-  constructor() { }
-
+  constructor(private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
+    
+      }
   ngOnInit() {
   }
-
+  getindex(index) {
+    
+  }
   // onSubmit() {
   //   console.log(this.scheduler);
   // }

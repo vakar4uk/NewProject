@@ -80,6 +80,7 @@ export class DataService {
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
   bloodUrl = "http://localhost:3000/BloodTests";
+  appointmentUrl = "http://localhost:3000/Appointments"
   pArray:personArray;
   bArray:bloodArray;
   lArray:loginArray;
@@ -163,6 +164,13 @@ export class DataService {
         console.log("Couldn't find: "+phone);
       }
     );
+  }
+  getApptNo(date:any){
+    this.http.get<appointmentArray>(this.appointmentUrl + "/" + date).subscribe(data => {
+      console.log("looking for: " + date);
+      console.log(data);
+      this.aArray = data;
+    })
   }
   //checks for correct username and password
   checkLogin(user: any, pass: any) {
