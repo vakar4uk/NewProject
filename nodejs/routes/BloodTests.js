@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var BloodTest = require('../models/BloodTest');
 
-router.get('BloodTests/:id',function(req,res,next){
+router.get('/:id?',function(req,res,next){
 	if(req.params.id){
 		BloodTest.getTestByPerson(req.params.id,function(err,rows){
 			if(err){
@@ -24,7 +24,7 @@ router.get('BloodTests/:id',function(req,res,next){
 		});
 	}
 });
-router.get('/:id?',function(req,res,next){
+/*router.get('/:id?',function(req,res,next){
 	if(req.params.id){
 		BloodTest.getTestByID(req.params.id,function(err,rows){
 			if(err){
@@ -45,7 +45,7 @@ router.get('/:id?',function(req,res,next){
 			}
 		});
 	}
-});
+}); */
 router.post('/',function(req,res,next){
 	BloodTest.addBloodTest(req.body,function(err,count){
 		if(err){

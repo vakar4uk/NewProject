@@ -242,6 +242,7 @@ export class DataService {
   searchBloodT(){
     this.http.get<bloodArray>(this.bloodUrl+"/"+this.ID).subscribe(data => {
       this.bArray = data;
+      console.log("Inside data service")
       console.log(this.bArray);
     });
   }

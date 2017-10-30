@@ -29,20 +29,20 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 // interface personArray {
 //   [index: number]: person;
 // }
-// interface blood {
-//   ResultsNo: any;
-//   Sodium: any;
-//   Potassium: any;
-//   Calcium: any;
-//   Glucose: any;
-//   Hemoglobin: any;
-//   Results_PID: any;
-//   DateTaken: any;
+interface blood {
+  ResultsNo: any;
+  Sodium: any;
+  Potassium: any;
+  Calcium: any;
+  Glucose: any;
+  Hemoglobin: any;
+  Results_PID: any;
+  DateTaken: any;
 
-// }
-// interface bloodArray {
-//   [index: number]: blood;
-// }
+}
+interface bloodArray {
+  [index: number]: blood;
+}
 
 @Component({
   selector: 'app-editlabresults',
@@ -116,7 +116,7 @@ export class EditlabresultsComponent implements OnInit {
   // }
   getID(index) {
     this._datatask.bIndex=index;
-    this._datatask.searchBloodT();
+    //this._datatask.searchBloodT();
     //get PID of person selected
     //this._datatask.getID(this.pArray[index].PID);
     //**** SCRAP LATER
@@ -178,9 +178,8 @@ export class EditlabresultsComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
     (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
     this._datatask.searchBloodT();
-    if(this._datatask.bArray[0] != undefined){
-      this.isTableHidden = false;
-    }
+    //console.log("Index 0 :"+this._datatask.bArray[0]);
+    this.isTableHidden = false;
 }
 
 }
