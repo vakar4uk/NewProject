@@ -69,6 +69,15 @@ input::-webkit-inner-spin-button {
     width: 200px;
 }
 
+/* Invalid Message */
+input.ng-invalid.ng-touched {
+    border: 2px solid #D23B3B;    
+}
+
+.help-block {
+    color: red;
+}
+
 h2 {
     color: #2222B1;
 }

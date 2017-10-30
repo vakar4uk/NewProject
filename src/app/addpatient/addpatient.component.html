@@ -20,7 +20,9 @@
                 class="col-lg-12 form-control"
                 ngModel           
                 name="firstName"
-                required>
+                required
+                #firstName="ngModel">
+                <span class="help-block" *ngIf="!firstName.valid && firstName.touched">Please enter first name</span>
                 </div>            
             </div>
               <div class="form-group">
@@ -33,7 +35,9 @@
                   class="col-lg-12 form-control"
                   ngModel            
                   name="lastName"
-                  required>
+                  required
+                  #lastName="ngModel">
+                  <span class="help-block" *ngIf="!lastName.valid && lastName.touched">Please enter last name</span>
                   </div>
                   
               </div>   
@@ -48,7 +52,9 @@
                 class="col-lg-12 form-control"
                 ngModel            
                 name="dob"
-                required>
+                required
+                #dob="ngModel">
+                <span class="help-block" *ngIf="!dob.valid && dob.touched">Please enter date of birth</span>
                 </div>                
             </div>
             
@@ -56,12 +62,19 @@
                 <div class="input-group">
                     <span class="input-group-addon">Gender</span>
                     <div>
-                        <select class="form-control" id="gender" name="gender" ngModel required>
+                        <select class="form-control"
+                         id="gender" 
+                         name="gender" 
+                         ngModel 
+                         required
+                         #gender="ngModel">                  
                             <option value="" disabled selected>Select...</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                        </select>                                 
+                        </select>
                     </div>
+                    <span class="help-block" *ngIf="!gender.valid && gender.touched">Please select gender</span>                             
+                    
                 </div>                   
             </div><hr><!-- Personal Information      -->
 
@@ -78,7 +91,9 @@
                     class="col-lg-12 form-control"
                     ngModel            
                     name="street"
-                    required>
+                    required
+                    #street="ngModel">
+                    <span class="help-block" *ngIf="!street.valid && street.touched">Please enter street</span>
                     </div>
             </div>
 
@@ -105,7 +120,9 @@
                             class="col-lg-12 form-control"
                             ngModel            
                             name="City"
-                            required>
+                            required
+                            #City="ngModel">
+                            <span class="help-block" *ngIf="!City.valid && City.touched">Please enter city</span>
                             </div>
                             
             </div> 
@@ -115,7 +132,13 @@
                   <div class="input-group">
                       <span class="input-group-addon">State</span>
                       <div>
-                          <select class="form-control" id="state" name="state" ngModel required>
+                          <select 
+                          class="form-control" 
+                          id="state" 
+                          name="state" 
+                          ngModel 
+                          required
+                          #state="ngModel">
                             <option value="" disabled selected>Select...</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
@@ -171,6 +194,7 @@
                             <option value="WY">Wyoming</option>
                           </select>
                         </div>  
+                        <span class="help-block" *ngIf="!state.valid && state.touched">Please select state</span>
                   <span class="input-group-addon">Zipcode</span>
                   <input
                   minlength="5"
@@ -181,7 +205,10 @@
                   class="col-lg-12 form-control"                  
                   ngModel                          
                   name="zipcode"
-                  required>                   
+                  required
+                  #zipcode="ngModel">
+                  <span class="help-block" *ngIf="!zipcode.valid && zipcode.touched">Please enter zipcode</span> 
+
                   </div>                  
         </div><hr> <!-- Address -->
 
@@ -199,8 +226,10 @@
                         class="col-lg-12 form-control"
                         ngModel            
                         name="phone"
-                        required>
+                        required
+                        #phone="ngModel">
                         </div>
+                        <span class="help-block" *ngIf="!phone.valid && phone.touched">Please eneter a valid phone!</span>
             </div>
 
             <div class="form-group">
@@ -213,7 +242,9 @@
                             class="col-lg-12 form-control"
                             ngModel            
                             name="patEmail"                            
-                            email>
+                            email
+                            #email="ngModel">
+                            <span class="help-block" *ngIf="!email.valid && email.touched">Please eneter a valid email!</span>
                             </div>
             </div><hr> <!-- Contact Information -->
 
