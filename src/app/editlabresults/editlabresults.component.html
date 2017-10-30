@@ -7,7 +7,7 @@
   <!-- <div [hidden]="isInfoHidden" class="col-lg-12"> -->
   <div class="col-lg-12">
       <div class="container">
-          <br><h2 (click)="populate" class="text-center">Edit Blood Test Results</h2>
+          <br><h2 (click)="populate()" class="text-center">Edit Blood Test Results</h2>
           <hr> 
       <div id="printArea">
       <div id="date" class="form-group">          
@@ -25,6 +25,19 @@
                   ngModel name="lastName" required>            
           </div>  
       </div><hr>  
+
+      <table id="blood-table" [hidden]="isTableHidden" class="table table-striped table-bordered">
+          <tr>
+              <th>Select</th>
+              <th>Date</th>              
+          </tr>
+
+          <!-- <tr  *ngFor="let person of pArray; let i = index">   -->
+          <tr *ngFor="let blood of this._datatask.bArray; let i = index">
+              <td><a id="selectPatient" (click)="getID(i)"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
+              <td>{{blood.DateTaken}}</td>             
+          </tr>
+      </table><hr>       
 
       <div id="date" class="input-group">
         <span id="date-text" class="input-group-addon">Date of the test</span>
@@ -180,7 +193,7 @@
 <!-- Alert Message --> 
 
 <!-- Footer -->
-<app-scrollablefooter></app-scrollablefooter>
+<!-- <app-scrollablefooter></app-scrollablefooter> -->
 
 <!-- <div *ngIf="isTableHidden || isInfoHidden">
     <app-stickyfooter></app-stickyfooter>

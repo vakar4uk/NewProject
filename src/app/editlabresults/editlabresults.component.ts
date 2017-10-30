@@ -117,24 +117,23 @@ export class EditlabresultsComponent implements OnInit {
   }
   getID(index) {
     //get PID of person selected
-    this._datatask.getID(this.pArray[index].PID);
-    
-    this.http.get<bloodArray>(this.bloodUrl +  "/" + this._datatask.ID).subscribe(data => {
-      console.log("Looking for:" + date);
-      this.bArray = data;
+    //this._datatask.getID(this.pArray[index].PID);
+    //**** SCRAP LATER
+    // this.http.get<bloodArray>(this.bloodUrl +  "/" + this._datatask.ID).subscribe(data => {
+    //   this.bArray = data;
 
-    },
-      err => {
-        console.log("Adding Entry");
-        this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
-      }
-    );
-    var date = (<HTMLInputElement>document.getElementById("testDate")).value;
-    var sodium = (<HTMLInputElement>document.getElementById("sodium")).value;
-    var potassium = (<HTMLInputElement>document.getElementById("potassium")).value;
-    var calcium = (<HTMLInputElement>document.getElementById("calcium")).value;
-    var glucose = (<HTMLInputElement>document.getElementById("glucose")).value;
-    var hemoglobin = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
+    // },
+    //   err => {
+    //     console.log("Adding Entry");
+    //     //this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
+    //   }
+    // );
+    //var date = (<HTMLInputElement>document.getElementById("testDate")).value;
+    (<HTMLInputElement>document.getElementById("sodium")).value = this._datatask.bArray[index].Sodium;
+    (<HTMLInputElement>document.getElementById("potassium")).value =this._datatask.bArray[index].Potassium;
+    (<HTMLInputElement>document.getElementById("calcium")).value= this._datatask.bArray[index].Calcium;
+    (<HTMLInputElement>document.getElementById("glucose")).value=this._datatask.bArray[index].Glucose;
+    (<HTMLInputElement>document.getElementById("hemoglobin")).value=this._datatask.bArray[index].Hemoglobin;
     this.isInfoHidden = false;
   }
   changeStatusSodium(){
@@ -177,7 +176,13 @@ export class EditlabresultsComponent implements OnInit {
     console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
     (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
     (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
-    
+    this.http.get<bloodArray>(this.bloodUrl+"/"+this._datatask.ID).subscribe(data => {
+      this.bArray = data;
+      console.log(this.bArray);
+      if(this.bArray[0] != undefined){
+        this.isTableHidden = false;
+      }
+    });
 }
 
 }

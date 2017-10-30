@@ -69,6 +69,7 @@ export class DataService {
   userUrl = "http://localhost:3000/UserTemps";
   bloodUrl = "http://localhost:3000/BloodTests";
   pArray:personArray;
+  bArray:bloodArray;
   lArray:loginArray;
   pIndex;
   ID;
