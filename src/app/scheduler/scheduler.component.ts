@@ -34,7 +34,7 @@ export class SchedulerComponent implements OnInit {
   ngOnInit() {
   }
   selectDate(){
-    this._datatask.getApptNo(this._bsValue);
+    this._datatask.getApptNo((<HTMLInputElement>document.getElementById("apptdate")).value);
     this.isTableHidden=false;
   }
   getindex(index) {
