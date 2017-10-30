@@ -11,12 +11,14 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 @Component({
   selector: 'app-addpatient',
   templateUrl: './addpatient.component.html',
-  styleUrls: ['./addpatient.component.css']
+  styleUrls: ['./addpatient.component.css'],  
 })
 
 export class AddpatientComponent implements OnInit {  
   public modalRef: BsModalRef;
   isCondition: false;
+
+  maxLength = '2';
   
 //  public conditions = [
 //     {name:'head', value: '1'},
@@ -61,12 +63,13 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
     var zip = (<HTMLInputElement>document.getElementById("zipcode")).value;
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
     var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
+    var notes = (<HTMLInputElement>document.getElementById("notes")).value;
     //if(fname != undefined && lname != undefined && dob != undefined && gender != undefined && street != undefined && city != undefined){
-    this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email);
+    this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes);
     //}
     //else{
     console.log("Patient/Person Added");
-    this._datatask.getIDNewPat(phone);
+    //this._datatask.getIDNewPat(phone);
     this.modalRef=this.modalService.show(template);
     //}
     console.log(this.addPatient);

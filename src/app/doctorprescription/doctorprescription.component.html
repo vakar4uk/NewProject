@@ -1,5 +1,5 @@
  <!-- Navbar -->
- <app-doctorheader></app-doctorheader>
+ <app-header></app-header>
  
  
  <!-- Page Content -->
@@ -8,22 +8,10 @@
   
   <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addPatient">    
           <div class="col-lg-12 row" id="content">  
-              <div class="form col-lg-6 text-center">
-      
-                 
-      
-                
+              <div class="form col-lg-6 text-center"> 
       
                       
-                      <!-- Prescription -->
-                      <br><h5>Prescription</h5>
-                      <div class="form-group">
-                              <div class="input-group">
-                      <span class="input-group-addon">Prescription</span>            
-                              <textarea name="Prescription" id="notes" cols="90" rows="10" ngModel></textarea>
-                          </div>
-                      </div>  <!-- Prescription -->   
-
+                      
                        <!-- Any other instructions -->
                        <br><h5>Any other instructions</h5>
                        <div class="form-group">

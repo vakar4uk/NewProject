@@ -1,156 +1,126 @@
-.container {
-    background-color: #D5ECEC;
-    margin-top: 80px;
-    width: 750px;
-    height: 200px;
-    border: 2px solid rgb(44, 95, 112);
-    border-radius: 50px;
+/* Search Bar */
+#search {
+    text-align: center;
+    width: 350px;
+    height: 38px;
+    border-radius: 23px;
+    border: 1px solid #ccc;
 }
 
-#navbar {    
+#searchButton {
+    border-radius: 50%;
+}
+
+input:focus {    
+    outline: 0;
+}
+
+/* Select Button */
+.fa-check-circle-o {    
+    padding: 5px;
+    border-radius: 100%;
+    background-color: #CCCCD4;
+    color: #268F4C;
+    opacity: 0.7;
+}
+
+.fa-check-circle-o:hover {
+    opacity:1;
+    color: green;
+}
+/* Select Button */
+/* Search Bar */
+
+/* Table */
+#table-content {   
     position: relative;
+    text-align: center;
+    margin-top: 30px;
+    width: 1800px;
+    padding-bottom: 50px;    
+}
+
+.table {
+    margin-top:15px;
+}
+
+th {
+    color: #0B0B5A;
+    font-size: 1.15em;
+    font-weight: bold;
+    text-align: center;
+}
+
+td {
+    font-style: italic;
+    color: #1D1C1C;    
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+/* Table */
+
+/* Content */
+.form {      
+    margin-left: 380px;    
+    padding: 10px; 
+    padding-left: 20px; 
+    background-color: #D5ECEC;
+    border: 2px solid rgb(44, 95, 112);     
+    border-radius: 35px;      
+    margin-bottom: 10px;
+}
+
+h5 {
+    text-align: center;
+}
+
+.input-group-addon {
+    border-right: 1px solid black;   
+}
+
+input {
+    font-weight: bold;
+    border: none;
+    margin-right: 5px;
+}
+
+.input-group {
     width: 100%;
-    height: 70px;
-    background-color: #616467;
-    color: #bbb;   
 }
 
-
-.nav-link, .nav-link:hover {
-    cursor: pointer;     
+#newPatient-button {
+    border-radius: 20px;
 }
 
-#main-content {
-    margin-top: 150px;
+#buttons-container {
+    margin-top: 30px;    
 }
 
-nav > li,a:hover {
-    color: #DDDDAC;
+button {
+    margin-right: 20px;
 }
 
-li >  a {
-    margin-left: 15px;
-    font-size: 1.2em;
+#buttons-container > button {
+    border-radius: 25px;
 }
 
-#dropdown-patient {
-    margin-top: 2.3px;
-    width: 125px;
+/* Content */
+
+/* Modal */
+.modal-body {
+    font-size: 2em;
+    text-align: center;
+    color: #C61F08;
 }
 
-#dropdown-patient:hover {
-    color: #DDDDAC;
+.modal-header {
+    text-align: center;
 }
 
-#dropdown-lab {
-    margin-top: 2.3px;
-    width: 170px;
+.modal-title {   
+    font-weight: bold;
+    color: #E64A0B;
 }
+/* Modal */
 
-#dropdown-lab:hover {
-    color: #DDDDAC;
-}
-
-a {
-    color: lightgray;
-}
-
-#dropdown-menu {
-    padding: 0;
-    margin-top: 0;
-    width: 180px;
-}
-
-#dropdown-lab-menu {
-    padding: 0;
-    margin-top: 0;
-    width: 185px;
-    margin-left:420px;
-}
-
-.dropdown-menu {
-    color: #bbb;
-    width: 75px;
-    margin-left:170px;
-    background-color: #616467;
-    border-style: 1px solid black;    
-}
-
-.dropdown-menu {
-    color: #bbb;
-    width: 75px;
-    margin-left:175px;
-    background-color: #616467;
-    border-style: 1px solid black;    
-}
-
-
-.dropdown-menu > li:hover {
-    color: #DDDDAC;
-    background-color: transparent; 
-    cursor: pointer; 
-}
-
-#dropdown-item {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.dropdown-item:hover {   
-    background-color: transparent;
-}
-
-#brand {
-    color: lightgray;
-    margin-bottom: 0;
-}
-#footer {
-    background-color: #46494C;
-    position: absolute;
-    color: black;
-    bottom: 0;
-    width: 100%;   
-  }  
-  
-  footer a {
-    color: #999;
-    text-decoration:none;
-    cursor: pointer;    
-  }
-  
-  footer a:hover, footer a:focus {   
-    color: #E1E1E1;
-    text-decoration:none;
-    
-  }  
-  /* social-media links */
-  #linkedin:hover {      
-    color: #007bb5;
-  }
-
-  #twitter:hover {
-    color: #00aced;
-  }
-
-  #facebook:hover {
-    color: #3b5998;
-  }
-  /* social-media links */
-
-  .row, .row > span {
-      margin-right: 10px;
-  }
-
-  i {
-      padding-right: 5px;
-  }
-  .nav2 {
-    font-size: 1.2em;
-    color: #bbb;   
-}
-li.nav-item {
-    height: 70px;
-    padding-top: 10px;
-}
-
-  

@@ -49,6 +49,8 @@ import { DoctorheaderComponent } from './doctorheader/doctorheader.component';
 import { DoctorprescriptionComponent } from './doctorprescription/doctorprescription.component';
 import { DoctorlabresultComponent } from './doctorlabresult/doctorlabresult.component';
 import { LabhistoryComponent } from './labhistory/labhistory.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DoctorschedulerComponent } from './doctorscheduler/doctorscheduler.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -68,6 +70,8 @@ const appRoutes: Routes =[
   { path: 'doctorlabresult', component: DoctorlabresultComponent },  
   { path: 'labhistory', component: LabhistoryComponent }, 
   { path: 'labresultschart', component: LabresultschartComponent },  
+  { path: 'doctorscheduler', component: DoctorschedulerComponent },  
+  
   
 ];
 
@@ -90,7 +94,7 @@ const appRoutes: Routes =[
     StickyfooterComponent, 
     ScrollablefooterComponent, 
     AlertmessageComponent, TryComponent, DoctorheaderComponent, DoctorprescriptionComponent, DoctorlabresultComponent, LabhistoryComponent, 
-    LabresultschartComponent
+    LabresultschartComponent, DoctorschedulerComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +105,8 @@ const appRoutes: Routes =[
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

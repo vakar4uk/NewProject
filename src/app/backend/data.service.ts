@@ -31,6 +31,7 @@ interface person{
   Zipcode:any;
   PhoneNo:any;
   Email:any;
+  Notes:any;
 }
 interface blood {
   ResultsNo: any;
@@ -49,6 +50,17 @@ interface personArray{
 interface loginArray {
   [index: number]: login;
 }
+interface blood {
+  ResultsNo: any;
+  Sodium: any;
+  Potassium: any;
+  Calcium: any;
+  Glucose: any;
+  Hemoglobin: any;
+  Results_PID: any;
+  DateTaken: any;
+
+}
 interface bloodArray {
   [index: number]: blood;
 }
@@ -57,11 +69,13 @@ export class DataService {
   title = 'app';
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
-  bloodUrl = "http://localhost:3000/BloodTests"
-  ID;
-  lArray:loginArray;
+  bloodUrl = "http://localhost:3000/BloodTests";
   pArray:personArray;
   bArray:bloodArray;
+  lArray:loginArray;
+  pIndex;
+  ID;
+  IsDoctor:boolean;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
@@ -72,6 +86,7 @@ export class DataService {
       console.log("Username:" + data[0].Username);
       console.log("Password:" + data[0].Password);
       console.log(data);
+      this.lArray = data;
     },
       err => {
         console.log("Not Connected to DB or User does not exist");
@@ -79,7 +94,7 @@ export class DataService {
     );
 
   }
-  addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
+  addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.post(this.personUrl, {
       Fname:fname,
       Lname:lname,
@@ -90,7 +105,8 @@ export class DataService {
       State:state,
       Zipcode:zip,
       PhoneNo:phone,
-      Email:email
+      Email:email,
+      Notes:notes
     })
       .subscribe(
       res => {
@@ -133,10 +149,12 @@ export class DataService {
         console.log("Access Denied");
       }
       else if (data[0].Username === user && data[0].Password === pass && data[0].UserLevel === 1) {
+        this.IsDoctor=true;
         console.log("Welcome Doctor");
-        this._router.navigate(['/doctorhome']);
+        this._router.navigate(['/home']);
       }
       else if (data[0].Username === user && data[0].Password === pass && data[0].UserLevel != 1) {
+        this.IsDoctor=false;
         console.log("Welcome Nurse");
         this._router.navigate(['/home']);
       }
@@ -147,7 +165,7 @@ export class DataService {
 
   }
   
-  updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email) {
+  updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.put(this.personUrl+"/"+this.ID, {
       Fname:fname,
       Lname:lname,
@@ -158,7 +176,8 @@ export class DataService {
       State:state,
       Zipcode:zip,
       PhoneNo:phone,
-      Email:email
+      Email:email,
+      Notes:notes
     })
       .subscribe(
       res => {

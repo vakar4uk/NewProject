@@ -1,0 +1,94 @@
+<!-- Navbar -->
+<app-header></app-header>
+
+  <!-- Page Content -->
+  
+    <!-- scheduler -->
+
+  <div class="container"id="content">
+    <br><h5 class="text-center">Scheduler</h5><hr>
+    <!-- <body>{{bsValue| date:'yMd'}}</body> -->
+    <input type="text"
+            readonly="true"
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            #dp="bsDatepicker"
+            bsDatepicker [(bsValue)]="bsValue">
+    <button class="btn btn-success" (click)="dp.toggle()">Select Date</button>
+      
+    <table id="table" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="date">10/31/2017</td>
+          <td id="time">8:00A.M.</td>          
+          <td id="select">
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusSodium()" id="btn">
+            select
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>9:00A.M.</td>          
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusPotassium()" id="btn">
+            select
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>10:00A.M.</td>
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusCalcium()" id="btn">
+            select
+          </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>11:00A.M.</td>
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusGlucose()" id="btn">
+              select
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>10/31/2017</td>
+          <td>1:00P.M.</td>
+          <td>
+            <button type="button" class="btn btn-primary"
+            (click)="changeStatusHemoglobin()" id="btn">
+            select
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button id="submit" (click)="onSubmit"
+    class="btn btn-lg btn-success btn-block" 
+    [disabled]="!f.valid"
+    type="submit"         
+    >Submit</button>    
+  
+  </div> 
+
+  
+      
+  <!-- Page Content -->
+  
+  <!-- <app-scrollablefooter></app-scrollablefooter> -->
+

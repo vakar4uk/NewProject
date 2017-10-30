@@ -94,24 +94,15 @@ input::-webkit-inner-spin-button {
  }
 
  #submit {
-    cursor: pointer;    
- }
-
-.nav2 {
-    font-size: 1.2em;
-    color: #bbb;   
-}
-
-li.nav-item {
-    height: 70px;
-    padding-top: 10px;
+    cursor: pointer;  
+    border-radius: 20px;  
 }
 
 /* Modal */
 .modal-body {
     font-size: 2em;
     text-align: center;
-    color: red;
+    color: #23D052;
 }
 
 .modal-header {
@@ -120,6 +111,6 @@ li.nav-item {
 
 .modal-title {   
     font-weight: bold;
-    color: red;
+    color: #23D052;
 }
 /* Modal */

@@ -59,11 +59,23 @@ export class AddlabresultsComponent implements OnInit {
   bloodUrl = "http://localhost:3000/BloodTests";
   public modalRef: BsModalRef;
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) { }
+  // public isTableHidden: boolean = true;
+  // public isInfoHidden: boolean = true;
+
+  public isSubmitted: boolean = false;
+  public hasRecords: boolean = false;
 
   ngOnInit() {
     // if(this._datatask.ID > 0){
     //   this.isTableHidden = false;
     // }
+  }
+   populate(){
+      console.log("Populating");
+      console.log(this._datatask.pArray[this._datatask.pIndex].Fname);
+      (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
+      (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
+      
   }
   search(template: TemplateRef<any>) {
     //searching for person|patient
@@ -118,6 +130,28 @@ export class AddlabresultsComponent implements OnInit {
     //   }
     // );
   }
+  // PRINT
+  print(): void {
+    let printContents, popupWin;
+    printContents = document.getElementById('printArea').innerHTML;
+    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+    popupWin.document.open();
+    popupWin.document.write(`
+      <html>
+        <head>
+          <title>Print tab</title>
+          <style>
+          //........Customized style.......
+          </style>
+        </head>
+    <body onload="window.print();window.close()">${printContents}</body>
+      </html>`
+    );
+    popupWin.document.close();
+}
+  // PRINT
+
+
   onSubmit() {
 
   }

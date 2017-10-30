@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-labresultschart',
   templateUrl: './labresultschart.component.html',
-  styleUrls: ['./labresultschart.component.css']
+  styleUrls: ['./labresultschart.component.css'],
 })
 export class LabresultschartComponent {
-
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -19,8 +18,11 @@ export class LabresultschartComponent {
   public barChartLegend:boolean = true;
   
   public barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Sodium'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Potassium'},
+    {data: [80, 59, 12, 29, 89, 25, 14], label: 'Calcium'},
+    {data: [25, 44, 53, 73, 29, 82, 26], label: 'Glucose'},
+    {data: [10, 16, 38, 19, 35, 36, 15], label: 'Hemoglobin'},
   ];
   
   // events

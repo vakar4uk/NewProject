@@ -1,12 +1,13 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-scheduler',
-  templateUrl: './scheduler.component.html',
-  styleUrls: ['./scheduler.component.css']
+  selector: 'app-doctorscheduler',
+  templateUrl: './doctorscheduler.component.html',
+  styleUrls: ['./doctorscheduler.component.css']
 })
-export class SchedulerComponent implements OnInit {
+export class DoctorschedulerComponent implements OnInit {
   minDate = new Date(2017, 5, 10);
   maxDate = new Date(2018, 9, 15);
   _bsValue: Date;
@@ -40,7 +41,3 @@ export class SchedulerComponent implements OnInit {
   
 
 }
-
-
-
-// lskd
