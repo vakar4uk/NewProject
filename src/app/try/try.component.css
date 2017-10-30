@@ -1,35 +1,113 @@
-/* Select Button */
-.fa-check-circle-o {    
-    padding: 5px;
-    border-radius: 100%;
-    background-color: #CCCCD4;
-    color: #268F4C;
-    opacity: 0.7;
+/* Main Content */
+#main-content {    
+    margin-top: 150px;
 }
-
-.fa-check-circle-o:hover {
-    opacity:1;
-    color: green;
-}
-
-
-
-
 
 #content {   
     position: relative;
     text-align: center;
-    margin-top: 30px;
-   
+    margin-top: 30px;   
     padding-bottom: 50px;    
 }
 
+/* Forms */
 .form {      
     margin-left: 380px;    
     padding: 10px;   
-    background-color: #D5ECEC;
+    background-color: #a7baba;
     border: 2px solid rgb(44, 95, 112);     
     border-radius: 30px;      
     margin-bottom: 10px;
 }
 
+.input-group > span {
+    width:115px;
+    border: 2px;
+}
+
+#gender {
+    margin-left: 0;
+    width: 150px;
+}
+
+#state {
+    width:220px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+#dropdown {
+    position: relative;
+    margin-top: 100px;
+}
+
+#radio-button {
+    margin-left: 30px;
+    margin-top: 7px;
+}
+
+#gender {   
+    width: 100px;   
+}
+
+#condition {
+    margin-left: 20px;
+    width: 50px;
+}
+
+#condition {
+    text-align: left;
+    width: 450px;
+}
+
+.input-group-addon {
+    width: 200px;
+}
+
+h2 {
+    color: #2222B1;
+}
+
+h5 {
+    margin-bottom: 20px;
+}
+
+button {
+    border-radius: 20px;
+}
+
+#submit {
+    cursor: pointer;  
+    border-radius: 20px;  
+}
+.nav2 {
+    font-size: 1.2em;
+    color: #bbb;   
+}
+
+li.nav-item {
+    height: 70px;
+    padding-top: 10px;
+}
+
+/* Modal */
+.modal-body {
+    font-size: 2em;
+    text-align: center;
+    color: #00FF44;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {   
+    font-weight: bold;
+    color: #03541C;
+}
+/* Modal */

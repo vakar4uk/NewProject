@@ -75,6 +75,14 @@ input::-webkit-inner-spin-button {
     margin-top: 7px;
 }
 
+button {
+    border-radius: 20px;
+}
+
+button > i {
+    margin-left: 5px;
+}
+
 #gender {   
     width: 100px;   
 }

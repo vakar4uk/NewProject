@@ -14,7 +14,7 @@
           <div class="input-group">
               <span class="input-group-addon">First Name</span>
               <input id="firstName" readonly="true" type="text" class="col-lg-10 form-control"
-                  ngModel name="firstName" required>      
+                  ngModel name="firstName">      
           </div>
       </div>
   
@@ -22,7 +22,7 @@
           <div class="input-group">
               <span class="input-group-addon">Last Name</span>
               <input readonly="true" type="text" id="lastName" class="form-control"
-                  ngModel name="lastName" required>            
+                  ngModel name="lastName">            
           </div>  
       </div><hr>  
 
@@ -73,9 +73,9 @@
               type="number"  min="0" step="1"            
               class="col-lg-3 form-control"
               ngModel            
-              name="sodium" required style = "display:inline">
+              name="sodium" style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusSodium()" id="sodium">
+              (click)="changeStatusSodium(); edit()" id="sodium">
                 edit
               </button>
             </td>
@@ -91,9 +91,9 @@
               (blur)="changeStatusPotassium2()"
               class="col-lg-3 form-control"
               ngModel            
-              name="potassium" required style = "display:inline">
+              name="potassium" style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusPotassium()" id="potassium">
+              (click)="changeStatusPotassium(); edit()" id="potassium">
                 edit
               </button>
             </td>
@@ -109,9 +109,9 @@
               (blur)="changeStatusCalcium2()"
               class="col-lg-3 form-control"
               ngModel            
-              name="calcium" required style = "display:inline">
+              name="calcium" style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusCalcium()" id="calcium">
+              (click)="changeStatusCalcium(); edit()" id="calcium">
                 edit
               </button>
             </td>
@@ -127,9 +127,9 @@
               (blur)="changeStatusGlucose2()"
               class="col-lg-3 form-control"
               ngModel            
-              name="glucose" required style = "display:inline">
+              name="glucose" style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusGlucose()" id="glucose">
+              (click)="changeStatusGlucose(); edit()" id="glucose">
                 edit
               </button>
             </td>
@@ -145,9 +145,9 @@
               (blur)="changeStatusHemoglobin2()"
               class="col-lg-3 form-control"
               ngModel            
-              name="hemoglobin" required style = "display:inline">
+              name="hemoglobin" style = "display:inline">
               <button type="button" class="btn btn-primary"
-              (click)="changeStatusHemoglobin()" id="hemoglobin">
+              (click)="changeStatusHemoglobin(); edit()" id="hemoglobin">
                 edit
               </button>
             </td>
@@ -156,13 +156,14 @@
         </tbody>
       </table>
      
-      <button (click)="print()" id="submit" class="btn btn-sm btn-warning btn-block" type="submit">Print The Results</button><hr>
+      <hr><button (click)="print()" type="button" class="btn btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button><hr>
 
       <button id="submit" (click)="onSubmit"
       class="btn btn-lg btn-danger btn-block" 
       [hidden]="isSubmitted"
       [disabled]="!f.valid"
-      type="submit"         
+      type="submit"  
+      [hidden]="!isEdited"       
       >Save</button> 
       
       <button id="submit" (click)="onSubmit"

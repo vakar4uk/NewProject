@@ -114,12 +114,14 @@
       </tbody>
     </table><hr>
 
+    <hr><button (click)="print()" type="button" class="btn btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button><hr>
+
     <button id="submit" (click)="addRecord(template)"
     class="btn btn-lg btn-success btn-block" 
     [hidden]="isSubmitted"
     [disabled]="!f.valid"
     type="submit"         
-    >Submit</button> 
+    >Add<i class="fa fa-plus" aria-hidden="true"></i></button> 
     
     <button [hidden]="!hasRecords" id="print-button" type="button" class="btn btn-lg btn-info btn-block">See previous results</button>
 
@@ -132,15 +134,24 @@
 
 <!-- Alert Message -->
 <template #template>
-    <div class="modal-header">
-      <h4 class="modal-title pull-left">Error!</h4>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      No record found!
-    </div>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">That's what's up!</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   Record was added succesfully!
+  </div> 
+
+  <div class="modal-body">
+      <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+  </div>
+
+  <div class="modal-body">
+          <button (click)="modalRef.hide()" routerLink="/home" type="button" class="btn btn-success">Return to Home<i class="fa fa-home" aria-hidden="true"></i></button>
+  </div>
+
 </template>
 <!-- Alert Message -->
 

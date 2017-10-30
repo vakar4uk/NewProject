@@ -62,6 +62,8 @@ export class EditpatientComponent implements OnInit {
   //                  'West Virginia', 'Wisconsin', 'Wyoming'
   // ];
 
+  public isEdited: boolean = false;
+
   public inactive: boolean = true;
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
@@ -75,8 +77,12 @@ export class EditpatientComponent implements OnInit {
   ];
 
   ngOnInit() {
-
   }
+
+  edit() {
+    this.isEdited = true;
+  }
+
   populate(){
     //if(this._datatask.ID != undefined){
       console.log("Populating");
