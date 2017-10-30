@@ -35,13 +35,12 @@ export class LoginComponent implements OnInit {
   //   }       
   
   onSubmit() {
+    //check if user input is valid or they missed something
     var user = (<HTMLInputElement>document.getElementById("inputUsername")).value;
     var pass = (<HTMLInputElement>document.getElementById("inputPassword")).value;
     if(user != undefined && pass != undefined){
-      //this._datatask.getUser(user,pass);
       this._datatask.checkLogin(user,pass);
     }
-    // this._router.navigate(['/home']);
     else{
       console.log("Access Denied");
     }
