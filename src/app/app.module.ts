@@ -51,6 +51,7 @@ import { DoctorlabresultComponent } from './doctorlabresult/doctorlabresult.comp
 import { LabhistoryComponent } from './labhistory/labhistory.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DoctorschedulerComponent } from './doctorscheduler/doctorscheduler.component';
+import { SchedulerfordoctorComponent } from './schedulerfordoctor/schedulerfordoctor.component';
 
 const appRoutes: Routes =[  
   { path: '', component: LoginComponent },
@@ -94,7 +95,7 @@ const appRoutes: Routes =[
     StickyfooterComponent, 
     ScrollablefooterComponent, 
     AlertmessageComponent, TryComponent, DoctorheaderComponent, DoctorprescriptionComponent, DoctorlabresultComponent, LabhistoryComponent, 
-    LabresultschartComponent, DoctorschedulerComponent
+    LabresultschartComponent, DoctorschedulerComponent, SchedulerfordoctorComponent
   ],
   imports: [
     BrowserModule,

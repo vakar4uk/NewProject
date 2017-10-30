@@ -1,0 +1,42 @@
+ <!-- Navbar -->
+ <app-header></app-header>
+ 
+   <div class="container"id="content">
+     <br><h5 class="text-center">Appointment</h5><hr>
+     <input type="text"
+             readonly="true"
+             [minDate]="minDate"
+             [maxDate]="maxDate"
+             #dp="bsDatepicker"
+             bsDatepicker [(bsValue)]="bsValue">
+     <button class="btn btn-success" (click)="dp.toggle()">Select Date</button>
+       
+     <table id="table" class="table table-striped">
+       <tr>
+         <thead>
+           <th>Date</th>
+           <th>Time</th>
+           <th>Select</th>
+         </thead>
+       </tr>
+         <tr  *ngFor="let person of aArray; let i = index">
+             <td>{{Appointment.ApptDate}}</td>
+             <td>{{Appointment.ApptDate}}</td>
+             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+         </tr>
+     </table>
+         
+    <button id="submit" (click)="onSubmit"
+    class="btn btn-lg btn-success btn-block" 
+    [disabled]="!f.valid"
+    type="submit"         
+    >Submit</button>    
+  
+  </div> 
+
+  
+      
+  <!-- Page Content -->
+  
+  <app-scrollablefooter></app-scrollablefooter>
+
