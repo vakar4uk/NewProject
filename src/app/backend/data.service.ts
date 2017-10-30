@@ -53,6 +53,15 @@ interface blood {
 interface bloodArray {
   [index: number]: blood;
 }
+interface Appointment {
+  ApptNo: any;
+  Appt_DrID: any;
+  ApptDate: any;
+  Appt_PID: any;
+}
+interface appointmentArray {
+  [index: number]: Appointment;
+}
 @Injectable()
 export class DataService {
   title = 'app';
@@ -64,6 +73,7 @@ export class DataService {
   pIndex;
   ID;
   IsDoctor:boolean;
+  aArray:appointmentArray;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
