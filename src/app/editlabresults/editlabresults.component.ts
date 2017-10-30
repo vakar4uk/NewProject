@@ -116,7 +116,7 @@ export class EditlabresultsComponent implements OnInit {
   // }
   getID(index) {
     this._datatask.bIndex=index;
-    this._datatask.searchBloodT();
+    //this._datatask.searchBloodT();
     //get PID of person selected
     //this._datatask.getID(this.pArray[index].PID);
     //**** SCRAP LATER
@@ -178,7 +178,7 @@ export class EditlabresultsComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("firstName")).value=(this._datatask.pArray[this._datatask.pIndex].Fname);
     (<HTMLInputElement>document.getElementById("lastName")).value=(this._datatask.pArray[this._datatask.pIndex].Lname);
     this._datatask.searchBloodT();
-    console.log(this._datatask.bArray[0]);
+    console.log("Index 0 :"+this._datatask.bArray[0]);
     if(this._datatask.bArray[0] != null){
       this.isTableHidden = false;
     }
