@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
+//all the data structures
 interface login {
   UID: any;
   Username: any;
@@ -33,6 +33,17 @@ interface person{
   Email:any;
   Notes:any;
 }
+interface blood {
+  ResultsNo: any;
+  Sodium: any;
+  Potassium: any;
+  Calcium: any;
+  Glucose: any;
+  Hemoglobin: any;
+  Results_PID: any;
+  DateTaken: any;
+
+}
 interface personArray{
   [index:number]:person;
 }
@@ -53,23 +64,36 @@ interface blood {
 interface bloodArray {
   [index: number]: blood;
 }
+interface Appointment {
+  ApptNo: any;
+  Appt_DrID: any;
+  ApptDate: any;
+  Appt_PID: any;
+}
+interface appointmentArray {
+  [index: number]: Appointment;
+}
 @Injectable()
 export class DataService {
+  //all the variables and declaration of said data structures
   title = 'app';
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
   bloodUrl = "http://localhost:3000/BloodTests";
+  appointmentUrl = "http://localhost:3000/Appointments"
   pArray:personArray;
   bArray:bloodArray;
   lArray:loginArray;
   pIndex;
+  bIndex;
   ID;
   IsDoctor:boolean;
+  aArray:appointmentArray;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
   
-
+//base model for checking login can discard
   getUser(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
       console.log("Username:" + data[0].Username);
@@ -83,6 +107,7 @@ export class DataService {
     );
 
   }
+  //adding patient
   addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.post(this.personUrl, {
       Fname:fname,
@@ -106,21 +131,30 @@ export class DataService {
       }
       );
   }
+  //looking for patient(s)
   searchPatient(search:any){
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" +search);
       console.log(data);
       this.pArray = data;
+      console.log("Number of entries: "+Object.keys(this.pArray).length);
     },
       err => {
         console.log("No Valid Entry");
       }
     );
   }
+  //getting the global person index, blood index, and ID
+  getPindex(index:any){
+    this.pIndex=index;
+  }
+  getBindex(index:any){
+    this.bIndex=index;
+  }
   getID(id:any){
     this.ID = id;
   }
-  //might not need
+  //might not need but let's leave it for now
   getIDNewPat(phone:any){
     this.http.get<personArray>(this.personUrl + "/" + phone).subscribe(data => {
       console.log("Looking for: " +phone);
@@ -132,6 +166,14 @@ export class DataService {
       }
     );
   }
+  getApptNo(date:any){
+    this.http.get<appointmentArray>(this.appointmentUrl + "/" + date).subscribe(data => {
+      console.log("looking for: " + date);
+      console.log(data);
+      this.aArray = data;
+    })
+  }
+  //checks for correct username and password
   checkLogin(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
       if (data[0] === undefined) {
@@ -153,7 +195,7 @@ export class DataService {
       });
 
   }
-  
+  //for edit patient
   updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.put(this.personUrl+"/"+this.ID, {
       Fname:fname,
@@ -177,6 +219,7 @@ export class DataService {
       }
       );
   }
+  //adding test result
   addBloodT(sod, pot, cal, glu, hem, resultPid, date) {
     const req = this.http.post(this.bloodUrl, {
       Sodium:sod,

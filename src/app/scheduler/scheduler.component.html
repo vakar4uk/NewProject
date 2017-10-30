@@ -70,15 +70,22 @@
     <button class="btn btn-success" (click)="dp.toggle()">Select Date</button>
       
     <table id="table" class="table table-striped">
-      <thead>
-        <tr>
+      <tr>
+        <thead>
           <th>Date</th>
           <th>Time</th>
           <th>Doctor</th>
           <th>Select</th>
+        </thead>
+      </tr>
+        <tr  *ngFor="let person of aArray; let i = index">
+            <td>{{Appointment.ApptDate}}</td>
+            <td>{{Appointment.ApptDate}}</td>
+            <td>{{Appointment.Appt_DrID}}</td>
+            <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
         </tr>
-      </thead>
-      <tbody>
+    </table>
+      <!-- <tbody>
         <tr>
           <td id="date">10/31/2017</td>
           <td id="time">8:00A.M.</td>          
@@ -142,11 +149,30 @@
     [disabled]="!f.valid"
     type="submit"         
     >Submit</button>    
-  
+   -->
   </div> 
 
   
-      
+      <!-- angular example  -->
+<!-- 
+      <table [hidden]="isTableHidden" class="table">
+          <tr>
+              <th>Select</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>Phone</th>
+          </tr>
+
+          <tr  *ngFor="let person of pArray; let i = index">
+              <td><button type="button" id="selectPatient" (click)="getID(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+              <td>{{person.Fname}}</td>
+              <td>{{person.Lname}}</td>
+              <td>{{person.Street}}</td>
+              <td>{{person.PhoneNo}}</td>
+          </tr>
+      </table> -->
+      <!-- angular example end -->
   <!-- Page Content -->
   
   <!-- <app-scrollablefooter></app-scrollablefooter> -->

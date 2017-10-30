@@ -12,24 +12,24 @@ import { TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
-interface person {
-  PID: any;
-  Fname: any;
-  Lname: any;
-  Sex: any;
-  DOB: any;
-  Street: any;
-  Unit: any;
-  City: any;
-  State: any;
-  Zipcode: any;
-  PhoneNo: any;
-  Email: any;
-  Notes:any;
-}
-interface personArray {
-  [index: number]: person;
-}
+// interface person {
+//   PID: any;
+//   Fname: any;
+//   Lname: any;
+//   Sex: any;
+//   DOB: any;
+//   Street: any;
+//   Unit: any;
+//   City: any;
+//   State: any;
+//   Zipcode: any;
+//   PhoneNo: any;
+//   Email: any;
+//   Notes:any;
+// }
+// interface personArray {
+//   [index: number]: person;
+// }
 
 @Component({
   selector: 'app-home',
@@ -47,42 +47,36 @@ export class HomeComponent implements OnInit {
   public modalRef: BsModalRef;
   isCondition = false;
   public id:any;
-  public pArray:personArray;
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
   }
-
+  /**********Something is wrong have 2 press twice************/
   search(template: TemplateRef<any>) {
     //searching for person|patient
     
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
-    this.http.get<personArray>(this._datatask.personUrl + "/" + search).subscribe(data => {
-      console.log("Looking for:" + search);
-      console.log(data);
-      if(data[0] != undefined){
+    this._datatask.searchPatient(search);
+    //if it is not empty show table
+      if(this._datatask.pArray[0] != undefined){
         this.isTableHidden = false;
       }
-      else if(data[0] === undefined){
+      //if it is empty show error
+      else if(this._datatask.pArray[0] === undefined){
         this.modalRef = this.modalService.show(template);
       }
-      this._datatask.pArray=data;
       console.log("Checking if data was Stored",this._datatask.pArray);
 
-    },
-      err => {
-        console.log("No Valid Entry");
-        this.modalRef = this.modalService.show(template);
-      }
-    );
+
 
   }
+  //this gets the ID and index for said person
   getID(index){
-    this._datatask.getID(this._datatask.pArray[index].PID);
-    this._datatask.pIndex=index;
+    this._datatask.getPindex(index);
+    this._datatask.getID(this._datatask.pArray[this._datatask.pIndex].PID);
     (<HTMLInputElement>document.getElementById("firstName")).value=this._datatask.pArray[this._datatask.pIndex].Fname;
     (<HTMLInputElement>document.getElementById("lastName")).value=this._datatask.pArray[this._datatask.pIndex].Lname;
     this.isInfoHidden = false;
-    console.log("Index"+index);
+    console.log("Index:"+this._datatask.pIndex);
     console.log("PID:"+this._datatask.ID);
     
   }
