@@ -11,8 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./scheduler.component.css']
 })
 export class SchedulerComponent implements OnInit {
-  minDate = new Date(2017, 5, 10);
-  maxDate = new Date(2018, 9, 15);
+  //minDate = new Date(2017, 5, 10);
+  //maxDate = new Date(2018, 9, 15);
   _bsValue: Date;
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
@@ -26,14 +26,6 @@ export class SchedulerComponent implements OnInit {
     this._bsValue = v;
   }
  
-  _bsRangeValue: any = [new Date(2017, 7, 4), new Date(2017, 7, 20)];
-  get bsRangeValue(): any {
-    return this._bsRangeValue;
-  }
- 
-  set bsRangeValue(v: any) {
-    this._bsRangeValue = v;
-  }
  
   log(v: any) {console.log(v);}
   constructor(private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
