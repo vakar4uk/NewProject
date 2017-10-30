@@ -58,8 +58,12 @@ li> .active {
     margin-bottom: 10px;
 }
 
+.input-group {
+    width: 350px;
+}
+
 .input-group > span {
-    width:115px;
+    width:160px;
     border: 2px;
 }
 
