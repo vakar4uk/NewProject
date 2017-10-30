@@ -59,9 +59,9 @@
     <input type="text"
             readonly="true"
             #dp="bsDatepicker"
-            bsDatepicker [(bsValue)]="bsValue"onchange="selectDate()">
+            bsDatepicker [(bsValue)]="bsValue"(click)="dp.toggle()">
     
-    <button class="btn btn-success" (click)="dp.toggle()">Select Date</button>
+    <button class="btn btn-success" (click)="selectDate()">Select Date</button>
       
     <table [hidden]="isTableHidden" id="table" class="table table-striped">
       <tr>
