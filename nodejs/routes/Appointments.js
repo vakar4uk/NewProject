@@ -4,7 +4,7 @@ var Appointment = require('../models/Appointment');
 
 router.get('/:id?',function(req,res,next){
 	if(req.params.id){
-		Appointment.getApptById(req.params.id,function(err,rows){
+		Appointment.getApptByDate(req.params.id,function(err,rows){
 			if(err){
 				res.json(err);
 			}
