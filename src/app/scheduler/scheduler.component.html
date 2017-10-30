@@ -86,14 +86,17 @@
           <th>Select</th>
         </thead>
       </tr>
-        <tr  *ngFor="let appointment of aArray; let i = index">
-            <td>{{appointment.ApptDate | date:'MM/dd/yyyy'}}</td>
-            <td>{{appointment.ApptDate | date:'shortTime'}}</td>
+        <tr  *ngFor="let appointment of this._datatask.aArray; let i = index">
+            <td>{{appointment.apptdate | date:'medium':-0500}}</td>
+            <td>{{appointment.ApptTime | date:'shortTime'}}</td>
             <td>{{appointment.Appt_DrID}}</td>
             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
         </tr>
     </table>
-      <!-- <tbody>
+            <!--  -->
+            <!--  -->
+
+    <!-- <tbody>
         <tr>
           <td id="date">10/31/2017</td>
           <td id="time">8:00A.M.</td>          

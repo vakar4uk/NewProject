@@ -3,13 +3,14 @@ import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../backend/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-scheduler',
   templateUrl: './scheduler.component.html',
   styleUrls: ['./scheduler.component.css']
 })
+
 export class SchedulerComponent implements OnInit {
   //minDate = new Date(2017, 5, 10);
   //maxDate = new Date(2018, 9, 15);
