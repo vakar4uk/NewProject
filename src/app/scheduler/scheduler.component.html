@@ -61,9 +61,9 @@
             #dp="bsDatepicker"
             bsDatepicker [(bsValue)]="bsValue">
     
-    <button class="btn btn-success" (click)="dp.toggle()">Select Date</button>
+    <button class="btn btn-success" (click)="dp.toggle()" (click)="selectDate()">Select Date</button>
       
-    <table id="table" class="table table-striped">
+    <table [hidden]="isTableHidden" id="table" class="table table-striped">
       <tr>
         <thead>
           <th>Date</th>
@@ -72,10 +72,10 @@
           <th>Select</th>
         </thead>
       </tr>
-        <tr  *ngFor="let person of aArray; let i = index">
-            <td>{{Appointment.ApptDate}}</td>
-            <td>{{Appointment.ApptDate}}</td>
-            <td>{{Appointment.Appt_DrID}}</td>
+        <tr  *ngFor="let appointment of aArray; let i = index">
+            <td>{{appointment.ApptDate | date:'MM/dd/yyyy'}}</td>
+            <td>{{appointment.ApptDate | time:'h:mm a'}}</td>
+            <td>{{appointment.Appt_DrID}}</td>
             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
         </tr>
     </table>

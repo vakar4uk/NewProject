@@ -33,6 +33,10 @@ export class SchedulerComponent implements OnInit {
       }
   ngOnInit() {
   }
+  selectDate(){
+    this._datatask.getApptNo(this._bsValue);
+    this.isTableHidden=false;
+  }
   getindex(index) {
     
   }
