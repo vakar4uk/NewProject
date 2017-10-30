@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
+//all the data structures
 interface login {
   UID: any;
   Username: any;
@@ -66,6 +66,7 @@ interface bloodArray {
 }
 @Injectable()
 export class DataService {
+  //all the variables and declaration of said data structures
   title = 'app';
   personUrl = "http://localhost:3000/Persons";
   userUrl = "http://localhost:3000/UserTemps";
@@ -74,13 +75,14 @@ export class DataService {
   bArray:bloodArray;
   lArray:loginArray;
   pIndex;
+  bIndex;
   ID;
   IsDoctor:boolean;
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
   
-
+//base model for checking login can discard
   getUser(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
       console.log("Username:" + data[0].Username);
@@ -94,6 +96,7 @@ export class DataService {
     );
 
   }
+  //adding patient
   addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.post(this.personUrl, {
       Fname:fname,
@@ -117,6 +120,7 @@ export class DataService {
       }
       );
   }
+  //looking for patient(s)
   searchPatient(search:any){
     this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
       console.log("Looking for:" +search);
@@ -128,10 +132,17 @@ export class DataService {
       }
     );
   }
+  //getting the global person index, blood index, and ID
+  getPindex(index:any){
+    this.pIndex=index;
+  }
+  getBindex(index:any){
+    this.bIndex=index;
+  }
   getID(id:any){
     this.ID = id;
   }
-  //might not need
+  //might not need but let's leave it for now
   getIDNewPat(phone:any){
     this.http.get<personArray>(this.personUrl + "/" + phone).subscribe(data => {
       console.log("Looking for: " +phone);
@@ -143,6 +154,7 @@ export class DataService {
       }
     );
   }
+  //checks for correct username and password
   checkLogin(user: any, pass: any) {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
       if (data[0] === undefined) {
@@ -164,7 +176,7 @@ export class DataService {
       });
 
   }
-  
+  //for edit patient
   updatePerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.put(this.personUrl+"/"+this.ID, {
       Fname:fname,
@@ -188,6 +200,7 @@ export class DataService {
       }
       );
   }
+  //adding test result
   addBloodT(sod, pot, cal, glu, hem, resultPid, date) {
     const req = this.http.post(this.bloodUrl, {
       Sodium:sod,
