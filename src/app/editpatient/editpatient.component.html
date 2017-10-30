@@ -49,7 +49,7 @@
                     <!-- <pre class="card card-block card-header">{{singleModel}}</pre> -->
                     <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusFirstName(); edit()" [(ngModel)]="singleModel"
                         btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
-                    edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                   </button>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                         ngModel name="lastName" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusLastName(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                      edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                     </button>
                 </div>
 
@@ -75,7 +75,7 @@
                     <input readonly="true" (blur)="changeStatusDOB2()" type="date" id="dob" class="form-control" ngModel name="dob" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusDOB(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                    edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                   </button>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                         </div>
                         <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusGender(); edit()" [(ngModel)]="singleModel"
                             btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
-                          edit
+                            Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                       </button>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         ngModel name="street" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusAddress(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                        edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                       </button>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                         ngModel name="unit">
                     <button type="button" class="btn btn-primary" (click)="changeStatusUnit(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                            edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                           </button>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                         name="City" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusCity(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                                edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                               </button>
                 </div>
 
@@ -205,7 +205,7 @@
                     </div>
                     <button type="button" class="btn btn-primary" id="firstNameButton" (click)="changeStatusState(); edit()" [(ngModel)]="singleModel"
                         btnCheckbox btnCheckboxTrue="1" btnCheckboxFalse="0">
-                            edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
 
                     <span class="input-group-addon">Zipcode</span>
@@ -213,7 +213,7 @@
                         ngModel name="zipcode" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusZipcode(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                      edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -231,7 +231,7 @@
                         ngModel name="phone" required>
                     <button type="button" class="btn btn-primary" (click)="changeStatusPhone(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                            edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                           </button>
                 </div>
             </div>
@@ -244,7 +244,7 @@
                         name="patEmail" required email>
                     <button type="button" class="btn btn-primary" (click)="changeStatusPatEmail(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                                edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                               </button>
                 </div>
             </div>
@@ -285,7 +285,7 @@
                         id="notes" cols="90" rows="5" ngModel></textarea>
                     <button type="button" class="btn btn-primary" (click)="changeStatusNotes(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                            edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                           </button>
                 </div>
             </div><hr>
@@ -300,7 +300,7 @@
                         id="instructions" cols="90" rows="5" ngModel></textarea>
                     <button [hidden]="!this._datatask.IsDoctor" type="button" class="btn btn-primary" (click)="changeStatusInstructions(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
-                            edit
+                        Edit<i class="fa fa-pencil" aria-hidden="true"></i>
                           </button>
                 </div>
             </div><hr>
@@ -309,7 +309,7 @@
 
             
             
-            <button [hidden]="!isEdited" id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save</button>
+            <button [hidden]="!isEdited" id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
 
         </div>
 

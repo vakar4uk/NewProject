@@ -43,11 +43,6 @@ input::-webkit-inner-spin-button {
     margin: 0; 
 }
 
-#dropdown {
-    position: relative;
-    margin-top: 100px;
-}
-
 #radio-button {
     margin-left: 30px;
     margin-top: 7px;
@@ -63,7 +58,7 @@ button {
 }
 
 button > i {
-    margin-left: 5px;
+    padding-left: 5px;
 }
 
 #print-button {
