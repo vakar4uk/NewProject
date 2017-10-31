@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 body {    
     background-color: #D4D4D6;
+    font-family: 'Averia Serif Libre';
 }
 
 .form {

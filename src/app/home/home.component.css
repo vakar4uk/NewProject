@@ -62,7 +62,7 @@ td {
 
 /* Content */
 .form {      
-    margin-left: 380px;    
+    /* margin-left: 380px;     */
     padding: 10px; 
     padding-left: 20px; 
     background-color: #a7baba;
@@ -74,8 +74,7 @@ td {
 .container {
     background-color: #a7baba;
     margin-top: 20px;
-    width: 50%;
-    /* height: 570px; */
+    width: 50%;    
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;

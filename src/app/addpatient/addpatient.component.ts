@@ -62,7 +62,14 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
         <head>
           <title>Print tab</title>
           <style>
-          //........Customized style.......
+          .form {      
+            margin-left: 380px;    
+            padding: 10px;   
+            background-color: #a7baba;
+            border: 2px solid rgb(44, 95, 112);     
+            border-radius: 30px;      
+            margin-bottom: 10px;
+        }
           </style>
         </head>
     <body onload="window.print();window.close()">${printContents}</body>
