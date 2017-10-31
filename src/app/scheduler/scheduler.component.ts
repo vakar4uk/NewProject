@@ -5,6 +5,7 @@ import { DataService } from '../backend/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
+
 @Component({
   selector: 'app-scheduler',
   templateUrl: './scheduler.component.html',
@@ -34,12 +35,14 @@ export class SchedulerComponent implements OnInit {
       }
   ngOnInit() {
   }
+
   selectDate(){
     this._datatask.getApptNo((<HTMLInputElement>document.getElementById("apptdate")).value);
     this.isTableHidden=false;
   }
   getindex(index) {
-    
+    this._datatask.updateApptStatus(this._datatask.aArray[index]);
+    //this._datatask.aArray[index]
   }
   // onSubmit() {
   //   console.log(this.scheduler);

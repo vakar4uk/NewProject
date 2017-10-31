@@ -14,7 +14,7 @@ var Appointment={
 		return db.query("delete from Appointment where ApptNo=?",[id],callback);
 	},
 	updateAppt:function(id,Appointment,callback){
-		return db.query("update Appointment set ApptDate=?, Booked=? where ApptNo=?",[Appointment.ApptDate,Appointment.Booked,id],callback);
+		return db.query("update Appointment set Booked=? where ApptNo=?",[Appointment.Booked,id],callback);
 	}
 };
 module.exports = Appointment;
