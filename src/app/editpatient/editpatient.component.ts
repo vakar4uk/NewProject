@@ -218,11 +218,12 @@ export class EditpatientComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('City')).readOnly = true;
   }
   changeStatusState() {
-    (<HTMLInputElement>document.getElementById('state')).disabled = false;
-    (<HTMLInputElement>document.getElementById('state')).focus();
+    (<HTMLInputElement>document.getElementById('state')).disabled=false;
+    (<HTMLInputElement>document.getElementById('state')).focus();    
   }
+
   changeStatusState2() {
-    (<HTMLInputElement>document.getElementById('state')).disabled = true;
+    (<HTMLInputElement>document.getElementById('state')).disabled=true;
   }
   changeStatusZipcode() {
     (<HTMLInputElement>document.getElementById('zipcode')).readOnly = false;
@@ -245,6 +246,7 @@ export class EditpatientComponent implements OnInit {
   changeStatusPatEmail2() {
     (<HTMLInputElement>document.getElementById('patEmail')).readOnly = true;
   }
+
   changeStatusNotes() {
     (<HTMLInputElement>document.getElementById('notes')).disabled = false;
     (<HTMLInputElement>document.getElementById('notes')).focus();

@@ -147,7 +147,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">State</span>
                     <div>
-                        <select disabled (blur)="ChangeStatusState2()" class="form-control" id="state" name="state" ngModel>
+                        <select disabled (blur)="changeStatusState2()" class="form-control" id="state" name="state" ngModel>
                               <option value="">Select...</option>
                               <option value="AK">Alaska</option>
                               <option value="AL">Alabama</option>
@@ -282,7 +282,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">Info</span>
                     <textarea disabled name="notes" (blur)="changeStatusNotes2()"
-                        id="notes" cols="90" rows="5" ngModel></textarea>
+                        id="notes" cols="120" rows="5" ngModel></textarea>
                     <button type="button" class="btn btn-primary" (click)="changeStatusNotes(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                         Edit<i class="fa fa-pencil" aria-hidden="true"></i>
@@ -297,7 +297,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">Instructions</span>
                     <textarea disabled name="notes" (blur)="changeStatusInstructions2()"
-                        id="instructions" cols="90" rows="5" ngModel></textarea>
+                        id="instructions" cols="120" rows="5" ngModel></textarea>
                     <button [hidden]="!this._datatask.IsDoctor" type="button" class="btn btn-primary" (click)="changeStatusInstructions(); edit()" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="1"
                         btnCheckboxFalse="0">
                         Edit<i class="fa fa-pencil" aria-hidden="true"></i>
