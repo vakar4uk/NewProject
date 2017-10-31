@@ -68,6 +68,7 @@ interface Appointment {
   ApptNo: any;
   Appt_DrID: any;
   apptdate: any;
+  Booked:any;
   ApptTime: any;
   Appt_PID: any;
 }
@@ -173,6 +174,24 @@ export class DataService {
       console.log(data);
       this.aArray = data;
     })
+  }
+  //change Appointment to taken
+  updateApptStatus(apptno){
+    const req = this.http.put(this.appointmentUrl+"/", {
+      Booked: "1",
+    })
+      .subscribe(
+      res => {
+        console.log("Update Success");
+      },
+      err => {
+        console.log("Error occured");
+      }
+      );
+  }
+  removeBooked(){
+    //this.aArray = this.aArray.filter(item => item.id !== id);
+      
   }
   //checks for correct username and password
   checkLogin(user: any, pass: any) {
