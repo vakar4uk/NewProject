@@ -214,6 +214,7 @@ export class DataService {
         this.dArray[appt].Lname = data[0].Lname;
       })
     }
+    console.log(this.dArray);
     
   }
   removeBooked(){
