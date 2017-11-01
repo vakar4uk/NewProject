@@ -182,7 +182,8 @@ export class DataService {
       console.log("looking for: " + date);
       console.log(data);
       this.aArray = data;
-    })
+    });
+    this.getDoctor();
   }
   //change Appointment to taken
   updateApptStatus(apptno){
