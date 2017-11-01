@@ -22,14 +22,14 @@
         
           <th>Date</th>
           <th>Time</th>
-          <!-- <th>Doctor</th> -->
+          <th>Doctor</th>
           <th>Select</th>
         
       </tr>
       <tr  *ngFor="let appointment of this._datatask.aArray; let i = index">        
             <td>{{appointment.apptdate | date:'fullDate'}}</td>
             <td>{{appointment.ApptTime}}</td>
-            <!-- <td>{{this._datatask.dArray[i].Lname}}, {{this._datatask.dArray[i].Fname}}</td> -->
+            <td>{{this._datatask.dArray[i].lname}}, {{this._datatask.dArray[i].fname}}</td>
             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
         </tr>
     </table>
