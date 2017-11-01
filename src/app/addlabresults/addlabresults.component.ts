@@ -23,6 +23,7 @@ export class AddlabresultsComponent implements OnInit {
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
   public modalRef: BsModalRef;
+  public modalRef2: BsModalRef;
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) { }
 
   public isSubmitted: boolean = false;
@@ -62,6 +63,15 @@ export class AddlabresultsComponent implements OnInit {
     this._datatask.getID(this._datatask.pArray[this._datatask.pIndex].PID);
     this.isInfoHidden = false;
   }
+
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  public openModal2(template: TemplateRef<any>) {
+    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+  } 
+
   addRecord() {
     var date = (<HTMLInputElement>document.getElementById("testDate")).value;
     var sodium = (<HTMLInputElement>document.getElementById("sodium")).value;

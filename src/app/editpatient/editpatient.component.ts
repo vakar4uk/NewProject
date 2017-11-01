@@ -23,6 +23,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 export class EditpatientComponent implements OnInit {
   public modalRef: BsModalRef;
+  public modalRef2: BsModalRef;
   isCondition = false;
   constructor(private modalService: BsModalService,private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
 
@@ -65,6 +66,14 @@ export class EditpatientComponent implements OnInit {
   edit() {
     this.isEdited = true;
   }
+
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  public openModal2(template: TemplateRef<any>) {
+    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+  } 
 
   populate(){
     //if(this._datatask.ID != undefined){

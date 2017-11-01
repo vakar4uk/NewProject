@@ -60,13 +60,22 @@ export class EditlabresultsComponent implements OnInit {
 
   edit() {
     this.isEdited = true;
-  }  
+  }   
 
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
   public date: any;
   public modalRef: BsModalRef;
+  public modalRef2: BsModalRef;
   public isSubmitted: boolean = false;
+
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  public openModal2(template: TemplateRef<any>) {
+    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+  } 
 
   // PRINT
   print(): void {

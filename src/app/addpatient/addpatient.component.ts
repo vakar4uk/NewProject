@@ -16,6 +16,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 export class AddpatientComponent implements OnInit {  
   public modalRef: BsModalRef;
+  public modalRef2: BsModalRef;
   isCondition: false;
 
   maxLength = '2';
@@ -50,6 +51,14 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
 
   ngOnInit() {    
   }
+
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  public openModal2(template: TemplateRef<any>) {
+    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+  } 
 
   // PRINT
   print(): void {
@@ -96,15 +105,7 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
     console.log("Patient/Person Added");
     // this.modalRef=this.modalService.show(template);
     console.log(this.addPatient);
-  }
-
-  public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
-
-  public openModal1(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
+  } 
 
 
 }

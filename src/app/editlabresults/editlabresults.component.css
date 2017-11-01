@@ -170,7 +170,12 @@ td {
     text-align: center;
 }
 
-.modal-title-success {   
+#modal-text {
+    text-align: center;
+}
+
+.modal-title-success { 
+    /* margin-left: 40px; */
     font-weight: bold;
     color: #09C66A;
 }
