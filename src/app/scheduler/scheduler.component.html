@@ -1,68 +1,8 @@
 <!-- Navbar -->
 <app-header></app-header>
-
   <!-- Page Content -->
-  
-  
-      <!-- Day of the week dropdown -->
-    <!-- <div id="date"class="btn-group" dropdown>
-      <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">Date<span class="caret"></span>
-      </button>
-        <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
-          <li role="menuitem"><a class="dropdown-item" href="#">Monday</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#">Tuesday</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#">Wednesday</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#">Thursday</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#">Friday</a></li>
-        </ul>
-    </div> -->
-      <!-- Day of the week dropdown -->
-      <!-- Time of day dropdown -->
-      <!-- <div id="timeofday"class="btn-group" dropdown>
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            Time <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" id="listedDays"role="menu">
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">8:00A.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">9:00A.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">10:00A.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">11:00A.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">12:00P.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">1:00P.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">2:00P.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">3:00P.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">4:00P.M.</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">5:00P.M.</a></li>
-          </ul>
-      </div> -->
-      <!-- Time of day dropdown -->
-      <!-- Doctor dropdown -->
-      <!-- <div id="doctor"class="btn-group" dropdown>
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            Doctor <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" id="listedDoctors"role="menu">
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Beesly, Pam</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Halpert, Jim</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Martin, Angela</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Scott, Michael</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">Schrute, Dwight</a></li>
-          </ul>
-      </div> -->
-      <!-- Doctor dropdown -->
-      
-      <!-- scheduler -->
-
   <div class="container"id="content">
     <br><h5 class="text-center">Appointment</h5><hr>
-    <!-- <body>{{bsValue| date:'yMd'}}</body> -->
-    <!-- <input type="text"
-            readonly="true"
-            #dp="bsDatepicker"
-            bsDatepicker [(bsValue)]="bsValue"onclick="dp.toggle()">
-    
-    <button class="btn btn-success" (click)="selectDate()">Select Date</button>
-       -->
     <div class="form-group">
         <label for="date" class="sr-only">Appointment Date</label>
         <div class="input-group">
@@ -93,97 +33,7 @@
             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></button></td>
         </tr>
     </table>
-            <!--  | date:'shortTime' -->
-            <!--  -->
-
-    <!-- <tbody>
-        <tr>
-          <td id="date">10/31/2017</td>
-          <td id="time">8:00A.M.</td>          
-          <td id="doctor">Beesly, Pam</td>
-          <td id="select">
-            <button type="button" class="btn btn-primary"
-            (click)="changeStatusSodium()" id="btn">
-            select
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>10/31/2017</td>
-          <td>9:00A.M.</td>          
-          <td>Halpert, Jim</td>
-          <td>
-            <button type="button" class="btn btn-primary"
-            (click)="changeStatusPotassium()" id="btn">
-            select
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>10/31/2017</td>
-          <td>10:00A.M.</td>
-          <td>Schrute, Dwight</td>
-          <td>
-            <button type="button" class="btn btn-primary"
-            (click)="changeStatusCalcium()" id="btn">
-            select
-          </button>
-          </td>
-        </tr>
-        <tr>
-          <td>10/31/2017</td>
-          <td>11:00A.M.</td>
-          <td>Scott, Michael</td>
-          <td>
-            <button type="button" class="btn btn-primary"
-            (click)="changeStatusGlucose()" id="btn">
-              select
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>10/31/2017</td>
-          <td>1:00P.M.</td>
-          <td>Levinson, Jan</td>
-          <td>
-            <button type="button" class="btn btn-primary"
-            (click)="changeStatusHemoglobin()" id="btn">
-            select
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <button id="submit" (click)="onSubmit"
-    class="btn btn-lg btn-success btn-block" 
-    [disabled]="!f.valid"
-    type="submit"         
-    >Submit</button>    
-   -->
   </div> 
-
-  
-      <!-- angular example  -->
-<!-- 
-      <table [hidden]="isTableHidden" class="table">
-          <tr>
-              <th>Select</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Address</th>
-              <th>Phone</th>
-          </tr>
-
-          <tr  *ngFor="let person of pArray; let i = index">
-              <td><button type="button" id="selectPatient" (click)="getID(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
-              <td>{{person.Fname}}</td>
-              <td>{{person.Lname}}</td>
-              <td>{{person.Street}}</td>
-              <td>{{person.PhoneNo}}</td>
-          </tr>
-      </table> -->
-      <!-- angular example end -->
   <!-- Page Content -->
 
   <!-- Footer -->
