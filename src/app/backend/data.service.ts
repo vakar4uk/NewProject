@@ -205,8 +205,8 @@ export class DataService {
         this.http.get<doctorArray>(this.doctorUrl + "/" + this.aArray[appt].Appt_DrID).subscribe(data => {
         console.log("looking for: " + this.aArray[appt].Appt_DrID);
         console.log(appt);
-        this.dArray[appt].Fname = data[0].Fname;
-        this.dArray[appt].Lname = data[0].Lname;
+        this.dArray[appt] = data[0];
+        //this.dArray[appt].Lname = data[0].Lname;
         console.log(this.dArray[appt].Fname);
         console.log(this.dArray[appt].Lname);
 
