@@ -62,7 +62,7 @@ export class AddlabresultsComponent implements OnInit {
     this._datatask.getID(this._datatask.pArray[this._datatask.pIndex].PID);
     this.isInfoHidden = false;
   }
-  addRecord(template: TemplateRef<any>) {
+  addRecord() {
     var date = (<HTMLInputElement>document.getElementById("testDate")).value;
     var sodium = (<HTMLInputElement>document.getElementById("sodium")).value;
     var potassium = (<HTMLInputElement>document.getElementById("potassium")).value;
@@ -70,7 +70,7 @@ export class AddlabresultsComponent implements OnInit {
     var glucose = (<HTMLInputElement>document.getElementById("glucose")).value;
     var hemoglobin = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
     this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
-    this.modalRef = this.modalService.show(template);
+    // this.modalRef = this.modalService.show(template);
   }
   // PRINT
   print(): void {

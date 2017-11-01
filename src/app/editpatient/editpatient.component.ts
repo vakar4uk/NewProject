@@ -108,7 +108,7 @@ export class EditpatientComponent implements OnInit {
 }
   // PRINT
 
-  search(template: TemplateRef<any>) {
+  search() {
     //searching for person|patient
     
     var search = (<HTMLInputElement>document.getElementById("search")).value;
@@ -120,7 +120,7 @@ export class EditpatientComponent implements OnInit {
       }
       //if it is empty show error
       else if(this._datatask.pArray[0] === undefined){
-        this.modalRef = this.modalService.show(template);
+        // this.modalRef = this.modalService.show(template);
       }
       console.log("Checking if data was Stored",this._datatask.pArray);
 
@@ -149,7 +149,7 @@ export class EditpatientComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("patEmail")).value=this._datatask.pArray[this._datatask.pIndex].Email;
     (<HTMLInputElement>document.getElementById("notes")).value=this._datatask.pArray[this._datatask.pIndex].Notes;
   }
-  onSubmit(template: TemplateRef<any>) {
+  editPerson() {
     //updating person|patient Currently missing DOB and Gender
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
@@ -164,8 +164,9 @@ export class EditpatientComponent implements OnInit {
     var email = (<HTMLInputElement>document.getElementById("patEmail")).value;
     var notes = (<HTMLInputElement>document.getElementById("notes")).value;
     this._datatask.updatePerson(fname, lname,dob,gender, street, city, state, zip, phone, email, notes);
-    this.modalRef = this.modalService.show(template);
-  }
+    // this.modalRef = this.modalService.show(template);
+  }  
+
   changeStatusGender() {
     (<HTMLInputElement>document.getElementById('gender')).disabled=false;
     (<HTMLInputElement>document.getElementById('gender')).focus();    
