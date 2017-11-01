@@ -116,11 +116,12 @@
 
     <hr><button (click)="print()" type="button" class="btn btn-lg btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button><hr>
 
-    <button id="submit" (click)="addRecord(template)"
+  
+    <button id="submit" (click)="addRecord(); checkModal.show()"
     class="btn btn-lg btn-success btn-block" 
     [hidden]="isSubmitted"
     [disabled]="!f.valid"
-    type="submit"         
+    type="button"         
     >Add<i class="fa fa-plus" aria-hidden="true"></i></button> 
 
     <hr><button type="button"  routerLink="/home" class="btn btn-lg btn-block btn-danger">Cancel<i class="fa fa-times" aria-hidden="true"></i></button><hr>
@@ -135,26 +136,39 @@
 <!-- Page Content -->
 
 <!-- Alert Message -->
-<template #template>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">That's what's up!</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-   Record was added succesfully!
-  </div> 
 
-  <div class="modal-body">
-      <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+<!-- Check Modal -->
+<div bsModal #checkModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog green modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Do you want to add this blood test result?</h4>          
+      </div>
+      <div class="modal-body">
+          <button (click)="addRecord(); checkModal.hide(); confirmationModal.show()" type="button" class="btn btn-lg btn-success">Yes</button>
+          <button (click)="checkModal.hide()" type="button" class="btn btn-lg btn-danger">No</button>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="modal-body">
-          <button (click)="modalRef.hide()" routerLink="/home" type="button" class="btn btn-success">Return to Home<i class="fa fa-home" aria-hidden="true"></i></button>
+<!-- Confiramtion Modal -->
+<div bsModal #confirmationModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title-success">Test successfully added!</h4>          
+      </div>
+      <div class="modal-body">
+          <div class="modal-body">
+              <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+              <button (click)="modalRef.hide()" routerLink="/home" type="button" class="btn btn-success">Return to Home<i class="fa fa-home" aria-hidden="true"></i></button>
+          </div>    
+         
+      </div>
+    </div>
   </div>
-
-</template>
+</div>
 <!-- Alert Message -->
 
 <!-- Footer -->

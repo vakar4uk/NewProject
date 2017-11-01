@@ -5,7 +5,7 @@
 
 <!-- Main Content -->
 
-<form id="printThis" (ngSubmit)="onSubmit(template)" #f="ngForm" class="form-editPatient">
+<form id="printThis" (ngSubmit)="onSubmit()" #f="ngForm" class="form-editPatient">
     <!-- <div class="col-lg-12 row" id="table-content">
         <div class="form col-lg-6 text-center"> 
                 <h5>Search and Edit Patient</h5><hr>       
@@ -309,7 +309,11 @@
 
             
             
-            <button [hidden]="!isEdited" id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+            <button id="submit" (click)="checkModal.show()"
+            class="btn btn-lg btn-danger btn-block"      
+            type="button"  
+            [hidden]="!f.touched"       
+            >Save<i class="fa fa-floppy-o" aria-hidden="true"></i></button> 
 
             <hr [hidden]="!isEdited"><button [hidden]="!isEdited" type="button"  routerLink="/home" class="btn btn-lg btn-block btn-danger">Cancel<i class="fa fa-times" aria-hidden="true"></i></button><hr [hidden]="!isEdited">
             
@@ -326,27 +330,41 @@
 <!-- Main Content -->
 
 <!-- Alert Message -->
-<template #template>
+
+<!-- Check Modal -->
+<div bsModal #checkModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog green modal-sm">
+      <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title pull-left">Saved!</h4>
-          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h4 class="modal-title">Do you want to save the changes?</h4>          
         </div>
         <div class="modal-body">
-          Updated Succesfully!
+            <!-- <button (click)="checkModal.hide(); confirmationModal.show(); editResult();" type="button" class="btn btn-lg btn-success">Yes</button>
+            <button (click)="checkModal.hide()" type="button" class="btn btn-lg btn-danger">No</button> -->
         </div>
-
-        <div class="modal-body">
-            <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Confiramtion Modal -->
+  <div bsModal #confirmationModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title-success">Change has been saved!</h4>          
         </div>
-
         <div class="modal-body">
+            <div class="modal-body">
+                <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
                 <button (click)="modalRef.hide()" routerLink="/home" type="button" class="btn btn-success">Return to Home<i class="fa fa-home" aria-hidden="true"></i></button>
+            </div>    
+           
         </div>
-
-</template>
-<!-- Alert Message -->
+      </div>
+    </div>
+  </div>
+  <!-- Alert Message -->
+  
 
 
 <!-- Footer -->

@@ -87,14 +87,14 @@ export class EditlabresultsComponent implements OnInit {
     );
     popupWin.document.close();
 }
-onSubmit(template: TemplateRef<any>){
+editResult() {
   var sod = (<HTMLInputElement>document.getElementById("sodium")).value;
   var pot = (<HTMLInputElement>document.getElementById("potassium")).value;
   var cal = (<HTMLInputElement>document.getElementById("calcium")).value;
   var glu = (<HTMLInputElement>document.getElementById("glucose")).value;
   var hem = (<HTMLInputElement>document.getElementById("hemoglobin")).value;
   this._datatask.updateBloodT(this._datatask.bArray[this._datatask.bIndex].ResultsNo,sod,pot,cal,glu,hem);
-  this.modalRef = this.modalService.show(template);
+  // this.modalRef = this.modalService.show(template);
 }
   // PRINT
 
