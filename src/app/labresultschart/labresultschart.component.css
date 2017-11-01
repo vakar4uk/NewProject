@@ -1,17 +1,34 @@
 .container {
     background-color: #a7baba;
     margin-top: 20px;
-    width: 70%;
-    height: 620px;
+    width: 50%;
+    /* height: 570px; */
     border: 2px solid rgb(44, 95, 112);
     border-radius: 50px;
     margin-bottom: 10px;
-  } 
-  #nameid {
-      margin-left: 40px;
-  }
+}
+
+.container1 {
+    padding: 10px;
+    width: 35%;
+    padding-bottom: 15px;
+}
+
+button {
+    border-radius: 25px;
+    padding-bottom: 10px;
+}
+
+.graph-container {
+    background-color: #a7baba;
+    border: 2px solid rgb(44, 95, 112);
+    border-radius: 50px;    
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+  
 .input-group > span {
-    width:auto;
+    width:115px;
     border: 2px;
 }
 

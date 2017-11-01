@@ -1,10 +1,11 @@
+<!-- Header -->
 <app-header></app-header>
-<div class="container">
-  
-  <br>
-  <div id="nameid"class="col-lg-12">
+
+<div id="printArea">
+<div class="col-lg-12 row">
+  <div class="container container1">
     <!-- name -->
-    <br><h2 (click)="populate()" class="text-center">Blood Test Results Chart</h2><br><hr>
+    <br><h2 (click)="populate()" class="text-center">Blood Test Results Chart</h2><br>
     <div id="date" class="form-group"> 
              
         <div class="input-group">
@@ -20,22 +21,26 @@
                 ngModel name="lastName">            
         </div>  
     </div>
+    <hr><button (click)="print()" type="button" class="btn btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
     <!-- name -->
-  </div>
-  <!-- Bar chart -->
-  <div class="col-lg-12">
-      <div style="display: block">
-        <canvas baseChart 
-        [datasets]="barChartData" 
-        [labels]="barChartLabels" 
-        [options]="barChartOptions" 
-        [legend]="barChartLegend"
-        [chartType]="barChartType" 
-        (chartHover)="chartHovered($event)" 
-        (chartClick)="chartClicked($event)"></canvas>
-      </div>
-      <button (click)="randomize()">Update</button>
-  </div>
+  </div>  
 </div>
 
-  <app-scrollablefooter></app-scrollablefooter>
+<!-- Bar chart -->  
+<div class="col-lg-12">
+    <div class="graph-container" style="display: block">
+      <canvas baseChart 
+      [datasets]="barChartData" 
+      [labels]="barChartLabels" 
+      [options]="barChartOptions" 
+      [legend]="barChartLegend"
+      [chartType]="barChartType" 
+      (chartHover)="chartHovered($event)" 
+      (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <!-- <button (click)="randomize()">Update</button> -->
+</div>
+</div>
+
+<!-- Footer -->
+<app-scrollablefooter></app-scrollablefooter>

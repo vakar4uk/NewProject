@@ -10,7 +10,7 @@
 <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-addLabResults">
   <div class="col-lg-12">
   <div class="container">
-    <br><h5 class="text-center">Blood Test Results</h5><hr>
+    <br><h5 (click)="populate()" class="text-center">Blood Test Results</h5><hr>
     <table id="table" class="table table-striped">
       <thead>
         <tr>
