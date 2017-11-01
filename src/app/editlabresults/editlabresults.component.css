@@ -160,6 +160,10 @@ td {
 
 
 /* Modal */
+.modal-header {
+    margin-top: 1000px;
+}
+
 .modal-body {
     font-size: 2em;
     text-align: center;

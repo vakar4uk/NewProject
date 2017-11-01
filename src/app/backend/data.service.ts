@@ -76,10 +76,10 @@ interface appointmentArray {
   [index: number]: Appointment;
 }
 interface Doctor{
-  Fname: any;
-  Lname: any;
+  fname: any;
+  lname: any;
 }
-interface doctorArray {
+interface doctorArray extends Array<Doctor>{
   [index: number]: Doctor;
 }
 @Injectable()
@@ -94,7 +94,7 @@ export class DataService {
   pArray:personArray;
   bArray:bloodArray;
   lArray:loginArray;
-  dArray: doctorArray;
+  dArray: doctorArray = [];
   pIndex;
   bIndex;
   ID;
@@ -182,11 +182,12 @@ export class DataService {
       console.log("looking for: " + date);
       console.log(data);
       this.aArray = data;
-    })
+      this.getDoctor();
+    });
   }
   //change Appointment to taken
   updateApptStatus(apptno){
-    const req = this.http.put(this.appointmentUrl+"/", {
+    const req = this.http.put(this.appointmentUrl+"/"+apptno, {
       Booked: "1",
     })
       .subscribe(
@@ -198,12 +199,26 @@ export class DataService {
       }
       );
   }
-  getDoctor(dID){
-    this.http.get<doctorArray>(this.doctorUrl + "/" + dID).subscribe(data => {
-      console.log("looking for: " + dID);
-      console.log(data);
-      this.dArray = data;
-    })
+  getDoctor(){
+    console.log("THIS IS GET DOCTOR");
+
+    for(let appt in this.aArray){
+        this.http.get<doctorArray>(this.doctorUrl + "/" + this.aArray[appt].Appt_DrID).subscribe(data => {
+        console.log("looking for: " + this.aArray[appt].Appt_DrID);
+        console.log(appt);
+        console.log(data[0]);
+        console.log("data[0].fname: "+data[0].fname);
+        console.log("data[0].lname: "+data[0].lname);
+        this.dArray.push(data[0]);
+        //this.dArray[appt] = data[0];
+        //this.dArray[appt].Lname = data[0].Lname;
+        console.log(this.dArray[appt].fname);
+        console.log(this.dArray[appt].lname);
+
+      });
+    }
+    console.log(this.dArray);
+    
   }
   removeBooked(){
     //this.aArray = this.aArray.filter(item => item.id !== id);

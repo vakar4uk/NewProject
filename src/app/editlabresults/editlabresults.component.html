@@ -31,7 +31,7 @@
   </div>
 
   <!-- <div [hidden]="isTableHidden" class="col-lg-12 row"> -->
-  <div [hidden]="isInfoHidden" class="col-lg-12 row">
+  <div [hidden]="isTableHidden" class="col-lg-12 row">
     <div class="container container1">
       <h5 class="text-center">Please select date of the test</h5>
         <table id="blood-table" class="table table-striped table-bordered">
@@ -46,7 +46,7 @@
                 <td>{{blood.DateTaken}}</td>             
             </tr>
         </table>
-        <hr><button routerLink="/labresultschart" type="button" class="btn btn-block btn-success">Dashboard<i class="fa fa-line-chart" aria-hidden="true"></i></button>  
+        <!-- <hr><button routerLink="/labresultschart" type="button" class="btn btn-block btn-success">Dashboard<i class="fa fa-line-chart" aria-hidden="true"></i></button>  --> 
     </div>
   </div>
     
@@ -194,7 +194,29 @@
   <!-- Page Content -->
   
  <!-- Alert Message -->
-<template #template>
+ <template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Saved!</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Updated Succesfully!
+        </div>
+
+        <div class="modal-body">
+            <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="modal-body">
+                <button (click)="modalRef.hide()" routerLink="/home" type="button" class="btn btn-success">Return to Home<i class="fa fa-home" aria-hidden="true"></i></button>
+        </div>
+
+</template>
+
+
+ <!-- <template #template>
     <div class="modal-header">
       <h4 class="modal-title pull-left">Saved!</h4>
       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
@@ -204,7 +226,7 @@
     <div class="modal-body">
       Updated Succesfully!
     </div>
-</template>
+</template> -->
 <!-- Alert Message --> 
 
 <!-- Footer -->
