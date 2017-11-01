@@ -87,7 +87,7 @@
         </thead>
       </tr>
         <tr  *ngFor="let appointment of this._datatask.aArray; let i = index">
-            <td>{{appointment.apptdate | date:'medium':-0500}}</td>
+            <td>{{appointment.apptdate | date:'fullDate'}}</td>
             <td>{{appointment.ApptTime}}</td>
             <td>{{appointment.Appt_DrID}}</td>
             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
