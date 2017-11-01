@@ -75,6 +75,13 @@ interface Appointment {
 interface appointmentArray {
   [index: number]: Appointment;
 }
+interface Doctor{
+  Fname: any;
+  Lname: any;
+}
+interface doctorArray {
+  [index: number]: Doctor;
+}
 @Injectable()
 export class DataService {
   //all the variables and declaration of said data structures
@@ -83,9 +90,11 @@ export class DataService {
   userUrl = "http://localhost:3000/UserTemps";
   bloodUrl = "http://localhost:3000/BloodTests";
   appointmentUrl = "http://localhost:3000/Appointments"
+  doctorUrl= "http://localhost:3000/Doctors";
   pArray:personArray;
   bArray:bloodArray;
   lArray:loginArray;
+  dArray: doctorArray;
   pIndex;
   bIndex;
   ID;
@@ -188,6 +197,13 @@ export class DataService {
         console.log("Error occured");
       }
       );
+  }
+  getDoctor(dID){
+    this.http.get<doctorArray>(this.doctorUrl + "/" + dID).subscribe(data => {
+      console.log("looking for: " + dID);
+      console.log(data);
+      this.dArray = data;
+    })
   }
   removeBooked(){
     //this.aArray = this.aArray.filter(item => item.id !== id);
