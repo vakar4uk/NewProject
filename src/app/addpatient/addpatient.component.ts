@@ -79,7 +79,7 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
 }
   // PRINT
 
-  onSubmit(template: TemplateRef<any>) {
+  addPerson() {
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lname = (<HTMLInputElement>document.getElementById("lastName")).value;
     var dob = (<HTMLInputElement>document.getElementById("dob")).value;
@@ -94,8 +94,16 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
     var notes = (<HTMLInputElement>document.getElementById("notes")).value;
     this._datatask.addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes);
     console.log("Patient/Person Added");
-    this.modalRef=this.modalService.show(template);
+    // this.modalRef=this.modalService.show(template);
     console.log(this.addPatient);
+  }
+
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  public openModal1(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
 

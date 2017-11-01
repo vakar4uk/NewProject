@@ -118,8 +118,9 @@ li.nav-item {
     text-align: center;
 }
 
-.modal-title {   
+.modal-title-success {   
     font-weight: bold;
-    color: #03541C;
+    color: #09C66A;
 }
+
 /* Modal */
