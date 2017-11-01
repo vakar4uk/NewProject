@@ -198,7 +198,7 @@ export class DataService {
       }
       );
   }
-  getDoctor(dID){
+  getDoctor(){
     // for(var i=0; i < Object.entries(this.aArray).length; i++){
     //   this.http.get<doctorArray>(this.doctorUrl + "/" + dID).subscribe(data => {
     //     console.log("looking for: " + dID);
@@ -208,7 +208,7 @@ export class DataService {
     // }
     for(let appt in this.aArray){
         this.http.get<doctorArray>(this.doctorUrl + "/" + this.aArray[appt].Appt_DrID).subscribe(data => {
-        console.log("looking for: " + dID);
+        console.log("looking for: " + this.aArray[appt].Appt_DrID);
         console.log(data);
         this.dArray[appt].Fname = data[0].Fname;
         this.dArray[appt].Lname = data[0].Lname;

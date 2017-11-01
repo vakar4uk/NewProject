@@ -38,6 +38,7 @@ export class SchedulerComponent implements OnInit {
 
   selectDate(){
     this._datatask.getApptNo((<HTMLInputElement>document.getElementById("apptdate")).value);
+    this._datatask.getDoctor();
     this.isTableHidden=false;
   }
   getindex(index) {
