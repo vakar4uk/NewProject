@@ -311,9 +311,12 @@
             
             <button [hidden]="!isEdited" id="submit" class="btn btn-lg btn-danger btn-block" type="submit">Save<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
 
+            <hr [hidden]="!isEdited"><button [hidden]="!isEdited" type="button"  routerLink="/home" class="btn btn-lg btn-block btn-danger">Cancel<i class="fa fa-times" aria-hidden="true"></i></button><hr [hidden]="!isEdited">
+            
         </div>
 
     </div>
+    
 
     <fieldset [disabled]="(killfields ? 'disabled':null)">
 

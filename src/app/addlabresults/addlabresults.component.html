@@ -114,7 +114,7 @@
       </tbody>
     </table><hr>
 
-    <hr><button (click)="print()" type="button" class="btn btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button><hr>
+    <hr><button (click)="print()" type="button" class="btn btn-lg btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button><hr>
 
     <button id="submit" (click)="addRecord(template)"
     class="btn btn-lg btn-success btn-block" 
@@ -122,6 +122,8 @@
     [disabled]="!f.valid"
     type="submit"         
     >Add<i class="fa fa-plus" aria-hidden="true"></i></button> 
+
+    <hr><button type="button"  routerLink="/home" class="btn btn-lg btn-block btn-danger">Cancel<i class="fa fa-times" aria-hidden="true"></i></button><hr>
     
     <button [hidden]="!hasRecords" id="print-button" type="button" class="btn btn-lg btn-info btn-block">See previous results</button>
 
