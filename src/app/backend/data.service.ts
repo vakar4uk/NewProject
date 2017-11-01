@@ -94,7 +94,7 @@ export class DataService {
   pArray:personArray;
   bArray:bloodArray;
   lArray:loginArray;
-  dArray: doctorArray;
+  dArray: doctorArray = [];
   pIndex;
   bIndex;
   ID;
