@@ -76,8 +76,8 @@ interface appointmentArray {
   [index: number]: Appointment;
 }
 interface Doctor{
-  Fname: any;
-  Lname: any;
+  fname: any;
+  lname: any;
 }
 interface doctorArray extends Array<Doctor>{
   [index: number]: Doctor;
@@ -207,13 +207,13 @@ export class DataService {
         console.log("looking for: " + this.aArray[appt].Appt_DrID);
         console.log(appt);
         console.log(data[0]);
-        console.log(data[0].Fname);
-        console.log(data[0].Lname);
+        console.log("data[0].fname: "+data[0].fname);
+        console.log("data[0].lname: "+data[0].lname);
         this.dArray.push(data[0]);
         //this.dArray[appt] = data[0];
         //this.dArray[appt].Lname = data[0].Lname;
-        console.log(this.dArray[appt].Fname);
-        console.log(this.dArray[appt].Lname);
+        console.log(this.dArray[appt].fname);
+        console.log(this.dArray[appt].lname);
 
       });
     }
