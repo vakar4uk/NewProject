@@ -7,6 +7,9 @@ var Doctor={
 	getDoctorById:function(id,callback){
 		return db.query("select * from Doctor where DrID=?",[id],callback);
 	},
+	getDoctor:function(id,callback){
+		return db.query("select fname, lname from Person left join Staff on Person.PID=Staff.Staff_PID where SID=?",[id],callback);
+	},
 	addDoctor:function(Doctor,callback){
 		return db.query("insert into Doctor values(?,?)",[Doctor.DrID,Doctor.Speciality],callback);
 	},
