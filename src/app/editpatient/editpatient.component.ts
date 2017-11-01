@@ -9,7 +9,7 @@ import *as myID from '../global-id';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {TemplateRef } from '@angular/core';
+import { TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
@@ -32,7 +32,7 @@ export class EditpatientComponent implements OnInit {
 
   //   ]; 
 
-  @ViewChild('f') addPatient: NgForm;
+  @ViewChild('f') editPatient: NgForm;
   //public genders = ['Male', 'Female'];
 
   // public states = ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
