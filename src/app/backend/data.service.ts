@@ -199,6 +199,7 @@ export class DataService {
       );
   }
   getDoctor(){
+    console.log("THIS IS GET DOCTOR");
     for(let appt in this.aArray){
         this.http.get<doctorArray>(this.doctorUrl + "/" + this.aArray[appt].Appt_DrID).subscribe(data => {
         console.log("looking for: " + this.aArray[appt].Appt_DrID);
