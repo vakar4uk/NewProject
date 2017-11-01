@@ -27,9 +27,10 @@
         </thead>
       </tr>
         <tr  *ngFor="let appointment of this._datatask.aArray; let i = index">
+            <span data-dummy="{{this._datatask.getDoctor(appointment.Appt_DrID)}}"></span>
             <td>{{appointment.apptdate | date:'fullDate'}}</td>
             <td>{{appointment.ApptTime}}</td>
-            <td data-dummy="{{this._datatask.getDoctor(appointment.Appt_DrID)}}">{{this._datatask.dArray[0].Lname}}, {{this._datatask.dArray[0].Fname}}</td>
+            <td>{{this._datatask.dArray[0].Lname}}, {{this._datatask.dArray[0].Fname}}</td>
             <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
         </tr>
     </table>
