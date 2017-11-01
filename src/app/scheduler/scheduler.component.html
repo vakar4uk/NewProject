@@ -19,23 +19,24 @@
     </div>
     <table [hidden]="isTableHidden" id="table" class="table table-striped table-bordered">
       <tr>
-        <thead>
+        
           <th>Date</th>
           <th>Time</th>
-          <th>Doctor</th>
+          <!-- <th>Doctor</th> -->
           <th>Select</th>
-        </thead>
+        
       </tr>
       <tr  *ngFor="let appointment of this._datatask.aArray; let i = index">        
             <td>{{appointment.apptdate | date:'fullDate'}}</td>
             <td>{{appointment.ApptTime}}</td>
-            <td>{{appointment.Appt_DrID}}</td>
-            <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></button></td>
+            <!-- <td>{{this._datatask.dArray[i].Lname}}, {{this._datatask.dArray[i].Fname}}</td> -->
+            <td><button type="button" id="selectbtn" (click)="getindex(i)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
         </tr>
     </table>
   </div> 
-  <!-- Page Content -->
+  <!-- Page Content 
+  <td>{{this._datatask.dArray[0].Lname}}, {{this._datatask.dArray[0].Fname}}</td>-->
 
   <!-- Footer -->
-  <br><br><br><br><br><br>
-  <app-stickyfooter></app-stickyfooter>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <app-scrollablefooter></app-scrollablefooter>

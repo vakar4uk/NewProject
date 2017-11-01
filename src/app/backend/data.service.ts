@@ -182,11 +182,12 @@ export class DataService {
       console.log("looking for: " + date);
       console.log(data);
       this.aArray = data;
-    })
+      this.getDoctor();
+    });
   }
   //change Appointment to taken
   updateApptStatus(apptno){
-    const req = this.http.put(this.appointmentUrl+"/", {
+    const req = this.http.put(this.appointmentUrl+"/"+apptno, {
       Booked: "1",
     })
       .subscribe(
@@ -198,12 +199,18 @@ export class DataService {
       }
       );
   }
-  getDoctor(dID){
-    this.http.get<doctorArray>(this.doctorUrl + "/" + dID).subscribe(data => {
-      console.log("looking for: " + dID);
-      console.log(data);
-      this.dArray = data;
-    })
+  getDoctor(){
+    console.log("THIS IS GET DOCTOR");
+    for(let appt in this.aArray){
+        this.http.get<doctorArray>(this.doctorUrl + "/" + this.aArray[appt].Appt_DrID).subscribe(data => {
+        console.log("looking for: " + this.aArray[appt].Appt_DrID);
+        console.log(data);
+        this.dArray[appt].Fname = data[0].Fname;
+        this.dArray[appt].Lname = data[0].Lname;
+      });
+    }
+    console.log(this.dArray);
+    
   }
   removeBooked(){
     //this.aArray = this.aArray.filter(item => item.id !== id);
