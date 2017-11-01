@@ -202,10 +202,10 @@ export class DataService {
   getDoctor(){
     console.log("THIS IS GET DOCTOR");
     for(let appt in this.aArray){
-        this.http.get<doctorArray>(this.doctorUrl + "/" + this.aArray[appt].Appt_DrID).subscribe(data => {
+        this.http.get<Doctor>(this.doctorUrl + "/" + this.aArray[appt].Appt_DrID).subscribe(data => {
         console.log("looking for: " + this.aArray[appt].Appt_DrID);
         console.log(appt);
-        this.dArray[appt] = data[0];
+        this.dArray[appt] = data;
         //this.dArray[appt].Lname = data[0].Lname;
         console.log(this.dArray[appt].Fname);
         console.log(this.dArray[appt].Lname);
