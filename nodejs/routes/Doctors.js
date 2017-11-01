@@ -4,7 +4,7 @@ var Doctor = require('../models/Doctor');
 
 router.get('/:id?',function(req,res,next){
 	if(req.params.id){
-		Doctor.getDoctorById(req.params.id,function(err,rows){
+		Doctor.getDoctor(req.params.id,function(err,rows){
 			if(err){
 				res.json(err);
 			}
