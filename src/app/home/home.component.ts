@@ -39,18 +39,21 @@ export class HomeComponent implements OnInit {
     console.log(search);
     this._datatask.searchPatient(search);
     //if it is not empty show table
-    setTimeout(function () {
-      if(this._datatask.pArray.length != 0){
+    setTimeout(this.check(template), 2000);
+      
+  }
+  check(template: TemplateRef<any>){
+    {
+      if((this._datatask.pArray.length) != 0){
         this.isTableHidden = false;
       }
       //if it is empty show error
-      else if(this._datatask.pArray.length == 0){
+      else if((this._datatask.pArray.length) === 0){
         this.modalRef = this.modalService.show(template);
       }
      console.log("Checking if data was Stored",this._datatask.pArray);
       
-  }, 2000);
-      
+  }
   }
   //this gets the ID and index for said person
   getID(index){
