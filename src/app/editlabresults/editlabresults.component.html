@@ -43,7 +43,7 @@
             <!-- <tr  *ngFor="let person of pArray; let i = index">   -->
             <tr *ngFor="let blood of this._datatask.bArray; let i = index">
                 <td><a id="selectPatient" (click)="getID(i)"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
-                <td>{{blood.DateTaken}}</td>             
+                <td>{{blood.DateTaken | date:'fullDate'}}</td>             
             </tr>
         </table>
         <!-- <hr><button routerLink="/labresultschart" type="button" class="btn btn-block btn-success">Dashboard<i class="fa fa-line-chart" aria-hidden="true"></i></button>  --> 
@@ -179,7 +179,7 @@
       [hidden]="!isEdited"       
       >Save<i class="fa fa-floppy-o" aria-hidden="true"></i></button>  -->
 
-      <button id="submit" (click)="checkModal.show()"
+      <button id="submit" (click)="openModal(template)"
       class="btn btn-lg btn-danger btn-block"      
       type="button"  
       [hidden]="!f.touched"       
@@ -200,41 +200,29 @@
   <!-- Page Content -->
   
  <!-- Alert Message -->
-
-<!-- Check Modal -->
-<div bsModal #checkModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog green modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Do you want to save the changes?</h4>          
-      </div>
-      <div class="modal-body">
-          <button (click)="checkModal.hide(); confirmationModal.show(); editResult();" type="button" class="btn btn-lg btn-success">Yes</button>
-          <button (click)="checkModal.hide()" type="button" class="btn btn-lg btn-danger">No</button>
-      </div>
-    </div>
+<!-- Check message -->
+<template #template>
+  <div class="modal-header">
+      <h4 class="modal-title">Do you want to save changes?</h4>       
   </div>
-</div>
-
-<!-- Confiramtion Modal -->
-<div bsModal #confirmationModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title-success">Change has been saved!</h4>          
-      </div>
-      <div class="modal-body">
-          <div class="modal-body">
-              <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
-              <button (click)="modalRef.hide()" routerLink="/home" type="button" class="btn btn-success">Return to Home<i class="fa fa-home" aria-hidden="true"></i></button>
-          </div>    
-         
-      </div>
-    </div>
+  <div class="modal-body">      
+    <button type="button" class="btn btn-primary" (click)="openModal2(templateNested); modalRef.hide(); editResult()">Yes</button>
+    <button type="button" class="btn btn-danger" (click)="modalRef.hide()">No</button>
   </div>
-</div>
+</template>
+ 
+<!-- Confirmation message -->
+<template #templateNested>
+  <div class="modal-header">
+    <h4 class="modal-title-success">Changes have been saved!</h4>      
+  </div>
+  <div class="modal-body">
+      <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+      <br><button routerLink="/home" type="button" class="btn btn-info" (click)="modalRef2.hide()">Home<i class="fa fa-home" aria-hidden="true"></i></button>
+  </div>
+</template>
+
 <!-- Alert Message -->
-
 
  <!-- <template #template>
     <div class="modal-header">

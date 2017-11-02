@@ -69,8 +69,14 @@ button > i {
     text-align: center;
 }
 
-.modal-title {   
-    font-weight: bold;
-    color: #03541C;
+#modal-text {
+    text-align: center;
 }
+
+.modal-title-success { 
+    /* margin-left: 40px; */
+    font-weight: bold;
+    color: #09C66A;
+}
+
 /* Modal */

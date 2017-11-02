@@ -12,24 +12,6 @@ import { TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
-// interface person {
-//   PID: any;
-//   Fname: any;
-//   Lname: any;
-//   Sex: any;
-//   DOB: any;
-//   Street: any;
-//   Unit: any;
-//   City: any;
-//   State: any;
-//   Zipcode: any;
-//   PhoneNo: any;
-//   Email: any;
-//   Notes:any;
-// }
-// interface personArray {
-//   [index: number]: person;
-// }
 
 @Component({
   selector: 'app-home',
@@ -57,17 +39,17 @@ export class HomeComponent implements OnInit {
     console.log(search);
     this._datatask.searchPatient(search);
     //if it is not empty show table
-      if(this._datatask.pArray[0] != undefined){
+    setTimeout(function () {
+      if(this._datatask.pArray.length != 0){
         this.isTableHidden = false;
       }
       //if it is empty show error
-      else if(this._datatask.pArray[0] === undefined){
+      else if(this._datatask.pArray.length == 0){
         this.modalRef = this.modalService.show(template);
       }
+  }, 1000);
+      
       console.log("Checking if data was Stored",this._datatask.pArray);
-
-
-
   }
   //this gets the ID and index for said person
   getID(index){
