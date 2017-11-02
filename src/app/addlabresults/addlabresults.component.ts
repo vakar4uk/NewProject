@@ -24,6 +24,12 @@ export class AddlabresultsComponent implements OnInit {
   public isInfoHidden: boolean = true;
   public modalRef: BsModalRef;
   public modalRef2: BsModalRef;
+  public config = {
+    // animated: true,
+    // keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) { }
 
   public isSubmitted: boolean = false;
@@ -65,11 +71,11 @@ export class AddlabresultsComponent implements OnInit {
   }
 
   public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, this.config);
   }
 
   public openModal2(template: TemplateRef<any>) {
-    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+    this.modalRef2 = this.modalService.show(template, this.config);
   } 
 
   addRecord() {

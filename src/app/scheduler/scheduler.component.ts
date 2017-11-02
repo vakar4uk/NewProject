@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from '../backend/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 
 @Component({
@@ -18,6 +21,8 @@ export class SchedulerComponent implements OnInit {
   _bsValue: Date;
   public isTableHidden: boolean = true;
   public isInfoHidden: boolean = true;
+  public modalRef: BsModalRef;
+  public modalRef2: BsModalRef;
   
   get bsValue(): Date {
     return this._bsValue;
@@ -30,7 +35,7 @@ export class SchedulerComponent implements OnInit {
  
  
   log(v: any) {console.log(v);}
-  constructor(private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
+  constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
     
       }
   ngOnInit() {
@@ -45,6 +50,14 @@ export class SchedulerComponent implements OnInit {
     this._datatask.updateApptStatus(this._datatask.aArray[index].ApptNo);
     //this._datatask.aArray[index]
   }
+
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  public openModal2(template: TemplateRef<any>, index) {
+    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+  } 
   // onSubmit() {
   //   console.log(this.scheduler);
   // }
