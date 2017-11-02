@@ -42,7 +42,7 @@ export class SchedulerComponent implements OnInit {
     this.isTableHidden=false;
   }
   getindex(index) {
-    this._datatask.updateApptStatus(this._datatask.aArray[index]);
+    this._datatask.updateApptStatus(this._datatask.aArray[index].ApptNo);
     //this._datatask.aArray[index]
   }
   // onSubmit() {
