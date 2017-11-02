@@ -304,18 +304,20 @@
                           </button>
                 </div>
             </div><hr>
-            <button (click)="print()" type="button" class="btn btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button><hr>
+            
+            <button id="action-buttons" (click)="print()" type="button" class="btn btn-block btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
             <!-- Instructions -->
 
             
             
-            <button id="submit" (click)="openModal(template)"
-            class="btn btn-lg btn-danger btn-block"      
+            <hr [hidden]="!f.touched"><button id="action-buttons" (click)="openModal(template)"
+            class="btn btn-lg btn-success btn-block"      
             type="button"  
             [hidden]="!f.touched"       
             >Save<i class="fa fa-floppy-o" aria-hidden="true"></i></button> 
 
             <hr [hidden]="!isEdited"><button [hidden]="!isEdited" type="button"  routerLink="/home" class="btn btn-lg btn-block btn-danger">Cancel<i class="fa fa-times" aria-hidden="true"></i></button><hr [hidden]="!isEdited">
+            
             
         </div>
 
@@ -336,8 +338,8 @@
         <h4 class="modal-title">Do you want to save changes?</h4>       
     </div>
     <div class="modal-body">      
-      <button type="button" class="btn btn-primary" (click)="openModal2(templateNested); modalRef.hide(); editPerson()">Yes</button>
-      <button type="button" class="btn btn-danger" (click)="modalRef.hide()">No</button>
+      <button id="action-buttons" type="button" class="btn btn-primary" (click)="openModal2(templateNested); modalRef.hide(); editPerson()">Yes</button>
+      <button id="action-buttons" type="button" class="btn btn-danger" (click)="modalRef.hide()">No</button>
     </div>
   </template>
    
@@ -347,8 +349,8 @@
       <h4 class="modal-title-success">Changes have been saved!</h4>      
     </div>
     <div class="modal-body">
-        <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
-        <br><button routerLink="/home" type="button" class="btn btn-info" (click)="modalRef2.hide()">Home<i class="fa fa-home" aria-hidden="true"></i></button>
+        <button id="action-buttons" (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+        <br><button id="action-buttons" routerLink="/home" type="button" class="btn btn-info" (click)="modalRef2.hide()">Home<i class="fa fa-home" aria-hidden="true"></i></button>
     </div>
   </template>
 

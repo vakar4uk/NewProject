@@ -79,18 +79,13 @@ a > i {
     margin-left: 5px;
 }
 
-button {
+#action-buttons {
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 button > i {
     padding-left: 5px;
-}
-
-#print-button {
-    float: right;
-    border-radius: 20px;
-    cursor: pointer;
 }
 
 .nav2 {

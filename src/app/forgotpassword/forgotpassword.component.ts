@@ -10,14 +10,12 @@ import { NgForm } from '@angular/forms';
 export class ForgotpasswordComponent implements OnInit {
 
   @ViewChild('f') signinForm: NgForm;
-
-
+  email = '';
 
   ngOnInit() {
   } 
 
   onSubmit() {
-
   }
 
   myFunc(){
