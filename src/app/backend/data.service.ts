@@ -188,11 +188,11 @@ export class DataService {
   //change Appointment to taken
   updateApptStatus(apptno){
     const req = this.http.put(this.appointmentUrl+"/"+apptno, {
-      Booked: "1",
+      Booked: 1
     })
       .subscribe(
       res => {
-        console.log("Update Success");
+        console.log("Booked");
       },
       err => {
         console.log("Error occured");
