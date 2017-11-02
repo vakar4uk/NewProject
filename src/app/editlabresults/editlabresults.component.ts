@@ -11,38 +11,22 @@ import 'rxjs/add/operator/catch';
 import { TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+import { DatePipe } from '@angular/common';
 
-// interface person {
-//   PID: any;
-//   Fname: any;
-//   Lname: any;
-//   Sex: any;
-//   DOB: any;
-//   Street: any;
-//   Unit: any;
-//   City: any;
-//   State: any;
-//   Zipcode: any;
-//   PhoneNo: any;
-//   Email: any;
-// }
-// interface personArray {
-//   [index: number]: person;
-// }
-interface blood {
-  ResultsNo: any;
-  Sodium: any;
-  Potassium: any;
-  Calcium: any;
-  Glucose: any;
-  Hemoglobin: any;
-  Results_PID: any;
-  DateTaken: any;
+// interface blood {
+//   ResultsNo: any;
+//   Sodium: any;
+//   Potassium: any;
+//   Calcium: any;
+//   Glucose: any;
+//   Hemoglobin: any;
+//   Results_PID: any;
+//   DateTaken: any;
 
-}
-interface bloodArray {
-  [index: number]: blood;
-}
+// }
+// interface bloodArray {
+//   [index: number]: blood;
+// }
 
 @Component({
   selector: 'app-editlabresults',
@@ -134,20 +118,6 @@ editResult() {
   // }
   getID(index) {
     this._datatask.bIndex=index;
-    //this._datatask.searchBloodT();
-    //get PID of person selected
-    //this._datatask.getID(this.pArray[index].PID);
-    //**** SCRAP LATER
-    // this.http.get<bloodArray>(this.bloodUrl +  "/" + this._datatask.ID).subscribe(data => {
-    //   this.bArray = data;
-
-    // },
-    //   err => {
-    //     console.log("Adding Entry");
-    //     //this._datatask.addBloodT(sodium, potassium, calcium, glucose, hemoglobin, this._datatask.ID, date);
-    //   }
-    // );
-    //var date = (<HTMLInputElement>document.getElementById("testDate")).value;
     var t = (this._datatask.bArray[this._datatask.bIndex].DateTaken.split(/[- T]/));
     this.date= t[0]+"-"+t[1]+"-"+t[2];
     (<HTMLInputElement>document.getElementById("testDate")).value=this.date;
