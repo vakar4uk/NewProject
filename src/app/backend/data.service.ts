@@ -97,6 +97,7 @@ export class DataService {
   dArray: doctorArray = [];
   pIndex;
   bIndex;
+  clicked:number = 0;
   ID;
   IsDoctor:boolean;
   aArray:appointmentArray = [];
@@ -148,10 +149,12 @@ export class DataService {
       console.log("Looking for:" +search);
       console.log(data);
       this.pArray = data;
-      console.log("Number of entries: "+Object.keys(this.pArray).length);
+      console.log("Number of entries: "+this.pArray.length);
+      this.clicked = 1;
     },
       err => {
         console.log("No Valid Entry");
+        this.clicked = 0;
       }
     );
   }
