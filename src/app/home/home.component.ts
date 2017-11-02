@@ -32,14 +32,15 @@ export class HomeComponent implements OnInit {
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
   }
   /**********Something is wrong have 2 press twice************/
-  search(template: TemplateRef<any>) {
+  search() {
     //searching for person|patient
     
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
     this._datatask.searchPatient(search);
+    this.isTableHidden = false;
     //if it is not empty show table
-    setTimeout(this.check(template), 2000);
+    //setTimeout(this.check(template), 2000);
       
   }
   check(template: TemplateRef<any>){
