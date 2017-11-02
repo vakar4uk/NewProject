@@ -283,7 +283,7 @@
                 id="submit" 
                 (click)="openModal(template)"
                 class="btn btn-lg btn-success btn-block"
-                [disabled]="!f.valid"                
+                [disabled]="!f.valid" 
                 type="button"         
                 >Add<i class="fa fa-plus" aria-hidden="true"></i></button>                 
 
@@ -310,8 +310,9 @@
     <div class="modal-header">
       <h4 class="modal-title-success">Person has been added!</h4>      
     </div>
-    <div class="modal-body">
-        <button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
+    <div class="modal-body">        
+        <button (click)="refresh()" type="button" class="btn btn-primary">Add another person<i class="fa fa-plus" aria-hidden="true"></i></button>
+        <br><button (click)="print()" type="button" class="btn btn-warning">Print<i class="fa fa-print" aria-hidden="true"></i></button>
         <br><button routerLink="/home" type="button" class="btn btn-info" (click)="modalRef2.hide()">Home<i class="fa fa-home" aria-hidden="true"></i></button>
     </div>
   </template>

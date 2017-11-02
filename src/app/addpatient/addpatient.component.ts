@@ -17,6 +17,13 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 export class AddpatientComponent implements OnInit {  
   public modalRef: BsModalRef;
   public modalRef2: BsModalRef;
+  public config = {
+    // animated: true,
+    // keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+
   isCondition: false;
 
   maxLength = '2';
@@ -53,11 +60,11 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
   }
 
   public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, this.config);
   }
 
   public openModal2(template: TemplateRef<any>) {
-    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+    this.modalRef2 = this.modalService.show(template, this.config);
   } 
 
   // PRINT
@@ -87,6 +94,10 @@ constructor(private modalService: BsModalService,private _datatask:DataService,p
     popupWin.document.close();
 }
   // PRINT
+
+  refresh(): void {
+    window.location.reload();
+}
 
   addPerson() {
     var fname = (<HTMLInputElement>document.getElementById("firstName")).value;

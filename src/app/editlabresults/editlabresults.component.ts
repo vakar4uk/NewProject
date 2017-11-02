@@ -67,14 +67,20 @@ export class EditlabresultsComponent implements OnInit {
   public date: any;
   public modalRef: BsModalRef;
   public modalRef2: BsModalRef;
+  public config = {
+    // animated: true,
+    // keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
   public isSubmitted: boolean = false;
 
   public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, this.config);
   }
 
   public openModal2(template: TemplateRef<any>) {
-    this.modalRef2 = this.modalService.show(template, {class: 'second'});
+    this.modalRef2 = this.modalService.show(template, this.config);
   } 
 
   // PRINT
