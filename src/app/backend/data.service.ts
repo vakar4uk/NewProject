@@ -150,6 +150,7 @@ export class DataService {
       console.log(data);
       this.pArray = data;
       console.log("Number of entries: "+this.pArray.length);
+      console.log(this.pArray);
       this.clicked = 1;
     },
       err => {

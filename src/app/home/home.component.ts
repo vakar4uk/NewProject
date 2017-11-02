@@ -47,9 +47,10 @@ export class HomeComponent implements OnInit {
       else if(this._datatask.pArray.length == 0){
         this.modalRef = this.modalService.show(template);
       }
-  }, 1000);
+     console.log("Checking if data was Stored",this._datatask.pArray);
       
-      console.log("Checking if data was Stored",this._datatask.pArray);
+  }, 2000);
+      
   }
   //this gets the ID and index for said person
   getID(index){
