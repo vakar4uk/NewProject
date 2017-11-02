@@ -44,10 +44,10 @@ export class HomeComponent implements OnInit {
         this.isTableHidden = false;
       }
       //if it is empty show error
-      else if(this._datatask.pArray.length === 0){
+      else if(this._datatask.pArray.length == 0){
         this.modalRef = this.modalService.show(template);
       }
-  }, 5000);
+  }, 1000);
       
       console.log("Checking if data was Stored",this._datatask.pArray);
   }
