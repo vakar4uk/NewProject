@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   public id:any;
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
   }
-  /**********Something is wrong have 2 press twice************/
+  /**********Something is wrong have to press twice************/
   search() {
     //searching for person|patient
     
@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
       
   }
   check(template: TemplateRef<any>){
-    {
       if(this._datatask.clicked === 1){
         this.isTableHidden = false;
       }
@@ -54,7 +53,6 @@ export class HomeComponent implements OnInit {
       }
      console.log("Checking if data was Stored",this._datatask.pArray);
       
-  }
   }
   //this gets the ID and index for said person
   getID(index){
