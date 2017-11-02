@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       }
       //if it is empty show error
       else if(this._datatask.pArray.length === 0){
-        this.modalRef = this.modalService.show(template);
+        //this.modalRef = this.modalService.show(template);
       }
       console.log("Checking if data was Stored",this._datatask.pArray);
   }
