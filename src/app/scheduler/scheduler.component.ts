@@ -46,9 +46,8 @@ export class SchedulerComponent implements OnInit {
     //this._datatask.getDoctor();
     this.isTableHidden=false;
   }
-  getindex(index, template) {
-    this.openModal(template);
-    //this._datatask.updateApptStatus(this._datatask.aArray[index]);
+  getindex(index) {
+    this._datatask.updateApptStatus(this._datatask.aArray[index].ApptNo);
     //this._datatask.aArray[index]
   }
 
