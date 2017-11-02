@@ -44,10 +44,10 @@ interface blood {
   DateTaken: any;
 
 }
-interface personArray{
+interface personArray extends Array<person>{
   [index:number]:person;
 }
-interface loginArray {
+interface loginArray extends Array<login>{
   [index: number]: login;
 }
 interface blood {
@@ -61,7 +61,7 @@ interface blood {
   DateTaken: any;
 
 }
-interface bloodArray {
+interface bloodArray extends Array<blood>{
   [index: number]: blood;
 }
 interface Appointment {
@@ -72,7 +72,7 @@ interface Appointment {
   ApptTime: any;
   Appt_PID: any;
 }
-interface appointmentArray {
+interface appointmentArray extends Array<Appointment>{
   [index: number]: Appointment;
 }
 interface Doctor{
@@ -91,15 +91,15 @@ export class DataService {
   bloodUrl = "http://localhost:3000/BloodTests";
   appointmentUrl = "http://localhost:3000/Appointments"
   doctorUrl= "http://localhost:3000/Doctors";
-  pArray:personArray;
-  bArray:bloodArray;
-  lArray:loginArray;
+  pArray:personArray = [];
+  bArray:bloodArray = [];
+  lArray:loginArray = [];
   dArray: doctorArray = [];
   pIndex;
   bIndex;
   ID;
   IsDoctor:boolean;
-  aArray:appointmentArray;
+  aArray:appointmentArray = [];
   constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
