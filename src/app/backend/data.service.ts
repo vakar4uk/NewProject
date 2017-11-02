@@ -151,13 +151,21 @@ export class DataService {
       this.pArray = data;
       console.log("Number of entries: "+this.pArray.length);
       console.log(this.pArray);
-      this.clicked = 1;
+      this.check();
     },
       err => {
         console.log("No Valid Entry");
         this.clicked = 0;
       }
     );
+  }
+  check(){
+    if(this.pArray.length != 0){
+      this.clicked = 1;
+    }
+    else{
+      this.clicked = 0;
+    }
   }
   //getting the global person index, blood index, and ID
   getPindex(index:any){
