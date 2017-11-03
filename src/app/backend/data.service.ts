@@ -8,6 +8,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import {TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 //all the data structures
 interface login {
   UID: any;
@@ -95,13 +98,15 @@ export class DataService {
   bArray:bloodArray = [];
   lArray:loginArray = [];
   dArray: doctorArray = [];
+  public modalRef: BsModalRef;
+  template: TemplateRef<any>;
   pIndex;
   bIndex;
   clicked:number = 0;
   ID;
   IsDoctor:boolean;
   aArray:appointmentArray = [];
-  constructor(private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
+  constructor(private modalService: BsModalService,private http: HttpClient, private _router: Router, private route: ActivatedRoute) {
   }
 
   
@@ -119,6 +124,9 @@ export class DataService {
     );
 
   }
+  // openModal(template: TemplateRef<any>) {
+  //   this.modalRef = this.modalService.show(template);
+  // }
   //adding patient
   addPerson(fname, lname, dob, gender, street, city, state, zip, phone, email, notes) {
     const req = this.http.post(this.personUrl, {
@@ -158,6 +166,9 @@ export class DataService {
         this.clicked = 0;
       }
     );
+  }
+  setModal(template: TemplateRef<any>){
+    this.template= template;
   }
   check(){
     if(this.pArray.length != 0){
@@ -241,6 +252,7 @@ export class DataService {
     this.http.get<loginArray>(this.userUrl + "/" + user).subscribe(data => {
       if (data[0] === undefined) {
         console.log("Access Denied");
+        this.modalRef = this.modalService.show(this.template);        
       }
       else if (data[0].Username === user && data[0].Password === pass && data[0].UserLevel === 1) {
         this.IsDoctor=true;
@@ -252,9 +264,13 @@ export class DataService {
         console.log("Welcome Nurse");
         this._router.navigate(['/home']);
       }
+      else{
+        this.modalRef = this.modalService.show(this.template);        
+      }
     },
       err => {
         console.log("Not Connected to DB");
+        this.modalRef = this.modalService.show(this.template);
       });
 
   }

@@ -15,20 +15,18 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public modalRef: BsModalRef;
+  
   link = "";
 
   @ViewChild('f') signinForm: NgForm;
   selectedLogin: Login;
-  constructor(private modalService: BsModalService,private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
+  constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
   }
   ngOnInit(){
   }
 
-  public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
+
 
   // userValidation(){
   //   var verify = (<HTMLInputElement>document.getElementById("inputUsername")).value;    

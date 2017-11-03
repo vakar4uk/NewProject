@@ -41,7 +41,7 @@
                 
               </label>
             </div> -->
-            <button id="submit" (click)="openModal(template)"
+            <button id="submit" (click)="this._datatask.setModal(template)"
             class="btn btn-lg btn-primary btn-block" 
             type="submit"
             [disabled]="!f.valid"
