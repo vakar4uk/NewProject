@@ -35,13 +35,13 @@
             </div>       
 
 
-            <div class="checkbox">
+            <!-- <div class="checkbox">
               <label>
                 <input type="checkbox" value="remember-me"> Remember me
                 
               </label>
-            </div>
-            <button id="submit" 
+            </div> -->
+            <button id="submit" (click)="openModal(template)"
             class="btn btn-lg btn-primary btn-block" 
             type="submit"
             [disabled]="!f.valid"
@@ -49,5 +49,18 @@
             <p class="message">Forgot your password? <a routerLink="/forgotpassword">Reset password</a></p>
           </form>    
         </div> <!-- /Login container -->
+
+        <!-- Alert Message -->
+        <template #template>
+          <div class="modal-header">
+            <h4 class="modal-title">Error!</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            The username and/or password you have entered is incorrect! Please try again.
+          </div>
+        </template>
            
          

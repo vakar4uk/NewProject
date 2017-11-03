@@ -4,6 +4,10 @@ import { NgForm } from '@angular/forms';
 import { DataService} from '../backend/data.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
+import {TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
 
 @Component({
   selector: 'app-component',
@@ -11,17 +15,19 @@ import { Subscription } from 'rxjs/Rx';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  public modalRef: BsModalRef;
   link = "";
 
   @ViewChild('f') signinForm: NgForm;
   selectedLogin: Login;
-  constructor(private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
+  constructor(private modalService: BsModalService,private _datatask:DataService,private _router:Router,private route:ActivatedRoute) { 
   
   }
   ngOnInit(){
+  }
 
-
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
   // userValidation(){

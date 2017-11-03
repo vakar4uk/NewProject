@@ -84,3 +84,29 @@
   a:hover {
     color: #ED0003;
   }
+
+  /* Modal */
+.modal-title {
+  color: red;
+}
+.modal-body {
+  font-size: 2em;
+  text-align: center;
+  color: #E25B5B;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+#modal-text {
+  text-align: center;
+}
+
+.modal-title-success { 
+  /* margin-left: 40px; */
+  font-weight: bold;
+  color: #C62525;
+}
+
+/* Modal */
