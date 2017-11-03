@@ -32,9 +32,9 @@ export class HomeComponent implements OnInit {
   constructor(private modalService: BsModalService, private http: HttpClient, public _datatask: DataService, private _router: Router, private route: ActivatedRoute) {
   }
   /**********Something is wrong have to press twice************/
-  search() {
+  search(template: TemplateRef<any>) {
     //searching for person|patient
-    
+    this._datatask.setModal(template);
     var search = (<HTMLInputElement>document.getElementById("search")).value;
     console.log(search);
     this._datatask.searchPatient(search);

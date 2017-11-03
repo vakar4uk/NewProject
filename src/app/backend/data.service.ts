@@ -153,19 +153,25 @@ export class DataService {
   }
   //looking for patient(s)
   searchPatient(search:any){
-    this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
-      console.log("Looking for:" +search);
-      console.log(data);
-      this.pArray = data;
-      console.log("Number of entries: "+this.pArray.length);
-      console.log(this.pArray);
-      this.check();
-    },
-      err => {
-        console.log("No Valid Entry");
-        this.clicked = 0;
-      }
-    );
+    if(search != undefined){
+      this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
+        console.log("Looking for:" +search);
+        console.log(data);
+        this.pArray = data;
+        console.log("Number of entries: "+this.pArray.length);
+        console.log(this.pArray);
+        //this.check();
+      },
+        err => {
+          console.log("No Valid Entry");
+          this.modalRef = this.modalService.show(this.template);
+          this.clicked = 0;
+        }
+      );
+    }
+    else{
+      this.modalRef = this.modalService.show(this.template);
+    }
   }
   setModal(template: TemplateRef<any>){
     this.template= template;
@@ -173,6 +179,7 @@ export class DataService {
   check(){
     if(this.pArray.length != 0){
       this.clicked = 1;
+      this.modalRef = this.modalService.show(this.template);
     }
     else{
       this.clicked = 0;
