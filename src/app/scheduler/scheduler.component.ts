@@ -23,6 +23,7 @@ export class SchedulerComponent implements OnInit {
   public isInfoHidden: boolean = true;
   public modalRef: BsModalRef;
   public modalRef2: BsModalRef;
+  public data: string = "";
   
   get bsValue(): Date {
     return this._bsValue;

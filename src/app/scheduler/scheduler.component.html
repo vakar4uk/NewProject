@@ -26,13 +26,14 @@
           <th>Select</th>
         
       </tr>
-      <tr  *ngFor="let appointment of this._datatask.aArray; let i = index">        
+      <tr  *ngFor="let appointment of this._datatask.aArray; let i = index" [(ngModel)]="data">        
             <td>{{appointment.apptdate | date:'fullDate'}}</td>
             <td>{{appointment.ApptTime}}</td>
             <td>{{this._datatask.dArray[i].lname}}, {{this._datatask.dArray[i].fname}}</td>
             <td><button type="button" id="selectbtn" (click)="getindex(i, template)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
-        </tr>
-    </table>
+           
+          </tr>
+    </table>  
   </div> 
   <!-- Page Content 
   <td>{{this._datatask.dArray[0].Lname}}, {{this._datatask.dArray[0].Fname}}</td>-->
