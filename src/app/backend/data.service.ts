@@ -153,7 +153,7 @@ export class DataService {
   }
   //looking for patient(s)
   searchPatient(search:any){
-    if(search != undefined){
+    if(search != null){
       this.http.get<personArray>(this.personUrl + "/" + search).subscribe(data => {
         console.log("Looking for:" +search);
         console.log(data);
