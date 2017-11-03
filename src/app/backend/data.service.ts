@@ -161,6 +161,9 @@ export class DataService {
         this.pArray = data;
         console.log("Number of entries: "+this.pArray.length);
         console.log(this.pArray);
+        if(this.pArray.length === 0){
+          this.modalRef = this.modalService.show(this.template);
+        }
         //this.check();
       },
         err => {
